@@ -1,0 +1,13 @@
+{
+  "name": "mailoptin/libsodium",
+  "description": "Remove LITE Restriction package",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "MailOptin\\Libsodium\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.5"
+  }
+}
