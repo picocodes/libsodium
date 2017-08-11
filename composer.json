@@ -1,6 +1,6 @@
 {
   "name": "mailoptin/libsodium",
-  "description": "Remove LITE Restriction package",
+  "description": "libsodium removal package",
   "type": "library",
   "autoload": {
     "psr-4": {
