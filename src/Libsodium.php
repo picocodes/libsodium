@@ -19,23 +19,9 @@ class Libsodium
         add_filter('mailoptin_lite_upgrade_more_optin_themes', '__return_false');
         add_filter('mailoptin_disable_sidebar_ads', '__return_true');
 
-        add_action('mo_optin_form_customizer_configuration_settings', array($this, 'add_optin_customizer_settings'), 10, 4);
-        add_action('mo_optin_form_customizer_configuration_controls', array($this, 'add_optin_customizer_control'), 10, 4);
-
         add_action('mailoptin_email_campaign_customizer_page_settings', array($this, 'add_email_customizer_settings'), 10, 4);
         add_action('mailoptin_email_campaign_customizer_settings_controls', array($this, 'add_email_customizer_control'), 10, 4);
     }
-
-    public function add_optin_customizer_settings($settings)
-{
-    $settings['remove_branding'] = array(
-        'default' => apply_filters('mo_optin_form_remove_branding_default', false),
-        'type' => 'option',
-        'transport' => 'refresh',
-    );
-
-    return $settings;
-}
 
     public function add_email_customizer_settings($settings)
     {
@@ -48,30 +34,6 @@ class Libsodium
         return $settings;
     }
 
-    /**
-     * @param array $control
-     * @param \WP_Customize_Manager $wp_customize
-     * @param string $option_prefix
-     * @param OptinCustomizer $customizerClassInstance
-     * @return mixed
-     */
-    public function add_optin_customizer_control($control, $wp_customize, $option_prefix, $customizerClassInstance)
-    {
-        $control['remove_branding'] = apply_filters('mo_optin_form_customizer_remove_branding_args', array(
-                'type' => 'checkbox',
-                'label' => __('Remove MailOptin Branding', 'mailoptin'),
-                /**
-                 * @todo add support for affiliate link. include a notice to that effect like so:
-                 * If your affiliate link is set in the Misc settings, it will be used.
-                 */
-                'section' => $customizerClassInstance->configuration_section_id,
-                'settings' => $option_prefix . '[remove_branding]',
-                'priority' => 110,
-            )
-        );
-
-        return $control;
-    }
 
     /**
      * @param array $control
