@@ -104,6 +104,9 @@ class LibsodiumSettingsPage
      */
     public static function plugin_check_license($force = false)
     {
+
+        if(defined( 'DOING_AJAX' )) return;
+
         // only check license if transient doesn't exist
         if (false === get_transient('mo_license_check') || $force === true) {
 
@@ -286,6 +289,8 @@ class LibsodiumSettingsPage
      */
     public static function plugin_updater()
     {
+        if(defined( 'DOING_AJAX' )) return;
+
         self::license_control_instance()->plugin_updater();
     }
 
