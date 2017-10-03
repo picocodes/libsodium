@@ -59,6 +59,8 @@ class LicenseControl
 
     /**
      * Activate License key
+     *
+     * @return mixed
      */
     public function activate_license()
     {
