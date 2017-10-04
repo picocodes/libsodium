@@ -2,6 +2,7 @@
 
 namespace MailOptin\Libsodium;
 
+use MailOptin\Core\Admin\Customizer\OptinForm\AbstractCustomizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerControls;
 
@@ -36,7 +37,7 @@ class OptinSuccess
         $success_settings_args = apply_filters("mo_optin_form_customizer_success_settings",
             array(
                 'success_action' => array(
-                    'default' => 'close_optin',
+                    'default' => (new AbstractCustomizer())->customizer_defaults['success_action'],
                     'type' => 'option',
                     'sanitize_callback' => 'sanitize_text_field',
                     'transport' => 'postMessage',
@@ -78,6 +79,7 @@ class OptinSuccess
                 'success_action' => apply_filters('mo_optin_form_customizer_success_action_args', array(
                         'type' => 'select',
                         'choices' => [
+                            'no_action' => __('No action', 'mailoptin'),
                             'close_optin' => __('Close optin', 'mailoptin'),
                             'close_optin_reload_page' => __('Close optin and reload page', 'mailoptin'),
                             'redirect_url' => __('Redirect to URL', 'mailoptin'),
@@ -105,9 +107,7 @@ class OptinSuccess
                         'section' => self::$success_section_id,
                         'settings' => $option_prefix . '[download_file_value]',
                         'priority' => 30,
-                        'description' => sprintf(
-                            __('Specify the URL of the file that users will download after opt-in. Must begin with http or https.', 'mailoptin')
-                        )
+                        'description' => __('Specify the URL of the file that users will download after opt-in. Must begin with http or https.', 'mailoptin')
                     )
                 ),
             ),
@@ -136,7 +136,7 @@ class OptinSuccess
     {
         if (!apply_filters('mo_optin_customizer_disable_success_section', false)) {
             $wp_customize->add_section(self::$success_section_id, array(
-                    'title' => __('Success', 'mailoptin'),
+                    'title' => __('After Conversion', 'mailoptin'),
                     'priority' => 35,
                 )
             );
