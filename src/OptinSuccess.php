@@ -47,12 +47,6 @@ class OptinSuccess
                     'type' => 'option',
                     'sanitize_callback' => 'esc_url',
                     'transport' => 'postMessage',
-                ),
-                'download_file_value' => array(
-                    'default' => '',
-                    'type' => 'option',
-                    'sanitize_callback' => 'esc_url',
-                    'transport' => 'postMessage',
                 )
             ),
             $customizerClassInstance
@@ -79,11 +73,10 @@ class OptinSuccess
                 'success_action' => apply_filters('mo_optin_form_customizer_success_action_args', array(
                         'type' => 'select',
                         'choices' => [
-                            'no_action' => __('No action', 'mailoptin'),
+                            'no_action' => __('Display success message.', 'mailoptin'),
                             'close_optin' => __('Close optin', 'mailoptin'),
                             'close_optin_reload_page' => __('Close optin and reload page', 'mailoptin'),
-                            'redirect_url' => __('Redirect to URL', 'mailoptin'),
-                            'download_file' => __('Download File', 'mailoptin')
+                            'redirect_url' => __('Redirect to URL', 'mailoptin')
                         ],
                         'label' => __('Success Action', 'mailoptin'),
                         'section' => self::$success_section_id,
@@ -100,16 +93,7 @@ class OptinSuccess
                         'priority' => 20,
                         'description' => __('Specify a URL to redirect users to after opt-in. Must begin with http or https.', 'mailoptin')
                     )
-                ),
-                'download_file_value' => apply_filters('mo_optin_form_customizer_download_url_value_args', array(
-                        'type' => 'text',
-                        'label' => __('Download File URL', 'mailoptin'),
-                        'section' => self::$success_section_id,
-                        'settings' => $option_prefix . '[download_file_value]',
-                        'priority' => 30,
-                        'description' => __('Specify the URL of the file that users will download after opt-in. Must begin with http or https.', 'mailoptin')
-                    )
-                ),
+                )
             ),
             $wp_customize,
             $option_prefix,
