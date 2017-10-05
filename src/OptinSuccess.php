@@ -2,6 +2,8 @@
 
 namespace MailOptin\Libsodium;
 
+use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Custom_Content;
+use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\OptinForm\AbstractCustomizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerControls;
@@ -34,10 +36,12 @@ class OptinSuccess
      */
     public static function optin_success_settings($wp_customize, $option_prefix, $customizerClassInstance)
     {
+        $customizer_defaults = (new AbstractCustomizer())->customizer_defaults;
+
         $success_settings_args = apply_filters("mo_optin_form_customizer_success_settings",
             array(
                 'success_action' => array(
-                    'default' => (new AbstractCustomizer())->customizer_defaults['success_action'],
+                    'default' => $customizer_defaults['success_action'],
                     'type' => 'option',
                     'sanitize_callback' => 'sanitize_text_field',
                     'transport' => 'postMessage',
@@ -46,6 +50,16 @@ class OptinSuccess
                     'default' => '',
                     'type' => 'option',
                     'sanitize_callback' => 'esc_url',
+                    'transport' => 'postMessage',
+                ),
+                'pass_lead_data_redirect_url' => array(
+                    'default' => $customizer_defaults['pass_lead_data_redirect_url'],
+                    'type' => 'option',
+                    'transport' => 'postMessage',
+                ),
+                'success_message_config_link' => array(
+                    'default' => '',
+                    'type' => 'option',
                     'transport' => 'postMessage',
                 )
             ),
@@ -67,13 +81,20 @@ class OptinSuccess
      */
     public static function optin_success_controls($instance, $wp_customize, $option_prefix, $customizerClassInstance)
     {
+
+        $success_message_config_link = sprintf(
+            __("To customize the success message shown after user subscribe to this opt-in campaign, %sclick here%s.", 'mailoptin'),
+            '<a onclick="wp.customize.control(\'mo_optin_campaign[' . $customizerClassInstance->optin_campaign_id . '][success_message]\').focus()" href="#">',
+            '</a>'
+        );
+
         $success_controls_args = apply_filters(
             "mo_optin_form_customizer_success_controls",
             array(
                 'success_action' => apply_filters('mo_optin_form_customizer_success_action_args', array(
                         'type' => 'select',
                         'choices' => [
-                            'no_action' => __('Display success message.', 'mailoptin'),
+                            'success_message' => __('Display success message.', 'mailoptin'),
                             'close_optin' => __('Close optin', 'mailoptin'),
                             'close_optin_reload_page' => __('Close optin and reload page', 'mailoptin'),
                             'redirect_url' => __('Redirect to URL', 'mailoptin')
@@ -92,6 +113,30 @@ class OptinSuccess
                         'settings' => $option_prefix . '[redirect_url_value]',
                         'priority' => 20,
                         'description' => __('Specify a URL to redirect users to after opt-in. Must begin with http or https.', 'mailoptin')
+                    )
+                ),
+                'pass_lead_data_redirect_url' => new WP_Customize_Toggle_Control(
+                    $wp_customize,
+                    $option_prefix . '[pass_lead_data_redirect_url]',
+                    apply_filters('mo_optin_form_customizer_pass_lead_data_redirect_url_args', array(
+                            'label' => __('Pass Lead Data to Redirect URL', 'mailoptin'),
+                            'description' => __('Enabling this will add lead name and email address as a query parameter to the redirect URL you specified above.', 'mailoptin'),
+                            'section' => self::$success_section_id,
+                            'settings' => $option_prefix . '[pass_lead_data_redirect_url]',
+                            'type' => 'light',
+                            'priority' => 30,
+                        )
+                    )
+                ),
+                'success_message_config_link' => new WP_Customize_Custom_Content(
+                    $wp_customize,
+                    $option_prefix . '[success_message_config_link]',
+                    apply_filters('mo_optin_form_customizer_success_message_config_link_args', array(
+                            'content' => $success_message_config_link,
+                            'section' => self::$success_section_id,
+                            'settings' => $option_prefix . '[ConvertKitConnect_upgrade_notice]',
+                            'priority' => 40,
+                        )
                     )
                 )
             ),
