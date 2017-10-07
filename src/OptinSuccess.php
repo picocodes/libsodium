@@ -2,6 +2,7 @@
 
 namespace MailOptin\Libsodium;
 
+use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Ace_Editor_Control;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Custom_Content;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\OptinForm\AbstractCustomizer;
@@ -58,6 +59,11 @@ class OptinSuccess
                     'transport' => 'postMessage',
                 ),
                 'success_message_config_link' => array(
+                    'default' => '',
+                    'type' => 'option',
+                    'transport' => 'postMessage',
+                ),
+                'success_js_script' => array(
                     'default' => '',
                     'type' => 'option',
                     'transport' => 'postMessage',
@@ -136,6 +142,21 @@ class OptinSuccess
                             'section' => self::$success_section_id,
                             'settings' => $option_prefix . '[ConvertKitConnect_upgrade_notice]',
                             'priority' => 40,
+                        )
+                    )
+                ),
+                'success_js_script' => new WP_Customize_Ace_Editor_Control(
+                    $wp_customize,
+                    $option_prefix . '[success_js_script]',
+                    apply_filters('mo_optin_form_customizer_success_js_script_args', array(
+                            'editor_id' => 'success-js-script',
+                            'label' => __('Success Triggered Script', 'mailoptin'),
+                            'description' => sprintf(
+                                __('Enter valid JavaScript code that will be triggered after every successful opt-in conversion. Please! do not include opening and closing %s&lt;script&gt;%s tag.', 'mailoptin'),
+                                '<code>', '</code>'),
+                            'section' => self::$success_section_id,
+                            'settings' => $option_prefix . '[success_js_script]',
+                            'priority' => 50,
                         )
                     )
                 )
