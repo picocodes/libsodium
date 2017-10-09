@@ -6,7 +6,7 @@ use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Ace_Editor_Contr
 use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerControls;
 
-class OptinSuccess
+class AfterConversion
 {
     public static function init()
     {

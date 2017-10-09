@@ -13,7 +13,7 @@ class Libsodium
     public function __construct()
     {
         LibsodiumSettingsPage::get_instance();
-        OptinSuccess::init();
+        AfterConversion::init();
 
         add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
         add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
