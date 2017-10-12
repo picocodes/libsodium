@@ -14,6 +14,9 @@ class Libsodium
         LibsodiumSettingsPage::get_instance();
         AfterConversion::init();
         CustomCSS::get_instance();
+        Shortcodes\Init::init();
+        DisplayRules::get_instance();
+        DisplayEffects::get_instance();
 
         add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
         add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
