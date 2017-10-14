@@ -2,7 +2,6 @@
 
 namespace MailOptin\Libsodium;
 
-use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Date_Picker_Control;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Range_Value_Control;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_X_Page_Views_Control;
@@ -44,18 +43,6 @@ class DisplayRules
 
         $shortcode_embed = '[mo-optin-form id="' . $optin_uuid . '"]';
         $template_tag_embed = "do_action('mo_optin_form', '$optin_uuid');";
-
-        $settings['schedule_status'] = array(
-            'default' => apply_filters('mo_optin_form_schedule_status', false),
-            'type' => 'option',
-            'transport' => 'postMessage',
-        );
-
-        $settings['schedule_start'] = array(
-            'default' => apply_filters('mo_optin_form_schedule_start', ''),
-            'type' => 'option',
-            'transport' => 'postMessage',
-        );
 
         $settings['click_launch_status'] = array(
             'default' => apply_filters('mo_optin_form_click_launch_status', ''),
@@ -108,17 +95,9 @@ class DisplayRules
      *
      * @param \WP_Customize_Manager $wp_customize
      * @param Customizer $customizerClassInstance
-     *
-     * @return mixed
      */
     public function optin_triggers_section($wp_customize, $customizerClassInstance)
     {
-        $wp_customize->add_section($customizerClassInstance->schedule_display_rule_section_id, array(
-                'title' => __("Schedule", 'mailoptin'),
-                'panel' => $customizerClassInstance->display_rules_panel_id
-            )
-        );
-
         // hide this if optin type is either sidebar or inpost.
         if (!in_array($customizerClassInstance->optin_campaign_type, ['sidebar', 'inpost'])) {
             $wp_customize->add_section($customizerClassInstance->click_launch_display_rule_section_id, array(
@@ -233,72 +212,11 @@ class DisplayRules
      */
     public function optin_triggers_controls($instance, $wp_customize, $option_prefix, $customizerClassInstance)
     {
-        $this->schedule_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance);
         $this->click_launch_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance);
         $this->exit_intent_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance);
         $this->after_x_seconds_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance);
         $this->after_x_scroll_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance);
         $this->x_page_views_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance);
-    }
-
-    /**
-     * Schedule display rule.
-     *
-     * @param \WP_Customize_Manager $wp_customize
-     * @param string $option_prefix
-     * @param Customizer $customizerClassInstance
-     */
-    public function schedule_display_rule_controls($wp_customize, $option_prefix, $customizerClassInstance)
-    {
-        /** @todo to be worked on */
-        if (MAILOPTIN_PLUGIN_TYPE !== 'proz') return;
-
-        $schedule_display_rule_control_args = apply_filters(
-            "mo_optin_form_customizer_click_launch_controls",
-            array(
-                'schedule_status' => new WP_Customize_Toggle_Control(
-                    $wp_customize,
-                    $option_prefix . '[schedule_status]',
-                    apply_filters('mo_optin_form_customizer_schedule_status_args', array(
-                            'label' => esc_html__('Activate Rule', 'mailoptin'),
-                            'section' => $customizerClassInstance->schedule_display_rule_section_id,
-                            'settings' => $option_prefix . '[schedule_status]',
-                            'type' => 'light',// light, ios, flat
-                            'description' => __('Show when a visitor clicks a link, button, image etc. %sNote:%s activating "Click Launch" will deactivate all other display rules.', 'mailoptin'),
-                            'priority' => 10
-                        )
-                    )
-                ),
-                'schedule_start' => new WP_Customize_Date_Picker_Control(
-                    $wp_customize,
-                    $option_prefix . '[schedule_start]',
-                    apply_filters('mo_optin_form_customizer_schedule_start_args', array(
-                            'label' => esc_html__('Start Time', 'mailoptin'),
-                            'section' => $customizerClassInstance->schedule_display_rule_section_id,
-                            'settings' => $option_prefix . '[schedule_start]',
-                            'type' => 'light',// light, ios, flat
-                            'description' => __('Show when a visitor clicks a link, button, image etc. %sNote:%s activating "Click Launch" will deactivate all other display rules. %sLearn more%s', 'mailoptin'),
-                            'priority' => 20
-                        )
-                    )
-                )
-            ),
-            $wp_customize,
-            $option_prefix,
-            $customizerClassInstance
-        );
-
-        do_action('mailoptin_before_schedule_controls_addition');
-
-        foreach ($schedule_display_rule_control_args as $id => $args) {
-            if (is_object($args)) {
-                $wp_customize->add_control($args);
-            } else {
-                $wp_customize->add_control($option_prefix . '[' . $id . ']', $args);
-            }
-        }
-
-        do_action('mailoptin_after_schedule_controls_addition');
     }
 
     /**
