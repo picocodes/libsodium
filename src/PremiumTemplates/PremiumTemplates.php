@@ -104,7 +104,7 @@ class PremiumTemplates
             $optin_theme_class = $premium_optin_theme['optin_class'];
 
             if ($db_optin_class === $optin_theme_class && $optin_type === $optin_theme_type) {
-                $optin_class = "\\MailOptin\\PremiumTemplates\\OptinForms\\$optin_type\\$db_optin_class";
+                $optin_class = "\\MailOptin\\Libsodium\\PremiumTemplates\\OptinForms\\$optin_type\\$db_optin_class";
             }
         }
         return $optin_class;

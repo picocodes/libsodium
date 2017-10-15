@@ -1,6 +1,6 @@
 {
   "name": "mailoptin/libsodium",
-  "description": "libsodium removal package",
+  "description": "libsodium package",
   "type": "library",
   "autoload": {
     "psr-4": {
