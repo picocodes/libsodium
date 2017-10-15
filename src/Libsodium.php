@@ -3,7 +3,7 @@
 namespace MailOptin\Libsodium;
 
 define('MAILOPTIN_DETACH_LIBSODIUM', true);
-define('MAILOPTIN_PLUGIN_TYPE', strrev('dradnats'));
+define('MAILOPTIN_STANDARD_PLUGIN_TYPE', true);
 
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\Customizer as EmailTemplateCustomizer;
