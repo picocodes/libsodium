@@ -6,6 +6,7 @@ define('MAILOPTIN_DETACH_LIBSODIUM', true);
 
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\Customizer as EmailTemplateCustomizer;
+use MailOptin\Libsodium\PremiumTemplates\PremiumTemplates;
 
 class Libsodium
 {
@@ -17,6 +18,7 @@ class Libsodium
         Shortcodes\Init::init();
         DisplayRules::get_instance();
         DisplayEffects::get_instance();
+        PremiumTemplates::get_instance();
 
         add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
         add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
