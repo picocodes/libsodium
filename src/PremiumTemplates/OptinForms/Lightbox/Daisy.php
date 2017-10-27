@@ -462,9 +462,7 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
     text-align: center;
     width: 100%;
 }
-div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
-    width: 66% !important;
-}
+    
 @media only screen and (min-width: 500px) {
     div#$optin_css_id.daisy-container input.daisy-input {
         width: 100%;
@@ -527,6 +525,15 @@ div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
     div#$optin_css_id.daisy-container {
         padding: 20px;
     }
+    
+    
+div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
+    width: 66% !important;
+}
+
+div#$optin_css_id.mo-has-email.daisy-container input[type="submit"].daisy-submit-button {
+        width: 30%;
+    }
 }
 /* hide image on small devices */
 
@@ -534,6 +541,11 @@ div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
     div#$optin_css_id.daisy-container img.mo-optin-form-image {
         display: none
     }
+    
+    
+div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
+    width: 100% !important;
+}
 }
 
 CSS;
