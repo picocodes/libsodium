@@ -88,7 +88,7 @@ class Bannino extends AbstractOptinTheme
             return $count - 2;
         });
 
-        add_filter('mo_optin_form_customizer_configuration_controls', function($controls) {
+        add_filter('mo_optin_form_customizer_configuration_controls', function ($controls) {
             unset($controls['hide_headline']);
             unset($controls['hide_description']);
 
@@ -96,7 +96,7 @@ class Bannino extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_enable_form_image', '__return_true');
-
+        
         $this->default_form_image_partial = MAILOPTIN_ASSETS_URL . 'images/optin-themes/bannino/optin-image.png';
 
         add_filter('mo_optin_form_partial_default_image', function () {

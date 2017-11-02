@@ -9,8 +9,6 @@ class Primrose extends AbstractOptinTheme
 {
     public $optin_form_name = 'Primrose';
 
-    protected $default_form_bg_image;
-
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         // -- default for design sections -- //
@@ -98,7 +96,9 @@ class Primrose extends AbstractOptinTheme
             return 'Raleway';
         });
 
-        $this->default_form_bg_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
+        add_filter('mo_optin_form_background_image_default', function () {
+            return MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
+        });
 
         add_filter('mo_optin_form_enable_form_background_image', '__return_true');
 
@@ -152,7 +152,7 @@ HTML;
     {
         $optin_css_id = $this->optin_css_id;
         $optin_uuid = $this->optin_campaign_uuid;
-        $background_image = $this->get_form_background_image_url($this->default_form_bg_image);
+        $background_image = $this->get_form_background_image_url();
 
         return <<<CSS
 
