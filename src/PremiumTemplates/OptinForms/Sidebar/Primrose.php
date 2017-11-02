@@ -30,7 +30,7 @@ class Primrose extends AbstractOptinTheme
 
         // -- default for headline sections -- //
         add_filter('mo_optin_form_headline_default', function () {
-            return __("50% off", 'mailoptin');
+            return __("50% OFF", 'mailoptin');
         });
 
         add_filter('mo_optin_form_headline_font_color_default', function () {
@@ -161,14 +161,6 @@ div#$optin_css_id.primrose-container * {
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
-   
-div#$optin_uuid.moOptinForm {
-    max-width: 400px;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
     
 div#$optin_css_id.primrose-container {
     max-width: 400px;
@@ -188,7 +180,10 @@ div#$optin_css_id.primrose-container .primrose-headline {
     font-size: 45px;
     text-align: center;
     font-family: 'PT serif', serif;
-    text-transform: uppercase;        
+    display: block;
+    border: 0;
+    line-height: normal;
+    height: auto;
 }
     
 div#$optin_css_id.primrose-container .primrose-description {
@@ -198,6 +193,9 @@ div#$optin_css_id.primrose-container .primrose-description {
     text-align: center;
     padding: 10px 0;
     line-height: 1.5;
+    display: block;
+    border: 0;
+    height: auto;
 }
         
 div#$optin_css_id.primrose-container .primrose-note {
@@ -206,13 +204,17 @@ div#$optin_css_id.primrose-container .primrose-note {
     font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
     font-weight: normal;
     text-align: center;
+    display: block;
+    border: 0;
+    line-height: normal;
+    height: auto;
 }
         
 div#$optin_css_id.primrose-container .primrose-headline {
     margin: 0;
 }
         
-div#$optin_css_id.primrose-container .primrose-input-field {
+div#$optin_css_id.primrose-container input.primrose-input-field {
     width: 100%;
     height: 36px !important;
     border: 2px solid #f0f0f0;
@@ -223,6 +225,7 @@ div#$optin_css_id.primrose-container .primrose-input-field {
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
+    line-height: normal;
 }
         
 div#$optin_css_id.primrose-container input.primrose-submit-button {
@@ -237,6 +240,7 @@ div#$optin_css_id.primrose-container input.primrose-submit-button {
     padding: 5px 10px;
     margin-top: 10px;
     font-size: 16px;
+    line-height: normal;
 }
 
 div#$optin_css_id.primrose-container .mo-optin-error {
