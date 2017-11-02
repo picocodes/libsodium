@@ -74,6 +74,12 @@ class PremiumTemplates
                 'optin_class' => 'Mimosa',
                 'optin_type' => 'slidein',
                 'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/mimosa-slidein.png'
+            ],
+            [
+                'name' => 'Primrose',
+                'optin_class' => 'Primrose',
+                'optin_type' => 'sidebar',
+                'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/mimosa-slidein.png'
             ]
         ];
     }
