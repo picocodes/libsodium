@@ -95,9 +95,9 @@ class Bannino extends AbstractOptinTheme
             return $controls;
         });
 
-        add_filter('mo_optin_form_enable_form_image', '__return_true');
-        
         $this->default_form_image_partial = MAILOPTIN_ASSETS_URL . 'images/optin-themes/bannino/optin-image.png';
+
+        add_filter('mo_optin_form_enable_form_image', '__return_true');
 
         add_filter('mo_optin_form_partial_default_image', function () {
             return $this->default_form_image_partial;
