@@ -264,32 +264,29 @@ class Dahlia extends AbstractOptinTheme
     public function optin_form()
     {
         return <<<HTML
-        
 [mo-optin-form-wrapper class="dahlia-container"]
-            <div class="dahlia-form-row dahlia-text-align">
-                <div class="dahlia-title-wrap">
-            [mo-optin-form-headline tag="div" class="dahlia-headline"]
-            <div class="dahlia-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
-                </div>
-                <div class="dahlia-form-group dahlia-name-field" id="mo-optin-form-name-field">
-                [mo-optin-form-name-field class="dahlia-form-control"]
-                        <span class="dahlia-icons-wrap">
-                        <i class="fa fa-user fa-lg dahlia-icons" aria-hidden="true"></i>
-                        </span>
-                </div>
-                <div class="dahlia-form-group dahlia-email-field">
-                [mo-optin-form-email-field class="dahlia-form-control"]
-                        <span class="dahlia-icons-wrap">
-                        <i class="fa fa-envelope fa-lg dahlia-icons" aria-hidden="true"></i>
-                        </span>
-                </div>
-                <div class="dahlia-form-group dahlia-button-group" style="padding-bottom: 15px;">
-                    
-            [mo-optin-form-submit-button class="dahlia-button"]
-                </div>
-        [mo-optin-form-error]
-            </div>
-
+<div class="dahlia-form-row dahlia-text-align">
+    <div class="dahlia-title-wrap">
+        [mo-optin-form-headline tag="div" class="dahlia-headline"]
+        <div class="dahlia-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
+    </div>
+    <div class="dahlia-form-group dahlia-name-field" id="mo-optin-form-name-field">
+        [mo-optin-form-name-field class="dahlia-form-control"]
+        <span class="dahlia-icons-wrap">
+          <i class="fa fa-user fa-lg dahlia-icons" aria-hidden="true"></i>
+		</span>
+    </div>
+    <div class="dahlia-form-group dahlia-email-field">
+        [mo-optin-form-email-field class="dahlia-form-control"]
+        <span class="dahlia-icons-wrap">
+            <i class="fa fa-envelope fa-lg dahlia-icons" aria-hidden="true"></i>
+		</span>
+    </div>
+    <div class="dahlia-form-group dahlia-button-group" style="padding-bottom: 15px;">
+        [mo-optin-form-submit-button class="dahlia-button"]
+    </div>
+    [mo-optin-form-error]
+</div>
 [/mo-optin-form-wrapper]
 HTML;
     }
