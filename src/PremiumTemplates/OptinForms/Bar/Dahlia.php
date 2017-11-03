@@ -12,62 +12,68 @@ class Dahlia extends AbstractOptinTheme
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         // -- default for design sections -- //
-//        add_filter('mo_optin_form_background_color_default', function () {
-//            return '#000000';
-//        });
-//        add_filter('mo_optin_form_border_color_default', function () {
-//            return '#000000';
-//        });
-//
-//        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-//            return __("Enter your name...", 'mailoptin');
-//        });
-//
-//        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-//            return __("Enter your email...", 'mailoptin');
-//        });
-//
-//        // -- default for headline sections -- //
-//        add_filter('mo_optin_form_headline_default', function () {
-//            return __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin');
-//        });
-//
-//        add_filter('mo_optin_form_headline_font_color_default', function () {
-//            return '#ffffff';
-//        });
-//
-//        add_filter('mo_optin_form_headline_font_default', function () {
-//            return 'Helvetica';
-//        });
-//
-//        // -- default for fields sections -- //
-//        add_filter('mo_optin_form_name_field_color_default', function () {
-//            return '#dddddd';
-//        });
-//
-//        add_filter('mo_optin_form_email_field_color_default', function () {
-//            return '#dddddd';
-//        });
-//
-//        add_filter('mo_optin_form_submit_button_color_default', function () {
-//            return '#ffffff';
-//        });
-//
-//        add_filter('mo_optin_form_submit_button_background_default', function () {
-//            return '#3abaab';
-//        });
-//
-//        add_filter('mo_optin_form_submit_button_font_default', function () {
-//            return 'Helvetica';
-//        });
-//
-//        add_filter('mo_optin_form_name_field_font_default', function () {
-//            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-//        });
-//
-//        add_filter('mo_optin_form_email_field_font_default', function () {
-//            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-//        });
+        add_filter('mo_optin_form_background_color_default', function () {
+            return '#ffffff';
+        });
+
+        add_filter('mo_optin_form_border_color_default', function () {
+            return '#00ceff';
+        });
+
+        add_filter('mo_optin_form_name_field_placeholder_default', function () {
+            return __("Enter your name...", 'mailoptin');
+        });
+
+        add_filter('mo_optin_form_email_field_placeholder_default', function () {
+            return __("Enter your email...", 'mailoptin');
+        });
+
+        // -- default for headline sections -- //
+        add_filter('mo_optin_form_headline_default', function () {
+            return __("Subscribe for Free Marketing Tips", 'mailoptin');
+        });
+
+        add_filter('mo_optin_form_headline_font_color_default', function () {
+            return '#000000';
+        });
+
+        add_filter('mo_optin_form_headline_font_default', function () {
+            return 'Helvetica';
+        });
+
+        // -- default for fields sections -- //
+        add_filter('mo_optin_form_name_field_color_default', function () {
+            return '#2e2e2e';
+        });
+
+        add_filter('mo_optin_form_email_field_color_default', function () {
+            return '#2e2e2e';
+        });
+
+        add_filter('mo_optin_form_submit_button_color_default', function () {
+            return '#ffffff';
+        });
+
+        add_filter('mo_optin_form_submit_button_background_default', function () {
+            return '#00c1f3';
+        });
+
+        add_filter('mo_optin_form_submit_button_font_default', function () {
+            return 'Helvetica';
+        });
+
+        add_filter('mo_optin_form_name_field_font_default', function () {
+            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
+        });
+
+        add_filter('mo_optin_form_email_field_font_default', function () {
+            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
+        });
+
+        add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
+            $settings['hide_name_field']['transport'] = 'refresh';
+            return $settings;
+        });
 
         parent::__construct($optin_campaign_id);
     }
@@ -262,12 +268,10 @@ class Dahlia extends AbstractOptinTheme
 [mo-optin-form-wrapper class="dahlia-container"]
             <div class="dahlia-form-row dahlia-text-align">
                 <div class="dahlia-title-wrap">
-                
-            [mo-optin-form-headline tag="div" class="dahlia-title-wrap-content"]
+            [mo-optin-form-headline tag="div" class="dahlia-headline"]
             <div class="dahlia-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
-                    <div class="dahlia-close-form" title="close">x</div>
                 </div>
-                <div class="dahlia-form-group dahlia-name-field">
+                <div class="dahlia-form-group dahlia-name-field" id="mo-optin-form-name-field">
                 [mo-optin-form-name-field class="dahlia-form-control"]
                         <span class="dahlia-icons-wrap">
                         <i class="fa fa-user fa-lg dahlia-icons" aria-hidden="true"></i>
@@ -283,6 +287,7 @@ class Dahlia extends AbstractOptinTheme
                     
             [mo-optin-form-submit-button class="dahlia-button"]
                 </div>
+        [mo-optin-form-error]
             </div>
 
 [/mo-optin-form-wrapper]
@@ -314,7 +319,6 @@ div#$optin_css_id.dahlia-container {
     color:#fff;
     padding-left: 15px;
     padding-right: 35px;
-    padding-bottom: 10px;
     width: 100%;
     font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
     font-size: 16px;
@@ -406,8 +410,15 @@ div#$optin_css_id.dahlia-container input.dahlia-button{
 
 div#$optin_css_id.dahlia-container .dahlia-email-field, div#$optin_css_id.dahlia-container .dahlia-name-field, div#$optin_css_id.dahlia-container .dahlia-button-group{
     width: 100%;
-    padding-bottom: 15px;
 }
+
+div#$optin_css_id.dahlia-container div.mo-optin-error {
+         display: none;
+         color: #FF0000;
+         text-align: center;
+         width: 100%;
+         padding-bottom: .5em;
+     }
 
 /* Media queries for responsiveness */
 /* Tablet */
@@ -452,8 +463,13 @@ div#$optin_css_id.dahlia-container .dahlia-email-field, div#$optin_css_id.dahlia
         margin-bottom: -5px;
     }
 }
-div#$optin_css_id.dahlia-container .dahlia-title-wrap-content{
+div#$optin_css_id.dahlia-container .dahlia-headline{
     color: #000;
+    font-size: 18px;
+    display: block;
+    border: none;
+    line-height: normal;
+    height: auto;
 }
 
 div#$optin_css_id.dahlia-container input.dahlia-form-control{
@@ -464,6 +480,7 @@ div#$optin_css_id.dahlia-container input.dahlia-form-control{
     border-radius: 0;
     height: 36px;
     display:block;
+    margin: 0;
 }
 
 div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{

@@ -67,8 +67,7 @@ class PremiumTemplates
                 'name' => 'Dahlia',
                 'optin_class' => 'Dahlia',
                 'optin_type' => 'bar',
-                /** @todo update screenshot */
-                'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/muscari-bar.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/dahlia-bar.png'
             ],
             [
                 'name' => 'Dashdot',
