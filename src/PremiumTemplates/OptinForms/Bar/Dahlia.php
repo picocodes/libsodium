@@ -5,69 +5,69 @@ namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Bar;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
-class Muscari extends AbstractOptinTheme
+class Dahlia extends AbstractOptinTheme
 {
-    public $optin_form_name = 'Muscari';
+    public $optin_form_name = 'Dahlia';
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#000000';
-        });
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#000000';
-        });
-
-        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-            return __("Enter your name...", 'mailoptin');
-        });
-
-        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email...", 'mailoptin');
-        });
-
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin');
-        });
-
-        add_filter('mo_optin_form_headline_font_color_default', function () {
-            return '#ffffff';
-        });
-
-        add_filter('mo_optin_form_headline_font_default', function () {
-            return 'Helvetica';
-        });
-
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#dddddd';
-        });
-
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#dddddd';
-        });
-
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
-
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#3abaab';
-        });
-
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Helvetica';
-        });
-
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-        });
-
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-        });
+//        add_filter('mo_optin_form_background_color_default', function () {
+//            return '#000000';
+//        });
+//        add_filter('mo_optin_form_border_color_default', function () {
+//            return '#000000';
+//        });
+//
+//        add_filter('mo_optin_form_name_field_placeholder_default', function () {
+//            return __("Enter your name...", 'mailoptin');
+//        });
+//
+//        add_filter('mo_optin_form_email_field_placeholder_default', function () {
+//            return __("Enter your email...", 'mailoptin');
+//        });
+//
+//        // -- default for headline sections -- //
+//        add_filter('mo_optin_form_headline_default', function () {
+//            return __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin');
+//        });
+//
+//        add_filter('mo_optin_form_headline_font_color_default', function () {
+//            return '#ffffff';
+//        });
+//
+//        add_filter('mo_optin_form_headline_font_default', function () {
+//            return 'Helvetica';
+//        });
+//
+//        // -- default for fields sections -- //
+//        add_filter('mo_optin_form_name_field_color_default', function () {
+//            return '#dddddd';
+//        });
+//
+//        add_filter('mo_optin_form_email_field_color_default', function () {
+//            return '#dddddd';
+//        });
+//
+//        add_filter('mo_optin_form_submit_button_color_default', function () {
+//            return '#ffffff';
+//        });
+//
+//        add_filter('mo_optin_form_submit_button_background_default', function () {
+//            return '#3abaab';
+//        });
+//
+//        add_filter('mo_optin_form_submit_button_font_default', function () {
+//            return 'Helvetica';
+//        });
+//
+//        add_filter('mo_optin_form_name_field_font_default', function () {
+//            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
+//        });
+//
+//        add_filter('mo_optin_form_email_field_font_default', function () {
+//            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
+//        });
 
         parent::__construct($optin_campaign_id);
     }
@@ -258,29 +258,33 @@ class Muscari extends AbstractOptinTheme
     public function optin_form()
     {
         return <<<HTML
-[mo-optin-form-wrapper class="muscari-container"]
-<div role="form">
-    <div class="muscari-form-row muscari-text-align">
-        <div class="muscari-form-title-wrap">
-            [mo-optin-form-headline tag="div" class="muscari-title-wrap-content"]
-            <div class="muscari-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
-        </div>
-        <div class="muscari-form-group muscari-name-field mo-optin-form-name-field">
-            <label>
-                [mo-optin-form-name-field class="muscari-form-control"]
-            </label>
-        </div>
-        <div class="muscari-form-group muscari-email-field mo-optin-form-email-field">
-            <label>
-                [mo-optin-form-email-field class="muscari-form-control"]
-            </label>
-        </div>
-        <div class="muscari-form-group muscari-button-group" style="padding-bottom: 15px;">
-            [mo-optin-form-submit-button class="muscari-button"]
-        </div>
-        [mo-optin-form-error]
-    </div>
-</div>
+        
+[mo-optin-form-wrapper class="dahlia-container"]
+            <div class="dahlia-form-row dahlia-text-align">
+                <div class="dahlia-title-wrap">
+                
+            [mo-optin-form-headline tag="div" class="dahlia-title-wrap-content"]
+            <div class="dahlia-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
+                    <div class="dahlia-close-form" title="close">x</div>
+                </div>
+                <div class="dahlia-form-group dahlia-name-field">
+                [mo-optin-form-name-field class="dahlia-form-control"]
+                        <span class="dahlia-icons-wrap">
+                        <i class="fa fa-user fa-lg dahlia-icons" aria-hidden="true"></i>
+                        </span>
+                </div>
+                <div class="dahlia-form-group dahlia-email-field">
+                [mo-optin-form-email-field class="dahlia-form-control"]
+                        <span class="dahlia-icons-wrap">
+                        <i class="fa fa-envelope fa-lg dahlia-icons" aria-hidden="true"></i>
+                        </span>
+                </div>
+                <div class="dahlia-form-group dahlia-button-group" style="padding-bottom: 15px;">
+                    
+            [mo-optin-form-submit-button class="dahlia-button"]
+                </div>
+            </div>
+
 [/mo-optin-form-wrapper]
 HTML;
     }
@@ -294,28 +298,34 @@ HTML;
     {
         $optin_css_id = $this->optin_css_id;
         return <<<CSS
-        div#$optin_css_id.muscari-container,
- div#$optin_css_id.muscari-container .muscari-form-group,
- div#$optin_css_id.muscari-container .muscari-form-control {
+        @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+div#$optin_css_id.dahlia-container * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+div#$optin_css_id.dahlia-container {
+    background-color: #fff;
+    color:#fff;
+    padding-left: 15px;
+    padding-right: 35px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
+    font-size: 16px;
+    border: 2px solid #00ceff;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
-div#$optin_css_id.muscari-container{
-    background-color: #000000;
-    border: 3px solid #000000;
-    color:#fff;
-    padding-left: 15px;
-    padding-right: 35px;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale;
-    width: 100%;
-    font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
-    font-size: 16px;
-}
-
-div#$optin_css_id.muscari-container .muscari-close-form{
+div#$optin_css_id.dahlia-container .dahlia-close-form {
+    color: #000;
     cursor: pointer;
     display: block;
     font-size: 22px;
@@ -332,31 +342,25 @@ div#$optin_css_id.muscari-container .muscari-close-form{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
 
-div#$optin_css_id.muscari-container .muscari-close-form,
-div#$optin_css_id.muscari-container .muscari-close-form a.mo-close-optin {
-    color: #fff;
-    text-decoration: none;
 }
-
-div#$optin_css_id.muscari-container .muscari-close-form:hover {
+div#$optin_css_id.dahlia-container .dahlia-close-form:hover {
     text-shadow: 0 0 2px #fff
 }
 
-div#$optin_css_id.muscari-container .muscari-form-title-wrap{
+div#$optin_css_id.dahlia-container .dahlia-title-wrap{
     padding: 15px;
     width:100%;
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
 }
 
-div#$optin_css_id.muscari-container .muscari-form-group {
+div#$optin_css_id.dahlia-container .dahlia-form-group {
     margin-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
-div#$optin_css_id.muscari-container .muscari-form-control{
+div#$optin_css_id.dahlia-container input.dahlia-form-control{
     display: block;
     width: 100%;
     height: 34px;
@@ -367,15 +371,15 @@ div#$optin_css_id.muscari-container .muscari-form-control{
     outline: none !important;
     border:none;
 }
-div#$optin_css_id.muscari-container .muscari-form-row{
-    margin-right: auto;
-    margin-left: auto;
+div#$optin_css_id.dahlia-container .dahlia-form-row{
+    margin-right: -15px;
+    margin-left: -15px;
 }
-div#$optin_css_id.muscari-container .muscari-form-row:after{
+div#$optin_css_id.dahlia-container .dahlia-form-row:after{
     clear: both;
 }
 
-div#$optin_css_id.muscari-container .muscari-button{
+div#$optin_css_id.dahlia-container input.dahlia-button{
     outline: none !important;
     display: inline-block;
     padding: 6px 12px;
@@ -383,7 +387,6 @@ div#$optin_css_id.muscari-container .muscari-button{
     font-size: 16px;
     line-height: 1.42857143;
     text-align: center;
-    text-transform: uppercase;
     white-space: nowrap;
     vertical-align: middle;
     -ms-touch-action: manipulation;
@@ -401,121 +404,125 @@ div#$optin_css_id.muscari-container .muscari-button{
     width: 100%;
 }
 
-div#$optin_css_id.muscari-container .muscari-email-field,.muscari-name-field,
-div#$optin_css_id.muscari-container .muscari-button-group {
+div#$optin_css_id.dahlia-container .dahlia-email-field, div#$optin_css_id.dahlia-container .dahlia-name-field, div#$optin_css_id.dahlia-container .dahlia-button-group{
     width: 100%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    padding-bottom: 15px;
 }
-
-div#$optin_css_id.muscari-container div.mo-optin-error {
-         display: none;
-         color: #FF0000;
-         text-align: center;
-         width: 100%;
-         padding-bottom: .5em;
-     }
 
 /* Media queries for responsiveness */
 /* Tablet */
 @media (min-width: 768px) {
-    div#$optin_css_id.muscari-container .muscari-email-field,
-    div#$optin_css_id.muscari-container .muscari-name-field{
+    div#$optin_css_id.dahlia-container .dahlia-email-field, div#$optin_css_id.dahlia-container .dahlia-name-field{
         width:28.19%;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-button-group{
+    div#$optin_css_id.dahlia-container .dahlia-button-group{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-close-form{
+    div#$optin_css_id.dahlia-container .dahlia-close-form{
         top: 50%;
-    }
-}
-
-/* Tablet onwards with only email field */
-@media (min-width: 992px) {
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-form-title-wrap{
-        width: auto;
-        display: inline-block;
-    }
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-email-field,
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-name-field,
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-button-group{
-        width:auto;
-        display: inline-block;
     }
 }
 
 /* Medium device */
 @media (min-width: 992px) {
-    div#$optin_css_id.muscari-container .muscari-text-align{
+    div#$optin_css_id.dahlia-container .dahlia-text-align{
         text-align: center;
     }
 }
 
+
 /* Large screens & TVs */
 @media (min-width: 1200px) {
-    div#$optin_css_id.muscari-container .muscari-form-title-wrap{
+    div#$optin_css_id.dahlia-container .dahlia-title-wrap{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-email-field,
-    div#$optin_css_id.muscari-container .muscari-name-field,
-    div#$optin_css_id.muscari-container .muscari-button-group{
+    div#$optin_css_id.dahlia-container .dahlia-email-field,
+    div#$optin_css_id.dahlia-container .dahlia-name-field,
+    div#$optin_css_id.dahlia-container .dahlia-button-group{
         width:auto;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-close-form{
+    div#$optin_css_id.dahlia-container .dahlia-close-form{
         top: 24px;
     }
-    div#$optin_css_id.muscari-container .muscari-form-group{
+    div#$optin_css_id.dahlia-container .dahlia-form-group{
         margin-bottom: -5px;
     }
 }
-
-div#$optin_css_id.muscari-container .muscari-form-control{
-    background: transparent;
-    color: #dddddd;
-    border-radius: 0;
-    border-bottom: 2px solid #cccccc;
+div#$optin_css_id.dahlia-container .dahlia-title-wrap-content{
+    color: #000;
 }
 
-div#$optin_css_id.muscari-container .muscari-form-control:hover{
+div#$optin_css_id.dahlia-container input.dahlia-form-control{
+    color: #2e2e2e;
+    border-bottom: 2px solid #D6D6D6;
+    padding-left: 45px;
+    background-color: transparent;
+    border-radius: 0;
+    height: 36px;
+    display:block;
+}
+
+div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{
     outline: 0;
-    border-bottom-color: #3abaab;
+    border-bottom-color: #00CCFF;
     -webkit-transition: border-bottom-color 0.15s;
     -moz-transition: border-bottom-color 0.15s;
     -ms-transition: border-bottom-color 0.15s;
     -o-transition: border-bottom-color 0.15s;
     transition: border-bottom-color 0.15s;
 }
-div#$optin_css_id.muscari-container .muscari-button{
-    background: #3abaab;
-    color:#fff;
-}
-div#$optin_css_id.muscari-container .muscari-button:hover{
-    background: #2fa699;
+
+div#$optin_css_id.dahlia-container .dahlia-form-group{
+    position: relative;
 }
 
-div#$optin_css_id.muscari-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #cccccc;
+div#$optin_css_id.dahlia-container input.dahlia-button{
+    background: #00CCFF;
+    color:#fff;
+}
+div#$optin_css_id.dahlia-container input.dahlia-button:hover{
+    background: #00c1f3;
+}
+
+div#$optin_css_id.dahlia-container .dahlia-icons-wrap{
+    position:absolute;
+    bottom:-5px;
+    top:0;
+    left:15px;
+    background:transparent;
+    border-bottom-left-radius:5px;
+    height: 36px;
+    width: 34px;
+    border-top-left-radius: 5px;
+}
+div#$optin_css_id.dahlia-container .dahlia-icons{
+    width:30px;
+    height:30px;
+    padding: 5px;
+    color: #00ceff;
+}
+
+div#$optin_css_id.dahlia-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.muscari-container ::-moz-placeholder { /* Firefox 19+ */
-    color: #cccccc;
+div#$optin_css_id.dahlia-container ::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.muscari-container :-ms-input-placeholder { /* IE 10+ */
-    color: #cccccc;
+div#$optin_css_id.dahlia-container :-ms-input-placeholder { /* IE 10+ */
+    color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.muscari-container :-moz-placeholder { /* Firefox 18- */
-    color: #cccccc;
+div#$optin_css_id.dahlia-container :-moz-placeholder { /* Firefox 18- */
+    color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }

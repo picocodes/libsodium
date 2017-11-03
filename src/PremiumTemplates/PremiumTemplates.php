@@ -64,6 +64,13 @@ class PremiumTemplates
                 'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/muscari-bar.png'
             ],
             [
+                'name' => 'Dahlia',
+                'optin_class' => 'Dahlia',
+                'optin_type' => 'bar',
+                /** @todo update screenshot */
+                'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/muscari-bar.png'
+            ],
+            [
                 'name' => 'Dashdot',
                 'optin_class' => 'Dashdot',
                 'optin_type' => 'bar',
