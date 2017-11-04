@@ -71,6 +71,10 @@ class Dahlia extends AbstractOptinTheme
             return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
         });
 
+        add_action('customize_preview_init', function () {
+            add_action('wp_footer', [$this, 'customizer_preview_js']);
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -265,6 +269,23 @@ class Dahlia extends AbstractOptinTheme
         return $output_controls;
     }
 
+    public function customizer_preview_js()
+    {
+        ?>
+        <script type="text/javascript">
+            (function ($) {
+                $(function () {
+                    wp.customize(mailoptin_optin_option_prefix + '[' + mailoptin_optin_campaign_id + '][dahlia_icons_color]', function (value) {
+                        value.bind(function (to) {
+                            $('.dahlia-icons').css('color', to);
+                        });
+                    });
+                })
+            })(jQuery)
+        </script>
+        <?php
+    }
+
     /**
      * Fulfil interface contract.
      */
@@ -315,6 +336,9 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $dahlia_icons_color = $this->get_customizer_value('dahlia_icons_color');
+        $dahlia_icons_color = empty($dahlia_icons_color) ? '#00cef' : $dahlia_icons_color;
+
         return <<<CSS
         @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 div#$optin_css_id.dahlia-container * {
@@ -324,8 +348,6 @@ div#$optin_css_id.dahlia-container * {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
 }
-
-
 
 div#$optin_css_id.dahlia-container {
     background-color: #fff;
@@ -533,7 +555,7 @@ div#$optin_css_id.dahlia-container .dahlia-icons{
     width:30px;
     height:30px;
     padding: 5px;
-    color: #00ceff;
+    color: $dahlia_icons_color;
 }
 
 div#$optin_css_id.dahlia-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
