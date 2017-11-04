@@ -520,7 +520,7 @@ div#$optin_css_id.dahlia-container input.dahlia-form-control{
 
 div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{
     outline: 0;
-    border-bottom-color: #00CCFF;
+    border-bottom-color: $dahlia_icons_color;
     -webkit-transition: border-bottom-color 0.15s;
     -moz-transition: border-bottom-color 0.15s;
     -ms-transition: border-bottom-color 0.15s;
