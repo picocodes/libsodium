@@ -2,6 +2,7 @@
 
 namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Bar;
 
+use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
@@ -70,11 +71,6 @@ class Dahlia extends AbstractOptinTheme
             return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
         });
 
-        add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
-            $settings['hide_name_field']['transport'] = 'refresh';
-            return $settings;
-        });
-
         parent::__construct($optin_campaign_id);
     }
 
@@ -93,7 +89,7 @@ class Dahlia extends AbstractOptinTheme
      * @param array $controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
@@ -117,7 +113,7 @@ class Dahlia extends AbstractOptinTheme
      * @param array $controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
@@ -141,7 +137,7 @@ class Dahlia extends AbstractOptinTheme
      * @param array $controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
@@ -165,7 +161,7 @@ class Dahlia extends AbstractOptinTheme
      * @param array $controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
@@ -183,6 +179,14 @@ class Dahlia extends AbstractOptinTheme
      */
     public function customizer_fields_settings($fields_settings, $CustomizerSettingsInstance)
     {
+        $fields_settings['hide_name_field']['transport'] = 'refresh';
+
+        $fields_settings['dahlia_icons_color'] = array(
+            'default' => '#00ceff',
+            'type' => 'option',
+            'transport' => 'postMessage',
+        );
+
         return $fields_settings;
     }
 
@@ -190,12 +194,24 @@ class Dahlia extends AbstractOptinTheme
      * @param array $fields_controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
     public function customizer_fields_controls($fields_controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
+        $fields_controls['dahlia_icons_color'] = new \WP_Customize_Color_Control(
+            $wp_customize,
+            $option_prefix . '[dahlia_icons_color]',
+            apply_filters('mo_optin_form_customizer_dahlia_icons_color_args', array(
+                    'label' => __('Icons Color', 'mailoptin'),
+                    'section' => $customizerClassInstance->fields_section_id,
+                    'settings' => $option_prefix . '[dahlia_icons_color]',
+                    'priority' => 5,
+                )
+            )
+        );
+
         return $fields_controls;
     }
 
@@ -215,7 +231,7 @@ class Dahlia extends AbstractOptinTheme
      * @param array $configuration_controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
@@ -240,7 +256,7 @@ class Dahlia extends AbstractOptinTheme
      * @param array $output_controls
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
-     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
+     * @param Customizer $customizerClassInstance
      *
      * @return array
      */
