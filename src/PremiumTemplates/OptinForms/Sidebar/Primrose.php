@@ -226,6 +226,7 @@ div#$optin_css_id.primrose-container input.primrose-input-field {
     margin-top: 10px;
     text-align: center;
     line-height: normal;
+    background-color: #ffffff;
 }
         
 div#$optin_css_id.primrose-container input.primrose-submit-button {

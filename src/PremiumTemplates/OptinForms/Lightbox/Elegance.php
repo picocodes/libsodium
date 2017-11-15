@@ -374,6 +374,7 @@ div#$optin_css_id.moEleganceModal input.moEleganceModal_input_fields {
   font-size: 16px;
   border: 1px solid #e3e3e3;
   outline: 1px solid #e3e3e3;
+  background-color: #ffffff;
 }
 
 div#$optin_css_id.moEleganceModal input.moEleganceModal_button {

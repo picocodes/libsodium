@@ -312,7 +312,7 @@ class Bannino extends AbstractOptinTheme
 	</div>
 
 	<div class="form-body">
-		<div class="bannino-input-fields clearfix">
+		<div class="bannino-input-fields bannino-clearfix">
 			[mo-optin-form-name-field class="bannino-form-field"]
 			[mo-optin-form-email-field class="bannino-form-field"]
 			[mo-optin-form-submit-button class="bannino-form-submit-button"]
@@ -353,6 +353,10 @@ div#$optin_css_id.bannino-container button, div#$optin_css_id.bannino-container 
 div#$optin_css_id.bannino-container .bannino-input-fields {
 		 border: 0;
 	 }
+	 
+div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-field {
+	background-color: #ffffff;
+}
 
 div#$optin_css_id.bannino-container img.mo-optin-form-image{
 		 display: block;
@@ -365,11 +369,11 @@ div#$optin_css_id.bannino-container input:focus {
 		 background: #ece4e4;
 	 }
 
-div#$optin_css_id.bannino-container .clearfix:before, div#$optin_css_id.bannino-container .clearfix:after {
-															   display: table;
-															   content: " ";
-														   }
-div#$optin_css_id.bannino-container .clearfix:after{
+div#$optin_css_id.bannino-container .bannino-clearfix:before, div#$optin_css_id.bannino-container .bannino-clearfix:after {
+display: table;
+content: " ";
+}
+div#$optin_css_id.bannino-container .bannino-clearfix:after{
 		 clear: both;
 	 }
 
@@ -395,11 +399,11 @@ div#$optin_css_id.bannino-container div.mo-optin-error {
 		 padding-bottom: .5em;
 	 }
 
-div#$optin_css_id.mo-has-email.bannino-container .bannino-input-fields.clearfix .bannino-form-field {
+div#$optin_css_id.mo-has-email.bannino-container .bannino-input-fields.bannino-clearfix .bannino-form-field {
 		 width: 100% !important;
 	 }
 
-div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 		 background: #2c3e50;
 		 border: 0;
 		 margin-top: 5px;
@@ -416,8 +420,8 @@ div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino
 	 }
 
 
-div#$optin_css_id.bannino-container .bannino-input-fields.clearfix .bannino-form-field,
-	 div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button{
+div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix .bannino-form-field,
+	 div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button{
 			  padding: 7px !important;
 			  display: block;
 			  width: 100%;
@@ -447,7 +451,7 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 	 }
 
 @media only screen and (min-width: 414px){
-	div#$optin_css_id.bannino-container  .bannino-input-fields.clearfix {
+	div#$optin_css_id.bannino-container  .bannino-input-fields.bannino-clearfix {
 			 display: flex;
 		 }
 
@@ -455,8 +459,8 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 			 margin-right: 0 !important;
 		 }
 
-	div#$optin_css_id.bannino-container  .bannino-input-fields.clearfix .bannino-form-field,
-		 div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container  .bannino-input-fields.bannino-clearfix .bannino-form-field,
+		 div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 				  width: 33%;
 				  float: left;
 				  margin-right: 10px;
@@ -466,7 +470,7 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 			  }
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 			 background: #2c3e50;
 			 border: 0;
 			 margin-top: 0 !important;
@@ -476,8 +480,8 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 }
 @media only screen and (min-width: 500px){
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix .bannino-form-field,
-		 div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix .bannino-form-field,
+		 div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 				  width: 33%;
 				  float: left;
 				  font-size: 14px;
@@ -488,7 +492,7 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 			  }
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 			 background: #2c3e50;
 			 border: 0;
 			 margin-top: 0 !important;
@@ -499,13 +503,13 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 @media only screen and (min-width: 1200px){
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix .bannino-form-field,
-		 div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix .bannino-form-field,
+		 div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 				  width: 33% !important;
 				  height: 40px !important;
 			  }
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 			 margin-top: 0 !important;
 			 padding: 8px 20px !important;
 			 height: 40px !important;
@@ -519,8 +523,8 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 @media only screen and (min-width: 768px){
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix .bannino-form-field,
-		 div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button   {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix .bannino-form-field,
+		 div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button   {
 				  width: 33%;
 				  float: left;
 				  margin-right: 10px;
@@ -528,7 +532,7 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 				  padding: 0 20px !important;
 			  }
 
-	div#$optin_css_id.bannino-container .bannino-input-fields.clearfix input.bannino-form-submit-button {
+	div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-submit-button {
 			 margin-top: 0 !important;
 			 padding: 0 20px !important;
 			 height: 40px !important;

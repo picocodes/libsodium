@@ -271,14 +271,10 @@ class Muscari extends AbstractOptinTheme
             <div class="muscari-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
         </div>
         <div class="muscari-form-group muscari-name-field mo-optin-form-name-field">
-            <label>
-                [mo-optin-form-name-field class="muscari-form-control"]
-            </label>
+           [mo-optin-form-name-field class="muscari-form-control"]
         </div>
         <div class="muscari-form-group muscari-email-field mo-optin-form-email-field">
-            <label>
-                [mo-optin-form-email-field class="muscari-form-control"]
-            </label>
+            [mo-optin-form-email-field class="muscari-form-control"]
         </div>
         <div class="muscari-form-group muscari-button-group" style="padding-bottom: 15px;">
             [mo-optin-form-submit-button class="muscari-button"]

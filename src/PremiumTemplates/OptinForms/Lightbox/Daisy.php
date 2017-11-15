@@ -434,6 +434,8 @@ div#$optin_css_id.daisy-container input.daisy-input {
     font-size: 14px;
     font-weight: 700;
     line-height: normal;
+    background-color: #ffffff;
+    min-height: 0;
 }
 div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
     width: 100%;

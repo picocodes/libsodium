@@ -358,7 +358,7 @@ div#$optin_css_id.moEleganceModal .moElegance_note {
   margin-top: 10px
 }
 
-div#$optin_css_id.moEleganceModal .moEleganceModal_input_fields {
+div#$optin_css_id.moEleganceModal input.moEleganceModal_input_fields {
   font-family: 'Titillium Web', sans-serif;
   display: block;
   width: 100%;
@@ -371,6 +371,7 @@ div#$optin_css_id.moEleganceModal .moEleganceModal_input_fields {
   font-size: 16px;
   border: 1px solid #e3e3e3;
   outline: 1px solid #e3e3e3;
+  background-color: #ffffff;
 }
 
 div#$optin_css_id.moEleganceModal .moEleganceModal_button {

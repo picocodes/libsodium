@@ -343,7 +343,7 @@ class LibsodiumSettingsPage
         }
         echo '<div id="message" class="error notice is-dismissible"><p>' . sprintf(__('MailOptin license is not active or has expired. %s or %s to ensure plugin updates are continually received.', 'mailoptin'),
                 '<a href="' . MAILOPTIN_LICENSE_SETTINGS_PAGE . '">' . __('Activate', 'mailoptin') . '</a>',
-                '<a target="_blank" href="https://mailoptin.net/account/">' . __('Renew your license', 'mailoptin') . '</a>') . '</p></div>';
+                '<a target="_blank" href="https://my.mailoptin.io">' . __('Renew your license', 'mailoptin') . '</a>') . '</p></div>';
     }
 
     /**
