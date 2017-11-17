@@ -425,7 +425,6 @@ div#$optin_css_id.dashdot-container input.dashdot-input-field {
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     width: 180px;
     border-radius: 2px;
-    background-color:#ffffff;
 }
 
 div#$optin_css_id.dashdot-container .dashdot-dotted {
