@@ -70,6 +70,18 @@ class Dashdot extends AbstractOptinTheme
             return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#ffffff';
+        });
+
         add_action('customize_preview_init', function () {
             add_action('wp_footer', [$this, 'customizer_preview_js']);
         });
@@ -332,7 +344,7 @@ class Dashdot extends AbstractOptinTheme
         return <<<HTML
 [mo-optin-form-wrapper class="dashdot-container"]
             <div class="dashdot-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
-    <div class="muscari-form-row muscari-text-align">
+    <div class="dashdot-form-row dashdot-text-align">
         <div class="dashdot-header-block">
             [mo-optin-form-headline tag="div" class="dashdot-dotted"]
         </div>
@@ -341,6 +353,7 @@ class Dashdot extends AbstractOptinTheme
                 [mo-optin-form-email-field class="dashdot-input-field"]
             [mo-optin-form-submit-button class="dashdot-submit-button"]
         </div>
+        [mo-mailchimp-interests]
         [mo-optin-form-error]
 </div>
 [/mo-optin-form-wrapper]
