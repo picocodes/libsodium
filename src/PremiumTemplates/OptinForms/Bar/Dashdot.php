@@ -370,7 +370,14 @@ HTML;
     {
         $optin_css_id = $this->optin_css_id;
         $headline_border_color = $this->get_customizer_value('headline_border_color');
+        if(empty($headline_border_color)) {
+            $headline_border_color = '#ffffff';
+        }
+
         $headline_background_color = $this->get_customizer_value('headline_background_color');
+        if(empty($headline_background_color)) {
+            $headline_background_color = '#aa3030';
+        }
 
         return <<<CSS
 div#$optin_css_id.dashdot-container {
