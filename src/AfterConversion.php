@@ -42,7 +42,7 @@ class AfterConversion
                 'settings' => $option_prefix . '[state_after_conversion]',
                 'description' => sprintf(
                     __('Choose state of optin form to users who are already subscribed. %sLearn more%s', 'mailoptin'),
-                    '<a target="_blank" href="#">', '</a>'
+                    '<a target="_blank" href="https://mailoptin.io/article/state-after-conversion/">', '</a>'
                 ),
                 'choices' => [
                     'success_message_shown' => __('Success Message Shown', 'mailoptin'),
