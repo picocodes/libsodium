@@ -35,23 +35,25 @@ class AfterConversion
      */
     public static function after_conversion_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
-        $controls['state_after_conversion'] = apply_filters('mo_optin_form_customizer_state_after_conversion_args', array(
-                'type' => 'select',
-                'label' => __('State After Conversion', 'mailoptin'),
-                'section' => $customizerClassInstance->success_section_id,
-                'settings' => $option_prefix . '[state_after_conversion]',
-                'description' => sprintf(
-                    __('Choose state of optin form to users who are already subscribed. %sLearn more%s', 'mailoptin'),
-                    '<a target="_blank" href="https://mailoptin.io/article/state-after-conversion/">', '</a>'
-                ),
-                'choices' => [
-                    'success_message_shown' => __('Success Message Shown', 'mailoptin'),
-                    'optin_form_hidden' => __('Optin Form Hidden', 'mailoptin'),
-                    'optin_form_shown' => __('Optin Form Shown', 'mailoptin'),
-                ],
-                'priority' => 25,
-            )
-        );
+        if (!in_array($customizerClassInstance->optin_campaign_type, ['bar', 'lightbox', 'slidein'])) {
+            $controls['state_after_conversion'] = apply_filters('mo_optin_form_customizer_state_after_conversion_args', array(
+                    'type' => 'select',
+                    'label' => __('State After Conversion', 'mailoptin'),
+                    'section' => $customizerClassInstance->success_section_id,
+                    'settings' => $option_prefix . '[state_after_conversion]',
+                    'description' => sprintf(
+                        __('Choose state of optin form to users who are already subscribed. %sLearn more%s', 'mailoptin'),
+                        '<a target="_blank" href="https://mailoptin.io/article/state-after-conversion/">', '</a>'
+                    ),
+                    'choices' => [
+                        'success_message_shown' => __('Success Message Shown', 'mailoptin'),
+                        'optin_form_hidden' => __('Optin Form Hidden', 'mailoptin'),
+                        'optin_form_shown' => __('Optin Form Shown', 'mailoptin'),
+                    ],
+                    'priority' => 25,
+                )
+            );
+        }
 
         $controls['pass_lead_data_redirect_url'] = new WP_Customize_Toggle_Control(
             $wp_customize,
