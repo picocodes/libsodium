@@ -104,6 +104,18 @@ class Mimosa extends AbstractOptinTheme
             return 'bottom_right';
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -314,6 +326,7 @@ class Mimosa extends AbstractOptinTheme
     [mo-optin-form-email-field class="mimosa-input"]
     [mo-optin-form-submit-button class="mimosa-submit"]
     </div>
+    [mo-mailchimp-interests]
     [mo-optin-form-note class="mimosa-finePrint"]
     </div>
 [/mo-optin-form-wrapper]

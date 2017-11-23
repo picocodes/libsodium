@@ -102,14 +102,6 @@ class Primrose extends AbstractOptinTheme
 
         add_filter('mo_optin_form_enable_form_background_image', '__return_true');
 
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
-            return 'inline';
-        });
-
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
-            return 'center';
-        });
-
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
             return '#000000';
         });
