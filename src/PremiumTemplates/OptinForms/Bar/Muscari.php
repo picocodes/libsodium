@@ -69,6 +69,18 @@ class Muscari extends AbstractOptinTheme
             return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#ffffff';
+        });
+
         add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
             $settings['hide_name_field']['transport'] = 'refresh';
             return $settings;
@@ -279,6 +291,7 @@ class Muscari extends AbstractOptinTheme
         <div class="muscari-form-group muscari-button-group" style="padding-bottom: 15px;">
             [mo-optin-form-submit-button class="muscari-button"]
         </div>
+        [mo-mailchimp-interests]
         [mo-optin-form-error]
     </div>
 </div>

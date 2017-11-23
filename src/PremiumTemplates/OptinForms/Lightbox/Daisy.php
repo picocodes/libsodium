@@ -119,6 +119,14 @@ class Daisy extends AbstractOptinTheme
             return $config;
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -339,6 +347,7 @@ class Daisy extends AbstractOptinTheme
         [mo-optin-form-email-field class="daisy-input"]
         [mo-optin-form-submit-button class="daisy-submit-button"]
     </div>
+    [mo-mailchimp-interests]
     [mo-optin-form-error]
 </div>
 [mo-optin-form-note class="daisy-note mo-close-optin"]

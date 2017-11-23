@@ -71,6 +71,18 @@ class Dahlia extends AbstractOptinTheme
             return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         add_action('customize_preview_init', function () {
             add_action('wp_footer', [$this, 'customizer_preview_js']);
         });
@@ -322,6 +334,7 @@ class Dahlia extends AbstractOptinTheme
     <div class="dahlia-form-group dahlia-button-group" style="padding-bottom: 15px;">
         [mo-optin-form-submit-button class="dahlia-button"]
     </div>
+    [mo-mailchimp-interests]
     [mo-optin-form-error]
 </div>
 [/mo-optin-form-wrapper]

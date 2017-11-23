@@ -94,6 +94,18 @@ class Elegance extends AbstractOptinTheme
             return 'Titillium+Web';
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -301,6 +313,7 @@ class Elegance extends AbstractOptinTheme
     [mo-optin-form-name-field class="moEleganceModal_input_fields"]
     [mo-optin-form-email-field class="moEleganceModal_input_fields"]
     [mo-optin-form-submit-button class="moEleganceModal_button"]
+    [mo-mailchimp-interests]
     [mo-optin-form-note class="moElegance_note"]
 [/mo-optin-form-wrapper]
 HTML;

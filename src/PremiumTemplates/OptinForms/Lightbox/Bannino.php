@@ -110,6 +110,18 @@ class Bannino extends AbstractOptinTheme
             return $config;
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -318,6 +330,7 @@ class Bannino extends AbstractOptinTheme
 			[mo-optin-form-submit-button class="bannino-form-submit-button"]
 		</div>
 		[mo-optin-form-error]
+		[mo-mailchimp-interests]
 		[mo-optin-form-note class="moBannini_note"]
 	</div>
 </div>
