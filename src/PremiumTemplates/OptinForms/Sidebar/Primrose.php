@@ -102,6 +102,18 @@ class Primrose extends AbstractOptinTheme
 
         add_filter('mo_optin_form_enable_form_background_image', '__return_true');
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
+        });
+
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -137,6 +149,7 @@ class Primrose extends AbstractOptinTheme
     [mo-optin-form-name-field class="primrose-input-field"]
     [mo-optin-form-email-field class="primrose-input-field"]
     [mo-optin-form-submit-button class="primrose-submit-button"]
+    [mo-mailchimp-interests]
     [mo-optin-form-note class="primrose-note"]
 [/mo-optin-form-wrapper]
 HTML;

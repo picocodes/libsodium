@@ -110,6 +110,10 @@ class Bannino extends AbstractOptinTheme
             return $config;
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -323,6 +327,7 @@ class Bannino extends AbstractOptinTheme
 			[mo-optin-form-email-field class="bannino-form-field"]
 			[mo-optin-form-submit-button class="bannino-form-submit-button"]
 		</div>
+		[mo-mailchimp-interests]
 		[mo-optin-form-error]
 		[mo-optin-form-note class="moBannini_note"]
 	</div>

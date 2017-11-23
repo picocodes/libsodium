@@ -88,6 +88,10 @@ class BareMetal extends AbstractOptinTheme
             return 'Source+Sans+Pro';
         });
 
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
+            return '#000000';
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -294,6 +298,7 @@ class BareMetal extends AbstractOptinTheme
     [mo-optin-form-name-field]
     [mo-optin-form-email-field]
     [mo-optin-form-submit-button]
+    [mo-mailchimp-interests]
     [mo-optin-form-note class="mo-baremetal-note"]
 [/mo-optin-form-wrapper]
 HTML;
