@@ -99,6 +99,8 @@ class Daisy extends AbstractOptinTheme
             return __("Enter your email...", 'mailoptin');
         });
 
+        add_filter('mo_optin_form_note_close_optin_onclick_default', '__return_true');
+
         add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
             $settings['hide_name_field']['transport'] = 'refresh';
             return $settings;
@@ -350,7 +352,7 @@ class Daisy extends AbstractOptinTheme
     [mo-mailchimp-interests]
     [mo-optin-form-error]
 </div>
-[mo-optin-form-note class="daisy-note mo-close-optin"]
+[mo-optin-form-note class="daisy-note"]
 [/mo-optin-form-wrapper]
 HTML;
     }
@@ -407,10 +409,8 @@ div#$optin_css_id.daisy-container input.daisy-input:focus {
 }
 div#$optin_css_id.daisy-container .daisy-note {
     font-family: merriweather, sans-serif;
-    text-decoration: underline;
     margin: 10px 0 0;
     text-align: center;
-    cursor: pointer;
     font-size: 12px;
 }
 div#$optin_css_id.daisy-container .daisy-description {
