@@ -90,6 +90,11 @@ class Dahlia extends AbstractOptinTheme
         parent::__construct($optin_campaign_id);
     }
 
+    public function features_support()
+    {
+        return [$this->cta_button];
+    }
+
     /**
      * @param mixed $settings
      * @param CustomizerSettings $CustomizerSettingsInstance
@@ -319,6 +324,8 @@ class Dahlia extends AbstractOptinTheme
         [mo-optin-form-headline tag="div" class="dahlia-headline"]
         <div class="dahlia-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
     </div>
+    
+    [mo-optin-form-fields-wrapper]
     <div class="dahlia-form-group dahlia-name-field" id="mo-optin-form-name-field">
         [mo-optin-form-name-field class="dahlia-form-control"]
         <span class="dahlia-icons-wrap">
@@ -334,6 +341,12 @@ class Dahlia extends AbstractOptinTheme
     <div class="dahlia-form-group dahlia-button-group" style="padding-bottom: 15px;">
         [mo-optin-form-submit-button class="dahlia-button"]
     </div>
+    [/mo-optin-form-fields-wrapper]
+    
+    <div class="dahlia-form-group dahlia-button-group">
+    [mo-optin-form-cta-button class="dahlia-button"]
+    </div>
+    
     [mo-mailchimp-interests]
     [mo-optin-form-error]
 </div>

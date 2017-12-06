@@ -89,6 +89,11 @@ class Dashdot extends AbstractOptinTheme
         parent::__construct($optin_campaign_id);
     }
 
+    public function features_support()
+    {
+        return [$this->cta_button];
+    }
+
     public function customizer_preview_js()
     {
         ?>
@@ -348,11 +353,12 @@ class Dashdot extends AbstractOptinTheme
         <div class="dashdot-header-block">
             [mo-optin-form-headline tag="div" class="dashdot-dotted"]
         </div>
-        <div class="dashdot-form-wrapper">
+        [mo-optin-form-fields-wrapper class="dashdot-form-wrapper"]
                 [mo-optin-form-name-field class="dashdot-input-field"]
                 [mo-optin-form-email-field class="dashdot-input-field"]
             [mo-optin-form-submit-button class="dashdot-submit-button"]
-        </div>
+        [/mo-optin-form-fields-wrapper]
+        [mo-optin-form-cta-button class="dashdot-submit-button"]
         [mo-mailchimp-interests]
         [mo-optin-form-error]
 </div>

@@ -89,6 +89,11 @@ class Muscari extends AbstractOptinTheme
         parent::__construct($optin_campaign_id);
     }
 
+    public function features_support()
+    {
+        return [$this->cta_button];
+    }
+
     /**
      * @param mixed $settings
      * @param CustomizerSettings $CustomizerSettingsInstance
@@ -282,6 +287,7 @@ class Muscari extends AbstractOptinTheme
             [mo-optin-form-headline tag="div" class="muscari-title-wrap-content"]
             <div class="muscari-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
         </div>
+        [mo-optin-form-fields-wrapper]
         <div class="muscari-form-group muscari-name-field mo-optin-form-name-field">
            [mo-optin-form-name-field class="muscari-form-control"]
         </div>
@@ -292,6 +298,10 @@ class Muscari extends AbstractOptinTheme
             [mo-optin-form-submit-button class="muscari-button"]
         </div>
         [mo-mailchimp-interests]
+        [/mo-optin-form-fields-wrapper]
+        <div class="muscari-form-group muscari-button-group" style="padding-bottom: 5px;">
+        [mo-optin-form-cta-button class="muscari-button"]
+        </div>
         [mo-optin-form-error]
     </div>
 </div>
@@ -306,7 +316,9 @@ HTML;
      */
     public function optin_form_css()
     {
+        $optin_uuid = $this->optin_campaign_uuid;
         $optin_css_id = $this->optin_css_id;
+
         return <<<CSS
         div#$optin_css_id.muscari-container,
  div#$optin_css_id.muscari-container .muscari-form-group,
@@ -509,6 +521,12 @@ div#$optin_css_id.muscari-container .muscari-button{
     background: #3abaab;
     color:#fff;
 }
+
+div#$optin_uuid.mo-cta-button-display .muscari-button,
+div#$optin_uuid.mo-cta-button-display .muscari-button-group {
+    width: 100%;
+}
+
 div#$optin_css_id.muscari-container .muscari-button:hover{
     background: #2fa699;
 }
