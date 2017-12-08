@@ -287,7 +287,7 @@ class Muscari extends AbstractOptinTheme
             [mo-optin-form-headline tag="div" class="muscari-title-wrap-content"]
             <div class="muscari-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
         </div>
-        [mo-optin-form-fields-wrapper]
+        [mo-optin-form-fields-wrapper tag="span"]
         <div class="muscari-form-group muscari-name-field mo-optin-form-name-field">
            [mo-optin-form-name-field class="muscari-form-control"]
         </div>
@@ -522,10 +522,16 @@ div#$optin_css_id.muscari-container .muscari-button{
     color:#fff;
 }
 
-div#$optin_uuid.mo-cta-button-display .muscari-button,
-div#$optin_uuid.mo-cta-button-display .muscari-button-group {
-    width: 100%;
+div#$optin_uuid.mo-cta-button-display .muscari-button-group,
+ div#$optin_uuid.mo-cta-button-display .muscari-form-title-wrap {
+    display: inline-block;
+    width: auto;
+    margin: auto;
 }
+
+div#$optin_uuid.mo-cta-button-display .muscari-text-align{
+        text-align: center;
+    }
 
 div#$optin_css_id.muscari-container .muscari-button:hover{
     background: #2fa699;
