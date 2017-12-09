@@ -119,6 +119,11 @@ class Mimosa extends AbstractOptinTheme
         parent::__construct($optin_campaign_id);
     }
 
+    public function features_support()
+    {
+        return [$this->cta_button];
+    }
+
     /**
      * @param mixed $settings
      * @param CustomizerSettings $CustomizerSettingsInstance
@@ -322,9 +327,12 @@ class Mimosa extends AbstractOptinTheme
     [mo-optin-form-description class="mimosa-caption"]
     <div class="mimosa-form">
     [mo-optin-form-error]
+    [mo-optin-form-fields-wrapper]
     [mo-optin-form-name-field class="mimosa-input"]
     [mo-optin-form-email-field class="mimosa-input"]
     [mo-optin-form-submit-button class="mimosa-submit"]
+    [/mo-optin-form-fields-wrapper]
+    [mo-optin-form-cta-button class="mimosa-submit"]
     </div>
     [mo-mailchimp-interests]
     [mo-optin-form-note class="mimosa-finePrint"]
@@ -418,7 +426,6 @@ box-sizing: border-box;
 }
 
 div#$optin_css_id.mimosa-container .mimosa-input {
-  
   -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -445,7 +452,7 @@ div#$optin_css_id.mimosa-container .mimosa-submit {
   width: 100%;
   margin-top: 0.5em;
   -webkit-appearance: none;
-  border: 2px solid #ea0c1a;
+  border: 0;
   background: #EA0C1A;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

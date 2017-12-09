@@ -109,6 +109,11 @@ class Primrose extends AbstractOptinTheme
         parent::__construct($optin_campaign_id);
     }
 
+    public function features_support()
+    {
+        return [$this->cta_button];
+    }
+
     /**
      * Default description content.
      *
@@ -116,7 +121,7 @@ class Primrose extends AbstractOptinTheme
      */
     private function _description_content()
     {
-        return __('On wide range of product<br/>CVHSTG', 'mailoptin');
+        return sprintf(__('On wide range of product%sCVHSTG', 'mailoptin'), '<br/>');
     }
 
     /**
@@ -138,9 +143,12 @@ class Primrose extends AbstractOptinTheme
     [mo-optin-form-headline class="primrose-headline" tag="div"]
     [mo-optin-form-description class="primrose-description"]
     [mo-optin-form-error]
+    [mo-optin-form-fields-wrapper]
     [mo-optin-form-name-field class="primrose-input-field"]
     [mo-optin-form-email-field class="primrose-input-field"]
     [mo-optin-form-submit-button class="primrose-submit-button"]
+    [/mo-optin-form-fields-wrapper]
+    [mo-optin-form-cta-button class="primrose-submit-button"]
     [mo-mailchimp-interests]
     [mo-optin-form-note class="primrose-note"]
 [/mo-optin-form-wrapper]
@@ -235,15 +243,15 @@ div#$optin_css_id.primrose-container input.primrose-input-field {
 }
         
 div#$optin_css_id.primrose-container input.primrose-submit-button {
-    border: 2px solid black;
+    border: 0;
     border-radius: 3px;
     background: black;
-    color: white;
+    color: #ffffff;
     width: 100%;
     font-weight: 700;
     font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
     text-transform: uppercase;
-    padding: 5px 10px;
+    padding: 8px 5px;
     margin-top: 10px;
     font-size: 16px;
     line-height: normal;

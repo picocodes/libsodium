@@ -284,7 +284,7 @@ class Elegance extends AbstractOptinTheme
      */
     private function _description_content()
     {
-        return 'Sign up to best of business news, informed analysis and opinions on what matters to you.';
+        return __('Sign up to best of business news, informed analysis and opinions on what matters to you.', 'mailoptin');
     }
 
     /**
