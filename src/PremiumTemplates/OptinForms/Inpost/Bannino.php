@@ -335,10 +335,10 @@ class Bannino extends AbstractOptinTheme
 		    </div>
       [/mo-optin-form-fields-wrapper]
       [mo-optin-form-cta-wrapper]
-		<div class="bannino-input-fields bannino-clearfix mo-optin-form-cta-wrapper">
+	     <div class="bannino-input-fields bannino-clearfix">
             [mo-optin-form-cta-button class="bannino-form-submit-button"]
-        </div>
-        [/mo-optin-form-cta-wrapper]
+         </div>
+      [/mo-optin-form-cta-wrapper]
 		[mo-mailchimp-interests]
 		[mo-optin-form-error]
 		[mo-optin-form-note class="moBannini_note"]

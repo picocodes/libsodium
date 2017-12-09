@@ -2,6 +2,9 @@
 
 namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Lightbox;
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
@@ -107,6 +110,11 @@ class Elegance extends AbstractOptinTheme
         });
 
         parent::__construct($optin_campaign_id);
+    }
+
+    public function features_support()
+    {
+        return [$this->cta_button];
     }
 
     /**
@@ -287,7 +295,7 @@ class Elegance extends AbstractOptinTheme
      */
     private function _description_content()
     {
-        return 'Signup to best of business news, informed analysis and opinions on what matters to you.';
+        return __('Sign up to best of business news, informed analysis and opinions on what matters to you.', 'mailoptin');
     }
 
     /**
@@ -310,9 +318,12 @@ class Elegance extends AbstractOptinTheme
     [mo-optin-form-headline class="moElegance_header"]
     [mo-optin-form-description class="moElegance_description"]
     [mo-optin-form-error]
-    [mo-optin-form-name-field class="moEleganceModal_input_fields"]
-    [mo-optin-form-email-field class="moEleganceModal_input_fields"]
-    [mo-optin-form-submit-button class="moEleganceModal_button"]
+    [mo-optin-form-fields-wrapper]
+        [mo-optin-form-name-field class="moEleganceModal_input_fields"]
+        [mo-optin-form-email-field class="moEleganceModal_input_fields"]
+        [mo-optin-form-submit-button class="moEleganceModal_button"]
+    [/mo-optin-form-fields-wrapper]
+    [mo-optin-form-cta-button class="moEleganceModal_button"]
     [mo-mailchimp-interests]
     [mo-optin-form-note class="moElegance_note"]
 [/mo-optin-form-wrapper]
@@ -402,6 +413,7 @@ div#$optin_css_id.moEleganceModal input.moEleganceModal_button {
   background: #2785C8;
   color: #ffffff;
   border: 0 none;
+  border-radius: 0;
   outline: 1px solid #2785C8;
   width: 100%;
   -webkit-transition: all 0.5s ease-in-out;

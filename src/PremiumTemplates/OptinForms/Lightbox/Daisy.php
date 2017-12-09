@@ -101,11 +101,6 @@ class Daisy extends AbstractOptinTheme
 
         add_filter('mo_optin_form_note_close_optin_onclick_default', '__return_true');
 
-        add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
-            $settings['hide_name_field']['transport'] = 'refresh';
-            return $settings;
-        });
-
         add_filter('mo_optin_form_enable_form_image', '__return_true');
 
         $this->default_form_image_partial = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/bookcover.png';
@@ -130,6 +125,11 @@ class Daisy extends AbstractOptinTheme
         });
 
         parent::__construct($optin_campaign_id);
+    }
+
+    public function features_support()
+    {
+        return [$this->cta_button];
     }
 
     /**
@@ -237,6 +237,10 @@ class Daisy extends AbstractOptinTheme
      */
     public function customizer_fields_settings($fields_settings, $CustomizerSettingsInstance)
     {
+        $fields_settings['hide_name_field']['transport'] = 'refresh';
+
+        $fields_settings['submit_button_background']['transport'] = 'refresh';
+
         return $fields_settings;
     }
 
@@ -330,7 +334,6 @@ class Daisy extends AbstractOptinTheme
         $optin_default_image = $this->default_form_image_partial;
 
         return <<<HTML
-
 [mo-optin-form-wrapper class="daisy-container"]
 <div class="daisy-clearfix">
     <div class="daisy-form daisy-tabbled daisy-half-col">
@@ -344,11 +347,18 @@ class Daisy extends AbstractOptinTheme
     </div>
 </div>
 <div class="daisy-form_button daisy-clearfix">
-    <div class="daisy-form-wrap">
+    [mo-optin-form-fields-wrapper]
+    <div class="daisy-form-wrap mo-optin-form-submit-button">
         [mo-optin-form-name-field class="daisy-input"]
         [mo-optin-form-email-field class="daisy-input"]
         [mo-optin-form-submit-button class="daisy-submit-button"]
     </div>
+    [/mo-optin-form-fields-wrapper]
+    [mo-optin-form-cta-wrapper]
+        <div class="daisy-form-wrap mo-optin-form-cta-button">
+        [mo-optin-form-cta-button class="daisy-submit-button"]
+    </div>
+    [/mo-optin-form-cta-wrapper]
     [mo-mailchimp-interests]
     [mo-optin-form-error]
 </div>
@@ -365,6 +375,10 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid = $this->optin_campaign_uuid;
+        $submit_button_background_color = $this->get_customizer_value('submit_button_background');
+        $cta_button_background_color = $this->get_customizer_value('cta_button_background');
+
         return <<<CSS
         div#$optin_css_id.daisy-container {
     max-width: 600px;
@@ -434,7 +448,7 @@ div#$optin_css_id.daisy-container .dasiy-image-wrap {
     padding-top: 0px;
 }
 div#$optin_css_id.daisy-container input.daisy-input {
-    border: 1px solid #2ecc71;
+    border: 1px solid $submit_button_background_color;
     width: 100%;
     display: block;
     margin: 0;
@@ -511,13 +525,21 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
 @media only screen and (min-width: 900px) {
     div#$optin_css_id.daisy-container .daisy-form-wrap {
         text-align: center;
-        background: #2ecc71;
         padding: 3px 3px 6px;
         margin: 20px auto 10px;
         width: 100%;
         border-radius: 5px;
         height: 44px;
     }
+    
+    div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-cta-button {
+        background: $cta_button_background_color;
+    }
+    
+    div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-submit-button {
+        background: $submit_button_background_color;
+    }
+    
     div#$optin_css_id.daisy-container input.daisy-input {
         width: 33%;
         font-weight: normal;
@@ -557,6 +579,10 @@ div#$optin_css_id.mo-has-email.daisy-container input[type="submit"].daisy-submit
 div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
     width: 100% !important;
 }
+}
+
+div#$optin_uuid.mo-cta-button-display input.mo-optin-form-cta-button {
+    width: 100% !important;
 }
 
 CSS;
