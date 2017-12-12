@@ -2,9 +2,6 @@
 
 namespace MailOptin\Libsodium;
 
-define('MAILOPTIN_DETACH_LIBSODIUM', true);
-define('MAILOPTIN_STANDARD_PLUGIN_TYPE', true);
-
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\Customizer as EmailTemplateCustomizer;
 use MailOptin\Libsodium\PremiumTemplates\PremiumTemplates;
@@ -28,6 +25,12 @@ class Libsodium
 
         add_action('mailoptin_email_campaign_customizer_page_settings', array($this, 'add_email_customizer_settings'), 10, 4);
         add_action('mailoptin_email_campaign_customizer_settings_controls', array($this, 'add_email_customizer_control'), 10, 4);
+
+        if (!LibsodiumSettingsPage::mo_is_license_expired()) {
+            define('MAILOPTIN_DETACH_LIBSODIUM', true);
+        }
+
+        define('MAILOPTIN_STANDARD_PLUGIN_TYPE', true);
     }
 
     public function add_email_customizer_settings($settings)

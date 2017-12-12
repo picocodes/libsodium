@@ -10,8 +10,6 @@ use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerControls;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
 use MailOptin\Core\Repositories\OptinCampaignsRepository;
 
-define('MAILOPTIN_DISPLAY_RULES_FLAG', true);
-
 class DisplayRules
 {
     public function __construct()
