@@ -10,14 +10,6 @@ class Libsodium
 {
     public function __construct()
     {
-        LibsodiumSettingsPage::get_instance();
-        AfterConversion::init();
-        CustomCSS::get_instance();
-        Shortcodes\Init::init();
-        DisplayRules::get_instance();
-        DisplayEffects::get_instance();
-        PremiumTemplates::get_instance();
-
         add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
         add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
         add_filter('mailoptin_lite_upgrade_more_optin_themes', '__return_false');
@@ -26,11 +18,19 @@ class Libsodium
         add_action('mailoptin_email_campaign_customizer_page_settings', array($this, 'add_email_customizer_settings'), 10, 4);
         add_action('mailoptin_email_campaign_customizer_settings_controls', array($this, 'add_email_customizer_control'), 10, 4);
 
-        if (!LibsodiumSettingsPage::mo_is_license_expired()) {
-            define('MAILOPTIN_DETACH_LIBSODIUM', true);
-        }
+        // this is at the top to define LibsodiumSettingsPage.
+        LibsodiumSettingsPage::get_instance();
 
+        if (!LibsodiumSettingsPage::mo_is_license_expired()) define('MAILOPTIN_DETACH_LIBSODIUM', true);
         define('MAILOPTIN_STANDARD_PLUGIN_TYPE', true);
+
+        if (!defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
+        AfterConversion::init();
+        CustomCSS::get_instance();
+        Shortcodes\Init::init();
+        DisplayRules::get_instance();
+        DisplayEffects::get_instance();
+        PremiumTemplates::get_instance();
     }
 
     public function add_email_customizer_settings($settings)

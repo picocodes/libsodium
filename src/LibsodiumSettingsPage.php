@@ -269,7 +269,6 @@ class LibsodiumSettingsPage
         exit;
     }
 
-
     /**
      * Activate License key
      */
@@ -281,6 +280,11 @@ class LibsodiumSettingsPage
         }
 
         $response = self::license_control_instance()->activate_license();
+
+        if (is_wp_error($response)) {
+            add_settings_error(self::slug, 'activation_error', $response->get_error_message());
+            return;
+        }
 
         if (is_wp_error($response)) {
             add_settings_error(self::slug, 'activation_error', $response->get_error_message());
@@ -350,7 +354,9 @@ class LibsodiumSettingsPage
         } elseif (self::mo_is_license_valid()) {
             echo '<div class="mo-banner">' . __('You have an active License', 'mailoptin') . '</div><br/><br/><br/><br/>';
         } elseif (self::mo_is_license_invalid()) {
-            echo '<div class="mo-banner">' . __('License key is invalid or expired', 'mailoptin') . '</div><br/><br/><br/><br/>';
+            echo '<div class="mo-banner">' . __('License key is invalid.', 'mailoptin') . '</div><br/><br/><br/><br/>';
+        } elseif (self::mo_is_license_expired()) {
+            echo '<div class="mo-banner">' . __('License key is expired.', 'mailoptin') . '</div><br/><br/><br/><br/>';
         }
     }
 
@@ -403,7 +409,7 @@ class LibsodiumSettingsPage
             sprintf(
                 __('Your MailOptin license has expired and you have been downgraded to the LITE version. %sClick here to renew your license%s to regain old data and features. %sLearn more%s', 'mailoptin'),
                 "<a target='_blank' href=\"$renew_url\"><strong>", '</strong></a>',
-                '<a target="_blank" href="https://my.mailoptin.io">',
+                '<a target="_blank" href="https://mailoptin.io/article/cancel-subscription-expires/">',
                 '</a>'
             ) . '</p></div>';
     }
