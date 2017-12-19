@@ -8,7 +8,7 @@ ob_start();
 
 class LibsodiumSettingsPage
 {
-    const slug = 'mailoptin-license';
+    const slug = MAILOPTIN_LICENSE_SETTINGS_SLUG;
 
     private static $license_key;
 
@@ -152,7 +152,7 @@ class LibsodiumSettingsPage
     public static function register_settings_page()
     {
         add_submenu_page(
-            'mailoptin-settings',
+            MAILOPTIN_SETTINGS_SETTINGS_SLUG,
             __('License', 'mailoptin') . ' - MailOptin',
             __('License', 'mailoptin'),
             'manage_options',
