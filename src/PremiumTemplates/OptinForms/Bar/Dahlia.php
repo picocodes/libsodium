@@ -338,14 +338,17 @@ class Dahlia extends AbstractOptinTheme
             <i class="fa fa-envelope fa-lg dahlia-icons" aria-hidden="true"></i>
 		</span>
     </div>
-    <div class="dahlia-form-group dahlia-button-group" style="padding-bottom: 15px;">
+    <div class="dahlia-form-group dahlia-button-group">
         [mo-optin-form-submit-button class="dahlia-button"]
     </div>
     [/mo-optin-form-fields-wrapper]
     
+    
+  [mo-optin-form-cta-wrapper]
     <div class="dahlia-form-group dahlia-button-group">
     [mo-optin-form-cta-button class="dahlia-button"]
     </div>
+  [/mo-optin-form-cta-wrapper]
     
     [mo-mailchimp-interests]
     [mo-optin-form-error]

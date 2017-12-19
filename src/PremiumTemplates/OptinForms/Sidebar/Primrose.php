@@ -146,10 +146,10 @@ class Primrose extends AbstractOptinTheme
     [mo-optin-form-fields-wrapper]
     [mo-optin-form-name-field class="primrose-input-field"]
     [mo-optin-form-email-field class="primrose-input-field"]
+    [mo-mailchimp-interests]
     [mo-optin-form-submit-button class="primrose-submit-button"]
     [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="primrose-submit-button"]
-    [mo-mailchimp-interests]
     [mo-optin-form-note class="primrose-note"]
 [/mo-optin-form-wrapper]
 HTML;

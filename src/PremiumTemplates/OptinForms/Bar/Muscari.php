@@ -294,7 +294,7 @@ class Muscari extends AbstractOptinTheme
         <div class="muscari-form-group muscari-email-field mo-optin-form-email-field">
             [mo-optin-form-email-field class="muscari-form-control"]
         </div>
-        <div class="muscari-form-group muscari-button-group" style="padding-bottom: 15px;">
+        <div class="muscari-form-group muscari-button-group">
             [mo-optin-form-submit-button class="muscari-button"]
         </div>
         [mo-mailchimp-interests]

@@ -330,11 +330,11 @@ class Mimosa extends AbstractOptinTheme
     [mo-optin-form-fields-wrapper]
     [mo-optin-form-name-field class="mimosa-input"]
     [mo-optin-form-email-field class="mimosa-input"]
+    [mo-mailchimp-interests]
     [mo-optin-form-submit-button class="mimosa-submit"]
     [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="mimosa-submit"]
     </div>
-    [mo-mailchimp-interests]
     [mo-optin-form-note class="mimosa-finePrint"]
     </div>
 [/mo-optin-form-wrapper]
@@ -410,6 +410,14 @@ div#$optin_css_id.mimosa-container .mimosa-form {
   max-width: 100%;
   margin-left: 0.5em;
   margin-right: 0.5em;
+}
+
+div#$optin_css_id.mimosa-container .mo-mailchimp-interest-label {
+  font-size: 0.83em;
+}
+
+div#$optin_css_id.mimosa-container span.mo-mailchimp-choice-label {
+  font-size: 0.8em;
 }
 
 div#$optin_css_id.mimosa-container .mo-optin-error {

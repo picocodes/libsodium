@@ -309,15 +309,14 @@ class Elegance extends AbstractOptinTheme
     [mo-optin-form-fields-wrapper]
         [mo-optin-form-name-field class="moEleganceModal_input_fields"]
         [mo-optin-form-email-field class="moEleganceModal_input_fields"]
+        [mo-mailchimp-interests]
         [mo-optin-form-submit-button class="moEleganceModal_button"]
     [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="moEleganceModal_button"]
-    [mo-mailchimp-interests]
     [mo-optin-form-note class="moElegance_note"]
 [/mo-optin-form-wrapper]
 HTML;
     }
-
 
     /**
      * Template CSS styling.
