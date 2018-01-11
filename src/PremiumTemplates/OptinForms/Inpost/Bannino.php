@@ -76,11 +76,6 @@ class Bannino extends AbstractOptinTheme
             return 'Titillium+Web';
         });
 
-        add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
-            $settings['hide_name_field']['transport'] = 'refresh';
-            return $settings;
-        });
-
         // remove headline and description section/panel. not needed.
         add_filter('mo_optin_customizer_disable_headline_section', '__return_true');
         add_filter('mo_optin_customizer_disable_description_section', '__return_true');

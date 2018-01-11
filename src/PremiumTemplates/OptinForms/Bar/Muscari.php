@@ -81,11 +81,6 @@ class Muscari extends AbstractOptinTheme
             return '#ffffff';
         });
 
-        add_filter('mo_optin_form_customizer_fields_settings', function ($settings) {
-            $settings['hide_name_field']['transport'] = 'refresh';
-            return $settings;
-        });
-
         parent::__construct($optin_campaign_id);
     }
 

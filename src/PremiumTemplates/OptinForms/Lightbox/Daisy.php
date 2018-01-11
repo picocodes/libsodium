@@ -237,10 +237,6 @@ class Daisy extends AbstractOptinTheme
      */
     public function customizer_fields_settings($fields_settings, $CustomizerSettingsInstance)
     {
-        $fields_settings['hide_name_field']['transport'] = 'refresh';
-
-        $fields_settings['submit_button_background']['transport'] = 'refresh';
-
         return $fields_settings;
     }
 
