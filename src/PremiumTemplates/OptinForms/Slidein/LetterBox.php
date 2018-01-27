@@ -1,44 +1,51 @@
 <?php
 
-namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Sidebar;
+namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Slidein;
 
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
-class Primrose extends AbstractOptinTheme
+class LetterBox extends AbstractOptinTheme
 {
-    public $optin_form_name = 'Primrose';
+    public $optin_form_name = 'Letter Box';
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
+        // -- remove branding so it doesn't distort design -- //
+        add_filter('mo_optin_form_remove_branding_default', function () {
+            return true;
+        });
+
         // -- default for design sections -- //
         add_filter('mo_optin_form_background_color_default', function () {
-            return '#f22613';
+            return '#0e67e0';
         });
 
         add_filter('mo_optin_form_border_color_default', function () {
-            return '#000000';
-        });
-
-        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-            return __("Enter your name...", 'mailoptin');
+            return '#0e67e0';
         });
 
         add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email...", 'mailoptin');
+            return __("Enter your email here...", 'mailoptin');
         });
 
         // -- default for headline sections -- //
         add_filter('mo_optin_form_headline_default', function () {
-            return __("50% OFF", 'mailoptin');
+            return __("Don't Miss Our Update", 'mailoptin');
         });
 
         add_filter('mo_optin_form_headline_font_color_default', function () {
             return '#ffffff';
         });
 
+        // Add Raleway with 400, 700 font weight variant.
+        add_filter('mo_optin_form_fonts_list', function ($webfont) {
+            $webfont[] = 'Raleway:400,700';
+            return $webfont;
+        });
+
         add_filter('mo_optin_form_headline_font_default', function () {
-            return 'PT+serif';
+            return 'Raleway';
         });
 
         // -- default for description sections -- //
@@ -56,11 +63,19 @@ class Primrose extends AbstractOptinTheme
 
         // -- default for fields sections -- //
         add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#555555';
+            return '#444444';
+        });
+
+        add_filter('mo_optin_form_name_field_background_default', function () {
+            return '#ffffff';
         });
 
         add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#555555';
+            return '#444444';
+        });
+
+        add_filter('mo_optin_form_email_field_background_default', function () {
+            return '#ffffff';
         });
 
         add_filter('mo_optin_form_submit_button_color_default', function () {
@@ -68,7 +83,7 @@ class Primrose extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#000000';
+            return '#1b1bea';
         });
 
         add_filter('mo_optin_form_submit_button_font_default', function () {
@@ -76,34 +91,31 @@ class Primrose extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Consolas, Lucida Console, monospace';
+            return 'Palatino Linotype, Book Antiqua, serif';
         });
 
         add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Consolas, Lucida Console, monospace';
+            return 'Palatino Linotype, Book Antiqua, serif';
         });
 
-        // -- default for note sections -- //
-        add_filter('mo_optin_form_note_font_color_default', function () {
-            return '#ffffff';
+        add_filter('mo_optin_form_modal_effects_default', function () {
+            return 'MOslideInUp';
         });
 
-        add_filter('mo_optin_form_note_default', function () {
-            return __('*Offer Valid till 26th December', 'mailoptin');
+        add_filter('mo_optin_form_slidein_position_default', function () {
+            return 'bottom_right';
         });
 
-        add_filter('mo_optin_form_note_font_default', function () {
-            return 'Raleway';
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
+            return 'inline';
         });
 
-        add_filter('mo_optin_form_background_image_default', function () {
-            return MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
+        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
+            return 'center';
         });
-
-        add_filter('mo_optin_form_enable_form_background_image', '__return_true');
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
-            return '#000000';
+            return '#ffffff';
         });
 
         parent::__construct($optin_campaign_id);
@@ -112,174 +124,6 @@ class Primrose extends AbstractOptinTheme
     public function features_support()
     {
         return [$this->cta_button];
-    }
-
-    /**
-     * Default description content.
-     *
-     * @return string
-     */
-    private function _description_content()
-    {
-        return sprintf(__('On wide range of product%sCVHSTG', 'mailoptin'), '<br/>');
-    }
-
-    /**
-     * Fulfil interface contract.
-     */
-    public function optin_script()
-    {
-    }
-
-    /**
-     * Template body.
-     *
-     * @return string
-     */
-    public function optin_form()
-    {
-        return <<<HTML
-[mo-optin-form-wrapper class="primrose-container mo-optin-form-background-image-wrapper"]
-    [mo-optin-form-headline class="primrose-headline" tag="div"]
-    [mo-optin-form-description class="primrose-description"]
-    [mo-optin-form-error]
-    [mo-optin-form-fields-wrapper]
-    [mo-optin-form-name-field class="primrose-input-field"]
-    [mo-optin-form-email-field class="primrose-input-field"]
-    [mo-mailchimp-interests]
-    [mo-optin-form-submit-button class="primrose-submit-button"]
-    [/mo-optin-form-fields-wrapper]
-    [mo-optin-form-cta-button class="primrose-submit-button"]
-    [mo-optin-form-note class="primrose-note"]
-[/mo-optin-form-wrapper]
-HTML;
-    }
-
-
-    /**
-     * Template CSS styling.
-     *
-     * @return string
-     */
-    public function optin_form_css()
-    {
-        $optin_css_id = $this->optin_css_id;
-        $background_image = $this->get_form_background_image_url();
-
-        return <<<CSS
-
-div#$optin_css_id.primrose-container * {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-    
-div#$optin_css_id.primrose-container {
-    max-width: 400px;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 20px;
-    background: url($background_image) no-repeat !important;
-    background-size: cover !important;
-    color: white;
-    background-color: #F22613;
-    border: 5px solid #000000;
-}
-
-div#$optin_css_id.primrose-container .primrose-headline {
-    font-size: 45px;
-    text-align: center;
-    font-family: 'PT serif', serif;
-    display: block;
-    border: 0;
-    line-height: normal;
-    height: auto;
-}
-    
-div#$optin_css_id.primrose-container .primrose-description {
-    font-size: 18px;
-    font-family: Raleway, sans-serif;
-    font-weight: 600;
-    text-align: center;
-    padding: 10px 0;
-    line-height: 1.5;
-    display: block;
-    border: 0;
-    height: auto;
-}
-        
-div#$optin_css_id.primrose-container .primrose-note {
-    font-size: 12px;
-    margin-top: 10px;
-    font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
-    font-weight: normal;
-    text-align: center;
-    display: block;
-    border: 0;
-    line-height: normal;
-    height: auto;
-}
-        
-div#$optin_css_id.primrose-container .primrose-headline {
-    margin: 0;
-}
-        
-div#$optin_css_id.primrose-container input.primrose-input-field {
-    width: 100%;
-    height: 36px !important;
-    border: 2px solid #f0f0f0;
-    border-radius: 3px;
-    padding-left: 10px;
-    font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
-    font-size: 16px;
-    margin: 0 auto;
-    margin-top: 10px;
-    text-align: center;
-    line-height: normal;
-    background-color: #ffffff;
-}
-        
-div#$optin_css_id.primrose-container input.primrose-submit-button {
-    border: 0;
-    border-radius: 3px;
-    background: black;
-    color: #ffffff;
-    width: 100%;
-    font-weight: 700;
-    font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
-    text-transform: uppercase;
-    padding: 8px 5px;
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: normal;
-}
-
-div#$optin_css_id.primrose-container .mo-optin-error {
-     display: none; 
-    background: #FF0000;
-    color: #ffffff;
-    text-align: center;
-    padding: .2em;
-    margin: 0 0 -5px;
-    width: 100%;
-    font-size: 16px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-        
-div#$optin_css_id.primrose-container input.primrose-input-field:focus {
-    border-color: #0abff0;
-    border-radius: 3px;
-}
-        
-div#$optin_css_id.primrose-container input.primrose-submit-button:hover {
-    background: black;
-    opacity: 0.9;
-}
-CSS;
     }
 
     /**
@@ -375,7 +219,12 @@ CSS;
      */
     public function customizer_note_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
-        return $controls;
+        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
+            return --$count;
+        });
+
+        // we are returning empty array so all controls for note are removed hence removing note panel/section.
+        return [];
     }
 
 
@@ -451,5 +300,174 @@ CSS;
     public function customizer_output_controls($output_controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
         return $output_controls;
+    }
+
+    /**
+     * Default description content.
+     *
+     * @return string
+     */
+    private function _description_content()
+    {
+        return __('Be the first to get exclusive content straight to your email.', 'mailoptin');
+    }
+
+    /**
+     * Fulfil interface contract.
+     */
+    public function optin_script()
+    {
+    }
+
+    /**
+     * Template body.
+     *
+     * @return string
+     */
+    public function optin_form()
+    {
+        $close_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/close.png';
+        return <<<HTML
+        [mo-optin-form-wrapper class="crayoned-subform-outter"]
+          [mo-close-optin class="close-btn"]<img src="$close_image" class="close-btn">[/mo-close-optin]
+    <div class="crayoned-subform-inner">
+        <div class="crayoned-upper">
+        [mo-optin-form-headline class="letterBox_header" tag="div"]
+        [mo-optin-form-description class="letterBox_description"]
+       </div>
+            </div>
+        <div class="crayoned-lower">
+        [mo-optin-form-error]
+        [mo-optin-form-fields-wrapper]
+            <div class="email-field-outter">
+            [mo-optin-form-name-field class="the-mail-field"]<br>
+            [mo-optin-form-email-field class="the-mail-field"]
+            </div>
+            [mo-optin-form-submit-button class="crayoned-submit"]
+        [/mo-optin-form-fields-wrapper]
+        [mo-optin-form-cta-button class="crayoned-submit"]
+        </div>
+    [/mo-optin-form-wrapper]
+HTML;
+    }
+
+
+    /**
+     * Template CSS styling.
+     *
+     * @return string
+     */
+    public function optin_form_css()
+    {
+        $optin_css_id = $this->optin_css_id;
+        return <<<CSS
+ input {
+    line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+        
+.crayoned-subform-outter {
+    background: #0e67e0;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 350px;
+    margin: 0;
+    width: 100%;
+}
+
+.crayoned-upper .letterBox_header {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px auto;
+}
+
+.crayoned-upper .letterBox_description {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.crayoned-subform-inner {
+    padding: 20px;
+}
+
+.the-mail-field {
+    width: 100%;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    color: #444;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.the-mail-field:focus {
+    background: #ececec;
+}
+
+.crayoned-submit {
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 0px;
+    background: #1b1bea;
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-appearance: button;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+  .crayoned-submit:hover{
+    color: #ffffff;
+    border-color: #3a3a3a;
+    background-color: #3a3a3a;
+}
+
+.email-field-outter {
+    padding: 0px 20px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    width: 20px;
+    height: 20px;
+}
+
+ @media only screen and (min-width: 200px){
+    .crayoned-image {
+    width: 133px;
+    height: 100px;
+}
+}
+
+@media only screen and (max-width: 575px) {
+    .crayoned-subform-outter, 
+     .crayoned-submit {
+        border-radius: 0 !important;
+    }
+}
+CSS;
+
     }
 }

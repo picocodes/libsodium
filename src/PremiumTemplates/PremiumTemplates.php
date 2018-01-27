@@ -82,6 +82,12 @@ class PremiumTemplates
                 'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/mimosa-slidein.png'
             ],
             [
+                'name' => 'Letter Box',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-sidebar.png'
+            ],
+            [
                 'name' => 'Primrose',
                 'optin_class' => 'Primrose',
                 'optin_type' => 'sidebar',
