@@ -40,7 +40,7 @@ class LetterBox extends AbstractOptinTheme
 
         // Add Raleway with 400, 700 font weight variant.
         add_filter('mo_optin_form_fonts_list', function ($webfont) {
-            $webfont[] = 'Raleway:400,700';
+            $webfont[] = "'Raleway:400,700'";
             return $webfont;
         });
 
@@ -134,6 +134,8 @@ class LetterBox extends AbstractOptinTheme
      */
     public function customizer_design_settings($settings, $CustomizerSettingsInstance)
     {
+        unset($settings['form_border_color']);
+
         return $settings;
     }
 
@@ -328,24 +330,24 @@ class LetterBox extends AbstractOptinTheme
     {
         $close_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/close.png';
         return <<<HTML
-        [mo-optin-form-wrapper class="crayoned-subform-outter"]
-          [mo-close-optin class="close-btn"]<img src="$close_image" class="close-btn">[/mo-close-optin]
-    <div class="crayoned-subform-inner">
-        <div class="crayoned-upper">
+        [mo-optin-form-wrapper class="letterBox_container"]
+          [mo-close-optin]<img src="$close_image" class="letterBox_closeBtn">[/mo-close-optin]
+    <div class="letterBox_inner">
+        <div class="letterBox_copy">
         [mo-optin-form-headline class="letterBox_header" tag="div"]
         [mo-optin-form-description class="letterBox_description"]
        </div>
             </div>
-        <div class="crayoned-lower">
-        [mo-optin-form-error]
+        <div class="letterBox_form">
         [mo-optin-form-fields-wrapper]
-            <div class="email-field-outter">
-            [mo-optin-form-name-field class="the-mail-field"]<br>
-            [mo-optin-form-email-field class="the-mail-field"]
+            <div class="letterBox_field_wrapper">
+            [mo-optin-form-name-field class="letterBox_form_field"]
+            [mo-optin-form-email-field class="letterBox_form_field"]
             </div>
-            [mo-optin-form-submit-button class="crayoned-submit"]
+        [mo-optin-form-error]
+            [mo-optin-form-submit-button class="letterBox_submitButton"]
         [/mo-optin-form-fields-wrapper]
-        [mo-optin-form-cta-button class="crayoned-submit"]
+        [mo-optin-form-cta-button class="letterBox_submitButton"]
         </div>
     [/mo-optin-form-wrapper]
 HTML;
@@ -361,92 +363,122 @@ HTML;
     {
         $optin_css_id = $this->optin_css_id;
         return <<<CSS
- input {
-    line-height: normal;
-}
-
-button, input, optgroup, select, textarea {
+        
+div#$optin_css_id.letterBox_container input,
+ div#$optin_css_id.letterBox_container select, 
+ div#$optin_css_id.letterBox_container textarea {
     margin: 0;
 }
 
-* {
+div#$optin_css_id.letterBox_container *,
+ div#$optin_css_id.letterBox_container .letterBox_submitButton,
+ div#$optin_css_id.letterBox_container .letterBox_form_field
+ {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
         
-.crayoned-subform-outter {
+div#$optin_css_id.letterBox_container {
     background: #0e67e0;
     border-radius: 10px;
     text-align: center;
     max-width: 350px;
     margin: 0;
     width: 100%;
+    border: 0;
 }
 
-.crayoned-upper .letterBox_header {
+div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
     font-family: 'Raleway', sans-serif;
-    color: white;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 700;
     margin: 15px auto;
+    line-height: normal;
+    height: auto;
+    display: block;
+    border: 0;
 }
 
-.crayoned-upper .letterBox_description {
-    color: white;
+div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
+    color: #ffffff;
     font-family: 'Raleway', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
+    line-height: normal;
+    height: auto;
+    display: block;
+    border: 0;
 }
 
-.crayoned-subform-inner {
+div#$optin_css_id.letterBox_container .letterBox_inner {
     padding: 20px;
 }
 
-.the-mail-field {
+div#$optin_css_id.letterBox_container input.letterBox_form_field {
     width: 100%;
     padding: 15px;
     border: 0px;
     border-radius: 5px;
     color: #444;
     font-family: 'Raleway', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
+    display: inline-block;
+    line-height: normal;
 }
 
-.the-mail-field:focus {
+div#$optin_css_id.letterBox_container input.letterBox_form_field:focus,
+div#$optin_css_id.letterBox_container input.letterBox_submitButton:focus,
+ {
+   outline: 0
+}
+
+div#$optin_css_id.letterBox_container input.letterBox_form_field:focus {
     background: #ececec;
 }
 
-.crayoned-submit {
+div#$optin_css_id.letterBox_container .mo-optin-error {
+     display: none; 
+    color: #ff0000;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+}
+
+div#$optin_css_id.letterBox_container input[type="submit"].letterBox_submitButton {
     width: 100%;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border: 0px;
+    border: 0;
     background: #1b1bea;
-    color: white;
-    padding: 16px;
-    font-size: 18px;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 15px;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     -webkit-appearance: button;
     cursor: pointer;
     font-weight: 700;
+    display: inline-block;
+    line-height: normal;
+    margin: 0;
 }
 
-  .crayoned-submit:hover{
+div#$optin_css_id.letterBox_container .letterBox_submitButton:hover{
     color: #ffffff;
     border-color: #3a3a3a;
     background-color: #3a3a3a;
 }
 
-.email-field-outter {
+div#$optin_css_id.letterBox_container .letterBox_field_wrapper {
     padding: 0px 20px;
 }
 
-.close-btn {
+div#$optin_css_id.letterBox_container .letterBox_closeBtn {
     position: absolute;
     right: 10px;
     top: 7px;
@@ -454,16 +486,10 @@ button, input, optgroup, select, textarea {
     height: 20px;
 }
 
- @media only screen and (min-width: 200px){
-    .crayoned-image {
-    width: 133px;
-    height: 100px;
-}
-}
-
+/* remove border radius from submit button when display on mobile */
 @media only screen and (max-width: 575px) {
-    .crayoned-subform-outter, 
-     .crayoned-submit {
+    .letterBox_container, 
+     .letterBox_submitButton {
         border-radius: 0 !important;
     }
 }
