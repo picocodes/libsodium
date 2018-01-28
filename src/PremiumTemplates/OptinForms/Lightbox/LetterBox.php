@@ -1,6 +1,6 @@
 <?php
 
-namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Inpost;
+namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Lightbox;
 
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
@@ -11,6 +11,11 @@ class LetterBox extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
+        add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
+            if ($optin_class == 'LetterBox' && $optin_type = 'lightbox') $val = false;
+            return $val;
+        }, 10, 3);
+
         // -- remove branding so it doesn't distort design -- //
         add_filter('mo_optin_form_remove_branding_default', function () {
             return true;
@@ -320,8 +325,10 @@ class LetterBox extends AbstractOptinTheme
      */
     public function optin_form()
     {
+        $close_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/close.png';
         return <<<HTML
 [mo-optin-form-wrapper class="letterBox_container"]
+[mo-close-optin]<img src="$close_image" class="letterBox_closeBtn">[/mo-close-optin]
 <div class="letterBox_inner">
 <div class="mo-optin-form-image-wrapper">
 	</div>
@@ -476,8 +483,8 @@ div#$optin_css_id.letterBox_container .letterBox_closeBtn {
     position: absolute;
     right: 10px;
     top: 7px;
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
 }
 
  @media only screen and (min-width: 600px){

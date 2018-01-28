@@ -97,6 +97,12 @@ class PremiumTemplates
                 'name' => 'Letter Box',
                 'optin_class' => 'LetterBox',
                 'optin_type' => 'inpost',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-inpost.png'
+            ],
+            [
+                'name' => 'Letter Box',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'lightbox',
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-sidebar.png'
             ],
             [
