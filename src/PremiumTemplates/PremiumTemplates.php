@@ -94,6 +94,12 @@ class PremiumTemplates
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-sidebar.png'
             ],
             [
+                'name' => 'Letter Box',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'inpost',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-sidebar.png'
+            ],
+            [
                 'name' => 'Primrose',
                 'optin_class' => 'Primrose',
                 'optin_type' => 'sidebar',
