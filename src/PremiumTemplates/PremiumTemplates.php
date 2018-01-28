@@ -103,7 +103,7 @@ class PremiumTemplates
                 'name' => 'Letter Box',
                 'optin_class' => 'LetterBox',
                 'optin_type' => 'lightbox',
-                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-sidebar.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-lightbox.png'
             ],
             [
                 'name' => 'Primrose',
