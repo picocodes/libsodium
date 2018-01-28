@@ -433,7 +433,7 @@ font-size: 0.8em;
 box-sizing: border-box; 
 }
 
-div#$optin_css_id.mimosa-container .mimosa-input {
+div#$optin_css_id.mimosa-container input.mimosa-input {
   -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -455,7 +455,7 @@ div#$optin_css_id.mimosa-container .mimosa-input {
   background: 0;
 }
 
-div#$optin_css_id.mimosa-container .mimosa-submit {
+div#$optin_css_id.mimosa-container input[type="submit"].mimosa-submit {
   display: block;
   width: 100%;
   margin-top: 0.5em;

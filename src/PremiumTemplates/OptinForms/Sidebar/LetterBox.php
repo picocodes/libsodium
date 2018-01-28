@@ -1,6 +1,6 @@
 <?php
 
-namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Slidein;
+namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Sidebar;
 
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
@@ -8,6 +8,8 @@ use MailOptin\Core\OptinForms\AbstractOptinTheme;
 class LetterBox extends AbstractOptinTheme
 {
     public $optin_form_name = 'Letter Box';
+
+    public $default_form_image_partial;
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
@@ -18,7 +20,7 @@ class LetterBox extends AbstractOptinTheme
 
         // -- default for design sections -- //
         add_filter('mo_optin_form_background_color_default', function () {
-            return '#0e67e0';
+            return '#70b343';
         });
 
         add_filter('mo_optin_form_border_color_default', function () {
@@ -83,7 +85,7 @@ class LetterBox extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#1b1bea';
+            return '#579b28';
         });
 
         add_filter('mo_optin_form_submit_button_font_default', function () {
@@ -91,19 +93,11 @@ class LetterBox extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Palatino Linotype, Book Antiqua, serif';
+            return 'Garamond, Hoefler Text, serif';
         });
 
         add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Palatino Linotype, Book Antiqua, serif';
-        });
-
-        add_filter('mo_optin_form_modal_effects_default', function () {
-            return 'MOslideInUp';
-        });
-
-        add_filter('mo_optin_form_slidein_position_default', function () {
-            return 'bottom_right';
+            return 'Garamond, Hoefler Text, serif';
         });
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
@@ -116,6 +110,21 @@ class LetterBox extends AbstractOptinTheme
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
             return '#ffffff';
+        });
+
+        $this->default_form_image_partial = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-icon.png';
+
+        add_filter('mo_optin_form_enable_form_image', '__return_true');
+
+        add_filter('mo_optin_form_partial_default_image', function () {
+            return $this->default_form_image_partial;
+        });
+
+        add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
+            $config['width'] = 300;
+            $config['height'] = 169;
+
+            return $config;
         });
 
         parent::__construct($optin_campaign_id);
@@ -328,11 +337,14 @@ class LetterBox extends AbstractOptinTheme
      */
     public function optin_form()
     {
-        $close_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/close.png';
+        $optin_default_image = $this->default_form_image_partial;
+
         return <<<HTML
 [mo-optin-form-wrapper class="letterBox_container"]
-[mo-close-optin]<img src="$close_image" class="letterBox_closeBtn">[/mo-close-optin]
 <div class="letterBox_inner">
+<div class="mo-optin-form-image-wrapper">
+	    [mo-optin-form-image default="$optin_default_image"]
+	</div>
     <div class="letterBox_copy">
         [mo-optin-form-headline class="letterBox_header" tag="div"]
         [mo-optin-form-description class="letterBox_description"]
@@ -381,19 +393,19 @@ div#$optin_css_id.letterBox_container *,
 }
         
 div#$optin_css_id.letterBox_container {
-    background: #0e67e0;
+    background: #70b343;
     border-radius: 10px;
     text-align: center;
-    max-width: 350px;
     margin: 0;
-    width: 100%;
     border: 0;
+    max-width: 400px;
+    width: 100%;
 }
 
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 24px;
     padding: 0 20px;
     font-weight: 700;
     margin: 15px auto;
@@ -406,7 +418,7 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
     color: #ffffff;
     font-family: 'Raleway', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     padding: 0 20px;
     font-weight: 400;
     line-height: normal;
@@ -416,13 +428,13 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
 }
 
 div#$optin_css_id.letterBox_container .letterBox_inner {
-    padding: 20px;
+    padding: 10px 0 20px;
 }
 
 div#$optin_css_id.letterBox_container input.letterBox_form_field {
     width: 100%;
     padding: 15px;
-    border: 0;
+    border: 0px;
     border-radius: 5px;
     color: #444;
     font-family: 'Raleway', sans-serif;
@@ -456,10 +468,10 @@ div#$optin_css_id.letterBox_container input[type="submit"].letterBox_submitButto
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border: 0;
-    background: #1b1bea;
+    background: #579b28;
     color: #ffffff;
-    padding: 12px;
-    font-size: 15px;
+    padding: 20px;
+    font-size: 18px;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -487,14 +499,6 @@ div#$optin_css_id.letterBox_container .letterBox_closeBtn {
     top: 7px;
     width: 20px;
     height: 20px;
-}
-
-/* remove border radius from submit button when display on mobile */
-@media only screen and (max-width: 575px) {
-    .letterBox_container, 
-     .letterBox_submitButton {
-        border-radius: 0 !important;
-    }
 }
 CSS;
 

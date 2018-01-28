@@ -85,7 +85,13 @@ class PremiumTemplates
                 'name' => 'Letter Box',
                 'optin_class' => 'LetterBox',
                 'optin_type' => 'slidein',
-                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/leatherbox-slidein.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-slidein.png'
+            ],
+            [
+                'name' => 'Letter Box',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'sidebar',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/letterbox-sidebar.png'
             ],
             [
                 'name' => 'Primrose',
