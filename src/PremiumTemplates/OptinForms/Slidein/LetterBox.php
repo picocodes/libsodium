@@ -11,112 +11,166 @@ class LetterBox extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        // -- remove branding so it doesn't distort design -- //
-        add_filter('mo_optin_form_remove_branding_default', function () {
-            return true;
-        });
+        $this->init_config_filters([
+            [
+                // -- remove branding so it doesn't distort design -- //
+                'name' => 'mo_optin_form_remove_branding_default',
+                'value' => true,
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_background_color_default',
+                'value' => '#0e67e0',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_email_field_placeholder_default',
+                'value' => __("Enter your email here...", 'mailoptin'),
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_name_field_placeholder_default',
+                'value' => __("Enter your name here...", 'mailoptin'),
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_headline_default',
+                'value' => __("Don't Miss Our Update", 'mailoptin'),
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_headline_font_color_default',
+                'value' => '#ffffff',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_headline_font_default',
+                'value' => 'Raleway',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_description_font_default',
+                'value' => 'Raleway',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_description_default',
+                'value' => $this->_description_content(),
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_description_font_color_default',
+                'value' => '#ffffff',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_name_field_color_default',
+                'value' => '#444444',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_name_field_background_default',
+                'value' => '#ffffff',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_email_field_color_default',
+                'value' => '#444444',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_email_field_background_default',
+                'value' => '#ffffff',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_submit_button_color_default',
+                'value' => '#ffffff',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_submit_button_background_default',
+                'value' => '#1b1bea',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_submit_button_font_default',
+                'value' => 'Raleway',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_name_field_font_default',
+                'value' => 'Palatino Linotype, Book Antiqua, serif',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_email_field_font_default',
+                'value' => 'Palatino Linotype, Book Antiqua, serif',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_modal_effects_default',
+                'value' => 'MOslideInUp',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                'name' => 'mo_optin_form_slidein_position_default',
+                'value' => 'bottom_right',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+            [
+                // Add Raleway with 400, 700 font weight variant.
+                'name' => 'mo_optin_form_fonts_list',
+                'value' => function ($webfont) {
+                    $webfont[] = "'Raleway:400,700'";
+                    return $webfont;
+                },
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
 
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#0e67e0';
-        });
+            [
+                'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                'value' => function () {
+                    return 'inline';
+                }
+            ],
 
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#0e67e0';
-        });
+            [
+                'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
+                'value' => function () {
+                    return 'center';
+                }
+            ],
 
-        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email here...", 'mailoptin');
-        });
-
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("Don't Miss Our Update", 'mailoptin');
-        });
-
-        add_filter('mo_optin_form_headline_font_color_default', function () {
-            return '#ffffff';
-        });
-
-        // Add Raleway with 400, 700 font weight variant.
-        add_filter('mo_optin_form_fonts_list', function ($webfont) {
-            $webfont[] = "'Raleway:400,700'";
-            return $webfont;
-        });
-
-        add_filter('mo_optin_form_headline_font_default', function () {
-            return 'Raleway';
-        });
-
-        // -- default for description sections -- //
-        add_filter('mo_optin_form_description_font_default', function () {
-            return 'Raleway';
-        });
-
-        add_filter('mo_optin_form_description_default', function () {
-            return $this->_description_content();
-        });
-
-        add_filter('mo_optin_form_description_font_color_default', function () {
-            return '#ffffff';
-        });
-
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#444444';
-        });
-
-        add_filter('mo_optin_form_name_field_background_default', function () {
-            return '#ffffff';
-        });
-
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#444444';
-        });
-
-        add_filter('mo_optin_form_email_field_background_default', function () {
-            return '#ffffff';
-        });
-
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
-
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#1b1bea';
-        });
-
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Raleway';
-        });
-
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Palatino Linotype, Book Antiqua, serif';
-        });
-
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Palatino Linotype, Book Antiqua, serif';
-        });
-
-        add_filter('mo_optin_form_modal_effects_default', function () {
-            return 'MOslideInUp';
-        });
-
-        add_filter('mo_optin_form_slidein_position_default', function () {
-            return 'bottom_right';
-        });
-
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
-            return 'inline';
-        });
-
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment', function () {
-            return 'center';
-        });
-
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
-            return '#ffffff';
-        });
+            [
+                'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
+                'value' => function () {
+                    return '#ffffff';
+                }
+            ]
+        ]);
 
         parent::__construct($optin_campaign_id);
     }
