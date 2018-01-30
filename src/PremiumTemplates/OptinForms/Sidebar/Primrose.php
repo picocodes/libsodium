@@ -11,94 +11,160 @@ class Primrose extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#f22613';
-        });
+        $this->init_config_filters([
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_background_color_default',
+                    'value' => '#f22613',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#000000';
-        });
+                [
+                    'name' => 'mo_optin_form_border_color_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-            return __("Enter your name...", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_placeholder_default',
+                    'value' => __("Enter your name...", 'mailoptin'),
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email...", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_placeholder_default',
+                    'value' => __("Enter your email...", 'mailoptin'),
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("50% OFF", 'mailoptin');
-        });
+                // -- default for headline sections -- //
+                [
+                    'name' => 'mo_optin_form_headline_default',
+                    'value' => __("50% OFF", 'mailoptin'),
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_headline_font_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_headline_font_default', function () {
-            return 'PT+serif';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_default',
+                    'value' => 'PT+serif',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        // -- default for description sections -- //
-        add_filter('mo_optin_form_description_font_default', function () {
-            return 'Raleway';
-        });
+                // -- default for description sections -- //
+                [
+                    'name' => 'mo_optin_form_description_font_default',
+                    'value' => 'Raleway',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_description_default', function () {
-            return $this->_description_content();
-        });
+                [
+                    'name' => 'mo_optin_form_description_default',
+                    'value' => $this->_description_content(),
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_description_font_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_description_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#555555';
-        });
+                // -- default for fields sections -- //
+                [
+                    'name' => 'mo_optin_form_name_field_color_default',
+                    'value' => '#555555',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#555555';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_color_default',
+                    'value' => '#555555',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#000000';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_background_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Raleway';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_font_default',
+                    'value' => 'Raleway',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Consolas, Lucida Console, monospace';
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_font_default',
+                    'value' => 'Consolas, Lucida Console, monospace',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Consolas, Lucida Console, monospace';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_font_default',
+                    'value' => 'Consolas, Lucida Console, monospace',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        // -- default for note sections -- //
-        add_filter('mo_optin_form_note_font_color_default', function () {
-            return '#ffffff';
-        });
+                // -- default for note sections -- //
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_note_default', function () {
-            return __('*Offer Valid till 26th December', 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('*Offer Valid till 26th December', 'mailoptin'),
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_note_font_default', function () {
-            return 'Raleway';
-        });
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Raleway',
+                    'optin_class' => 'Primrose',
+                    'optin_type' => 'sidebar'
+                ],
 
-        add_filter('mo_optin_form_background_image_default', function () {
-            return MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
-        });
+                [
+                    'name' => 'mo_optin_form_background_image_default',
+                    'value' => function () {
+                        return MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
+                    }
+                ]
+            ]
+        );
 
         add_filter('mo_optin_form_enable_form_background_image', '__return_true');
 

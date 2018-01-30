@@ -13,93 +13,161 @@ class Daisy extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#ffffff';
-        });
+        $this->init_config_filters([
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_background_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_headline_font_color_default', function () {
-            return '#000000';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_color_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_headline_font_default', function () {
-            return 'Courgette';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_default',
+                    'value' => 'Courgette',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        // -- default for description sections -- //
-        add_filter('mo_optin_form_description_font_default', function () {
-            return 'Titillium Web';
-        });
+                // -- default for description sections -- //
+                [
+                    'name' => 'mo_optin_form_description_font_default',
+                    'value' => 'Titillium Web',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#2ecc71';
-        });
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_border_color_default',
+                    'value' => '#2ecc71',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("Get Your Free Ebook", 'mailoptin');
-        });
+                // -- default for headline sections -- //
+                [
+                    'name' => 'mo_optin_form_headline_default',
+                    'value' => __("Get Your Free Ebook", 'mailoptin'),
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_description_default', function () {
-            return $this->_description_content();
-        });
+                [
+                    'name' => 'mo_optin_form_description_default',
+                    'value' => $this->_description_content(),
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_description_font_color_default', function () {
-            return '#a2a2a2';
-        });
+                [
+                    'name' => 'mo_optin_form_description_font_color_default',
+                    'value' => '#a2a2a2',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#000';
-        });
+                // -- default for fields sections -- //
+                [
+                    'name' => 'mo_optin_form_name_field_color_default',
+                    'value' => '#000',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#000';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_color_default',
+                    'value' => '#000',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#2ecc71';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_background_default',
+                    'value' => '#2ecc71',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Merriweather';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_font_default',
+                    'value' => 'Merriweather',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Trebuchet MS, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_font_default',
+                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Trebuchet MS, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_font_default',
+                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        // -- default for note sections -- //
-        add_filter('mo_optin_form_note_font_color_default', function () {
-            return '#000000';
-        });
+                // -- default for note sections -- //
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_note_default', function () {
-            return __("I'll Pass, Thank you", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __("I'll Pass, Thank you", 'mailoptin'),
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_note_font_default', function () {
-            return 'Merriweather';
-        });
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Merriweather',
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-            return __("Enter your name...", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_placeholder_default',
+                    'value' => __("Enter your name...", 'mailoptin'),
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email...", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_placeholder_default',
+                    'value' => __("Enter your email...", 'mailoptin'),
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ],
 
-        add_filter('mo_optin_form_note_close_optin_onclick_default', '__return_true');
+                [
+                    'name' => 'mo_optin_form_note_close_optin_onclick_default',
+                    'value' => true,
+                    'optin_class' => 'Daisy',
+                    'optin_type' => 'lightbox'
+                ]
+            ]
+        );
 
         add_filter('mo_optin_form_enable_form_image', '__return_true');
 
