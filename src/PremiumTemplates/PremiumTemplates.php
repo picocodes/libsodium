@@ -110,6 +110,12 @@ class PremiumTemplates
                 'optin_class' => 'Primrose',
                 'optin_type' => 'sidebar',
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-sidebar.png'
+            ],
+            [
+                'name' => 'Gridgum',
+                'optin_class' => 'Gridgum',
+                'optin_type' => 'inpost',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-sidebar.png'
             ]
         ];
     }

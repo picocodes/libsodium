@@ -11,63 +11,108 @@ class Muscari extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#000000';
-        });
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#000000';
-        });
+        $this->init_config_filters([
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_background_color_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
+                [
+                    'name' => 'mo_optin_form_border_color_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-            return __("Enter your name...", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_placeholder_default',
+                    'value' => __("Enter your name...", 'mailoptin'),
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email...", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_placeholder_default',
+                    'value' => __("Enter your email...", 'mailoptin'),
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin');
-        });
+                // -- default for headline sections -- //
+                [
+                    'name' => 'mo_optin_form_headline_default',
+                    'value' => __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin'),
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_headline_font_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_headline_font_default', function () {
-            return 'Helvetica';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_default',
+                    'value' => 'Helvetica',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#dddddd';
-        });
+                // -- default for fields sections -- //
+                [
+                    'name' => 'mo_optin_form_name_field_color_default',
+                    'value' => '#dddddd',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#dddddd';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_color_default',
+                    'value' => '#dddddd',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#3abaab';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_background_default',
+                    'value' => '#3abaab',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Helvetica';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_font_default',
+                    'value' => 'Helvetica',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_font_default',
+                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_font_default',
+                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ]
+            ]
+        );
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
             return 'inline';

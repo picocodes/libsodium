@@ -11,64 +11,109 @@ class Dashdot extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#34495e';
-        });
+        $this->init_config_filters([
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_background_color_default',
+                    'value' => '#34495e',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#34495e';
-        });
+                [
+                    'name' => 'mo_optin_form_border_color_default',
+                    'value' => '#34495e',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_name_field_placeholder_default', function () {
-            return __("Enter your name..", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_placeholder_default',
+                    'value' => __("Enter your name..", 'mailoptin'),
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_email_field_placeholder_default', function () {
-            return __("Enter your email..", 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_placeholder_default',
+                    'value' => __("Enter your email..", 'mailoptin'),
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin');
-        });
+                // -- default for headline sections -- //
+                [
+                    'name' => 'mo_optin_form_headline_default',
+                    'value' => __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin'),
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_headline_font_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_headline_font_default', function () {
-            return 'Vollkorn';
-        });
+                [
+                    'name' => 'mo_optin_form_headline_font_default',
+                    'value' => 'Vollkorn',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#666666';
-        });
+                // -- default for fields sections -- //
+                [
+                    'name' => 'mo_optin_form_name_field_color_default',
+                    'value' => '#666666',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#666666';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_color_default',
+                    'value' => '#666666',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#666666';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_background_default',
+                    'value' => '#666666',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Raleway';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_font_default',
+                    'value' => 'Raleway',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_font_default',
+                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
 
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_font_default',
+                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ]
+            ]
+        );
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style', function () {
             return 'inline';
@@ -376,12 +421,12 @@ HTML;
     {
         $optin_css_id = $this->optin_css_id;
         $headline_border_color = $this->get_customizer_value('headline_border_color');
-        if(empty($headline_border_color)) {
+        if (empty($headline_border_color)) {
             $headline_border_color = '#ffffff';
         }
 
         $headline_background_color = $this->get_customizer_value('headline_background_color');
-        if(empty($headline_background_color)) {
+        if (empty($headline_background_color)) {
             $headline_background_color = '#aa3030';
         }
 

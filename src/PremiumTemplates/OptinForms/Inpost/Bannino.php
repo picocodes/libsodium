@@ -13,82 +13,109 @@ class Bannino extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        // remove default closeIcon
-        add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class) {
-            if ($optin_class == 'Bannino') $val = false;
-            return $val;
-        }, 10, 2);
+        $this->init_config_filters([
 
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_background_color_default', function () {
-            return '#00cc77';
-        });
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_background_color_default',
+                    'value' => '#00cc77',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        // -- default for design sections -- //
-        add_filter('mo_optin_form_border_color_default', function () {
-            return '#00cc77';
-        });
+                // -- default for design sections -- //
+                [
+                    'name' => 'mo_optin_form_border_color_default',
+                    'value' => '#00cc77',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        // -- default for headline sections -- //
-        add_filter('mo_optin_form_headline_default', function () {
-            return __("Subscribe For Latest Updates", 'mailoptin');
-        });
+                // -- default for headline sections -- //
+                [
+                    'name' => 'mo_optin_form_headline_default',
+                    'value' => __("Subscribe For Latest Updates", 'mailoptin'),
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        // -- default for fields sections -- //
-        add_filter('mo_optin_form_name_field_color_default', function () {
-            return '#000';
-        });
+                // -- default for fields sections -- //
+                [
+                    'name' => 'mo_optin_form_name_field_color_default',
+                    'value' => '#000',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_email_field_color_default', function () {
-            return '#000';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_color_default',
+                    'value' => '#000',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_submit_button_color_default', function () {
-            return '#ffffff';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_submit_button_background_default', function () {
-            return '#2c3e50';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_background_default',
+                    'value' => '#2c3e50',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_submit_button_font_default', function () {
-            return 'Open+Sans';
-        });
+                [
+                    'name' => 'mo_optin_form_submit_button_font_default',
+                    'value' => 'Open+Sans',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_name_field_font_default', function () {
-            return 'Trebuchet MS, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_name_field_font_default',
+                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_email_field_font_default', function () {
-            return 'Trebuchet MS, Arial, sans-serif';
-        });
+                [
+                    'name' => 'mo_optin_form_email_field_font_default',
+                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        // -- default for note sections -- //
-        add_filter('mo_optin_form_note_font_color_default', function () {
-            return '#000000';
-        });
+                // -- default for note sections -- //
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#000000',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_note_default', function () {
-            return __('We promise not to spam you. You can unsubscribe at any time', 'mailoptin');
-        });
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time', 'mailoptin'),
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
 
-        add_filter('mo_optin_form_note_font_default', function () {
-            return 'Titillium+Web';
-        });
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Titillium+Web',
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ]
+            ]
+        );
 
         // remove headline and description section/panel. not needed.
         add_filter('mo_optin_customizer_disable_headline_section', '__return_true');
         add_filter('mo_optin_customizer_disable_description_section', '__return_true');
-        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
-            return $count - 2;
-        });
-
-        add_filter('mo_optin_form_customizer_configuration_controls', function ($controls) {
-            unset($controls['hide_headline']);
-            unset($controls['hide_description']);
-
-            return $controls;
-        });
 
         add_filter('mo_optin_form_enable_form_image', '__return_true');
 
@@ -260,6 +287,13 @@ class Bannino extends AbstractOptinTheme
      */
     public function customizer_configuration_controls($configuration_controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
+        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
+            return $count - 2;
+        });
+
+        unset($configuration_controls['hide_headline']);
+        unset($configuration_controls['hide_description']);
+
         return $configuration_controls;
     }
 

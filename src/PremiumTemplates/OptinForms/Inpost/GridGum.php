@@ -2,16 +2,21 @@
 
 namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Inpost;
 
-use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
+use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Tinymce_Control;
+use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
-class BareMetal extends AbstractOptinTheme
+class Gridgum extends AbstractOptinTheme
 {
-    public $optin_form_name = 'Bare Metal';
+    public $optin_form_name = 'Gridgum';
+
+    public $default_form_image_partial;
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         $this->init_config_filters([
+
+
                 // -- default for design sections -- //
                 [
                     'name' => 'mo_optin_form_background_color_default',
@@ -145,6 +150,21 @@ class BareMetal extends AbstractOptinTheme
             ]
         );
 
+        add_filter('mo_optin_form_enable_form_image', '__return_true');
+
+        $this->default_form_image_partial = MAILOPTIN_ASSETS_URL . 'images/optin-themes/bannino/optin-image.png';
+
+        add_filter('mo_optin_form_partial_default_image', function () {
+            return $this->default_form_image_partial;
+        });
+
+        add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
+            $config['width'] = 700;
+            $config['height'] = 300;
+
+            return $config;
+        });
+
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
             return '#000000';
         });
@@ -189,6 +209,13 @@ class BareMetal extends AbstractOptinTheme
      */
     public function customizer_headline_settings($settings, $CustomizerSettingsInstance)
     {
+        $settings['mini_headline'] = array(
+            'default' => "DON'T MISS OUT!",
+            'type' => 'option',
+            'transport' => 'refresh',
+            'sanitize_callback' => array($CustomizerSettingsInstance, '_remove_paragraph_from_headline'),
+        );
+
         return $settings;
     }
 
@@ -202,6 +229,24 @@ class BareMetal extends AbstractOptinTheme
      */
     public function customizer_headline_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
+        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
+            return ++$count;
+        });
+
+        $controls['mini_headline'] = new WP_Customize_Tinymce_Control(
+            $wp_customize,
+            $option_prefix . '[mini_headline]',
+            apply_filters('mo_optin_form_customizer_mini_headline_args', array(
+                    'label' => __('Mini Headline', 'mailoptin'),
+                    'section' => $customizerClassInstance->headline_section_id,
+                    'settings' => $option_prefix . '[mini_headline]',
+                    'editor_id' => 'mini_headline',
+                    'editor_height' => 50,
+                    'priority' => 5
+                )
+            )
+        );
+
         return $controls;
     }
 
@@ -335,7 +380,7 @@ class BareMetal extends AbstractOptinTheme
      */
     private function _description_content()
     {
-        return '<p style="text-align: center;">Exclusive special offers that you won\'t ever find on our blog·</p>';
+        return __('Signup to best of business news, informed analysis and opinions on what matters to you.', 'mailoptin');
     }
 
     /**
@@ -352,23 +397,44 @@ class BareMetal extends AbstractOptinTheme
      */
     public function optin_form()
     {
+        $mini_header = $this->get_customizer_value('mini_headline');
+        $mini_header = empty($mini_header) ? __("Don't miss out!", 'mailoptin') : $mini_header;
+
+        $image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/gridgum-img.png';
+
         return <<<HTML
-[mo-optin-form-wrapper class="mo-baremetal-container"]
-    [mo-optin-form-headline]
-    [mo-optin-form-description class="mo-baremetal-description"]
-    [mo-optin-form-error]
-    [mo-optin-form-fields-wrapper]
-    [mo-optin-form-name-field]
-    [mo-optin-form-email-field]
-    [mo-mailchimp-interests]
-    [mo-optin-form-submit-button]
-    [/mo-optin-form-fields-wrapper]
-    [mo-optin-form-cta-button]
-    [mo-optin-form-note class="mo-baremetal-note"]
+        [mo-optin-form-wrapper class="gridgum_container"]
+            <div class="gridgum_inner gridgum_clearfix">
+                <div class="gridgum_style-smaller">
+                    <div class="gridgum_style-image gridgum_img-responsive">
+                        <img src="$image">
+                    </div>
+                    <div class="gridgum_img-overlay"></div>
+                    <div class="gridgum_content-overlay">
+                     [mo-optin-form-description class="gridgum_header4"]
+                        <div class="gridgum_header2"> Questions ?</div>
+                        <div class="gridgum_header4"> You can also contact </div>
+                        <div class="gridgum_header4"> us at info@mailoptin.io </div>
+                    </div>
+                </div>
+                <div class="gridgum_body">
+                    <div class="gridgum_body-inner">
+                        <div class="gridgum_header2">$mini_header</div>
+                        [mo-optin-form-headline tag="div" class="gridgum_header3"]
+                            <div class="gridgum_body-form">
+                            [mo-optin-form-name-field class="gridgum_input_field"]
+                            [mo-optin-form-email-field class="gridgum_input_field"]
+                            [mo-optin-form-cta-button class="gridgum_submit_button"]
+                            </div>
+                        <!--<div class="gridgum_note"> <u>No, I don't want one</u></div>-->
+                       [mo-optin-form-note class="gridgum_note"]
+                    </div>
+                </div>
+            </div>
 [/mo-optin-form-wrapper]
+
 HTML;
     }
-
 
     /**
      * Template CSS styling.
@@ -378,131 +444,191 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
-
+        $optin_uuid = $this->optin_campaign_uuid;
         return <<<CSS
-div#$optin_css_id.mo-baremetal-container {
-text-align:center;
-background: #f0f0f0;
-border: 4px solid #dd3333;
-border-radius: 5px;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
--webkit-border-radius: 5px;
--o-border-radius: 5px;
--moz-border-radius: 5px;
-padding: 1.5em;
-margin: 10px auto;
-max-width: 100%;
-width: 100%;
-}
+* {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
 
-div#$optin_css_id.mo-baremetal-container h2.mo-optin-form-headline {
-color: #222222;
-font-family: "Arimo", sans-serif;
-margin: 0 0 10px;
-font-size: 24px;
-font-weight: bold;
-text-align: center;
-}
+        .gridgum_style-smaller{
+            display: none;
+        }
 
-div#$optin_css_id.mo-baremetal-container .mo-baremetal-description {
-color: #000000;
-font-family: "Source Sans Pro", sans-serif;
-font-weight: normal;
-font-size: 16px;
-line-height: 1.6;
-margin-bottom: 20px;
-text-rendering: optimizeLegibility;
-}
+        .gridgum_body {
+            width: 100%;
+            margin: 10px auto;
+        }
 
-div#$optin_css_id .mo-baremetal-note {
-  color:#000000;
-  margin: 5px auto;
-  text-align: center;
-  font-style: italic;
-  font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif;
-}
+        .gridgum_inner {
+            width: 100%;
+            background: white;
+            margin: 0px auto;
+            border: 1px solid #e7e7e7;
+            border-radius: 3px;
+            padding: 20px;
+        }
 
-div#$optin_css_id.mo-baremetal-container #{$optin_css_id}_name_field,
-div#$optin_css_id.mo-baremetal-container #{$optin_css_id}_email_field {
--webkit-appearance: none;
--webkit-border-radius: 0;
-border-radius: 0;
-background: #fff;
-border: 1px solid #ccc;
--webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-margin: 0;
-padding: 8px;
-height: 37px;
-width: 100%;
-max-width: initial;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
--webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
--moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
--webkit-transition: all 0.15s linear;
--moz-transition: all 0.15s linear;
--o-transition: all 0.15s linear;
-font-size: 16px;
-}
+        .gridgum_body-inner .gridgum_header2 {
+            text-transform: uppercase;
+            font-weight: 900;
+            padding-bottom: 10px;
+            font-size: 12px;
+            color: #46ca9b;
+            text-align: center;
+        }
 
-div#$optin_css_id.mo-baremetal-container input[type="submit"].mo-optin-form-submit-button, div#$optin_css_id.mo-baremetal-container input[type="submit"].mo-optin-form-cta-button {
-border: none;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-line-height: normal;
-letter-spacing: normal;
-margin: 16px 0 0;
-position: relative;
-text-decoration: none;
-text-align: center;
-text-transform: uppercase;
-text-shadow: none;
-box-shadow: none;
-height: auto;
-min-width: initial;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-outline: 0;
-display: inline-block;
-padding: 16px 32px 17px;
-font-size: 16px;
-background: #0073b7;
-color: #ffffff;
--webkit-transition: background-color 1s;
--moz-transition: background-color 1s;
--o-transition: background-color 1s;
-transition: background-color 1s;
-width: 100%;
--webkit-border-radius: 3px;
-border-radius: 3px;
-float: initial;
-cursor: pointer;
-font-weight: 600;
-}
+        .gridgum_body-inner .gridgum_header2, .gridgum_body-inner .gridgum_header3, .gridgum_body-form .gridgum_input_field, .gridgum_submit_button, .gridgum_note , .gridgum_content-overlay .gridgum_header2, .gridgum_content-overlay .gridgum_header4 {
+            font-family: "Open Sans", sans-serif;
+        }
 
-div#$optin_css_id.mo-baremetal-container .mo-optin-error {
-display: none;
-background: #FF0000;
-color: #ffffff;
-text-align: center;
-padding: .2em;
-margin: 0;
-width: 100%;
-font-size: 16px;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box; 
-}
+        .gridgum_body-inner .gridgum_header3 {
+            padding-bottom: 10px;
+            color: #4b4646;
+            font-size: 25px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .gridgum_body-form .gridgum_input_field {
+            width: 100%;
+            padding: 10px 0px;
+            margin-bottom: 20px;
+            border: 0px;
+            border-bottom: 2px solid #ccc;
+            font-weight: 600;
+            color: #181818;
+            font-size: 15px;
+        }
 
-div#$optin_css_id ul {
-    margin: 0 0 1.6em 1.3333em;
-}
+        .gridgum_submit_button {
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 3px;
+            border: 0px;
+            background: #46ca9b;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .gridgum_note {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .gridgum_note {
+            color: #777;
+        }
+
+        .gridgum_img-responsive img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: 700px) {
+            .gridgum_style-smaller {
+                display: block;
+            }
+            .gridgum_inner {
+                max-width: 700px;
+            }
+
+            .gridgum_style-smaller{
+                width: 45%;
+                position: relative;
+                float: left;
+            }
+
+            .gridgum_body {
+                width: 55%;
+                position: relative;
+                float: left;
+            }
+            
+            .gridgum_clearfix:before,
+            .gridgum_clearfix:after {
+            display: table;
+            content: " ";
+            }
+
+            .gridgum_clearfix:after {
+                clear: both;
+            }
+
+            .gridgum_body-inner {
+                padding-left: 50px;
+                padding-top: 50px;
+                padding-right: 50px;
+            }
+
+            .gridgum_content-overlay {
+                position: absolute;
+                bottom: 60px;
+                left: 18%;
+            }
+
+            .gridgum_inner {
+                padding: 0px;
+            }
+
+            .gridgum_style-image.gridgum_img-responsive {
+                height: 460px;
+                display: block;
+                overflow: hidden;
+            }
+
+            .gridgum_img-overlay {
+                background: -webkit-gradient(linear, left top, right top, from(#5FC3E499), to(#E55D87E6));
+                background: -webkit-linear-gradient(left, #5FC3E499, #E55D87E6);
+                background: -o-linear-gradient(left, #5FC3E499, #E55D87E6);
+                background: linear-gradient(to right, #5FC3E499, #E55D87E6);
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .gridgum_content-overlay .gridgum_header2, .gridgum_content-overlay .gridgum_header4 {
+                color: #fff;
+            }
+
+            .gridgum_content-overlay .gridgum_header2 {
+                padding-bottom: 10px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            .gridgum_inner {
+                max-width: 800px;
+            }
+            .gridgum_style-image.gridgum_img-responsive {
+                height: 500px;
+            }
+            .gridgum_body-inner .gridgum_header2 {
+                font-size: 18px;
+                text-align: center;
+                padding-bottom: 0px;
+            }
+            .gridgum_body-inner .gridgum_header3 {
+                font-size: 33px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            .gridgum_style-smaller {
+                width: 40%;
+            }
+
+            .gridgum_body {
+                 width: 60%;
+            }
+        }
+
 CSS;
 
     }
