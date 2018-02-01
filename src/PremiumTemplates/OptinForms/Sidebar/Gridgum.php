@@ -10,8 +10,6 @@ class Gridgum extends AbstractOptinTheme
 {
     public $optin_form_name = 'Gridgum';
 
-    public $default_form_image_partial;
-
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         $this->init_config_filters([
@@ -21,14 +19,14 @@ class Gridgum extends AbstractOptinTheme
                     'name' => 'mo_optin_form_background_color_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_border_color_default',
                     'value' => '#4b4646',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 // -- default for headline sections -- //
@@ -36,21 +34,21 @@ class Gridgum extends AbstractOptinTheme
                     'name' => 'mo_optin_form_headline_default',
                     'value' => __("Subscribe To Newsletter", 'mailoptin'),
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_headline_font_color_default',
                     'value' => '#4b4646',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_headline_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 // -- default for description sections -- //
@@ -58,21 +56,21 @@ class Gridgum extends AbstractOptinTheme
                     'name' => 'mo_optin_form_description_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_description_default',
                     'value' => $this->_description_content(),
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_description_font_color_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 // -- default for fields sections -- //
@@ -80,7 +78,7 @@ class Gridgum extends AbstractOptinTheme
                     'name' => 'mo_optin_form_name_field_color_default',
                     'value' => '#181818',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
 
@@ -88,55 +86,55 @@ class Gridgum extends AbstractOptinTheme
                     'name' => 'mo_optin_form_name_field_background_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
                 [
                     'name' => 'mo_optin_form_email_field_color_default',
                     'value' => '#181818',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_email_field_background_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_submit_button_color_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_submit_button_background_default',
                     'value' => '#0073b7',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_submit_button_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_name_field_font_default',
                     'value' => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_email_field_font_default',
                     'value' => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 // -- default for note sections -- //
@@ -144,53 +142,31 @@ class Gridgum extends AbstractOptinTheme
                     'name' => 'mo_optin_form_note_font_color_default',
                     'value' => '#000000',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_note_close_optin_onclick_default',
-                    'value' => true,
-                    'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_note_default',
-                    'value' => __('No, I don\'t want to.', 'mailoptin'),
+                    'value' => __('We promise not to spam you. Unsubscribe at any time', 'mailoptin'),
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_form_note_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ],
 
                 [
                     'name' => 'mo_optin_branding_outside_form',
                     'value' => true,
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'sidebar'
                 ]
             ]
         );
-
-        add_filter('mo_optin_form_enable_form_image', '__return_true');
-
-        $this->default_form_image_partial = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/gridgum-img.png';
-
-        add_filter('mo_optin_form_partial_default_image', function () {
-            return $this->default_form_image_partial;
-        });
-
-        add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
-            $config['width'] = 278;
-            $config['height'] = 500;
-
-            return $config;
-        });
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
             return '#000000';
