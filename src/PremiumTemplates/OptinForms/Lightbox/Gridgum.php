@@ -558,7 +558,7 @@ div#$optin_css_id.gridgum_container * {
         }
         
         div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_input_field:focus,
-        div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_submit_button:focus, {
+        div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_submit_button:focus {
             outline: 0;
         }
 
