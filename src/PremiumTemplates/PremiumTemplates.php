@@ -115,7 +115,7 @@ class PremiumTemplates
                 'name' => 'Gridgum',
                 'optin_class' => 'Gridgum',
                 'optin_type' => 'inpost',
-                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-sidebar.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/gridgum-inpost.png'
             ]
         ];
     }
