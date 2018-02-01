@@ -393,7 +393,7 @@ class Dashdot extends AbstractOptinTheme
     {
         return <<<HTML
 [mo-optin-form-wrapper class="dashdot-container"]
-            <div class="dashdot-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
+   <div class="dashdot-close-form">[mo-close-optin class="mo-close-optin"]x[/mo-close-optin]</div>
     <div class="dashdot-form-row dashdot-text-align">
         <div class="dashdot-header-block">
             [mo-optin-form-headline tag="div" class="dashdot-dotted"]

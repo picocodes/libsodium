@@ -367,7 +367,7 @@ class Dahlia extends AbstractOptinTheme
 <div class="dahlia-form-row dahlia-text-align">
     <div class="dahlia-title-wrap">
         [mo-optin-form-headline tag="div" class="dahlia-headline"]
-        <div class="dahlia-close-form" title="close"><a class="mo-close-optin" href="#">x</a></div>
+        <div class="dahlia-close-form">[mo-close-optin class="mo-close-optin"]x[/mo-close-optin]</div>
     </div>
     
     [mo-optin-form-fields-wrapper]
