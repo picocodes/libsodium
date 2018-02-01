@@ -1,6 +1,6 @@
 <?php
 
-namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Lightbox;
+namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Sidebar;
 
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Tinymce_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
@@ -155,13 +155,6 @@ class Gridgum extends AbstractOptinTheme
                 [
                     'name' => 'mo_optin_form_note_font_default',
                     'value' => 'Open+Sans',
-                    'optin_class' => 'Gridgum',
-                    'optin_type' => 'sidebar'
-                ],
-
-                [
-                    'name' => 'mo_optin_branding_outside_form',
-                    'value' => true,
                     'optin_class' => 'Gridgum',
                     'optin_type' => 'sidebar'
                 ]
@@ -407,16 +400,6 @@ class Gridgum extends AbstractOptinTheme
 
         return <<<HTML
         [mo-optin-form-wrapper class="gridgum_container"]
-            <div class="gridgum_inner gridgum_clearfix">
-                <div class="gridgum_style-smaller">
-                    <div class="gridgum_style-image gridgum_img-responsive mo-optin-form-image-wrapper">
-                        [mo-optin-form-image default="$optin_default_image"]
-                    </div>
-                    <div class="gridgum_img-overlay"></div>
-                    <div class="gridgum_content-overlay">
-                     [mo-optin-form-description class="gridgum_description"]
-                    </div>
-                </div>
                 <div class="gridgum_body">
                     <div class="gridgum_body-inner">
                         <div class="gridgum_header2">$mini_header</div>
@@ -433,7 +416,6 @@ class Gridgum extends AbstractOptinTheme
                             </div>
                        [mo-optin-form-note class="gridgum_note"]
                     </div>
-                </div>
             </div>
 [/mo-optin-form-wrapper]
 
@@ -474,10 +456,6 @@ div#$optin_css_id.gridgum_container * {
     padding: 5px;
     font-size: 14px;
 }
-
-        div#$optin_css_id.gridgum_container .gridgum_style-smaller{
-            display: none;
-        }
 
         div#$optin_css_id.gridgum_container .gridgum_body {
             width: 100%;
@@ -534,7 +512,7 @@ div#$optin_css_id.gridgum_container * {
         }
         
         div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_input_field:focus,
-        div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_submit_button:focus, {
+        div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_submit_button:focus {
             outline: 0;
         }
 
@@ -571,23 +549,8 @@ div#$optin_css_id.gridgum_container * {
         }
 
         @media (min-width: 700px) {
-            div#$optin_css_id.gridgum_container .gridgum_style-smaller {
-                display: block;
-            }
             div#$optin_css_id.gridgum_container .gridgum_inner {
                 max-width: 700px;
-            }
-
-            div#$optin_css_id.gridgum_container .gridgum_style-smaller{
-                width: 40%;
-                position: relative;
-                float: left;
-            }
-
-            div#$optin_css_id.gridgum_container .gridgum_body {
-                width: 55%;
-                position: relative;
-                float: left;
             }
             
             div#$optin_css_id.gridgum_container .gridgum_clearfix:before,
@@ -658,16 +621,6 @@ div#$optin_css_id.gridgum_container * {
             }
             div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline {
                 font-size: 25px;
-            }
-        }
-
-        @media (min-width: 980px) {
-           div#$optin_css_id.gridgum_container .gridgum_style-smaller {
-                width: 40%;
-            }
-
-            div#$optin_css_id.gridgum_container .gridgum_body {
-                 width: 60%;
             }
         }
 
