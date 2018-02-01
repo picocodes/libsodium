@@ -12,9 +12,9 @@ class LetterBox extends AbstractOptinTheme
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         $this->init_config_filters([
-                // -- remove branding so it doesn't distort design -- //
+
                 [
-                    'name' => 'mo_optin_form_remove_branding_default',
+                    'name' => 'mo_optin_branding_outside_form',
                     'value' => true,
                     'optin_class' => 'LetterBox',
                     'optin_type' => 'inpost'
@@ -45,7 +45,7 @@ class LetterBox extends AbstractOptinTheme
                 // -- default for headline sections -- //
                 [
                     'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Don't Miss Our Updatez", 'mailoptin'),
+                    'value' => __("Don't Miss Our Update", 'mailoptin'),
                     'optin_class' => 'LetterBox',
                     'optin_type' => 'inpost'
                 ],

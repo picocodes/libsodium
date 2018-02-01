@@ -13,8 +13,7 @@ class LetterBox extends AbstractOptinTheme
     {
         $this->init_config_filters([
             [
-                // -- remove branding so it doesn't distort design -- //
-                'name' => 'mo_optin_form_remove_branding_default',
+                'name' => 'mo_optin_branding_outside_form',
                 'value' => true,
                 'optin_class' => 'LetterBox',
                 'optin_type' => 'slidein'

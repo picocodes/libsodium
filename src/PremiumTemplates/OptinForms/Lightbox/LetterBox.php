@@ -17,13 +17,6 @@ class LetterBox extends AbstractOptinTheme
         }, 10, 3);
 
         $this->init_config_filters([
-                // -- remove branding so it doesn't distort design -- //
-                [
-                    'name' => 'mo_optin_form_remove_branding_default',
-                    'value' => true,
-                    'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
-                ],
 
                 // -- default for design sections -- //
                 [
