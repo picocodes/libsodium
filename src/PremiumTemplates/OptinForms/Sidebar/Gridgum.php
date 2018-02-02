@@ -24,7 +24,7 @@ class Gridgum extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#4b4646',
+                    'value' => '#cccccc',
                     'optin_class' => 'Gridgum',
                     'optin_type' => 'sidebar'
                 ],
@@ -162,6 +162,9 @@ class Gridgum extends AbstractOptinTheme
         );
 
         add_filter('mo_optin_customizer_disable_description_section', '__return_true');
+        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
+            return $count - 1;
+        });
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
             return '#000000';
@@ -447,8 +450,9 @@ div#$optin_css_id.gridgum_container * {
          -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
          box-sizing: border-box;
-         border: 3px solid #4b4646;
+         border: 3px solid #cccccc;
          margin: 10px auto;
+         max-width: 400px;
         }
         
         div#$optin_css_id.gridgum_container .mo-optin-error {
@@ -510,7 +514,7 @@ div#$optin_css_id.gridgum_container * {
         }
 
         div#$optin_css_id.gridgum_container input[type="submit"].gridgum_submit_button {
-            padding: 10px 20px;
+            padding: 5px 10px;
             font-size: 15px;
             border-radius: 3px;
             border: 0px;
@@ -525,7 +529,7 @@ div#$optin_css_id.gridgum_container * {
             padding-top: 20px;
             color: #777;
             text-align: center;
-            font-size: 14px;
+            font-size: 12px;
             font-style: italic;
             display: block;
             border: 0;
