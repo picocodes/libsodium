@@ -127,7 +127,13 @@ class PremiumTemplates
                 'name' => 'Gridgum',
                 'optin_class' => 'Gridgum',
                 'optin_type' => 'sidebar',
-                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/gridgum-sidebar.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/gridgum-sidebar-slidein.png'
+            ],
+            [
+                'name' => 'Gridgum',
+                'optin_class' => 'Gridgum',
+                'optin_type' => 'slidein',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/gridgum-sidebar-slidein.png'
             ]
         ];
     }
