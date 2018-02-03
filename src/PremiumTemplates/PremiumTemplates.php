@@ -152,6 +152,12 @@ class PremiumTemplates
                 'optin_class' => 'Boldy',
                 'optin_type' => 'sidebar',
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-sidebar.png'
+            ],
+            [
+                'name' => 'Boldy',
+                'optin_class' => 'Boldy',
+                'optin_type' => 'slidein',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-sidebar.png'
             ]
         ];
     }

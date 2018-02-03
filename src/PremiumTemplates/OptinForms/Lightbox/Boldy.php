@@ -171,6 +171,26 @@ class Boldy extends AbstractOptinTheme
                     'value' => 'Lato',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
+                ],
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                    'value' => function () {
+                        return 'inline';
+                    }
+                ],
+
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
+                    'value' => function () {
+                        return 'center';
+                    }
+                ],
+
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
+                    'value' => function () {
+                        return '#ffffff';
+                    }
                 ]
             ]
         );
@@ -190,16 +210,13 @@ class Boldy extends AbstractOptinTheme
             return $config;
         });
 
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
-            return '#000000';
-        });
-
         parent::__construct($optin_campaign_id);
     }
 
     public function features_support()
     {
-        return [$this->cta_button];
+        // doesn't declare cta support
+        return [];
     }
 
     /**
@@ -415,6 +432,7 @@ class Boldy extends AbstractOptinTheme
                             [mo-optin-form-email-field class="boldy_input"]
                             [mo-optin-form-submit-button class="boldy_submitButton"]
                         </div>
+                        [mo-mailchimp-interests]
 		            [mo-optin-form-error class="boldy_optin_error"]
                 </div>
             </div>

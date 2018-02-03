@@ -191,7 +191,7 @@ class Boldy extends AbstractOptinTheme
         });
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
-            return '#000000';
+            return '#ffffff';
         });
 
         parent::__construct($optin_campaign_id);
@@ -410,9 +410,13 @@ class Boldy extends AbstractOptinTheme
                     [mo-optin-form-description class="boldy_description"]
                     [mo-optin-form-note class="boldy_note"]
                         <div class="boldy_main-form">
+                        [mo-optin-form-fields-wrapper]
                             [mo-optin-form-name-field class="boldy_input"]
                             [mo-optin-form-email-field class="boldy_input"]
+                            [mo-mailchimp-interests]
                             [mo-optin-form-submit-button class="boldy_submitButton"]
+                            [/mo-optin-form-fields-wrapper]
+                        [mo-optin-form-cta-button class="boldy_submitButton"]
                         </div>
 		            [mo-optin-form-error class="boldy_optin_error"]
                 </div>
