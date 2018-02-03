@@ -18,14 +18,14 @@ class Boldy extends AbstractOptinTheme
                 // -- default for design sections -- //
                 [
                     'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#ffffff',
+                    'value' => '#2d3144',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
 
                 [
                     'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#4b4646',
+                    'value' => '#2d3144',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
@@ -40,7 +40,7 @@ class Boldy extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#4b4646',
+                    'value' => '#ffffff',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
@@ -82,6 +82,12 @@ class Boldy extends AbstractOptinTheme
                     'optin_type' => 'lightbox'
                 ],
 
+                [
+                    'name' => 'mo_optin_form_name_field_placeholder_default',
+                    'value' => __("Enter your name...", 'mailoptin'),
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
 
                 [
                     'name' => 'mo_optin_form_name_field_background_default',
@@ -104,6 +110,13 @@ class Boldy extends AbstractOptinTheme
                 ],
 
                 [
+                    'name' => 'mo_optin_form_email_field_placeholder_default',
+                    'value' => __("Enter your email...", 'mailoptin'),
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
                     'name' => 'mo_optin_form_submit_button_color_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Boldy',
@@ -112,7 +125,7 @@ class Boldy extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#0073b7',
+                    'value' => '#13aff0',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
@@ -126,14 +139,14 @@ class Boldy extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'value' => 'Franklin Gothic Medium, sans-serif',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
 
                 [
                     'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'value' => 'Franklin Gothic Medium, sans-serif',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
@@ -141,14 +154,7 @@ class Boldy extends AbstractOptinTheme
                 // -- default for note sections -- //
                 [
                     'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#000000',
-                    'optin_class' => 'Boldy',
-                    'optin_type' => 'lightbox'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_note_close_optin_onclick_default',
-                    'value' => true,
+                    'value' => '#8f8888',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
                 ],
@@ -165,13 +171,6 @@ class Boldy extends AbstractOptinTheme
                     'value' => 'Lato',
                     'optin_class' => 'Boldy',
                     'optin_type' => 'lightbox'
-                ],
-
-                [
-                    'name' => 'mo_optin_branding_outside_form',
-                    'value' => true,
-                    'optin_class' => 'Boldy',
-                    'optin_type' => 'lightbox'
                 ]
             ]
         );
@@ -185,8 +184,8 @@ class Boldy extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
-            $config['width'] = 278;
-            $config['height'] = 500;
+            $config['width'] = 700;
+            $config['height'] = 190;
 
             return $config;
         });
@@ -398,38 +397,28 @@ class Boldy extends AbstractOptinTheme
      */
     public function optin_form()
     {
-        $mini_header = $this->get_customizer_value('mini_headline');
-        $mini_header = empty($mini_header) ? __("Don't miss out!", 'mailoptin') : $mini_header;
-
         $optin_default_image = $this->default_form_image_partial;
-        $close_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/close.png';
 
         return <<<HTML
-<div class="new-style-2">
-            <div class="new-style-2-inner">
-                <a class="trenton-element-close trenton-close" title="Close" style="background-color:#2d3144;color:#ffffff;">×</a>
-                <div class="new-style-2-top">
-                    <div class="new-style-small-image img-is-responsive">
-                        <img src="$optin_default_image">
+        [mo-optin-form-wrapper class="boldy_container"]
+            <div class="boldy_inner">
+            [mo-close-optin class="boldy_closeIcon"]x[/mo-close-optin]
+                    <div class="boldy_featureImage boldy_isresponsive mo-optin-form-image-wrapper">
+                    [mo-optin-form-image default="$optin_default_image"]
                     </div>
-                </div>
-                <div class="new-style-lower">
-                    <h2> Psst.. you forgot something</h2>
-                    <h3> Subscribe to the Newslatter !</h3>
-                    <div class="note"> join our suscribers who get content directly to they inbox </div>
-                    <form method="post" action="#">
-                        <div class="new-style-lower-form">
-                            <input class="new-style-lower-input" type="text" placeholder="First Name ...">
-                            <input class="new-style-lower-input" type="text" placeholder="Email Address ...">
-                            <input type="submit" class="new-style-lower-submit" value="Sign up">
+                <div class="boldy_main">
+                    [mo-optin-form-headline tag="div" class="boldy_header"]
+                    [mo-optin-form-description class="boldy_description"]
+                    [mo-optin-form-note class="boldy_note"]
+                        <div class="boldy_main-form">
+                            [mo-optin-form-name-field class="boldy_input"]
+                            [mo-optin-form-email-field class="boldy_input"]
+                            [mo-optin-form-submit-button class="boldy_submitButton"]
                         </div>
-                    </form>
-
-                    <div class="new-style-lower-error">Please enter a valid email address. </div>
+		            [mo-optin-form-error class="boldy_optin_error"]
                 </div>
             </div>
-        </div>
-
+[/mo-optin-form-wrapper]
 HTML;
     }
 
@@ -443,14 +432,15 @@ HTML;
         $optin_css_id = $this->optin_css_id;
         return <<<CSS
 
-        * {
-            padding: 0px;
-            margin: 0px;
-            box-sizing: border-box;
+      div#$optin_css_id.boldy_container {
+            margin: 0 auto;
+            font-size: 16px;
+            background: #2d3144;
+            border: 2px solid #2d3144;
+            max-width: 700px;
         }
         
-        .trenton-close {
-    color: #fff;
+     div#$optin_css_id.boldy_container .boldy_closeIcon {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -464,41 +454,43 @@ HTML;
     font-family: Helvetica,"Helvetic Neue",Arial,sans-serif;
     z-index: 1050;
     padding: 11px 12px;
-    background-color: #353945;
     border-radius: 100px;
+    background-color:#2d3144;
+    color:#ffffff;
 }
 
-        .img-is-responsive img{
+       div#$optin_css_id.boldy_container .boldy_isresponsive img {
             display: block;
             width: 100%;
             height: auto;
         }
 
-        .new-style-2 {
-            margin: 0px auto;
-            /* global font-size*/
-            font-size: 16px;
-            background: #2d3144;
-        }
-
-        .new-style-2-inner {
+        div#$optin_css_id.boldy_container .boldy_inner {
             margin: 0;
             position: relative;
         }
 
-        .new-style-lower h2, .new-style-lower h3, .new-style-lower .note, .new-style-lower-input{
+        div#$optin_css_id.boldy_container .boldy_main .boldy_header,
+        div#$optin_css_id.boldy_container .boldy_main .boldy_description,
+        div#$optin_css_id.boldy_container .boldy_main .boldy_note,
+        div#$optin_css_id.boldy_container .boldy_input{
             font-family: "Lato", sans-serif;
         }
 
-        .new-style-lower h2, .new-style-lower h3, .new-style-lower .note{
+       div#$optin_css_id.boldy_container .boldy_main .boldy_header,
+       div#$optin_css_id.boldy_container .boldy_main .boldy_description,
+       div#$optin_css_id.boldy_container .boldy_main .boldy_note{
             color: #fff;
         }
 
-        .new-style-lower h2 {
+        div#$optin_css_id.boldy_container .boldy_main .boldy_header {
             font-weight: 700;
+            display: block;
+            border: 0;
+            line-height: normal;
         }
 
-        .new-style-lower {
+        div#$optin_css_id.boldy_container .boldy_main {
             text-align: center;
             padding: 20px;
             background: inherit;
@@ -507,18 +499,24 @@ HTML;
             margin: 0;
         }
 
-        .new-style-lower h3 {
+        div#$optin_css_id.boldy_container .boldy_main .boldy_description {
             font-size: 15px;
             padding-bottom: 10px;
             padding-top: 10px;
             font-weight: 500;
+            display: block;
+            border: 0;
+            line-height: normal;
         }
 
-        .new-style-lower .note {
+        div#$optin_css_id.boldy_container .boldy_main .boldy_note {
             color: #8f8888;
+            display: block;
+            border: 0;
+            line-height: normal;
         }
 
-        .new-style-lower-input {
+        div#$optin_css_id.boldy_container input.boldy_input {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -527,17 +525,22 @@ HTML;
             outline: none;
         }
 
-        .new-style-lower-form {
+        div#$optin_css_id.boldy_container input.boldy_input:focus,
+         div#$optin_css_id.boldy_container input.boldy_submitButton:focus {
+            outline: 0
+        }
+
+        div#$optin_css_id.boldy_container .boldy_main-form {
             padding: 20px;
         }
 
-        .new-style-lower-submit {
-            font-family: Lato;
+        div#$optin_css_id.boldy_container input.boldy_submitButton {
+            font-family: Lato, sans-serif, Arial, Verdana, "Trebuchet MS";
             font-size: 15px;
             text-transform: uppercase;
-            padding: 6px 18px;
+            padding: 6px;
             border-radius: 4px;
-            border: 0px;
+            border: 0;
             font-weight: 700;
             background: #13aff0;
             color: #fff;
@@ -547,46 +550,35 @@ HTML;
             width: 100%;
         }
 
-        .new-style-lower-error {
+        div#$optin_css_id.boldy_container .boldy_optin_error {
+            display:none;
             font-size: 12px;
             color: #ff5151 !important;
             font-style: italic;
         }
 
-        .new-style-small-image.img-is-responsive img {
+       div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
         }
 
-        .new-style-2-close-btn {
-            position: absolute;
-            right: -13px;
-            background: #2d3144;
-            top: -13px;
-            border-radius: 100px;
-            padding: 5px;
-            width: 25px;
-            height: 25px;
-            box-sizing: content-box;
-        }
-
         @media only screen and (min-width: 720px){
         
-            .new-style-lower-form {
+          div#$optin_css_id.boldy_container .boldy_main-form {
                 padding: 30px 20px 20px;
                 display: flex;
             }
             
-            .new-style-lower h3 {
+            div#$optin_css_id.boldy_container .boldy_main .boldy_description {
                 font-size: 22px;
                 padding-top: 0px;
                 font-weight: 500;
             }
 
-            .new-style-lower h2 {
+            div#$optin_css_id.boldy_container .boldy_main .boldy_header {
                 font-size: 26px;
             }
-            .new-style-lower-input {
+            div#$optin_css_id.boldy_container input.boldy_input {
                 width: 35%;
                 padding: 15px;
                 border-radius: 3px;
@@ -594,21 +586,21 @@ HTML;
                 margin-right: 10px;
                 margin-bottom: 0px;
             }
-            .new-style-lower-submit {
+            div#$optin_css_id.boldy_container input.boldy_submitButton {
             width: 25%;
             }
         }
 
         @media only screen and (min-width: 1000px){
-            .new-style-lower-input {
+            div#$optin_css_id.boldy_container input.boldy_input {
                 font-weight: 600;
                 font-size: 14px;
             }
 
-            .new-style-lower-error {
+            div#$optin_css_id.boldy_container .boldy_optin_error {
                 font-size: 16px;
             }
-            .new-style-lower h2{
+            div#$optin_css_id.boldy_container .boldy_main .boldy_header{
                 font-size: 38px;
                 padding-bottom: 5px;
             }

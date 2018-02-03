@@ -166,13 +166,6 @@ class Gridgum extends AbstractOptinTheme
                     'value' => 'Open+Sans',
                     'optin_class' => 'Gridgum',
                     'optin_type' => 'lightbox'
-                ],
-
-                [
-                    'name' => 'mo_optin_branding_outside_form',
-                    'value' => true,
-                    'optin_class' => 'Gridgum',
-                    'optin_type' => 'lightbox'
                 ]
             ]
         );
