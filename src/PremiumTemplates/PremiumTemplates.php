@@ -140,6 +140,18 @@ class PremiumTemplates
                 'optin_class' => 'Boldy',
                 'optin_type' => 'lightbox',
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-lightbox.png'
+            ],
+            [
+                'name' => 'Boldy',
+                'optin_class' => 'Boldy',
+                'optin_type' => 'inpost',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-inpost.png'
+            ],
+            [
+                'name' => 'Boldy',
+                'optin_class' => 'Boldy',
+                'optin_type' => 'sidebar',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-sidebar.png'
             ]
         ];
     }

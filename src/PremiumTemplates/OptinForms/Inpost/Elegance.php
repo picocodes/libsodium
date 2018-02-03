@@ -377,7 +377,6 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
-        $image_asset_url = MAILOPTIN_OPTIN_THEMES_ASSETS_URL;
         return <<<CSS
 div#$optin_css_id.moEleganceModal {
   font-family: Arial, Helvetica, sans-serif;
