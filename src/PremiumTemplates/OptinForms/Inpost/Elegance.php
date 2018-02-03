@@ -131,7 +131,7 @@ class Elegance extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_note_default',
-                    'value' => '<em>' . __('We promise not to spam you. You can unsubscribe at any time', 'mailoptin') . '</em>',
+                    'value' => '<em>' . __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin') . '</em>',
                     'optin_class' => 'Elegance',
                     'optin_type' => 'inpost'
                 ],

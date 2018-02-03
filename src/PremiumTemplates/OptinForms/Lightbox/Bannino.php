@@ -104,7 +104,7 @@ class Bannino extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. You can unsubscribe at any time', 'mailoptin'),
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Bannino',
                     'optin_type' => 'lightbox'
                 ],

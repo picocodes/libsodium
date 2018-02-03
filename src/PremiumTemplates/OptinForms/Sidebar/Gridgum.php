@@ -147,7 +147,7 @@ class Gridgum extends AbstractOptinTheme
 
                 [
                     'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. Unsubscribe at any time', 'mailoptin'),
+                    'value' => __('We promise not to spam you. Unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Gridgum',
                     'optin_type' => 'sidebar'
                 ],
