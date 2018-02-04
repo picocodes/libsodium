@@ -523,6 +523,10 @@ HTML;
             border: 0px;
             outline: none;
         }
+        
+        div#$optin_css_id.boldy_container.mo-has-email input.boldy_input {
+            width: 100% !important;
+        }
 
         div#$optin_css_id.boldy_container input.boldy_input:focus,
          div#$optin_css_id.boldy_container input.boldy_submitButton:focus {

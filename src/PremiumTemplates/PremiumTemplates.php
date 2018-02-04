@@ -157,7 +157,7 @@ class PremiumTemplates
                 'name' => 'Boldy',
                 'optin_class' => 'Boldy',
                 'optin_type' => 'slidein',
-                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-sidebar.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-slidein.png'
             ]
         ];
     }
