@@ -158,6 +158,12 @@ class PremiumTemplates
                 'optin_class' => 'Boldy',
                 'optin_type' => 'slidein',
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/boldy-slidein.png'
+            ],
+            [
+                'name' => 'Rescript',
+                'optin_class' => 'Rescript',
+                'optin_type' => 'lightbox',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-slidein.png'
             ]
         ];
     }
