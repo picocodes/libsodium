@@ -13,6 +13,11 @@ class Boldy extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
+        add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
+            if ($optin_class == 'Boldy' && $optin_type == 'lightbox') $val = false;
+            return $val;
+        }, 10, 3);
+
         $this->init_config_filters([
 
                 // -- default for design sections -- //
