@@ -482,7 +482,7 @@ HTML;
 
         div#$optin_css_id.boldy_container .boldy_main {
             text-align: center;
-            padding: 10px 10px 0;
+            padding: 10px;
             background: inherit;
             border-bottom-right-radius: 5px;
             border-bottom-left-radius: 5px;

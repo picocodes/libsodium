@@ -469,9 +469,6 @@ HTML;
 div#$optin_css_id.gridgum_container * {
             padding: 0px;
             margin: 0px;
-          -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-         box-sizing: border-box;
         }
 
         div#$optin_css_id.gridgum_container {
