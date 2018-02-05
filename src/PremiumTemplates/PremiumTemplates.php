@@ -163,7 +163,7 @@ class PremiumTemplates
                 'name' => 'Rescript',
                 'optin_class' => 'Rescript',
                 'optin_type' => 'lightbox',
-                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-slidein.png'
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-lightbox.png'
             ]
         ];
     }

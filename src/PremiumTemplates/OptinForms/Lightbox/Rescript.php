@@ -136,9 +136,33 @@ class Rescript extends AbstractOptinTheme
                     'value' => 'Open+Sans',
                     'optin_class' => 'Rescript',
                     'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                    'value' => function () {
+                        return 'inline';
+                    }
+                ],
+
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
+                    'value' => function () {
+                        return 'center';
+                    }
+                ],
+
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
+                    'value' => function () {
+                        return '#919191';
+                    }
                 ]
             ]
         );
+
+
+        add_filter('mo_optin_customizer_disable_note_section', '__return_true');
 
         add_filter('mo_optin_form_enable_form_image', '__return_true');
 
@@ -153,10 +177,6 @@ class Rescript extends AbstractOptinTheme
             $config['height'] = 560;
 
             return $config;
-        });
-
-        add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
-            return '#000000';
         });
 
         parent::__construct($optin_campaign_id);
@@ -329,6 +349,12 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_configuration_settings($configuration_settings, $CustomizerSettingsInstance)
     {
+        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
+            return --$count;
+        });
+
+        unset($configuration_settings['hide_note']);
+
         return $configuration_settings;
     }
 
@@ -378,7 +404,7 @@ class Rescript extends AbstractOptinTheme
      */
     private function _description_content()
     {
-        return __('Be the first to get latest updates and exclusive content straight to your email inbox.', 'mailoptin');
+        return __('In this free live workshop, learn how to setup your first website and start making money in weeks', 'mailoptin');
     }
 
     /**
@@ -405,7 +431,7 @@ class Rescript extends AbstractOptinTheme
         <div class="rescript_closeBtnDiv">
 [mo-close-optin class="rescript_closeBtn"]x[/mo-close-optin]
         </div>
-        <div class="rescript_imgCol">
+        <div class="rescript_imgCol mo-optin-form-image-wrapper">
         [mo-optin-form-image default="$optin_default_image" class="rescript_imgResponsive"]
     </div>
     <div class="rescript_main">  
@@ -418,9 +444,10 @@ class Rescript extends AbstractOptinTheme
             [mo-optin-form-fields-wrapper]
                 [mo-optin-form-email-field class="rescript_inputField"]
                 [mo-optin-form-submit-button class="rescript_submitBtn"]
+                [mo-mailchimp-interests]
                 [mo-optin-form-error]
             [/mo-optin-form-fields-wrapper]
-    [mo-optin-form-cta-button class="rescript_submitBtn"]
+    [mo-optin-form-cta-button class="rescript_submitBtn rescript_ctaBtn"]
             </div>
         </div>
         </div>
@@ -450,6 +477,14 @@ HTML;
                     height: auto;
                 }
 
+               div#$optin_css_id.rescript_container {
+                    padding: 50px 50px 0 0;
+                }
+
+               div#$optin_css_id.rescript_container * {
+                    font-size: 16px;
+                }
+
                div#$optin_css_id.rescript_container .rescript_clear::before,
                div#$optin_css_id.rescript_container .rescript_clear::after {
                     content: " ";
@@ -464,13 +499,11 @@ HTML;
                     display: none;
                 }
 
-               div#$optin_css_id.rescript_container {
-                    padding: 50px 50px 0 0;
-                }
-
                 div#$optin_css_id.rescript_container .rescript_miniHeader {
                     text-transform: uppercase;
                     font-weight: 700;
+                    color: #bebebe;
+                    font-size: 16px;
                 }
 
                 div#$optin_css_id.rescript_container {
@@ -486,9 +519,11 @@ HTML;
                 }
 
                div#$optin_css_id.rescript_container .rescript_main .rescript_description {
-                    font-family: open sans;
                     line-height: 1.8;
-                    color: #737373;
+                    font-size: 16px;
+                    font-family: 'Open Sans', sans-serif;
+                    line-height: 1.8;
+                    color: #bebebe;
                 }
                             
         div#$optin_css_id.rescript_container .mo-optin-error {
@@ -537,12 +572,6 @@ HTML;
                     margin: 20px 0;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_main .rescript_description {
-                    font-family: 'Open Sans', sans-serif;
-                    line-height: 1.8;
-                    color: #bebebe;
-                }
-
                div#$optin_css_id.rescript_container .rescript_form {
                     padding-top: 20px;
                     padding-bottom: 20px;
@@ -563,14 +592,14 @@ HTML;
                     margin-top: 20px;
                 }
 
-              div#$optin_uuid.mo-cta-button-display .rescript_submitBtn {
+              div#$optin_uuid.mo-cta-button-display .rescript_ctaBtn {
                     width: 100% !important;
                 }
 
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {
                  div#$optin_css_id.rescript_container .rescript_copy {
-                        padding: 20px ;
+                        padding: 20px 10px ;
                     }
                 }
 
@@ -597,14 +626,13 @@ HTML;
                         font-weight: 700;
                         text-transform: uppercase;
                         font-family: 'Open Sans', sans-serif;
-                        margin-top: 0px !important;
                         position: absolute;
                         right: 0;
                         top: 0;
                     }
                 }
 
-                @media only screen and (min-width: 700px) {
+                @media only screen and (min-width: 768px) {
                    div#$optin_css_id.rescript_container .rescript_main {
                         padding-right: 20px;
                         padding-left: 320px;
@@ -640,7 +668,6 @@ HTML;
                     div#$optin_css_id.rescript_container {
                         padding: 0px;
                         width: auto;
-                       margin: 0 10px; /*@todo investigate if this is needed */
                     }
 
                    div#$optin_css_id.rescript_container .rescript_imgCol img {
