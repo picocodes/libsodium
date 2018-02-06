@@ -1,6 +1,6 @@
 <?php
 
-namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Lightbox;
+namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Inpost;
 
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Tinymce_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
@@ -14,11 +14,6 @@ class Rescript extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
-        add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
-            if ($optin_class == 'Rescript' && $optin_type == 'lightbox') $val = false;
-            return $val;
-        }, 10, 3);
-
         $this->init_config_filters([
 
                 // -- default for design sections -- //
@@ -26,14 +21,14 @@ class Rescript extends AbstractOptinTheme
                     'name' => 'mo_optin_form_background_color_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#000000',
+                    'value' => '#cccccc',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 // -- default for headline sections -- //
@@ -41,21 +36,21 @@ class Rescript extends AbstractOptinTheme
                     'name' => 'mo_optin_form_headline_default',
                     'value' => __("Learn how to easily create your own website in live workshop", 'mailoptin'),
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_headline_font_color_default',
                     'value' => '#2c2f33',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_headline_font_default',
                     'value' => 'PT+Serif',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 // -- default for description sections -- //
@@ -63,21 +58,21 @@ class Rescript extends AbstractOptinTheme
                     'name' => 'mo_optin_form_description_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_description_default',
                     'value' => $this->_description_content(),
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_description_font_color_default',
                     'value' => '#bebebe',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 // -- default for fields sections -- //
@@ -86,49 +81,49 @@ class Rescript extends AbstractOptinTheme
                     'name' => 'mo_optin_form_email_field_placeholder_default',
                     'value' => __("Enter your email...", 'mailoptin'),
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_email_field_color_default',
                     'value' => '#737373',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_email_field_background_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_submit_button_color_default',
                     'value' => '#ffffff',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_submit_button_background_default',
                     'value' => '#ff7f45',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_submit_button_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_email_field_font_default',
                     'value' => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 // -- default for note sections -- //
@@ -136,14 +131,21 @@ class Rescript extends AbstractOptinTheme
                     'name' => 'mo_optin_form_note_font_color_default',
                     'value' => '#2c2f33',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
                 ],
 
                 [
                     'name' => 'mo_optin_form_note_font_default',
                     'value' => 'Open+Sans',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name' => 'mo_optin_branding_outside_form',
+                    'value' => true,
+                    'optin_class' => 'Rescript',
+                    'optin_type' => 'inpost'
                 ],
 
                 [
@@ -436,9 +438,6 @@ class Rescript extends AbstractOptinTheme
 
         return <<<HTML
 [mo-optin-form-wrapper class="rescript_container"]
-        <div class="rescript_closeBtnDiv">
-[mo-close-optin class="rescript_closeBtn"]x[/mo-close-optin]
-        </div>
         <div class="rescript_imgCol mo-optin-form-image-wrapper">
         [mo-optin-form-image default="$optin_default_image" class="rescript_imgResponsive"]
     </div>
@@ -474,11 +473,6 @@ HTML;
         $optin_css_id = $this->optin_css_id;
         $optin_uuid = $this->optin_campaign_uuid;
         return <<<CSS
-        
-        div#{$optin_css_id}_container.mo-optin-form-container {
-                    max-width: 800px !important;
-                }
-               
                 div#$optin_css_id.rescript_container .rescript_imgResponsive {
                     display: block;
                     max-width: 100%;
@@ -486,7 +480,9 @@ HTML;
                 }
 
                div#$optin_css_id.rescript_container {
+                    margin: 10px auto;
                     padding: 50px 50px 0 0;
+                    width: 100%;
                 }
 
                div#$optin_css_id.rescript_container * {
@@ -526,7 +522,7 @@ HTML;
                     border-radius: 6px;
                     -webkit-border-radius: 6px; 
                     -moz-border-radius: 6px; 
-                    border: 1px solid #000;
+                    border: 1px solid #ccc;
                     position: relative;
                 }
 
@@ -559,8 +555,8 @@ HTML;
                     font-weight: 400;
                     font-family: 'Open Sans', sans-serif;
                     padding-left: 25px !important;
-                    text-align: left;
                     color: #737373;
+                    text-align: left;
                 }
 
                div#$optin_css_id.rescript_container input.rescript_inputField:focus,
@@ -572,19 +568,6 @@ HTML;
                     position: relative;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_closeBtn {
-                    text-decoration: none;
-                    color: #000;
-                    font-size: 25px;
-                    font-family: "Verdana", Arial, sans-serif;
-                }
-
-              div#$optin_css_id.rescript_container  .rescript_closeBtnDiv {
-                    position: absolute;
-                    right: 20px;
-                    top: 10px;
-                }
-
                div#$optin_css_id.rescript_container .rescript_headline {
                     font-family: 'PT Serif', serif;
                     line-height: 1.5;
@@ -592,6 +575,7 @@ HTML;
                     font-weight: bold;
                     font-size: 24px;
                     margin: 20px 0;
+                    
                     display: block;
                     border: 0px;
                     height: auto;
@@ -626,7 +610,7 @@ HTML;
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {
                  div#$optin_css_id.rescript_container .rescript_copy {
-                        padding: 20px 10px ;
+                        padding: 20px;
                     }
                 }
 
@@ -636,7 +620,7 @@ HTML;
                     }
                 }
 
-                @media only screen and (min-width: 768px) {
+                @media only screen and (min-width: 1200px) {
                     div#$optin_css_id.rescript_container {
                         padding: 50px;
                     }
@@ -661,7 +645,7 @@ HTML;
                     }
                 }
 
-                @media only screen and (min-width: 768px) {
+                @media only screen and (min-width: 1200px) {
                    div#$optin_css_id.rescript_container .rescript_main {
                         padding-right: 20px;
                         padding-left: 320px;
