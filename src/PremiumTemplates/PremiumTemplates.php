@@ -170,6 +170,18 @@ class PremiumTemplates
                 'optin_class' => 'Rescript',
                 'optin_type' => 'inpost',
                 'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-inpost.png'
+            ],
+            [
+                'name' => 'Rescript',
+                'optin_class' => 'Rescript',
+                'optin_type' => 'sidebar',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-sidebar.png'
+            ],
+            [
+                'name' => 'Rescript',
+                'optin_class' => 'Rescript',
+                'optin_type' => 'slidein',
+                'screenshot' => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-slidein.png'
             ]
         ];
     }

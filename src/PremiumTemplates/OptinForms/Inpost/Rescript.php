@@ -414,7 +414,7 @@ class Rescript extends AbstractOptinTheme
      */
     private function _description_content()
     {
-        return __('In this free live workshop, learn how to setup your first website and start making money in weeks', 'mailoptin');
+        return __('In this free live workshop, learn how to setup your first website and start making money in weeks.', 'mailoptin');
     }
 
     /**
