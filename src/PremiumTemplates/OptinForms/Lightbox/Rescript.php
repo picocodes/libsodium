@@ -81,6 +81,14 @@ class Rescript extends AbstractOptinTheme
                 ],
 
                 // -- default for fields sections -- //
+
+                [
+                    'name' => 'mo_optin_form_email_field_placeholder_default',
+                    'value' => __("Enter your email...", 'mailoptin'),
+                    'optin_class' => 'Rescript',
+                    'optin_type' => 'lightbox'
+                ],
+
                 [
                     'name' => 'mo_optin_form_email_field_color_default',
                     'value' => '#737373',
@@ -504,6 +512,11 @@ HTML;
                     font-weight: 700;
                     color: #bebebe;
                     font-size: 16px;
+                    display: block;
+                    border: 0px;
+                    line-height: normal;
+                    height: auto;
+
                 }
 
                 div#$optin_css_id.rescript_container {
@@ -516,14 +529,12 @@ HTML;
 
                div#$optin_css_id.rescript_container .rescript_main .rescript_description {
                     font-family: 'Open Sans', sans-serif;
-                }
-
-               div#$optin_css_id.rescript_container .rescript_main .rescript_description {
-                    line-height: 1.8;
                     font-size: 16px;
-                    font-family: 'Open Sans', sans-serif;
                     line-height: 1.8;
                     color: #bebebe;
+                    display: block;
+                    border: 0px;
+                    height: auto;
                 }
                             
         div#$optin_css_id.rescript_container .mo-optin-error {
@@ -534,7 +545,7 @@ HTML;
             font-size: 14px;
         }
 
-               div#$optin_css_id.rescript_container .rescript_inputField {
+               div#$optin_css_id.rescript_container input.rescript_inputField {
                     border: 2px solid #ff4b4b;
                     width: 100%;
                     border-radius: 100px;
@@ -544,6 +555,11 @@ HTML;
                     font-family: 'Open Sans', sans-serif;
                     padding-left: 25px !important;
                     color: #737373;
+                }
+
+               div#$optin_css_id.rescript_container input.rescript_inputField:focus,
+               div#$optin_css_id.rescript_container input.rescript_submitBtn:focus {
+                    outline: 0;
                 }
 
                div#$optin_css_id.rescript_container .rescript_blockify {
@@ -570,6 +586,11 @@ HTML;
                     font-weight: bold;
                     font-size: 24px;
                     margin: 20px 0;
+                    
+                    display: block;
+                    border: 0px;
+                    line-height: normal;
+                    height: auto;
                 }
 
                div#$optin_css_id.rescript_container .rescript_form {
@@ -578,7 +599,7 @@ HTML;
                     position: relative;
                 }
 
-              div#$optin_css_id.rescript_container .rescript_submitBtn {
+              div#$optin_css_id.rescript_container input.rescript_submitBtn {
                     width: 100%;
                     background: #ff7f45;
                     border: 0px;
@@ -614,11 +635,11 @@ HTML;
                         padding: 50px;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_submitBtn {
+                   div#$optin_css_id.rescript_container input.rescript_submitBtn {
                         width: 165px;
-                        margin-top: 0px;
+                        margin-top: 0;
                         background: #ff7f45;
-                        border: 0px;
+                        border: 0;
                         padding: 10px;
                         border-radius: 100px;
                         height: 60px !important;
