@@ -30,12 +30,15 @@ class AfterConversion
 
     private static function af_default_subject()
     {
-        return __('[OPTIN_CAMPAIGN] - New Lead', 'mailoptin');
+        return sprintf(__('%s - New Lead', 'mailoptin'), '[OPTIN_CAMPAIGN]');
     }
 
     public function af_send_email_notification($lead_data, $optin_campaign_id)
     {
-        $emails = OptinCampaignsRepository::get_customizer_value($optin_campaign_id, 'email_notification');
+        $emails = trim(OptinCampaignsRepository::get_customizer_value($optin_campaign_id, 'email_notification'));
+
+        if (empty($emails)) return;
+
         $optin_campaign_name = OptinCampaignsRepository::get_optin_campaign_name($optin_campaign_id);
 
         if (strpos($emails, ',') !== false) {
@@ -88,6 +91,12 @@ class AfterConversion
                 'rows' => 10,
                 'value' => self::af_default_email_body(),
                 'label' => __('Email Message', 'mailoptin')
+            ],
+            'afems_shortcodes_helo' => [
+                'type' => 'custom_field_block',
+                'data' => "<strong>" . __('Shortcode Help Guide', 'mailoptin') . '</strong>',
+                'description' => '<p>' . sprintf('%s : Name of optin campaign.', '<code style="color:#800;margin:0;padding:0;">[OPTIN_CAMPAIGN]</code>') . '</p>
+<p>' . sprintf('%s : Data of new lead or subscriber.', '<code style="color:#800;margin:0;padding:0;">[LEAD_DATA]</code>') . '</p>',
             ]
         ];
 
@@ -159,7 +168,10 @@ class AfterConversion
                 'section' => $customizerClassInstance->success_section_id,
                 'settings' => $option_prefix . '[email_notification]',
                 'input_attrs' => ['placeholder' => __('Email Address', 'mailoptin')],
-                'description' => __('Enter email address to send notifications of new subscribers. You can add multiple email addresses separated by a comma. Leave blank to disable this feature.', 'mailoptin'),
+                'description' => sprintf(
+                    __('Enter email address to send notifications of new subscribers. You can add multiple email addresses separated by a comma. Leave blank to disable this feature.%sClick here%s to customize the notification email in "Optin Campaign" settings.', 'mailoptin'),
+                    '<br><a target="_blank" href="' . MAILOPTIN_SETTINGS_SETTINGS_PAGE . '#afems_email_subject_row">', '</a>'
+                ),
                 'priority' => 35,
             )
         );
