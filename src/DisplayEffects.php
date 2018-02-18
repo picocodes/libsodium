@@ -20,13 +20,13 @@ class DisplayEffects
         add_action('mo_optin_customizer_settings', [$this, 'customizer_settings'], 10, 2);
         add_action('mo_optin_after_customizer_controls', [$this, 'customizer_controls'], 10, 4);
 
-        add_action('mo_optin_js_config', [$this, 'optin_effect_js_config'], 10, 3);
+        add_filter('mo_optin_js_config', [$this, 'optin_effect_js_config'], 10, 3);
     }
 
     /**
      * Add effect customizer section to list of active sections.
      *
-     * @param string $sections_ids
+     * @param array $sections_ids
      *
      * @return array
      */

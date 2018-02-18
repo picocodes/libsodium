@@ -35,9 +35,10 @@ class DisplayRules
             $customizerSettings->optin_campaign_id
         );
 
-        $basic_shortcode = "[mo-click-launch id=\"$optin_uuid\" link=\"Click Me!\"]";
-        $advance_shortcode = "[mo-click-launch id=\"$optin_uuid\"]Click Me![/mo-click-launch]";
-        $html_code = "<a href=\"#\" class=\"mailoptin-click-trigger\" data-optin-uuid=\"$optin_uuid\">Click Me!</a>";
+        $click_me = __('Click Me', 'mailoptin');
+        $basic_shortcode = "[mo-click-launch id=\"$optin_uuid\" link=\"$click_me!\"]";
+        $advance_shortcode = "[mo-click-launch id=\"$optin_uuid\"]$click_me![/mo-click-launch]";
+        $html_code = "<a href=\"#\" class=\"mailoptin-click-trigger\" data-optin-uuid=\"$optin_uuid\">$click_me!</a>";
 
         $shortcode_embed = '[mo-optin-form id="' . $optin_uuid . '"]';
         $template_tag_embed = "do_action('mo_optin_form', '$optin_uuid');";
