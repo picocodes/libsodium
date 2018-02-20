@@ -666,7 +666,7 @@ div#$optin_css_id.gridgum_container * {
 
         @media (min-width: 980px) {
            div#$optin_css_id.gridgum_container  .gridgum_inner {
-                max-width: 800px;
+                max-width: 100%;
             }
             div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2 {
                 font-size: 15px;
