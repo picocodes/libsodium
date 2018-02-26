@@ -33,7 +33,7 @@ class AfterConversion
         return sprintf(__('%s - New Lead', 'mailoptin'), '[OPTIN_CAMPAIGN]');
     }
 
-    public function af_send_email_notification($lead_data, $optin_campaign_id)
+    public static function af_send_email_notification($lead_data, $optin_campaign_id)
     {
         $emails = trim(OptinCampaignsRepository::get_customizer_value($optin_campaign_id, 'email_notification'));
 
