@@ -6,6 +6,14 @@ use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\Customizer as EmailTemplateCustomizer;
 use MailOptin\Libsodium\PremiumTemplates\PremiumTemplates;
 
+if (strpos(__FILE__, 'mailoptin/vendor') !== false) {
+    // production url path to assets folder.
+    define('MAILOPTIN_LIBSODIUM_ASSETS_URL', MAILOPTIN_URL . '../' . dirname(substr(__FILE__, strpos(__FILE__, 'mailoptin/vendor'))) . '/assets/');
+} else {
+    // dev url path to assets folder.
+    define('MAILOPTIN_LIBSODIUM_ASSETS_URL', MAILOPTIN_URL . '../' . dirname(substr(__FILE__, strpos(__FILE__, 'mailoptin'))) . '/assets/');
+}
+
 class Libsodium
 {
     public function __construct()
