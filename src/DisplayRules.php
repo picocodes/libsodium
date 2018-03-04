@@ -122,13 +122,13 @@ class DisplayRules
                     'panel' => $customizerClassInstance->display_rules_panel_id
                 )
             );
-
-            $wp_customize->add_section($customizerClassInstance->x_page_views_display_rule_section_id, array(
-                    'title' => __("Visitor has viewed 'X' pages", 'mailoptin'),
-                    'panel' => $customizerClassInstance->display_rules_panel_id
-                )
-            );
         }
+
+        $wp_customize->add_section($customizerClassInstance->x_page_views_display_rule_section_id, array(
+                'title' => __("Visitor has viewed 'X' pages", 'mailoptin'),
+                'panel' => $customizerClassInstance->display_rules_panel_id
+            )
+        );
     }
 
     /**
