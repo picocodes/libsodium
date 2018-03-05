@@ -20,8 +20,8 @@ class DisplayRules
         add_filter('mo_optin_form_customizer_output_settings', [$this, 'customize_settings'], 10, 2);
         add_action('mo_optin_after_customizer_controls', array($this, 'optin_triggers_controls'), 10, 4);
         add_action('mo_optin_after_customizer_controls', array($this, 'shortcode_template_tag_control'), 10, 4);
-        add_action('mo_optin_after_setup_display_rule_section', array($this, 'optin_triggers_section'), 10, 2);
-        add_action('mo_optin_after_page_filter_display_rule_section', array($this, 'shortcode_template_tag_section'), 10, 2);
+        add_action('mo_optin_after_page_user_targeting_display_rule_section', array($this, 'optin_triggers_section'), 10, 2);
+        add_action('mo_optin_after_core_display_rules_section', array($this, 'shortcode_template_tag_section'), 10, 2);
     }
 
     /**
