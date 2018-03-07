@@ -14,7 +14,11 @@ class Boldy extends AbstractOptinTheme
     public function __construct($optin_campaign_id, $wp_customize = '')
     {
         add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
-            if ($optin_class == 'Boldy' && $optin_type == 'lightbox') $val = false;
+            // this was suppose to be false since it has its own close button. it is true because if false,
+            // the success overlay after optin do not cover the close button hence the success close button
+            // and its own close button are shown. settings this to true make default close icon for modal to
+            // be added but the good thing is, the optin close button overshadows that.
+            if ($optin_class == 'Boldy' && $optin_type == 'lightbox') $val = true;
             return $val;
         }, 10, 3);
 
