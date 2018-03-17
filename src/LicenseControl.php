@@ -59,15 +59,15 @@ class LicenseControl
 
     /**
      * Activate License key
-     *
+     * @param string $license_key
      * @return mixed
      */
-    public function activate_license()
+    public function activate_license($license_key = '')
     {
         // data to send in our API request
         $api_params = array(
             'edd_action' => 'activate_license',
-            'license' => $this->license_key,
+            'license' => !empty($license_key) ? $license_key : $this->license_key,
             'item_name' => urlencode($this->item_name), // the name of our product in EDD
             'item_id' => $this->item_id,
             'url' => home_url()

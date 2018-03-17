@@ -257,13 +257,17 @@ class LibsodiumSettingsPage
         }
 
         $old = self::$license_key;
-        $new = sanitize_key($_POST['mo_license_key']);
+        $new = trim(sanitize_key($_POST['mo_license_key']));
 
         if ($old && $old != $new) {
             delete_option('mo_license_status'); // new license has been entered, so must reactivate
         }
 
         update_option('mo_license_key', $new);
+
+        if (!empty($new)) {
+            self::activate_license($new);
+        }
 
         wp_redirect(esc_url_raw(add_query_arg('settings-updated', 'true')));
         exit;
@@ -272,14 +276,14 @@ class LibsodiumSettingsPage
     /**
      * Activate License key
      */
-    public static function activate_license()
+    public static function activate_license($license_key = '')
     {
         // run a quick security check
         if (!check_admin_referer('mo_plugin_nonce', 'mo_plugin_nonce')) {
             return;
         }
 
-        $response = self::license_control_instance()->activate_license();
+        $response = self::license_control_instance()->activate_license($license_key);
 
         if (is_wp_error($response)) {
             add_settings_error(self::slug, 'activation_error', $response->get_error_message());
