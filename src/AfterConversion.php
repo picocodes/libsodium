@@ -92,7 +92,7 @@ class AfterConversion
                 'value' => self::af_default_email_body(),
                 'label' => __('Email Message', 'mailoptin')
             ],
-            'afems_shortcodes_helo' => [
+            'afems_shortcodes_help' => [
                 'type' => 'custom_field_block',
                 'data' => "<strong>" . __('Shortcode Help Guide', 'mailoptin') . '</strong>',
                 'description' => '<p>' . sprintf('%s : Name of optin campaign.', '<code style="color:#800;margin:0;padding:0;">[OPTIN_CAMPAIGN]</code>') . '</p>
