@@ -30,7 +30,7 @@ class AfterConversion
 
     private static function af_default_subject()
     {
-        return sprintf(__('%s - New Lead', 'mailoptin'), '[OPTIN_CAMPAIGN]');
+        return sprintf(__('New MailOptin Lead via %s', 'mailoptin'), '[OPTIN_CAMPAIGN]');
     }
 
     public static function af_send_email_notification($lead_data, $optin_campaign_id)
@@ -164,13 +164,13 @@ class AfterConversion
 
         $controls['email_notification'] = apply_filters('mo_optin_form_customizer_email_notification_args', array(
                 'type' => 'text',
-                'label' => __('Email Notification', 'mailoptin'),
+                'label' => __('Email Notification of New Lead', 'mailoptin'),
                 'section' => $customizerClassInstance->success_section_id,
                 'settings' => $option_prefix . '[email_notification]',
-                'input_attrs' => ['placeholder' => __('Email Address', 'mailoptin')],
+                'input_attrs' => ['placeholder' => __('Enter Email Address', 'mailoptin')],
                 'description' => sprintf(
-                    __('Enter email address to send notifications of new subscribers. You can add multiple email addresses separated by a comma. Leave blank to disable this feature.%sClick here%s to customize the notification email in "Optin Campaign" settings.', 'mailoptin'),
-                    '<br><a target="_blank" href="' . MAILOPTIN_SETTINGS_SETTINGS_PAGE . '#afems_email_subject_row">', '</a>'
+                    __('Add multiple email address separated by a comma. Leave blank to disable. %sCustomize the email%s in "Optin Campaign" settings.', 'mailoptin'),
+                    '<a target="_blank" href="' . MAILOPTIN_SETTINGS_SETTINGS_PAGE . '#afems_email_subject_row">', '</a>'
                 ),
                 'priority' => 35,
             )
