@@ -19,7 +19,7 @@ class CustomCSS
     {
         $settings['custom_css'] = [
             'type' => 'option',
-            'transport' => 'postMessage',
+            'transport' => 'refresh',
         ];
 
         return $settings;
