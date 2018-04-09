@@ -48,12 +48,6 @@ class PremiumTemplates
             [
                 'name' => 'Elegance',
                 'optin_class' => 'Elegance',
-                'optin_type' => 'lightbox',
-                'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/elegance-lightbox.png'
-            ],
-            [
-                'name' => 'Elegance',
-                'optin_class' => 'Elegance',
                 'optin_type' => 'inpost',
                 'screenshot' => MAILOPTIN_ASSETS_URL . 'images/optin-themes/elegance-inpost.png'
             ],
