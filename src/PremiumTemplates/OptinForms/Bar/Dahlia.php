@@ -112,6 +112,33 @@ class Dahlia extends AbstractOptinTheme
                     'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Dahlia',
                     'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_hide_note_default',
+                    'value' => true,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#515151',
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Helvetica',
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
                 ]
             ]
         );
@@ -394,8 +421,8 @@ class Dahlia extends AbstractOptinTheme
     [mo-optin-form-cta-button class="dahlia-button"]
     </div>
   [/mo-optin-form-cta-wrapper]
-    
     [mo-mailchimp-interests]
+	[mo-optin-form-note class="moDahlia_note"]
     [mo-optin-form-error]
 </div>
 [/mo-optin-form-wrapper]
@@ -438,12 +465,7 @@ div#$optin_css_id.dahlia-container {
 }
 
 div#$optin_css_id.dahlia-container .dahlia-close-form {
-    color: #000;
-    cursor: pointer;
     display: block;
-    font-size: 22px;
-    font-weight: 100;
-    text-decoration: none !important;
     font-family: Arial, sans-serif !important;
     margin-left: 5px;
     vertical-align: text-top;
@@ -455,11 +477,28 @@ div#$optin_css_id.dahlia-container .dahlia-close-form {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
 }
+
+div#$optin_css_id.dahlia-container .dahlia-close-form a {
+    color: #000;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 100;
+    text-decoration: none !important;
+    font-family: Arial, sans-serif !important;
+}
+
 div#$optin_css_id.dahlia-container .dahlia-close-form:hover {
     text-shadow: 0 0 2px #fff
 }
+
+div#$optin_css_id.dahlia-container .moDahlia_note {
+		 font-style: italic;
+		 font-size: 14px;
+		 line-height: 1.5;
+		 text-align: center;
+		 color: #000;
+	 }
 
 div#$optin_css_id.dahlia-container .dahlia-title-wrap{
     padding: 15px;
@@ -526,6 +565,7 @@ div#$optin_css_id.dahlia-container div.mo-optin-error {
          color: #FF0000;
          text-align: center;
          width: 100%;
+         font-size: 14px;
          padding-bottom: .5em;
      }
 
@@ -571,6 +611,14 @@ div#$optin_css_id.dahlia-container div.mo-optin-error {
     div#$optin_css_id.dahlia-container .dahlia-form-group{
         margin-bottom: -5px;
     }
+    
+    div#$optin_css_id.dahlia-container .moDahlia_note {
+		 margin-top: 10px;
+	 }
+	 
+	 div#$optin_css_id.dahlia-container div.mo-optin-error {
+	    margin-top: 5px;
+	 }
 }
 div#$optin_css_id.dahlia-container .dahlia-headline{
     color: #000;
