@@ -497,7 +497,7 @@ div#$optin_css_id.dahlia-container .moDahlia_note {
 		 font-size: 14px;
 		 line-height: 1.5;
 		 text-align: center;
-		 color: #000;
+		 color: #515151;
 	 }
 
 div#$optin_css_id.dahlia-container .dahlia-title-wrap{

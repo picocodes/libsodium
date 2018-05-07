@@ -110,6 +110,34 @@ class Muscari extends AbstractOptinTheme
                     'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Muscari',
                     'optin_type' => 'bar'
+                ],
+
+
+                [
+                    'name' => 'mo_optin_form_hide_note_default',
+                    'value' => true,
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Helvetica',
+                    'optin_class' => 'Muscari',
+                    'optin_type' => 'bar'
                 ]
             ]
         );
@@ -342,6 +370,7 @@ class Muscari extends AbstractOptinTheme
         <div class="muscari-form-group muscari-button-group" style="padding-bottom: 5px;">
         [mo-optin-form-cta-button class="muscari-button"]
         </div>
+        [mo-optin-form-note class="moMuscari_note"]
         [mo-optin-form-error]
     </div>
 </div>
@@ -481,7 +510,15 @@ div#$optin_css_id.muscari-container div.mo-optin-error {
          text-align: center;
          width: 100%;
          padding-bottom: .5em;
+         font-size: 14px;
      }
+     
+     div#$optin_css_id.muscari-container .moMuscari_note {
+		 font-style: italic;
+		 font-size: 14px;
+		 text-align: center;
+		 color: #fff;
+	 }
 
 /* Media queries for responsiveness */
 /* Tablet */

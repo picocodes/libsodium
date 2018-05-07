@@ -111,6 +111,33 @@ class Dashdot extends AbstractOptinTheme
                     'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Dashdot',
                     'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_hide_note_default',
+                    'value' => true,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Helvetica',
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
                 ]
             ]
         );
@@ -405,6 +432,7 @@ class Dashdot extends AbstractOptinTheme
         [/mo-optin-form-fields-wrapper]
         [mo-optin-form-cta-button class="dashdot-submit-button"]
         [mo-mailchimp-interests]
+        [mo-optin-form-note class="moDashdot_note"]
         [mo-optin-form-error]
 </div>
 [/mo-optin-form-wrapper]
@@ -520,6 +548,7 @@ div#$optin_css_id.dashdot-container div.mo-optin-error {
          color: #FF0000;
          text-align: center;
          width: 100%;
+         font-size: 14px;
          padding-bottom: .5em;
      }
      
@@ -547,6 +576,15 @@ div#$optin_css_id.dashdot-container .dashdot-close-form a.mo-close-optin {
     color: #fff;
     text-decoration: none;
 }
+
+div#$optin_css_id.dashdot-container .moDashdot_note {
+		 font-style: italic;
+		 font-size: 14px;
+		 line-height: 1.5;
+		 text-align: center;
+		 color: #ffffff;
+		 margin-top: 5px;
+	 }
 
 @media only screen and (max-width: 768px) {
 	div#$optin_css_id.dashdot-container .dashdot-header-block{
