@@ -146,8 +146,30 @@ class Rescript extends AbstractOptinTheme
                     'optin_type' => 'lightbox'
                 ],
 
+
+                // -- default for note sections -- //
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'Rescript',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'optin_class' => 'Rescript',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Raleway',
+                    'optin_class' => 'Rescript',
+                    'optin_type' => 'lightbox'
+                ],
+
+                ['name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
                     'value' => function () {
                         return 'inline';
                     }
@@ -168,9 +190,6 @@ class Rescript extends AbstractOptinTheme
                 ]
             ]
         );
-
-
-        add_filter('mo_optin_customizer_disable_note_section', '__return_true');
 
         add_filter('mo_optin_form_enable_form_image', '__return_true');
 
@@ -357,12 +376,6 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_configuration_settings($configuration_settings, $CustomizerSettingsInstance)
     {
-        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
-            return --$count;
-        });
-
-        unset($configuration_settings['hide_note']);
-
         return $configuration_settings;
     }
 

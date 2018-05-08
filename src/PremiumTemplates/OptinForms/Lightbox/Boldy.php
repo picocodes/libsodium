@@ -469,6 +469,7 @@ class Boldy extends AbstractOptinTheme
                         </div>
                         [mo-mailchimp-interests]
 		            $after_form_note
+                [mo-optin-form-error]
                 </div>
             </div>
 [/mo-optin-form-wrapper]
@@ -618,6 +619,14 @@ HTML;
        div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
+        }
+        
+        div#$optin_css_id.boldy_container .mo-optin-error {
+            display: none; 
+            color: #ff0000;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
         }
 
         @media only screen and (min-width: 720px){
