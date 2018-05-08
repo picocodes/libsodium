@@ -4,6 +4,7 @@ namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Lightbox;
 
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
+use MailOptin\Core\Repositories\OptinCampaignsRepository;
 
 class Boldy extends AbstractOptinTheme
 {
@@ -308,6 +309,12 @@ class Boldy extends AbstractOptinTheme
      */
     public function customizer_note_settings($settings, $CustomizerSettingsInstance)
     {
+        $settings['note_position'] = [
+            'default' => 'before_form',
+            'type' => 'option',
+            'transport' => 'refresh',
+        ];
+
         return $settings;
     }
 
@@ -321,6 +328,20 @@ class Boldy extends AbstractOptinTheme
      */
     public function customizer_note_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
+        $controls['note_position'] = apply_filters('mo_optin_form_customizer_note_position_args', array(
+                'type' => 'select',
+                'description' => __(''),
+                'choices' => [
+                    'before_form' => __('Before Form', 'mailoptin'),
+                    'after_form' => __('After Form', 'mailoptin')
+                ],
+                'label' => __('Position', 'mailoptin'),
+                'section' => $customizerClassInstance->note_section_id,
+                'settings' => $option_prefix . '[note_position]',
+                'priority' => 15,
+            )
+        );
+
         return $controls;
     }
 
@@ -424,6 +445,11 @@ class Boldy extends AbstractOptinTheme
     public function optin_form()
     {
         $optin_default_image = $this->default_form_image_partial;
+        $note_position = OptinCampaignsRepository::get_customizer_value($this->optin_campaign_id, 'note_position', 'before_form');
+        $before_form_note = $after_form_note = '';
+
+        if ($note_position == 'after_form') $after_form_note = '[mo-optin-form-note class="boldy_note"]';
+        if ($note_position == 'before_form') $before_form_note = '[mo-optin-form-note class="boldy_note"]';
 
         return <<<HTML
         [mo-optin-form-wrapper class="boldy_container"]
@@ -435,14 +461,14 @@ class Boldy extends AbstractOptinTheme
                 <div class="boldy_main">
                     [mo-optin-form-headline tag="div" class="boldy_header"]
                     [mo-optin-form-description class="boldy_description"]
-                    [mo-optin-form-note class="boldy_note"]
+                    $before_form_note
                         <div class="boldy_main-form">
                             [mo-optin-form-name-field class="boldy_input"]
                             [mo-optin-form-email-field class="boldy_input"]
                             [mo-optin-form-submit-button class="boldy_submitButton"]
                         </div>
                         [mo-mailchimp-interests]
-		            [mo-optin-form-error class="boldy_optin_error"]
+		            $after_form_note
                 </div>
             </div>
 [/mo-optin-form-wrapper]
@@ -562,7 +588,7 @@ HTML;
         }
 
         div#$optin_css_id.boldy_container .boldy_main-form {
-            padding: 20px;
+            padding: 20px 20px 10px;
         }
 
         div#$optin_css_id.boldy_container input.boldy_submitButton {
@@ -586,6 +612,7 @@ HTML;
             font-size: 12px;
             color: #ff5151 !important;
             font-style: italic;
+            margin-top: 5px;
         }
 
        div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
@@ -596,7 +623,7 @@ HTML;
         @media only screen and (min-width: 720px){
         
           div#$optin_css_id.boldy_container .boldy_main-form {
-                padding: 30px 20px 20px;
+                padding: 30px 20px 10px;
                 display: flex;
             }
             
@@ -629,7 +656,7 @@ HTML;
             }
 
             div#$optin_css_id.boldy_container .boldy_optin_error {
-                font-size: 16px;
+                font-size: 14px;
             }
             div#$optin_css_id.boldy_container .boldy_main .boldy_header{
                 font-size: 38px;
