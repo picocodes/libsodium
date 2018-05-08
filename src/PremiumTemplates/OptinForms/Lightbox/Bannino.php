@@ -375,9 +375,9 @@ class Bannino extends AbstractOptinTheme
             [mo-optin-form-cta-button class="bannino-form-submit-button"]
          </div>
       [/mo-optin-form-cta-wrapper]
-		[mo-optin-form-error]
 		[mo-mailchimp-interests]
 		[mo-optin-form-note class="moBannini_note"]
+		[mo-optin-form-error]
 	</div>
 </div>
 [/mo-optin-form-wrapper]
@@ -453,7 +453,7 @@ div#$optin_css_id.bannino-container .moBannini_note {
 div#$optin_css_id.bannino-container div.mo-optin-error {
 		 display: none;
 		 color: #FF0000;
-		 font-size: 12px;
+		 font-size: 14px;
 		 text-align: center;
 		 width: 100%;
 		 padding-bottom: .5em;
@@ -576,7 +576,7 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 			 margin-bottom: 10px !important;
 		 }
 	div#$optin_css_id.bannino-container .bannino-input-fields {
-			 padding: 15px 30px !important;
+			 padding: 15px 30px 0 !important;
 		 }
 
 }

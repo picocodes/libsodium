@@ -424,9 +424,9 @@ class Daisy extends AbstractOptinTheme
     </div>
     [/mo-optin-form-cta-wrapper]
     [mo-mailchimp-interests]
-    [mo-optin-form-error]
-</div>
 [mo-optin-form-note class="daisy-note"]
+</div>
+[mo-optin-form-error]
 [/mo-optin-form-wrapper]
 HTML;
     }
@@ -509,7 +509,7 @@ div#$optin_css_id.daisy-container .dasiy-image-wrap {
     text-align: center;
     margin: 10px auto;
     width: 100%;
-    padding-top: 0px;
+    padding-top: 0;
 }
 div#$optin_css_id.daisy-container input.daisy-input {
     border: 1px solid $submit_button_background_color;
@@ -550,6 +550,7 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
     font-size: 12px;
     text-align: center;
     width: 100%;
+    margin-top: 5px;
 }
     
 @media only screen and (min-width: 500px) {
@@ -614,7 +615,7 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
         font-family: merriweather, sans-serif;
     }
     div#$optin_css_id.daisy-container .daisy-note {
-        padding-top: 20px;
+        padding-top: 10px;
     }
     div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
         width: 30%;
