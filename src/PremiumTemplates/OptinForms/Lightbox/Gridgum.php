@@ -444,11 +444,11 @@ class Gridgum extends AbstractOptinTheme
                             [mo-optin-form-email-field class="gridgum_input_field"]
                             [mo-mailchimp-interests]
                             [mo-optin-form-submit-button class="gridgum_submit_button"]
-                            [mo-optin-form-error]
                             [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="gridgum_submit_button"]
                             </div>
                        [mo-optin-form-note class="gridgum_note"]
+                       [mo-optin-form-error]
                     </div>
                 </div>
             </div>
