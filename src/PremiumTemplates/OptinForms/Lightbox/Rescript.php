@@ -134,7 +134,7 @@ class Rescript extends AbstractOptinTheme
                 // -- default for note sections -- //
                 [
                     'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#2c2f33',
+                    'value' => '#bebebe',
                     'optin_class' => 'Rescript',
                     'optin_type' => 'lightbox'
                 ],
@@ -146,25 +146,9 @@ class Rescript extends AbstractOptinTheme
                     'optin_type' => 'lightbox'
                 ],
 
-
-                // -- default for note sections -- //
-                [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#ffffff',
-                    'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
-                ],
-
                 [
                     'name' => 'mo_optin_form_note_default',
                     'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
-                    'optin_class' => 'Rescript',
-                    'optin_type' => 'lightbox'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Raleway',
                     'optin_class' => 'Rescript',
                     'optin_type' => 'lightbox'
                 ],
@@ -470,6 +454,7 @@ class Rescript extends AbstractOptinTheme
             [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="rescript_submitBtn rescript_ctaBtn"]
             </div>
+        [mo-optin-form-note class="rescript_note"]
         </div>
         </div>
     </div>  
@@ -635,6 +620,18 @@ HTML;
               div#$optin_uuid.mo-cta-button-display .rescript_ctaBtn {
                     width: 100% !important;
                 }
+                
+                
+
+div#$optin_css_id.rescript_container .rescript_note, div#$optin_css_id.rescript_container .rescript_note * {
+     margin-top: 5px;
+     text-align: center;
+     font-size: 14px !important;
+     font-style: italic;
+     display: block;
+     border: 0;
+     line-height: normal;
+ }
 
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {

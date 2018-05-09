@@ -149,6 +149,28 @@ class LetterBox extends AbstractOptinTheme
                     'value' => 'Garamond, Hoefler Text, serif',
                     'optin_class' => 'LetterBox',
                     'optin_type' => 'sidebar'
+                ],
+
+                // -- default for note sections -- //
+                [
+                    'name' => 'mo_optin_form_note_font_color_default',
+                    'value' => '#ffffff',
+                    'optin_class' => 'LetterBox',
+                    'optin_type' => 'sidebar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_default',
+                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'optin_class' => 'LetterBox',
+                    'optin_type' => 'sidebar'
+                ],
+
+                [
+                    'name' => 'mo_optin_form_note_font_default',
+                    'value' => 'Raleway',
+                    'optin_class' => 'LetterBox',
+                    'optin_type' => 'sidebar'
                 ]
             ]
         );
@@ -290,12 +312,7 @@ class LetterBox extends AbstractOptinTheme
      */
     public function customizer_note_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
-        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
-            return --$count;
-        });
-
-        // we are returning empty array so all controls for note are removed hence removing note panel/section.
-        return [];
+        return $controls;
     }
 
 
@@ -415,6 +432,7 @@ class LetterBox extends AbstractOptinTheme
     <div class="letterBox_field_wrapper">
         [mo-optin-form-name-field class="letterBox_form_field"]
         [mo-optin-form-email-field class="letterBox_form_field"]
+        [mo-optin-form-note class="letterbox_note"]
     </div>
     [mo-mailchimp-interests]
     [mo-optin-form-error]
@@ -522,6 +540,16 @@ div#$optin_css_id.letterBox_container .mo-optin-error {
     padding: 5px;
     font-size: 14px;
 }
+
+div#$optin_css_id.letterBox_container .letterbox_note {
+     margin: 0 auto 10px;
+     text-align: center;
+     font-size: 14px;
+     font-style: italic;
+     display: block;
+     border: 0;
+     line-height: normal;
+ }
 
 div#$optin_css_id.letterBox_container input[type="submit"].letterBox_submitButton {
     width: 100%;
