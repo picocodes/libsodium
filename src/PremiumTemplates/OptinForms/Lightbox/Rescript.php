@@ -134,7 +134,7 @@ class Rescript extends AbstractOptinTheme
                 // -- default for note sections -- //
                 [
                     'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#bebebe',
+                    'value' => '#2c2f33',
                     'optin_class' => 'Rescript',
                     'optin_type' => 'lightbox'
                 ],
@@ -450,11 +450,11 @@ class Rescript extends AbstractOptinTheme
                 [mo-optin-form-email-field class="rescript_inputField"]
                 [mo-optin-form-submit-button class="rescript_submitBtn"]
                 [mo-mailchimp-interests]
-                [mo-optin-form-error]
             [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="rescript_submitBtn rescript_ctaBtn"]
             </div>
         [mo-optin-form-note class="rescript_note"]
+        [mo-optin-form-error]
         </div>
         </div>
     </div>  
@@ -536,6 +536,29 @@ HTML;
                     display: block;
                     border: 0px;
                     height: auto;
+                }
+                
+                div#$optin_css_id.rescript_container .rescript_note::before, 
+                div#$optin_css_id.rescript_container .rescript_note::after,
+                div#$optin_css_id.rescript_container .mo-optin-error ::before, 
+                div#$optin_css_id.rescript_container .mo-optin-error ::after {
+                    display: table;
+                    content: " ";
+                }
+                
+                div#$optin_css_id.rescript_container .rescript_note::after,
+                div#$optin_css_id.rescript_container .mo-optin-error::after
+                 {
+                    clear: both;
+                }
+                
+                div#$optin_css_id.rescript_container .mo-note-content
+                 {
+                    display: inline-block !important;
+                }
+                
+                div#$optin_css_id.rescript_container #mo-acceptance-checkbox {
+                    display: inline-block !important;
                 }
                             
         div#$optin_css_id.rescript_container .mo-optin-error {
@@ -621,17 +644,16 @@ HTML;
                     width: 100% !important;
                 }
                 
-                
-
-div#$optin_css_id.rescript_container .rescript_note, div#$optin_css_id.rescript_container .rescript_note * {
-     margin-top: 5px;
-     text-align: center;
-     font-size: 14px !important;
-     font-style: italic;
-     display: block;
-     border: 0;
-     line-height: normal;
- }
+                div#$optin_css_id.rescript_container .rescript_note,
+                div#$optin_css_id.rescript_container .rescript_note * {
+                     margin-top: 5px;
+                     text-align: center;
+                     font-size: 14px !important;
+                     font-style: italic;
+                     display: block;
+                     border: 0;
+                     line-height: normal;
+                 }
 
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {

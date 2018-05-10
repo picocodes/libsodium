@@ -126,6 +126,30 @@ class LetterBox extends AbstractOptinTheme
                 'optin_class' => 'LetterBox',
                 'optin_type' => 'slidein'
             ],
+
+
+            // -- default for note sections -- //
+            [
+                'name' => 'mo_optin_form_note_font_color_default',
+                'value' => '#ffffff',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+
+            [
+                'name' => 'mo_optin_form_note_default',
+                'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+
+            [
+                'name' => 'mo_optin_form_note_font_default',
+                'value' => 'Raleway',
+                'optin_class' => 'LetterBox',
+                'optin_type' => 'slidein'
+            ],
+
             [
                 'name' => 'mo_optin_form_modal_effects_default',
                 'value' => 'MOslideInUp',
@@ -274,12 +298,7 @@ class LetterBox extends AbstractOptinTheme
      */
     public function customizer_note_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
-        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
-            return --$count;
-        });
-
-        // we are returning empty array so all controls for note are removed hence removing note panel/section.
-        return [];
+        return $controls;
     }
 
 
@@ -396,6 +415,7 @@ class LetterBox extends AbstractOptinTheme
     <div class="letterBox_field_wrapper">
         [mo-optin-form-name-field class="letterBox_form_field"]
         [mo-optin-form-email-field class="letterBox_form_field"]
+        [mo-optin-form-note class="letterbox_note"]
     </div>
     [mo-mailchimp-interests]
     [mo-optin-form-error]
@@ -541,6 +561,16 @@ div#$optin_css_id.letterBox_container .letterBox_closeBtn {
     width: 20px;
     height: 20px;
 }
+
+div#$optin_css_id.letterBox_container .letterbox_note {
+     margin: 0 auto 10px;
+     text-align: center;
+     font-size: 14px;
+     font-style: italic;
+     display: block;
+     border: 0;
+     line-height: normal;
+ }
 
 /* remove border radius from submit button when display on mobile */
 @media only screen and (max-width: 575px) {
