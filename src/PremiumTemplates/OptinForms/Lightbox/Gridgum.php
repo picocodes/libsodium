@@ -481,12 +481,12 @@ div#$optin_css_id.gridgum_container * {
         }
         
         div#$optin_css_id.gridgum_container .mo-optin-error {
-     display: none; 
-    color: #ff0000;
-    text-align: center;
-    padding: 5px;
-    font-size: 14px;
-}
+            display: none; 
+            color: #ff0000;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
+        }
 
         div#$optin_css_id.gridgum_container .gridgum_style-smaller{
             display: none;

@@ -401,8 +401,6 @@ class Gridgum extends AbstractOptinTheme
         $mini_header = $this->get_customizer_value('mini_headline');
         $mini_header = empty($mini_header) ? __("Don't miss out!", 'mailoptin') : $mini_header;
 
-        $optin_default_image = $this->default_form_image_partial;
-
         return <<<HTML
         [mo-optin-form-wrapper class="gridgum_container"]
                 <div class="gridgum_body">
@@ -415,11 +413,11 @@ class Gridgum extends AbstractOptinTheme
                             [mo-optin-form-email-field class="gridgum_input_field"]
                             [mo-mailchimp-interests]
                             [mo-optin-form-submit-button class="gridgum_submit_button"]
-                            [mo-optin-form-error]
                             [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="gridgum_submit_button"]
                             </div>
                        [mo-optin-form-note class="gridgum_note"]
+                       [mo-optin-form-error]
                     </div>
             </div>
 [/mo-optin-form-wrapper]
@@ -519,7 +517,7 @@ div#$optin_css_id.gridgum_container .gridgum_body-form input.gridgum_input_field
           }
 
 div#$optin_css_id.gridgum_container input[type="submit"].gridgum_submit_button {
-         padding: 5px 10px;
+         padding: 10px;
          font-size: 15px;
          border-radius: 3px;
          border: 0px;
@@ -531,7 +529,7 @@ div#$optin_css_id.gridgum_container input[type="submit"].gridgum_submit_button {
      }
 
 div#$optin_css_id.gridgum_container .gridgum_note {
-         padding-top: 20px;
+         padding-top: 10px;
          color: #777;
          text-align: center;
          font-size: 12px;
