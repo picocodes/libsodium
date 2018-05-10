@@ -157,7 +157,7 @@ class AfterConversion
                     'section' => $customizerClassInstance->success_section_id,
                     'settings' => $option_prefix . '[pass_lead_data_redirect_url]',
                     'type' => 'light',
-                    'priority' => 30,
+                    'priority' => 22,
                 )
             )
         );
