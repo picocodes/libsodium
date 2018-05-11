@@ -153,7 +153,8 @@ class Rescript extends AbstractOptinTheme
                     'optin_type' => 'lightbox'
                 ],
 
-                ['name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                [
+                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
                     'value' => function () {
                         return 'inline';
                     }
@@ -546,19 +547,10 @@ HTML;
                     content: " ";
                 }
                 
-                div#$optin_css_id.rescript_container .rescript_note::after,
-                div#$optin_css_id.rescript_container .mo-optin-error::after
+                div#$optin_css_id.rescript_container .mo-note-content,
+                div#$optin_css_id.rescript_container #mo-acceptance-checkbox
                  {
-                    clear: both;
-                }
-                
-                div#$optin_css_id.rescript_container .mo-note-content
-                 {
-                    display: inline-block !important;
-                }
-                
-                div#$optin_css_id.rescript_container #mo-acceptance-checkbox {
-                    display: inline-block !important;
+                    display: inline !important;
                 }
                             
         div#$optin_css_id.rescript_container .mo-optin-error {
@@ -714,7 +706,6 @@ HTML;
 
                    div#$optin_css_id.rescript_container .rescript_blockify {
                         width: 100%;
-                        float: left;
                         position: relative;
                     }
 

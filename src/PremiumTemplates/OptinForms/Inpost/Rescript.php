@@ -171,9 +171,6 @@ class Rescript extends AbstractOptinTheme
             ]
         );
 
-
-        add_filter('mo_optin_customizer_disable_note_section', '__return_true');
-
         add_filter('mo_optin_form_enable_form_image', '__return_true');
 
         $this->default_form_image_partial = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/rescript-img.jpg';
@@ -359,12 +356,6 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_configuration_settings($configuration_settings, $CustomizerSettingsInstance)
     {
-        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
-            return --$count;
-        });
-
-        unset($configuration_settings['hide_note']);
-
         return $configuration_settings;
     }
 
@@ -452,10 +443,11 @@ class Rescript extends AbstractOptinTheme
                 [mo-optin-form-email-field class="rescript_inputField"]
                 [mo-optin-form-submit-button class="rescript_submitBtn"]
                 [mo-mailchimp-interests]
-                [mo-optin-form-error]
             [/mo-optin-form-fields-wrapper]
     [mo-optin-form-cta-button class="rescript_submitBtn rescript_ctaBtn"]
             </div>
+        [mo-optin-form-note class="rescript_note"]
+        [mo-optin-form-error]
         </div>
         </div>
     </div>  
@@ -606,6 +598,17 @@ HTML;
               div#$optin_uuid.mo-cta-button-display .rescript_ctaBtn {
                     width: 100% !important;
                 }
+                
+                div#$optin_css_id.rescript_container .rescript_note,
+                div#$optin_css_id.rescript_container .rescript_note * {
+                     margin-top: 5px;
+                     text-align: center;
+                     font-size: 14px !important;
+                     font-style: italic;
+                     display: inline;
+                     border: 0;
+                     line-height: normal;
+                 }
 
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {
