@@ -642,7 +642,7 @@ HTML;
                      text-align: center;
                      font-size: 14px !important;
                      font-style: italic;
-                     display: block;
+                     display: inline;
                      border: 0;
                      line-height: normal;
                  }
