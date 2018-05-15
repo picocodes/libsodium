@@ -183,10 +183,11 @@ class AfterConversion
                     'editor_id' => 'success-js-script',
                     'label' => __('Success Triggered Script', 'mailoptin'),
                     'description' => sprintf(
-                        __('Enter valid JavaScript code that will be triggered after every successful opt-in conversion. Please! do not include opening and closing %s&lt;script&gt;%s tag.', 'mailoptin'),
-                        '<code>', '</code>'),
+                        __('Enter conversion tracking, pixel code or whatever script that you want triggered when visitors subscribes to your campaign. %3$s Use %1$s[NAME]%2$s and %1$s[EMAIL]%2$s to pass in subscriber\'s name and email address', 'mailoptin'),
+                        '<code>', '</code>', '<br><br>'),
                     'section' => $customizerClassInstance->success_section_id,
                     'settings' => $option_prefix . '[success_js_script]',
+                    'language' => 'html',
                     'priority' => 50,
                 )
             )
