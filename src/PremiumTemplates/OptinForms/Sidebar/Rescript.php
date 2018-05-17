@@ -332,12 +332,6 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_configuration_settings($configuration_settings, $CustomizerSettingsInstance)
     {
-        add_filter('mailoptin_tinymce_customizer_control_count', function ($count) {
-            return --$count;
-        });
-
-        unset($configuration_settings['hide_note']);
-
         return $configuration_settings;
     }
 
