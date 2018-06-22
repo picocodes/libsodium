@@ -150,7 +150,7 @@ class LibsodiumSettingsPage
                 update_option('mo_license_status', $response->license);
             }
 
-            set_transient('mo_license_check', 'active', 24 * HOUR_IN_SECONDS);
+            set_transient('mo_license_check', 'active', 12 * HOUR_IN_SECONDS);
         }
 
         if ($force === true) {
@@ -218,7 +218,7 @@ class LibsodiumSettingsPage
                     </th>
                     <td>
                         <input id="mo_license_key" name="mo_license_key" type="text" class="regular-text" value="<?php esc_attr_e($license); ?>"/>
-                        <label class="description" for="mo_plugin_license_key"><?php _e('Enter your license key', 'mailoptin'); ?></label>
+                        <label class="description" for="mo_license_key"><?php _e('Enter your license key', 'mailoptin'); ?></label>
                     </td>
                 </tr>
                 <?php if (false !== $license) { ?>
@@ -295,11 +295,6 @@ class LibsodiumSettingsPage
         }
 
         $response = self::license_control_instance()->activate_license($license_key);
-
-        if (is_wp_error($response)) {
-            add_settings_error(self::slug, 'activation_error', $response->get_error_message());
-            return;
-        }
 
         if (is_wp_error($response)) {
             add_settings_error(self::slug, 'activation_error', $response->get_error_message());
