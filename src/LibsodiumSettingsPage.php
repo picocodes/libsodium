@@ -26,7 +26,7 @@ class LibsodiumSettingsPage
             add_action('admin_init', array(__CLASS__, 'plugin_check_license'), 0);
         }
 
-        add_action('init', function () {
+        add_action('mailoptin_admin_notices', function () {
             add_action('admin_notices', array(__CLASS__, 'license_not_active_notice'));
             add_action('admin_notices', array(__CLASS__, 'license_expired_notice'));
         });
