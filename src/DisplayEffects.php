@@ -17,7 +17,7 @@ class DisplayEffects
     {
         add_action('mo_optin_customizer_sections_ids', [$this, 'add_customizer_section_to_filter']);
         add_action('mo_optin_after_configuration_customizer_section', [$this, 'customizer_section'], 10, 2);
-        add_action('mo_optin_customizer_settings', [$this, 'customizer_settings'], 10, 2);
+        add_action('mo_optin_customizer_settings', [$this, 'customizer_settings'], 10, 3);
         add_action('mo_optin_after_customizer_controls', [$this, 'customizer_controls'], 10, 4);
 
         add_filter('mo_optin_js_config', [$this, 'optin_effect_js_config'], 10, 3);
@@ -54,11 +54,12 @@ class DisplayEffects
     /**
      * @param \WP_Customize_Manager $wp_customize
      * @param string $option_prefix
+     * @param \MailOptin\Core\Admin\Customizer\OptinForm\Customizer $customizerClassInstance
      */
-    public function customizer_settings($wp_customize, $option_prefix)
+    public function customizer_settings($wp_customize, $option_prefix, $customizerClassInstance)
     {
         $wp_customize->add_setting($option_prefix . '[modal_effects]', array(
-                'default' => (new AbstractCustomizer())->customizer_defaults['modal_effects'],
+                'default' => (new AbstractCustomizer($customizerClassInstance->optin_campaign_id))->customizer_defaults['modal_effects'],
                 'type' => 'option',
                 'transport' => 'postMessage',
             )
