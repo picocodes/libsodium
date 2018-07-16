@@ -284,11 +284,6 @@ class LibsodiumSettingsPage
      */
     public static function activate_license($license_key = '')
     {
-        // run a quick security check
-        if (!check_admin_referer('mo_plugin_nonce', 'mo_plugin_nonce')) {
-            return;
-        }
-
         $response = self::license_control_instance()->activate_license($license_key);
 
         if (is_wp_error($response)) {
@@ -329,11 +324,6 @@ class LibsodiumSettingsPage
      */
     public static function deactivate_license()
     {
-        // run a quick security check
-        if (!check_admin_referer('mo_plugin_nonce', 'mo_plugin_nonce')) {
-            return;
-        } // get out if we didn't click the Activate button
-
         $response = self::license_control_instance()->deactivate_license();
 
         if (is_wp_error($response)) {
