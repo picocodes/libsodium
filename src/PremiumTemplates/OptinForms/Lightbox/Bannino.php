@@ -11,7 +11,7 @@ class Bannino extends AbstractOptinTheme
 
     public $default_form_image_partial;
 
-    public function __construct($optin_campaign_id, $wp_customize = '')
+    public function __construct($optin_campaign_id)
     {
         // remove default closeIcon
         add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class) {

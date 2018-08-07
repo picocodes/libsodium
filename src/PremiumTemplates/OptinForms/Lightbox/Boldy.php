@@ -12,7 +12,7 @@ class Boldy extends AbstractOptinTheme
 
     public $default_form_image_partial;
 
-    public function __construct($optin_campaign_id, $wp_customize = '')
+    public function __construct($optin_campaign_id)
     {
         add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
             // this was suppose to be false since it has its own close button. it is true because if false,

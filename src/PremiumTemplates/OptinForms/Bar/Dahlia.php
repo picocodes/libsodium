@@ -10,7 +10,7 @@ class Dahlia extends AbstractOptinTheme
 {
     public $optin_form_name = 'Dahlia';
 
-    public function __construct($optin_campaign_id, $wp_customize = '')
+    public function __construct($optin_campaign_id)
     {
         $this->init_config_filters([
                 // -- default for design sections -- //

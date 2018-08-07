@@ -27,6 +27,7 @@ class DisplayRules
     /**
      * @param $settings
      * @param CustomizerSettings $customizerSettings
+     *
      * @return mixed
      */
     public function customize_settings($settings, $customizerSettings)
@@ -35,47 +36,47 @@ class DisplayRules
             $customizerSettings->optin_campaign_id
         );
 
-        $click_me = __('Click Me', 'mailoptin');
-        $basic_shortcode = "[mo-click-launch id=\"$optin_uuid\" link=\"$click_me!\"]";
+        $click_me          = __('Click Me', 'mailoptin');
+        $basic_shortcode   = "[mo-click-launch id=\"$optin_uuid\" link=\"$click_me!\"]";
         $advance_shortcode = "[mo-click-launch id=\"$optin_uuid\"]$click_me![/mo-click-launch]";
-        $html_code = "<a href=\"#\" class=\"mailoptin-click-trigger\" data-optin-uuid=\"$optin_uuid\">$click_me!</a>";
+        $html_code         = "<a href=\"#\" class=\"mailoptin-click-trigger\" data-optin-uuid=\"$optin_uuid\">$click_me!</a>";
 
-        $shortcode_embed = '[mo-optin-form id="' . $optin_uuid . '"]';
+        $shortcode_embed    = '[mo-optin-form id="' . $optin_uuid . '"]';
         $template_tag_embed = "do_action('mo_optin_form', '$optin_uuid');";
 
         $settings['click_launch_status'] = array(
-            'default' => apply_filters('mo_optin_form_click_launch_status', ''),
-            'type' => 'option',
+            'default'   => apply_filters('mo_optin_form_click_launch_status', ''),
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['click_launch_basic_shortcode'] = array(
-            'default' => apply_filters('mo_optin_form_click_launch_basic_shortcode', $basic_shortcode),
-            'type' => 'option',
+            'default'   => apply_filters('mo_optin_form_click_launch_basic_shortcode', $basic_shortcode),
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['click_launch_advance_shortcode'] = array(
-            'default' => apply_filters('mo_optin_form_click_launch_advance_shortcode', $advance_shortcode),
-            'type' => 'option',
+            'default'   => apply_filters('mo_optin_form_click_launch_advance_shortcode', $advance_shortcode),
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['click_launch_html_code'] = array(
-            'default' => apply_filters('mo_optin_form_click_launch_html_code', $html_code),
-            'type' => 'option',
+            'default'   => apply_filters('mo_optin_form_click_launch_html_code', $html_code),
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['shortcode_embed'] = array(
-            'default' => apply_filters('mo_optin_form_shortcode_embed', $shortcode_embed),
-            'type' => 'option',
+            'default'   => apply_filters('mo_optin_form_shortcode_embed', $shortcode_embed),
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['template_tag_embed'] = array(
-            'default' => apply_filters('mo_optin_form_template_tag_embed', $template_tag_embed),
-            'type' => 'option',
+            'default'   => apply_filters('mo_optin_form_template_tag_embed', $template_tag_embed),
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
@@ -98,7 +99,7 @@ class DisplayRules
     public function optin_triggers_section($wp_customize, $customizerClassInstance)
     {
         // hide this if optin type is either sidebar or inpost.
-        if (!in_array($customizerClassInstance->optin_campaign_type, ['sidebar', 'inpost'])) {
+        if ( ! in_array($customizerClassInstance->optin_campaign_type, ['sidebar', 'inpost'])) {
             $wp_customize->add_section($customizerClassInstance->click_launch_display_rule_section_id, array(
                     'title' => __("Click Launch", 'mailoptin'),
                     'panel' => $customizerClassInstance->display_rules_panel_id
@@ -159,28 +160,29 @@ class DisplayRules
     {
 
         // hide this if optin type is not either sidebar or inpost.
-        if (!in_array($customizerClassInstance->optin_campaign_type, ['sidebar', 'inpost'])) return;
+        if ( ! in_array($customizerClassInstance->optin_campaign_type, ['sidebar', 'inpost']))
+            return;
 
         $shortcode_template_tag_control_args = apply_filters(
             "mo_optin_form_customizer_shortcode_template_tag_controls",
             array(
-                'shortcode_embed' => array(
-                    'type' => 'text',
+                'shortcode_embed'    => array(
+                    'type'        => 'text',
                     'input_attrs' => ['readonly' => 'readonly', 'class' => 'mo-click-select'],
-                    'label' => __('Shortcode', 'mailoptin'),
-                    'section' => 'mo_wp_shortcode_template_tag_display_rule_section',
-                    'settings' => $option_prefix . '[shortcode_embed]',
+                    'label'       => __('Shortcode', 'mailoptin'),
+                    'section'     => 'mo_wp_shortcode_template_tag_display_rule_section',
+                    'settings'    => $option_prefix . '[shortcode_embed]',
                     'description' => __('Use the shortcode below to embed this opt-in form anywhere in your WordPress posts or pages.', 'mailoptin'),
-                    'priority' => 10
+                    'priority'    => 10
                 ),
                 'template_tag_embed' => array(
-                    'type' => 'text',
+                    'type'        => 'text',
                     'input_attrs' => ['readonly' => 'readonly', 'class' => 'mo-click-select'],
-                    'label' => __('Template Tag', 'mailoptin'),
-                    'section' => 'mo_wp_shortcode_template_tag_display_rule_section',
-                    'settings' => $option_prefix . '[template_tag_embed]',
+                    'label'       => __('Template Tag', 'mailoptin'),
+                    'section'     => 'mo_wp_shortcode_template_tag_display_rule_section',
+                    'settings'    => $option_prefix . '[template_tag_embed]',
                     'description' => __('Use the template tag below to embed this opt-in form anywhere in your theme', 'mailoptin'),
-                    'priority' => 20
+                    'priority'    => 20
                 ),
             ),
             $wp_customize,
@@ -230,14 +232,14 @@ class DisplayRules
         $click_launch_display_rule_control_args = apply_filters(
             "mo_optin_form_customizer_click_launch_controls",
             array(
-                'click_launch_status' => new WP_Customize_Toggle_Control(
+                'click_launch_status'            => new WP_Customize_Toggle_Control(
                     $wp_customize,
                     $option_prefix . '[click_launch_status]',
                     apply_filters('mo_optin_form_customizer_click_launch_args', array(
-                            'label' => esc_html__('Activate Rule', 'mailoptin'),
-                            'section' => $customizerClassInstance->click_launch_display_rule_section_id,
-                            'settings' => $option_prefix . '[click_launch_status]',
-                            'type' => 'light',// light, ios, flat
+                            'label'       => esc_html__('Activate Rule', 'mailoptin'),
+                            'section'     => $customizerClassInstance->click_launch_display_rule_section_id,
+                            'settings'    => $option_prefix . '[click_launch_status]',
+                            'type'        => 'light',// light, ios, flat
                             'description' => sprintf(
                                 __('Show when a visitor clicks a link, button, image etc. %sNote:%s activating "Click Launch" will deactivate all other display rules. %sLearn more%s', 'mailoptin'),
                                 '<strong>',
@@ -245,36 +247,36 @@ class DisplayRules
                                 '<a href="https://mailoptin.io/article/click-launch-optin-trigger/ " target="_blank">',
                                 '</a>'
                             ),
-                            'priority' => 10
+                            'priority'    => 10
                         )
                     )
                 ),
-                'click_launch_basic_shortcode' => array(
-                    'type' => 'text',
+                'click_launch_basic_shortcode'   => array(
+                    'type'        => 'text',
                     'input_attrs' => ['readonly' => 'readonly', 'class' => 'mo-click-select'],
-                    'label' => __('Shortcode', 'mailoptin'),
-                    'section' => $customizerClassInstance->click_launch_display_rule_section_id,
-                    'settings' => $option_prefix . '[click_launch_basic_shortcode]',
+                    'label'       => __('Shortcode', 'mailoptin'),
+                    'section'     => $customizerClassInstance->click_launch_display_rule_section_id,
+                    'settings'    => $option_prefix . '[click_launch_basic_shortcode]',
                     'description' => __('Copy/paste this shortcode to a post or page. Note: "Click Me!" is the link label or anchor text and you are free to change it.', 'mailoptin'),
-                    'priority' => 20
+                    'priority'    => 20
                 ),
                 'click_launch_advance_shortcode' => array(
-                    'type' => 'text',
+                    'type'        => 'text',
                     'input_attrs' => ['readonly' => 'readonly', 'class' => 'mo-click-select'],
-                    'label' => __('Advance Shortcode', 'mailoptin'),
-                    'section' => $customizerClassInstance->click_launch_display_rule_section_id,
-                    'settings' => $option_prefix . '[click_launch_advance_shortcode]',
+                    'label'       => __('Advance Shortcode', 'mailoptin'),
+                    'section'     => $customizerClassInstance->click_launch_display_rule_section_id,
+                    'settings'    => $option_prefix . '[click_launch_advance_shortcode]',
                     'description' => __('Note: you can replace "Click Me!" with any HTML button, image, text and even shortcodes.', 'mailoptin'),
-                    'priority' => 30
+                    'priority'    => 30
                 ),
-                'click_launch_html_code' => array(
-                    'type' => 'text',
+                'click_launch_html_code'         => array(
+                    'type'        => 'text',
                     'input_attrs' => ['readonly' => 'readonly', 'class' => 'mo-click-select'],
-                    'label' => __('HTML Code', 'mailoptin'),
-                    'section' => $customizerClassInstance->click_launch_display_rule_section_id,
-                    'settings' => $option_prefix . '[click_launch_html_code]',
+                    'label'       => __('HTML Code', 'mailoptin'),
+                    'section'     => $customizerClassInstance->click_launch_display_rule_section_id,
+                    'settings'    => $option_prefix . '[click_launch_html_code]',
                     'description' => __('Copy/paste HTML link to use anywhere on your site.', 'mailoptin'),
-                    'priority' => 40
+                    'priority'    => 40
                 ),
             ),
             $wp_customize,
@@ -311,10 +313,10 @@ class DisplayRules
                     $wp_customize,
                     $option_prefix . '[exit_intent_status]',
                     apply_filters('mo_optin_form_customizer_exit_intent_args', array(
-                            'label' => esc_html__('Activate Rule', 'mailoptin'),
-                            'section' => $customizerClassInstance->exit_intent_display_rule_section_id,
-                            'settings' => $option_prefix . '[exit_intent_status]',
-                            'type' => 'light',// light, ios, flat
+                            'label'       => esc_html__('Activate Rule', 'mailoptin'),
+                            'section'     => $customizerClassInstance->exit_intent_display_rule_section_id,
+                            'settings'    => $option_prefix . '[exit_intent_status]',
+                            'type'        => 'light',// light, ios, flat
                             'description' => __('Show when a visitor tries to leave your site.', 'mailoptin')
                         )
                     )
@@ -354,25 +356,25 @@ class DisplayRules
                     $wp_customize,
                     $option_prefix . '[x_seconds_status]',
                     apply_filters('mo_optin_form_customizer_x_seconds_args', array(
-                            'label' => esc_html__('Activate Rule', 'mailoptin'),
-                            'section' => $customizerClassInstance->x_seconds_display_rule_section_id,
-                            'settings' => $option_prefix . '[x_seconds_status]',
-                            'type' => 'light',// light, ios, flat
+                            'label'       => esc_html__('Activate Rule', 'mailoptin'),
+                            'section'     => $customizerClassInstance->x_seconds_display_rule_section_id,
+                            'settings'    => $option_prefix . '[x_seconds_status]',
+                            'type'        => 'light',// light, ios, flat
                             'description' => __('Number of seconds after page-load before optin form will display.', 'mailoptin')
                         )
                     )
                 ),
-                'x_seconds_value' => new WP_Customize_Range_Value_Control(
+                'x_seconds_value'  => new WP_Customize_Range_Value_Control(
                     $wp_customize,
                     $option_prefix . '[x_seconds_value]',
                     apply_filters('mo_optin_form_customizer_x_seconds_value_args', array(
-                            'section' => $customizerClassInstance->x_seconds_display_rule_section_id,
-                            'settings' => $option_prefix . '[x_seconds_value]',
-                            'label' => __('Show after number of seconds is'),
+                            'section'     => $customizerClassInstance->x_seconds_display_rule_section_id,
+                            'settings'    => $option_prefix . '[x_seconds_value]',
+                            'label'       => __('Show after number of seconds is', 'mailoptin'),
                             'input_attrs' => array(
-                                'min' => 1,
-                                'max' => 100,
-                                'step' => 1,
+                                'min'    => 1,
+                                'max'    => 100,
+                                'step'   => 1,
                                 'suffix' => 'sec', //optional suffix
                             ),
                         )
@@ -413,34 +415,34 @@ class DisplayRules
                     $wp_customize,
                     $option_prefix . '[x_page_views_status]',
                     apply_filters('mo_optin_form_customizer_x_page_views_args', array(
-                            'label' => esc_html__('Activate Rule', 'mailoptin'),
-                            'section' => $customizerClassInstance->x_page_views_display_rule_section_id,
-                            'settings' => $option_prefix . '[x_page_views_status]',
-                            'type' => 'light',// light, ios, flat
+                            'label'       => esc_html__('Activate Rule', 'mailoptin'),
+                            'section'     => $customizerClassInstance->x_page_views_display_rule_section_id,
+                            'settings'    => $option_prefix . '[x_page_views_status]',
+                            'type'        => 'light',// light, ios, flat
                             'description' => __('Show when a visitor has viewed certain number of pages on your site.', 'mailoptin')
                         )
                     )
                 ),
-                'x_page_views' => new WP_Customize_X_Page_Views_Control(
+                'x_page_views'        => new WP_Customize_X_Page_Views_Control(
                     $wp_customize,
                     $option_prefix . '[x_page_views]',
                     apply_filters('mo_optin_form_customizer_x_page_views_args', array(
-                            'label' => __("Show when the visitor has page views of", 'mailoptin'),
-                            'section' => $customizerClassInstance->x_page_views_display_rule_section_id,
-                            'settings' => [
+                            'label'          => __("Show when the visitor has page views of", 'mailoptin'),
+                            'section'        => $customizerClassInstance->x_page_views_display_rule_section_id,
+                            'settings'       => [
                                 'x_page_views_condition' => $option_prefix . '[x_page_views_condition]',
-                                'x_page_views_value' => $option_prefix . '[x_page_views_value]'
+                                'x_page_views_value'     => $option_prefix . '[x_page_views_value]'
                             ],
                             // specify the kind of input field
-                            'type' => 'number',
-                            'input_attrs' => ['size' => 2, 'maxlength' => 2, 'style' => 'width:20%'],
-                            'select_attrs' => ['style' => 'width:auto'],
+                            'type'           => 'number',
+                            'input_attrs'    => ['size' => 2, 'maxlength' => 2, 'style' => 'width:20%'],
+                            'select_attrs'   => ['style' => 'width:auto'],
                             'select_choices' => [
-                                '...' => __('Select...', 'mailoptin'),
-                                'equals' => __('Equals', 'mailoptin'),
-                                'more_than' => __('More than', 'mailoptin'),
-                                'less_than' => __('Less than', 'mailoptin'),
-                                'at_least' => __('At least', 'mailoptin'),
+                                '...'           => __('Select...', 'mailoptin'),
+                                'equals'        => __('Equals', 'mailoptin'),
+                                'more_than'     => __('More than', 'mailoptin'),
+                                'less_than'     => __('Less than', 'mailoptin'),
+                                'at_least'      => __('At least', 'mailoptin'),
                                 'not_more_than' => __('Not more than', 'mailoptin'),
                             ]
                         )
@@ -481,25 +483,25 @@ class DisplayRules
                     $wp_customize,
                     $option_prefix . '[x_scroll_status]',
                     apply_filters('mo_optin_form_customizer_x_scroll_args', array(
-                            'label' => esc_html__('Activate Rule', 'mailoptin'),
-                            'section' => $customizerClassInstance->x_scroll_display_rule_section_id,
-                            'settings' => $option_prefix . '[x_scroll_status]',
-                            'type' => 'light',// light, ios, flat
+                            'label'       => esc_html__('Activate Rule', 'mailoptin'),
+                            'section'     => $customizerClassInstance->x_scroll_display_rule_section_id,
+                            'settings'    => $option_prefix . '[x_scroll_status]',
+                            'type'        => 'light',// light, ios, flat
                             'description' => __('Show after a visitor has scrolled a certain percentage.', 'mailoptin')
                         )
                     )
                 ),
-                'x_scroll_value' => new WP_Customize_Range_Value_Control(
+                'x_scroll_value'  => new WP_Customize_Range_Value_Control(
                     $wp_customize,
                     $option_prefix . '[x_scroll_value]',
                     apply_filters('mo_optin_form_customizer_x_scroll_value_args', array(
-                            'section' => $customizerClassInstance->x_scroll_display_rule_section_id,
-                            'settings' => $option_prefix . '[x_scroll_value]',
-                            'label' => __('Show optin after scroll % is at least'),
+                            'section'     => $customizerClassInstance->x_scroll_display_rule_section_id,
+                            'settings'    => $option_prefix . '[x_scroll_value]',
+                            'label'       => __('Show optin after scroll % is at least', 'mailoptin'),
                             'input_attrs' => array(
-                                'min' => 1,
-                                'max' => 100,
-                                'step' => 1,
+                                'min'    => 1,
+                                'max'    => 100,
+                                'step'   => 1,
                                 'suffix' => '%', //optional suffix
                             ),
                         )

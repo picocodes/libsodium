@@ -9,7 +9,7 @@ class LetterBox extends AbstractOptinTheme
 {
     public $optin_form_name = 'Letter Box';
 
-    public function __construct($optin_campaign_id, $wp_customize = '')
+    public function __construct($optin_campaign_id)
     {
         add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
             if ($optin_class == 'LetterBox' && $optin_type = 'lightbox') $val = false;
