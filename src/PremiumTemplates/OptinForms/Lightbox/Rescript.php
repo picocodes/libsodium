@@ -380,6 +380,8 @@ class Rescript extends AbstractOptinTheme
             }
         }
 
+        $fields_settings['submit_button_background']['transport'] = 'refresh';
+
         return $fields_settings;
     }
 
@@ -543,6 +545,7 @@ HTML;
         $optin_css_id = $this->optin_css_id;
         $optin_uuid   = $this->optin_campaign_uuid;
 
+        $submit_button_background = $this->get_customizer_value('submit_button_background', '#ff7f45');
         $mini_headline_font_color = $this->get_customizer_value('mini_headline_font_color', '#bebebe');
 
         return <<<CSS
@@ -635,7 +638,7 @@ HTML;
         }
 
                div#$optin_css_id.rescript_container input.rescript_inputField {
-                    border: 2px solid #ff4b4b;
+                    border: 2px solid $submit_button_background;
                     width: 100%;
                     border-radius: 100px;
                     -webkit-border-radius: 100px; 
