@@ -478,6 +478,7 @@ class Gridgum extends AbstractOptinTheme
 
         return <<<HTML
         [mo-optin-form-wrapper class="gridgum_container"]
+        [mo-close-optin class="gridgum-optin-form-close"]x[/mo-close-optin]
                 <div class="gridgum_body">
                     <div class="gridgum_body-inner">
                         $mini_header_block
@@ -489,7 +490,7 @@ class Gridgum extends AbstractOptinTheme
                             [mo-mailchimp-interests]
                             [mo-optin-form-submit-button class="gridgum_submit_button"]
                             [/mo-optin-form-fields-wrapper]
-    [mo-optin-form-cta-button class="gridgum_submit_button"]
+        [mo-optin-form-cta-button class="gridgum_submit_button"]
                             </div>
                        [mo-optin-form-note class="gridgum_note"]
                        [mo-optin-form-error]
@@ -528,6 +529,9 @@ div#$optin_css_id.gridgum_container {
          border: 3px solid #cccccc;
          margin: 10px auto;
          max-width: 350px;
+         padding-left: 10px;
+         padding-right: 10px;
+         font-family: 'Open Sans', arial, sans-serif;
      }
 
 div#$optin_css_id.gridgum_container .mo-optin-error {
@@ -537,6 +541,22 @@ div#$optin_css_id.gridgum_container .mo-optin-error {
          padding: 5px;
          font-size: 14px;
      }
+     
+div#$optin_css_id.gridgum_container .gridgum-optin-form-close {
+    color: #000;
+    display: inline;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 500;
+    float: right;
+    text-decoration: none !important;
+    vertical-align: text-top;
+    margin-top: -0.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 div#$optin_css_id.gridgum_container .gridgum_body {
          width: 100%;
@@ -544,9 +564,9 @@ div#$optin_css_id.gridgum_container .gridgum_body {
      }
 
 div#$optin_css_id.gridgum_container .gridgum_body-inner {
-         padding-left: 20px;
          padding-top: 20px;
-         padding-right: 20px;
+         padding-left: 10px;
+         padding-right: 10px;
      }
 
 div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2 {
