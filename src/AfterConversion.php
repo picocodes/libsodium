@@ -28,7 +28,7 @@ class AfterConversion
 
     public static function meta_section_description($section_title, $option_name)
     {
-        if ($section_title !== self::$settings_section_title) return;
+        if ($section_title !== self::$settings_section_title || $option_name != MAILOPTIN_SETTINGS_DB_OPTION_NAME) return;
 
         printf(
             __('%sCustomize the content of the email sent whenever there is a new subscriber.%s', 'mailoptin'),
