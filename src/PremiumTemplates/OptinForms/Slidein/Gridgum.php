@@ -3,6 +3,7 @@
 namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Slidein;
 
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Tinymce_Control;
+use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
@@ -16,147 +17,153 @@ class Gridgum extends AbstractOptinTheme
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#cccccc',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#cccccc',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Subscribe To Newsletter", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Subscribe To Newsletter", 'mailoptin'),
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#4b4646',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#4b4646',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 // -- default for description sections -- //
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_default',
-                    'value' => $this->_description_content(),
+                    'name'        => 'mo_optin_form_description_default',
+                    'value'       => $this->_description_content(),
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_description_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#181818',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#181818',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
 
                 [
-                    'name' => 'mo_optin_form_name_field_background_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_name_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#181818',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#181818',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_email_field_background_default',
-                    'value' => '#ffffff',
-                    'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_email_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#0073b7',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#0073b7',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'slidein'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. Unsubscribe at any time.', 'mailoptin'),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('We promise not to spam you. Unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Gridgum',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
+                ],
+                [
+                    'name'        => 'mo_optin_form_modal_effects_default',
+                    'value'       => 'MOslideInUp',
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'slidein'
                 ]
             ]
         );
@@ -168,6 +175,10 @@ class Gridgum extends AbstractOptinTheme
 
         add_filter('mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color', function () {
             return '#000000';
+        });
+
+        add_action('customize_preview_init', function () {
+            add_action('wp_footer', [$this, 'customizer_preview_js']);
         });
 
         parent::__construct($optin_campaign_id);
@@ -211,10 +222,22 @@ class Gridgum extends AbstractOptinTheme
     public function customizer_headline_settings($settings, $CustomizerSettingsInstance)
     {
         $settings['mini_headline'] = array(
-            'default' => "DON'T MISS OUT!",
-            'type' => 'option',
-            'transport' => 'refresh',
+            'default'           => "DON'T MISS OUT!",
+            'type'              => 'option',
+            'transport'         => 'refresh',
             'sanitize_callback' => array($CustomizerSettingsInstance, '_remove_paragraph_from_headline'),
+        );
+
+        $settings['hide_mini_headline'] = array(
+            'default'   => false,
+            'type'      => 'option',
+            'transport' => 'postMessage'
+        );
+
+        $settings['mini_headline_font_color'] = array(
+            'default'   => '#46ca9b',
+            'type'      => 'option',
+            'transport' => 'postMessage'
         );
 
         return $settings;
@@ -238,12 +261,37 @@ class Gridgum extends AbstractOptinTheme
             $wp_customize,
             $option_prefix . '[mini_headline]',
             apply_filters('mo_optin_form_customizer_mini_headline_args', array(
-                    'label' => __('Mini Headline', 'mailoptin'),
-                    'section' => $customizerClassInstance->headline_section_id,
-                    'settings' => $option_prefix . '[mini_headline]',
-                    'editor_id' => 'mini_headline',
+                    'label'         => __('Mini Headline', 'mailoptin'),
+                    'section'       => $customizerClassInstance->headline_section_id,
+                    'settings'      => $option_prefix . '[mini_headline]',
+                    'editor_id'     => 'mini_headline',
                     'editor_height' => 50,
-                    'priority' => 5
+                    'priority'      => 4
+                )
+            )
+        );
+
+        $controls['hide_mini_headline'] = new WP_Customize_Toggle_Control(
+            $wp_customize,
+            $option_prefix . '[hide_mini_headline]',
+            apply_filters('mo_optin_form_customizer_hide_mini_headline_args', array(
+                    'label'    => __('Hide Mini Headline', 'mailoptin'),
+                    'section'  => $customizerClassInstance->headline_section_id,
+                    'settings' => $option_prefix . '[hide_mini_headline]',
+                    'type'     => 'light',
+                    'priority' => 2,
+                )
+            )
+        );
+
+        $controls['mini_headline_font_color'] = new \WP_Customize_Color_Control(
+            $wp_customize,
+            $option_prefix . '[mini_headline_font_color]',
+            apply_filters('mo_optin_form_customizer_headline_mini_headline_font_color_args', array(
+                    'label'    => __('Mini Headline Color', 'mailoptin'),
+                    'section'  => $customizerClassInstance->headline_section_id,
+                    'settings' => $option_prefix . '[mini_headline_font_color]',
+                    'priority' => 3
                 )
             )
         );
@@ -391,6 +439,29 @@ class Gridgum extends AbstractOptinTheme
     {
     }
 
+    public function customizer_preview_js()
+    {
+        ?>
+        <script type="text/javascript">
+            (function ($) {
+                $(function () {
+                    wp.customize(mailoptin_optin_option_prefix + '[' + mailoptin_optin_campaign_id + '][mini_headline_font_color]', function (value) {
+                        value.bind(function (to) {
+                            $('.gridgum_header2').css('color', to);
+                        });
+                    });
+
+                    wp.customize(mailoptin_optin_option_prefix + '[' + mailoptin_optin_campaign_id + '][hide_mini_headline]', function (value) {
+                        value.bind(function (to) {
+                            $('.gridgum_header2').toggle(!to);
+                        });
+                    });
+                })
+            })(jQuery)
+        </script>
+        <?php
+    }
+
     /**
      * Template body.
      *
@@ -398,14 +469,18 @@ class Gridgum extends AbstractOptinTheme
      */
     public function optin_form()
     {
-        $mini_header = $this->get_customizer_value('mini_headline');
-        $mini_header = empty($mini_header) ? __("Don't miss out!", 'mailoptin') : $mini_header;
+        $mini_header = $this->get_customizer_value('mini_headline', __("Don't miss out!", 'mailoptin'));
+
+        $mini_header_block = '';
+        if ( ! $this->get_customizer_value('hide_mini_headline', false)) {
+            $mini_header_block = '<div class="gridgum_header2">' . $mini_header . '</div>';
+        }
 
         return <<<HTML
         [mo-optin-form-wrapper class="gridgum_container"]
                 <div class="gridgum_body">
                     <div class="gridgum_body-inner">
-                        <div class="gridgum_header2">$mini_header</div>
+                        $mini_header_block
                         [mo-optin-form-headline tag="div" class="gridgum_headline"]
                             <div class="gridgum_body-form">
                             [mo-optin-form-fields-wrapper]
@@ -433,6 +508,9 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+
+        $mini_headline_font_color = $this->get_customizer_value('mini_headline_font_color', '#46ca9b');
+
         return <<<CSS
 div#$optin_css_id.gridgum_container * {
          padding: 0px;
@@ -476,7 +554,7 @@ div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2 {
          font-weight: 900;
          padding-bottom: 10px;
          font-size: 12px;
-         color: #46ca9b;
+         color: $mini_headline_font_color;
          text-align: center;
      }
 

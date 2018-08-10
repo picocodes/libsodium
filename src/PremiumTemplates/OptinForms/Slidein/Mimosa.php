@@ -200,13 +200,6 @@ class Mimosa extends AbstractOptinTheme
                 ],
 
                 [
-                    'name' => 'mo_optin_form_modal_effects_default',
-                    'value' => 'MOslideInUp',
-                    'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
-                ],
-
-                [
                     'name' => 'mo_optin_form_hide_name_field_default',
                     'value' => true,
                     'optin_class' => 'Mimosa',

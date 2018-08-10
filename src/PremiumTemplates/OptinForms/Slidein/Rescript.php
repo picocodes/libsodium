@@ -155,6 +155,13 @@ class Rescript extends AbstractOptinTheme
                 ],
 
                 [
+                    'name' => 'mo_optin_form_modal_effects_default',
+                    'value' => 'MOslideInUp',
+                    'optin_class' => 'Rescript',
+                    'optin_type' => 'slidein'
+                ],
+
+                [
                     'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
                     'value' => function () {
                         return '#919191';

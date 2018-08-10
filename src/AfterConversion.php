@@ -191,7 +191,7 @@ class AfterConversion
                 'input_attrs' => ['placeholder' => __('Enter Email Address', 'mailoptin')],
                 'description' => sprintf(
                     __('Add multiple email address separated by a comma. Leave blank to disable. %sCustomize the email%s in "Optin Campaign" settings.', 'mailoptin'),
-                    '<a target="_blank" href="' . MAILOPTIN_SETTINGS_SETTINGS_PAGE . '#afems_email_subject_row">', '</a>'
+                    '<a target="_blank" href="' . MAILOPTIN_SETTINGS_SETTINGS_PAGE . '#optin_campaign_settings?afems_email_subject_row">', '</a>'
                 ),
                 'priority'    => 35,
             )
