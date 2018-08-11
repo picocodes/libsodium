@@ -3,6 +3,7 @@
 namespace MailOptin\Libsodium\PremiumTemplates\OptinForms\Slidein;
 
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Tinymce_Control;
+use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinTheme;
 
@@ -170,6 +171,10 @@ class Rescript extends AbstractOptinTheme
             ]
         );
 
+        add_action('customize_preview_init', function () {
+            add_action('wp_footer', [$this, 'customizer_preview_js']);
+        });
+
         parent::__construct($optin_campaign_id);
     }
 
@@ -217,6 +222,18 @@ class Rescript extends AbstractOptinTheme
             'sanitize_callback' => array($CustomizerSettingsInstance, '_remove_paragraph_from_headline'),
         );
 
+        $settings['hide_mini_headline'] = array(
+            'default'   => false,
+            'type'      => 'option',
+            'transport' => 'postMessage'
+        );
+
+        $settings['mini_headline_font_color'] = array(
+            'default'   => '#bebebe',
+            'type'      => 'option',
+            'transport' => 'postMessage'
+        );
+
         return $settings;
     }
 
@@ -243,7 +260,32 @@ class Rescript extends AbstractOptinTheme
                     'settings' => $option_prefix . '[mini_headline]',
                     'editor_id' => 'mini_headline',
                     'editor_height' => 50,
-                    'priority' => 5
+                    'priority' => 4
+                )
+            )
+        );
+
+        $controls['hide_mini_headline'] = new WP_Customize_Toggle_Control(
+            $wp_customize,
+            $option_prefix . '[hide_mini_headline]',
+            apply_filters('mo_optin_form_customizer_hide_mini_headline_args', array(
+                    'label'    => __('Hide Mini Headline', 'mailoptin'),
+                    'section'  => $customizerClassInstance->headline_section_id,
+                    'settings' => $option_prefix . '[hide_mini_headline]',
+                    'type'     => 'light',
+                    'priority' => 2,
+                )
+            )
+        );
+
+        $controls['mini_headline_font_color'] = new \WP_Customize_Color_Control(
+            $wp_customize,
+            $option_prefix . '[mini_headline_font_color]',
+            apply_filters('mo_optin_form_customizer_headline_mini_headline_font_color_args', array(
+                    'label'    => __('Mini Headline Color', 'mailoptin'),
+                    'section'  => $customizerClassInstance->headline_section_id,
+                    'settings' => $option_prefix . '[mini_headline_font_color]',
+                    'priority' => 3
                 )
             )
         );
@@ -315,6 +357,8 @@ class Rescript extends AbstractOptinTheme
                 unset($fields_settings[$key]);
             }
         }
+
+        $fields_settings['submit_button_background']['transport'] = 'refresh';
 
         return $fields_settings;
     }
@@ -399,6 +443,29 @@ class Rescript extends AbstractOptinTheme
     {
     }
 
+    public function customizer_preview_js()
+    {
+        ?>
+        <script type="text/javascript">
+            (function ($) {
+                $(function () {
+                    wp.customize(mailoptin_optin_option_prefix + '[' + mailoptin_optin_campaign_id + '][mini_headline_font_color]', function (value) {
+                        value.bind(function (to) {
+                            $('.rescript_miniHeader').css('color', to);
+                        });
+                    });
+
+                    wp.customize(mailoptin_optin_option_prefix + '[' + mailoptin_optin_campaign_id + '][hide_mini_headline]', function (value) {
+                        value.bind(function (to) {
+                            $('.rescript_miniHeader').toggle(!to);
+                        });
+                    });
+                })
+            })(jQuery)
+        </script>
+        <?php
+    }
+
     /**
      * Template body.
      *
@@ -406,8 +473,12 @@ class Rescript extends AbstractOptinTheme
      */
     public function optin_form()
     {
-        $mini_header = $this->get_customizer_value('mini_headline');
-        $mini_header = empty($mini_header) ? __("Don't miss out!", 'mailoptin') : $mini_header;
+        $mini_header = $this->get_customizer_value('mini_headline', __("Don't miss out!", 'mailoptin'));
+
+        $mini_header_block = '';
+        if ( ! $this->get_customizer_value('hide_mini_headline', false)) {
+            $mini_header_block = '<div class="rescript_miniHeader">' . $mini_header . '</div>';
+        }
 
         return <<<HTML
 [mo-optin-form-wrapper class="rescript_container"]
@@ -416,7 +487,7 @@ class Rescript extends AbstractOptinTheme
         </div>
     <div class="rescript_main">  
         <div class="rescript_copy">
-        <div class="rescript_miniHeader">$mini_header</div>
+        $mini_header_block
         [mo-optin-form-headline tag="div" class="rescript_headline"]
         [mo-optin-form-description class="rescript_description"]
         <div class="rescript_form rescript_clear">
@@ -446,6 +517,10 @@ HTML;
     {
         $optin_css_id = $this->optin_css_id;
         $optin_uuid = $this->optin_campaign_uuid;
+
+        $submit_button_background = $this->get_customizer_value('submit_button_background', '#ff7f45');
+        $mini_headline_font_color = $this->get_customizer_value('mini_headline_font_color', '#bebebe');
+
         return <<<CSS
         
                div#$optin_css_id.rescript_container {
@@ -472,7 +547,7 @@ HTML;
                 div#$optin_css_id.rescript_container .rescript_miniHeader {
                     text-transform: uppercase;
                     font-weight: 700;
-                    color: #bebebe;
+                    color: $mini_headline_font_color;
                     font-size: 16px;
                     display: block;
                     border: 0px;
@@ -525,7 +600,7 @@ HTML;
         }
 
                div#$optin_css_id.rescript_container input.rescript_inputField {
-                    border: 2px solid #ff4b4b;
+                    border: 2px solid $submit_button_background;
                     width: 100%;
                     border-radius: 100px;
                     -webkit-border-radius: 100px; 
