@@ -497,10 +497,7 @@ class Rescript extends AbstractOptinTheme
     {
         $mini_header = $this->get_customizer_value('mini_headline', __("Don't miss out!", 'mailoptin'));
 
-        $mini_header_block = '';
-        if ( ! $this->get_customizer_value('hide_mini_headline', false)) {
-            $mini_header_block = '<div class="rescript_miniHeader">' . $mini_header . '</div>';
-        }
+        $mini_header_block = '<div class="rescript_miniHeader">' . $mini_header . '</div>';
 
         $optin_default_image = $this->default_form_image_partial;
 
@@ -548,6 +545,11 @@ HTML;
         $submit_button_background = $this->get_customizer_value('submit_button_background', '#ff7f45');
         $mini_headline_font_color = $this->get_customizer_value('mini_headline_font_color', '#bebebe');
 
+        $is_mini_hadline_display = '';
+        if ($this->get_customizer_value('hide_mini_headline', false)) {
+            $is_mini_hadline_display = 'display:none;';
+        }
+
         return <<<CSS
         
         div#{$optin_css_id}_container.mo-optin-form-container {
@@ -592,6 +594,7 @@ HTML;
                     border: 0px;
                     line-height: normal;
                     height: auto;
+                    $is_mini_hadline_display
 
                 }
 

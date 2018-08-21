@@ -19,152 +19,152 @@ class Rescript extends AbstractOptinTheme
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#cccccc',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#cccccc',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Learn how to easily create your own website in live workshop", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Learn how to easily create your own website in live workshop", 'mailoptin'),
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#2c2f33',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#2c2f33',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'PT+Serif',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'PT+Serif',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for description sections -- //
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_default',
-                    'value' => $this->_description_content(),
+                    'name'        => 'mo_optin_form_description_default',
+                    'value'       => $this->_description_content(),
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_font_color_default',
-                    'value' => '#bebebe',
+                    'name'        => 'mo_optin_form_description_font_color_default',
+                    'value'       => '#bebebe',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for fields sections -- //
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email...", 'mailoptin'),
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#737373',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#737373',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_background_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_email_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#ff7f45',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#ff7f45',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#2c2f33',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#2c2f33',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_branding_outside_form',
-                    'value' => true,
+                    'name'        => 'mo_optin_branding_outside_form',
+                    'value'       => true,
                     'optin_class' => 'Rescript',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                    'name'  => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
                     'value' => function () {
                         return 'inline';
                     }
                 ],
 
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
+                    'name'  => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
                     'value' => function () {
                         return 'center';
                     }
                 ],
 
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
+                    'name'  => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
                     'value' => function () {
                         return '#919191';
                     }
@@ -181,7 +181,7 @@ class Rescript extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
-            $config['width'] = 420;
+            $config['width']  = 420;
             $config['height'] = 560;
 
             return $config;
@@ -232,9 +232,9 @@ class Rescript extends AbstractOptinTheme
     public function customizer_headline_settings($settings, $CustomizerSettingsInstance)
     {
         $settings['mini_headline'] = array(
-            'default' => "DON'T MISS OUT!",
-            'type' => 'option',
-            'transport' => 'refresh',
+            'default'           => "DON'T MISS OUT!",
+            'type'              => 'option',
+            'transport'         => 'refresh',
             'sanitize_callback' => array($CustomizerSettingsInstance, '_remove_paragraph_from_headline'),
         );
 
@@ -271,12 +271,12 @@ class Rescript extends AbstractOptinTheme
             $wp_customize,
             $option_prefix . '[mini_headline]',
             apply_filters('mo_optin_form_customizer_mini_headline_args', array(
-                    'label' => __('Mini Headline', 'mailoptin'),
-                    'section' => $customizerClassInstance->headline_section_id,
-                    'settings' => $option_prefix . '[mini_headline]',
-                    'editor_id' => 'mini_headline',
+                    'label'         => __('Mini Headline', 'mailoptin'),
+                    'section'       => $customizerClassInstance->headline_section_id,
+                    'settings'      => $option_prefix . '[mini_headline]',
+                    'editor_id'     => 'mini_headline',
                     'editor_height' => 50,
-                    'priority' => 4
+                    'priority'      => 4
                 )
             )
         );
@@ -491,10 +491,7 @@ class Rescript extends AbstractOptinTheme
     {
         $mini_header = $this->get_customizer_value('mini_headline', __("Don't miss out!", 'mailoptin'));
 
-        $mini_header_block = '';
-        if ( ! $this->get_customizer_value('hide_mini_headline', false)) {
-            $mini_header_block = '<div class="rescript_miniHeader">' . $mini_header . '</div>';
-        }
+        $mini_header_block = '<div class="rescript_miniHeader">' . $mini_header . '</div>';
 
         $optin_default_image = $this->default_form_image_partial;
 
@@ -534,10 +531,15 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
-        $optin_uuid = $this->optin_campaign_uuid;
+        $optin_uuid   = $this->optin_campaign_uuid;
 
         $submit_button_background = $this->get_customizer_value('submit_button_background', '#ff7f45');
         $mini_headline_font_color = $this->get_customizer_value('mini_headline_font_color', '#bebebe');
+
+        $is_mini_hadline_display = '';
+        if ( $this->get_customizer_value('hide_mini_headline', false)) {
+            $is_mini_hadline_display = 'display:none;';
+        }
 
         return <<<CSS
                 div#$optin_css_id.rescript_container .rescript_imgResponsive {
@@ -580,6 +582,7 @@ HTML;
                     border: 0px;
                     line-height: normal;
                     height: auto;
+                    $is_mini_hadline_display
 
                 }
 

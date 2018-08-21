@@ -484,10 +484,7 @@ class Gridgum extends AbstractOptinTheme
     {
         $mini_header = $this->get_customizer_value('mini_headline', __("Don't miss out!", 'mailoptin'));
 
-        $mini_header_block = '';
-        if ( ! $this->get_customizer_value('hide_mini_headline', false)) {
-            $mini_header_block = '<div class="gridgum_header2">' . $mini_header . '</div>';
-        }
+        $mini_header_block = '<div class="gridgum_header2">' . $mini_header . '</div>';
 
         $optin_default_image = $this->default_form_image_partial;
 
@@ -537,6 +534,11 @@ HTML;
 
         $mini_headline_font_color = $this->get_customizer_value('mini_headline_font_color', '#46ca9b');
 
+        $is_mini_hadline_display = '';
+        if ($this->get_customizer_value('hide_mini_headline', false)) {
+            $is_mini_hadline_display = 'display:none;';
+        }
+
         return <<<CSS
 div#$optin_css_id.gridgum_container * {
             padding: 0px;
@@ -583,6 +585,7 @@ div#$optin_css_id.gridgum_container * {
             font-size: 12px;
             color: $mini_headline_font_color;
             text-align: center;
+            $is_mini_hadline_display
         }
 
        div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2, 
