@@ -56,6 +56,7 @@ class LibsodiumSettingsPage
     public static function mo_is_license_valid()
     {
         $license = get_option('mo_license_status');
+
         return $license == 'valid' ? true : false;
     }
 
@@ -66,6 +67,7 @@ class LibsodiumSettingsPage
     public static function mo_is_license_invalid()
     {
         $license = get_option('mo_license_status');
+
         return $license == 'invalid';
     }
 
@@ -77,6 +79,7 @@ class LibsodiumSettingsPage
     public static function mo_is_license_expired()
     {
         $license = get_option('mo_license_expired_status', 'false');
+
         return $license == 'true';
     }
 
@@ -125,7 +128,7 @@ class LibsodiumSettingsPage
 
             $response = self::license_control_instance()->check_license();
 
-            if (!empty($response->license)) {
+            if ( ! empty($response->license)) {
 
                 if ($response->license == 'site_inactive') {
                     self::activate_license();
@@ -137,7 +140,7 @@ class LibsodiumSettingsPage
                     update_option('mo_license_expired_status', 'false');
                 }
 
-                if ($response->license == 'expired') {
+                if (in_array($response->license, ['expired', 'disabled'])) {
                     update_option('mo_license_expired_status', 'true');
                 }
 
@@ -176,13 +179,13 @@ class LibsodiumSettingsPage
         // listen for our activate button to be clicked
         if (isset($_POST['mo_activate_license'])) {
             self::activate_license();
-        } else if (isset($_POST['mo_deactivate_license'])) {
+        } elseif (isset($_POST['mo_deactivate_license'])) {
             self::deactivate_license();
         } // listen for our activate button to be clicked
-        else if (isset($_POST['save_license'])) {
+        elseif (isset($_POST['save_license'])) {
             self::save_license_key();
         } // listen for our activate button to be clicked
-        else if (isset($_GET['revalidate_license'])) {
+        elseif (isset($_GET['revalidate_license'])) {
             self::plugin_check_license(true);
         }
 
@@ -258,7 +261,7 @@ class LibsodiumSettingsPage
     public static function save_license_key()
     {
         // run a quick security check
-        if (!check_admin_referer('mo_plugin_nonce', 'mo_plugin_nonce')) {
+        if ( ! check_admin_referer('mo_plugin_nonce', 'mo_plugin_nonce')) {
             return;
         }
 
@@ -271,7 +274,7 @@ class LibsodiumSettingsPage
 
         update_option('mo_license_key', $new);
 
-        if (!empty($new)) {
+        if ( ! empty($new)) {
             self::activate_license($new);
         }
 
@@ -288,6 +291,7 @@ class LibsodiumSettingsPage
 
         if (is_wp_error($response)) {
             add_settings_error(self::slug, 'activation_error', $response->get_error_message());
+
             return;
         }
 
@@ -328,6 +332,7 @@ class LibsodiumSettingsPage
 
         if (is_wp_error($response)) {
             add_settings_error(self::slug, 'deactivation_error', $response->get_error_message());
+
             return;
         }
 
@@ -357,7 +362,7 @@ class LibsodiumSettingsPage
 
     public static function license_not_active_notice()
     {
-        if (!is_super_admin(get_current_user_id())) {
+        if ( ! is_super_admin(get_current_user_id())) {
             return;
         }
 
@@ -379,11 +384,11 @@ class LibsodiumSettingsPage
 
     public static function license_expired_notice()
     {
-        if (!PAnD::is_admin_notice_active('mo-license-expired-notice-14')) {
+        if ( ! PAnD::is_admin_notice_active('mo-license-expired-notice-14')) {
             return;
         }
 
-        if (!is_super_admin(get_current_user_id())) {
+        if ( ! is_super_admin(get_current_user_id())) {
             return;
         }
 
@@ -392,21 +397,21 @@ class LibsodiumSettingsPage
         }
 
         // bail if license not expired.
-        if (!self::mo_is_license_expired()) {
+        if ( ! self::mo_is_license_expired()) {
             return;
         }
 
-        $licenseKey = self::$license_key;
+        $licenseKey  = self::$license_key;
         $download_id = EDD_MO_ITEM_ID;
-        $renew_url = !empty(self::$license_key) ? "https://my.mailoptin.io/checkout/?edd_license_key={$licenseKey}&download_id={$download_id}" : 'https://my.mailoptin.io';
+        $renew_url   = ! empty(self::$license_key) ? "https://my.mailoptin.io/checkout/?edd_license_key={$licenseKey}&download_id={$download_id}" : 'https://my.mailoptin.io';
 
         echo '<div data-dismissible="mo-license-expired-notice-14" class="error notice is-dismissible"><p>' .
-            sprintf(
-                __('Your MailOptin license has expired and you have been downgraded to the LITE version. %sClick here to renew your license%s to regain old data and features. %sLearn more%s', 'mailoptin'),
-                "<a target='_blank' href=\"$renew_url\"><strong>", '</strong></a>',
-                '<a target="_blank" href="https://mailoptin.io/article/cancel-subscription-expires/">',
-                '</a>'
-            ) . '</p></div>';
+             sprintf(
+                 __('Your MailOptin license has expired and you have been downgraded to the LITE version. %sClick here to renew your license%s to regain old data and features. %sLearn more%s', 'mailoptin'),
+                 "<a target='_blank' href=\"$renew_url\"><strong>", '</strong></a>',
+                 '<a target="_blank" href="https://mailoptin.io/article/cancel-subscription-expires/">',
+                 '</a>'
+             ) . '</p></div>';
     }
 
     /**
