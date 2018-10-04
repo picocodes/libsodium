@@ -822,7 +822,6 @@ HTML;
                         padding: 0px;
                     }
                 }
-
 CSS;
 
     }
