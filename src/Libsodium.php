@@ -21,7 +21,6 @@ class Libsodium
     {
         add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
         add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
-        add_filter('mailoptin_lite_upgrade_more_optin_themes', '__return_false');
         add_filter('mailoptin_disable_sidebar_ads', '__return_true');
         add_filter('mailoptin_enable_email_customizer_connections', '__return_true');
 
