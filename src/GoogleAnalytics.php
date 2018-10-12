@@ -21,8 +21,7 @@ class GoogleAnalytics extends AbstractSettingsPage
 
     public function ga_settings($arg)
     {
-
-        if (defined('MAILOPTIN_AGENCY_PLUGIN_TYPE')) {
+        if (apply_filters('mailoptin_enable_google_analytics', false)) {
             $settingsArg[] = apply_filters('mailoptin_google_analytics_settings_page', [
                 'section_title' => __('Google Analytics', 'mailoptin'),
                 'type'          => AbstractConnect::ANALYTICS_TYPE,

@@ -44,16 +44,22 @@ class Libsodium
 
     public static function init_old_pro_plan()
     {
+        define('MAILOPTIN_OLD_PRO_PLUGIN_TYPE', true);
+        add_filter('mailoptin_enable_advance_analytics', '__return_true');
+        add_filter('mailoptin_enable_post_email_digest', '__return_true');
+        add_filter('mailoptin_enable_leadbank', '__return_true');
         LeadBank::get_instance();
         OptinSchedule::get_instance();
         AdblockDetector::get_instance();
         NewVsReturningVisitors::get_instance();
         ReferrerDetection::get_instance();
         AutoResponder::get_instance();
+        \MailOptin\AdvanceAnalytics\AdvanceAnalytics::get_instance();
     }
 
     public static function init_old_agency_plan()
     {
+        add_filter('mailoptin_enable_google_analytics', '__return_true');
         GoogleAnalytics::get_instance();
     }
 
