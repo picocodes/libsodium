@@ -19,21 +19,22 @@ class Libsodium
 {
     public function __construct()
     {
-        add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
-        add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
-        add_filter('mailoptin_disable_sidebar_ads', '__return_true');
-        add_filter('mailoptin_enable_email_customizer_connections', '__return_true');
-
-        add_action('mailoptin_email_campaign_customizer_page_settings', array($this, 'add_email_customizer_settings'), 10, 4);
-        add_action('mailoptin_email_campaign_customizer_settings_controls', array($this, 'add_email_customizer_control'), 10, 4);
-
         // this is at the top to define LibsodiumSettingsPage.
         LibsodiumSettingsPage::get_instance();
 
         if ( ! LibsodiumSettingsPage::mo_is_license_expired()) define('MAILOPTIN_DETACH_LIBSODIUM', true);
-        define('MAILOPTIN_STANDARD_PLUGIN_TYPE', true);
 
         if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
+
+        add_filter('mailoptin_add_optin_email_campaign_limit', '__return_false');
+        add_filter('mailoptin_add_new_email_campaign_limit', '__return_false');
+        add_filter('mailoptin_disable_sidebar_ads', '__return_true');
+        if (EDD_MO_ITEM_ID != '5591') {
+            add_filter('mailoptin_enable_email_customizer_connections', '__return_true');
+        }
+        add_action('mailoptin_email_campaign_customizer_page_settings', array($this, 'add_email_customizer_settings'), 10, 4);
+        add_action('mailoptin_email_campaign_customizer_settings_controls', array($this, 'add_email_customizer_control'), 10, 4);
+
         AfterConversion::init();
         CustomCSS::get_instance();
         Shortcodes\Init::init();
@@ -42,12 +43,18 @@ class Libsodium
         PremiumTemplates::get_instance();
     }
 
-    public static function init_old_pro_plan()
+    public function init_old_pro()
     {
-        define('MAILOPTIN_OLD_PRO_PLUGIN_TYPE', true);
+        // we need to check got this constant because it becomes undefined if license is expired.
+        if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
+
+        if ( ! defined('MAILOPTIN_OLD_PRO_PLUGIN_TYPE')) {
+            define('MAILOPTIN_OLD_PRO_PLUGIN_TYPE', true);
+        }
         add_filter('mailoptin_enable_advance_analytics', '__return_true');
         add_filter('mailoptin_enable_post_email_digest', '__return_true');
         add_filter('mailoptin_enable_leadbank', '__return_true');
+
         LeadBank::get_instance();
         OptinSchedule::get_instance();
         AdblockDetector::get_instance();
@@ -57,8 +64,11 @@ class Libsodium
         \MailOptin\AdvanceAnalytics\AdvanceAnalytics::get_instance();
     }
 
-    public static function init_old_agency_plan()
+    public function init_old_agency()
     {
+        // we need to check got this constant because it becomes undefined if license is expired.
+        if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
+        $this->init_old_pro();
         add_filter('mailoptin_enable_google_analytics', '__return_true');
         GoogleAnalytics::get_instance();
     }
