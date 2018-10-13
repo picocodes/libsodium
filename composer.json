@@ -2,9 +2,6 @@
   "name": "mailoptin/libsodium",
   "description": "libsodium package",
   "type": "library",
-  "require": {
-    "mailoptin/advanceanalytics": "^0.1-dev"
-  },
   "autoload": {
     "psr-4": {
       "MailOptin\\Libsodium\\": "src/"

@@ -2,6 +2,7 @@
 
 namespace MailOptin\Libsodium;
 
+use MailOptin\AdvanceAnalytics\AdvanceAnalytics;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
 use MailOptin\Core\Admin\Customizer\EmailCampaign\Customizer as EmailTemplateCustomizer;
 use MailOptin\Libsodium\LeadBank\LeadBank;
@@ -54,7 +55,7 @@ class Libsodium
         NewVsReturningVisitors::get_instance();
         ReferrerDetection::get_instance();
         AutoResponder::get_instance();
-        \MailOptin\AdvanceAnalytics\AdvanceAnalytics::get_instance();
+        AdvanceAnalytics::get_instance();
 
         return $this;
     }
@@ -78,7 +79,6 @@ class Libsodium
     {
         // we need to check got this constant because it becomes undefined if license is expired.
         if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
-        define('MAILOPTIN_OLD_PRO_PLUGIN_TYPE', true);
         add_filter('mailoptin_enable_advance_analytics', '__return_true');
         add_filter('mailoptin_enable_post_email_digest', '__return_true');
         add_filter('mailoptin_enable_leadbank', '__return_true');
@@ -88,7 +88,7 @@ class Libsodium
         NewVsReturningVisitors::get_instance();
         ReferrerDetection::get_instance();
         AutoResponder::get_instance();
-        \MailOptin\AdvanceAnalytics\AdvanceAnalytics::get_instance();
+        AdvanceAnalytics::get_instance();
     }
 
     public function add_email_customizer_settings($settings)
