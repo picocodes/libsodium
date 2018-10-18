@@ -167,6 +167,64 @@ class Gridgum extends AbstractOptinTheme
                     'value'       => 'Open+Sans',
                     'optin_class' => 'Gridgum',
                     'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 25,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 25,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 20,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 16,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 16,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 14,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'lightbox'
                 ]
             ]
         );
@@ -600,7 +658,6 @@ div#$optin_css_id.gridgum_container * {
         div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline {
             padding-bottom: 10px;
             color: #4b4646;
-            font-size: 20px;
             text-align: center;
             text-transform: capitalize;
             display: block;
@@ -743,9 +800,6 @@ div#$optin_css_id.gridgum_container * {
                 font-size: 15px;
                 text-align: center;
                 padding-bottom: 0px;
-            }
-            div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline {
-                font-size: 25px;
             }
         }
 

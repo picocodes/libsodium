@@ -139,6 +139,49 @@ class Dahlia extends AbstractOptinTheme
                     'value' => 'Helvetica',
                     'optin_class' => 'Dahlia',
                     'optin_type' => 'bar'
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 12,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 18,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Dahlia',
+                    'optin_type' => 'bar'
                 ]
             ]
         );
@@ -494,7 +537,6 @@ div#$optin_css_id.dahlia-container .dahlia-close-form:hover {
 
 div#$optin_css_id.dahlia-container .moDahlia_note {
 		 font-style: italic;
-		 font-size: 14px;
 		 line-height: 1.5;
 		 text-align: center;
 		 color: #515151;
@@ -622,7 +664,6 @@ div#$optin_css_id.dahlia-container div.mo-optin-error {
 }
 div#$optin_css_id.dahlia-container .dahlia-headline{
     color: #000;
-    font-size: 18px;
     display: block;
     border: none;
     line-height: normal;
