@@ -138,6 +138,48 @@ class Dashdot extends AbstractOptinTheme
                     'value' => 'Helvetica',
                     'optin_class' => 'Dashdot',
                     'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 12,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 18,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Dashdot',
+                    'optin_type' => 'bar'
                 ]
             ]
         );
@@ -497,7 +539,6 @@ div#$optin_css_id.dashdot-container input.dashdot-submit-button {
     font-size: 13px;
     display: inline;
     line-height: normal;
-    border-width: 1px 1px 3px;
     font-weight: 900;
     font-family: Georgia, "Times New Roman", Times, serif;;
     padding: 10px;
@@ -534,7 +575,6 @@ div#$optin_css_id.dashdot-container .dashdot-dotted {
     color: #fff;
     border: 1px dashed $headline_border_color;
     border-radius: 1px;
-    text-shadow: -1px -1px #aa3030;
     font-weight: 700;
     font-family: Vollkorn, san-serif;
 }
@@ -579,7 +619,6 @@ div#$optin_css_id.dashdot-container .dashdot-close-form a.mo-close-optin {
 
 div#$optin_css_id.dashdot-container .moDashdot_note {
 		 font-style: italic;
-		 font-size: 14px;
 		 line-height: 1.5;
 		 text-align: center;
 		 color: #ffffff;

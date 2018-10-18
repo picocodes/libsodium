@@ -141,7 +141,6 @@ class Dahlia extends AbstractOptinTheme
                     'optin_type' => 'bar'
                 ],
 
-
                 [
                     'name'        => 'mo_optin_form_note_font_size_desktop_default',
                     'value'       => 14,

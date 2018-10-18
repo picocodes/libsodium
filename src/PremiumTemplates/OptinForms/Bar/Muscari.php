@@ -14,130 +14,172 @@ class Muscari extends AbstractOptinTheme
         $this->init_config_filters([
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_name_field_placeholder_default',
-                    'value' => __("Enter your name...", 'mailoptin'),
-                    'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name...", 'mailoptin'),
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email...", 'mailoptin'),
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin'),
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Helvetica',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Helvetica',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#dddddd',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#dddddd',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#dddddd',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#dddddd',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#3abaab',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#3abaab',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Helvetica',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Helvetica',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
 
                 [
-                    'name' => 'mo_optin_form_hide_note_default',
-                    'value' => true,
+                    'name'        => 'mo_optin_form_hide_note_default',
+                    'value'       => true,
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
-                    'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Helvetica',
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Muscari',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Helvetica',
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 12,
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 15,
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 15,
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 15,
+                    'optin_class' => 'Muscari',
+                    'optin_type'  => 'bar'
                 ]
             ]
         );
@@ -385,7 +427,7 @@ HTML;
      */
     public function optin_form_css()
     {
-        $optin_uuid = $this->optin_campaign_uuid;
+        $optin_uuid   = $this->optin_campaign_uuid;
         $optin_css_id = $this->optin_css_id;
 
         return <<<CSS
