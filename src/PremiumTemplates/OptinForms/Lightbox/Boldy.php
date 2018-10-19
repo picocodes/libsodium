@@ -201,6 +201,48 @@ class Boldy extends AbstractOptinTheme
                     'value' => function () {
                         return '#ffffff';
                     }
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 38,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 26,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 18,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 22,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 15,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'lightbox'
                 ]
             ]
         );
@@ -554,7 +596,6 @@ HTML;
         }
 
         div#$optin_css_id.boldy_container .boldy_main .boldy_description {
-            font-size: 15px;
             padding-bottom: 10px;
             padding-top: 10px;
             font-weight: 500;
@@ -637,14 +678,10 @@ HTML;
             }
             
             div#$optin_css_id.boldy_container .boldy_main .boldy_description {
-                font-size: 22px;
                 padding-top: 0px;
                 font-weight: 500;
             }
-
-            div#$optin_css_id.boldy_container .boldy_main .boldy_header {
-                font-size: 26px;
-            }
+            
             div#$optin_css_id.boldy_container input.boldy_input {
                 width: 35%;
                 padding: 15px;
@@ -668,7 +705,6 @@ HTML;
                 font-size: 14px;
             }
             div#$optin_css_id.boldy_container .boldy_main .boldy_header{
-                font-size: 38px;
                 padding-bottom: 5px;
             }
         }

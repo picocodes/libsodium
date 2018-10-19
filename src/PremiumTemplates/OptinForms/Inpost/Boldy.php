@@ -193,6 +193,48 @@ class Boldy extends AbstractOptinTheme
                     'value' => function () {
                         return '#ffffff';
                     }
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 38,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 26,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 18,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 22,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 15,
+                    'optin_class' => 'Boldy',
+                    'optin_type' => 'inpost'
                 ]
             ]
         );
