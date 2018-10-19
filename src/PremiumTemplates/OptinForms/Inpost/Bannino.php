@@ -109,6 +109,20 @@ class Bannino extends AbstractOptinTheme
                     'value' => 'Titillium+Web',
                     'optin_class' => 'Bannino',
                     'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Bannino',
+                    'optin_type' => 'inpost'
                 ]
             ]
         );
