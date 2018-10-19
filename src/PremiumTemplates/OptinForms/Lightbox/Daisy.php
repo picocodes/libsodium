@@ -16,155 +16,218 @@ class Daisy extends AbstractOptinTheme
         $this->init_config_filters([
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Courgette',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Courgette',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for description sections -- //
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Titillium Web',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Titillium Web',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#2ecc71',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#2ecc71',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Get Your Free Ebook", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Get Your Free Ebook", 'mailoptin'),
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_default',
-                    'value' => $this->_description_content(),
+                    'name'        => 'mo_optin_form_description_default',
+                    'value'       => $this->_description_content(),
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_font_color_default',
-                    'value' => '#a2a2a2',
+                    'name'        => 'mo_optin_form_description_font_color_default',
+                    'value'       => '#a2a2a2',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#000',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#000',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#000',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#000',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#2ecc71',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#2ecc71',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Merriweather',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Merriweather',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Trebuchet MS, Arial, sans-serif',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Trebuchet MS, Arial, sans-serif',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __("I'll Pass, Thank you", 'mailoptin'),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __("I'll Pass, Thank you", 'mailoptin'),
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Merriweather',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Merriweather',
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_placeholder_default',
-                    'value' => __("Enter your name...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name...", 'mailoptin'),
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email...", 'mailoptin'),
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_close_optin_onclick_default',
-                    'value' => true,
+                    'name'        => 'mo_optin_form_note_close_optin_onclick_default',
+                    'value'       => true,
                     'optin_class' => 'Daisy',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 25,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 25,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 20,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 17,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 17,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 15,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
+                    'value'       => 12,
+                    'optin_class' => 'Daisy',
+                    'optin_type'  => 'lightbox'
                 ]
             ]
         );
@@ -178,7 +241,7 @@ class Daisy extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
-            $config['width'] = 250;
+            $config['width']  = 250;
             $config['height'] = 300;
 
             return $config;
@@ -438,10 +501,10 @@ HTML;
      */
     public function optin_form_css()
     {
-        $optin_css_id = $this->optin_css_id;
-        $optin_uuid = $this->optin_campaign_uuid;
+        $optin_css_id                   = $this->optin_css_id;
+        $optin_uuid                     = $this->optin_campaign_uuid;
         $submit_button_background_color = $this->get_customizer_value('submit_button_background');
-        $cta_button_background_color = $this->get_customizer_value('cta_button_background');
+        $cta_button_background_color    = $this->get_customizer_value('cta_button_background');
 
         return <<<CSS
         div#$optin_css_id.daisy-container {
@@ -460,7 +523,6 @@ div#$optin_css_id.daisy-container div.daisy-header {
     color: #000;
     font-weight: 700;
     margin: 10px 0;
-    font-size: 25px;
     line-height: 1.5;
     text-align: center;
 }
@@ -489,17 +551,16 @@ div#$optin_css_id.daisy-container .daisy-note {
     font-family: merriweather, sans-serif;
     margin: 10px 0 0;
     text-align: center;
-    font-size: 12px;
 }
 div#$optin_css_id.daisy-container .daisy-description {
     font-family: 'merriweather', sans-serif;
-    font-size: 17px;
     line-height: 1.5;
     text-align: center;
-    color: #777;
+    color: #a2a2a2;
     margin: 10px 0;
     font-weight: 300;
 }
+
 div#$optin_css_id.daisy-container img.mo-optin-form-image {
     display: block;
     max-width: 100%;
@@ -538,11 +599,6 @@ div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
     font-size: 13px;
     padding: 12px;
     line-height: normal;
-}
-div#$optin_css_id.daisy-container .daisy-description {
-    font-family: merriweather, sans-serif;
-    color: #a2a2a2;
-    font-size: 17px;
 }
 div#$optin_css_id.daisy-container div.mo-optin-error {
     display: none;
