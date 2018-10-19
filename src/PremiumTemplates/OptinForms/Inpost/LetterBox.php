@@ -171,6 +171,69 @@ class LetterBox extends AbstractOptinTheme
                     'value' => 'Raleway',
                     'optin_class' => 'LetterBox',
                     'optin_type' => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 28,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 24,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 20,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 21,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 16,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 14,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
+                    'value'       => 12,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'inpost'
                 ]
             ]
         );
@@ -463,7 +526,6 @@ div#$optin_css_id.letterBox_container {
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
-    font-size: 24px;
     padding: 0 20px;
     font-weight: 700;
     margin: 15px auto;
@@ -476,7 +538,6 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
     color: #ffffff;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
     padding: 0 20px;
     font-weight: 400;
     line-height: normal;
@@ -554,22 +615,11 @@ div#$optin_css_id.letterBox_container .letterBox_field_wrapper {
 div#$optin_css_id.letterBox_container .letterbox_note {
      margin: 0 auto 10px;
      text-align: center;
-     font-size: 14px;
      font-style: italic;
      display: block;
      border: 0;
      line-height: normal;
  }
-
- @media only screen and (min-width: 600px){
-
-div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
-    font-size: 28px;
-}
-div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
-    font-size: 21px;
-}   
-}
 
 @media only screen and (min-width: 1000px){
 

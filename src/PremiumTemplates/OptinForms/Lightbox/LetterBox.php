@@ -13,6 +13,7 @@ class LetterBox extends AbstractOptinTheme
     {
         add_filter('mo_optin_campaign_icon_close', function ($val, $optin_class, $optin_type) {
             if ($optin_class == 'LetterBox' && $optin_type = 'lightbox') $val = false;
+
             return $val;
         }, 10, 3);
 
@@ -20,155 +21,218 @@ class LetterBox extends AbstractOptinTheme
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#9d58e2',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#9d58e2',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#0e67e0',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#0e67e0',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email here...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email here...", 'mailoptin'),
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Don't Miss Our Update", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Don't Miss Our Update", 'mailoptin'),
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for description sections -- //
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_default',
-                    'value' => $this->_description_content(),
+                    'name'        => 'mo_optin_form_description_default',
+                    'value'       => $this->_description_content(),
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_description_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#444444',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#444444',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_background_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_name_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#444444',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#444444',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_background_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_email_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#8000e2',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#8000e2',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Garamond, Hoefler Text, serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Garamond, Hoefler Text, serif',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Garamond, Hoefler Text, serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Garamond, Hoefler Text, serif',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'LetterBox',
-                    'optin_type' => 'lightbox'
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 28,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 24,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 20,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 21,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 16,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 14,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
+                    'value'       => 12,
+                    'optin_class' => 'LetterBox',
+                    'optin_type'  => 'lightbox'
                 ]
             ]
         );
@@ -176,6 +240,7 @@ class LetterBox extends AbstractOptinTheme
         // Add Raleway with 400, 700 font weight variant.
         add_filter('mo_optin_form_fonts_list', function ($webfont) {
             $webfont[] = "'Raleway:400,700'";
+
             return $webfont;
         });
 
@@ -397,6 +462,7 @@ class LetterBox extends AbstractOptinTheme
     public function optin_form()
     {
         $close_image = MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/close.png';
+
         return <<<HTML
 [mo-optin-form-wrapper class="letterBox_container"]
 [mo-close-optin]<img src="$close_image" class="letterBox_closeBtn">[/mo-close-optin]
@@ -434,6 +500,7 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+
         return <<<CSS
         
 div#$optin_css_id.letterBox_container input,

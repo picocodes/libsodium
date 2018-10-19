@@ -192,6 +192,69 @@ class LetterBox extends AbstractOptinTheme
                 'value' => function () {
                     return '#ffffff';
                 }
+            ],
+
+            [
+                'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                'value'       => 20,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                'value'       => 20,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                'value'       => 18,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                'value'       => 15,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                'value'       => 15,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                'value'       => 14,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                'value'       => 14,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                'value'       => 14,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
+            ],
+
+            [
+                'name'        => 'mo_optin_form_note_font_size_mobile_default',
+                'value'       => 12,
+                'optin_class' => 'LetterBox',
+                'optin_type'  => 'slidein'
             ]
         ]);
 
@@ -466,7 +529,6 @@ div#$optin_css_id.letterBox_container {
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
-    font-size: 20px;
     padding: 0 20px;
     font-weight: 700;
     margin: 15px auto;
@@ -479,7 +541,6 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
     color: #ffffff;
     font-family: 'Raleway', sans-serif;
-    font-size: 15px;
     padding: 0 20px;
     font-weight: 400;
     line-height: normal;
@@ -565,7 +626,6 @@ div#$optin_css_id.letterBox_container .letterBox_closeBtn {
 div#$optin_css_id.letterBox_container .letterbox_note {
      margin: 0 auto 10px;
      text-align: center;
-     font-size: 14px;
      font-style: italic;
      display: block;
      border: 0;
