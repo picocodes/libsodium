@@ -14,154 +14,218 @@ class Primrose extends AbstractOptinTheme
         $this->init_config_filters([
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#f22613',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#f22613',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_placeholder_default',
-                    'value' => __("Enter your name...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name...", 'mailoptin'),
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email...", 'mailoptin'),
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("50% OFF", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("50% OFF", 'mailoptin'),
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'PT+serif',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'PT+serif',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for description sections -- //
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_default',
-                    'value' => $this->_description_content(),
+                    'name'        => 'mo_optin_form_description_default',
+                    'value'       => $this->_description_content(),
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_description_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#555555',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#555555',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#555555',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#555555',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Consolas, Lucida Console, monospace',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Consolas, Lucida Console, monospace',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Consolas, Lucida Console, monospace',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Consolas, Lucida Console, monospace',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('*Offer Valid till 26th December', 'mailoptin'),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('*Offer Valid till 26th December', 'mailoptin'),
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'Primrose',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_background_image_default',
+                    'name'  => 'mo_optin_form_background_image_default',
                     'value' => function () {
                         return MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
                     }
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 45,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 40,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 35,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 18,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 18,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 14,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 12,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 12,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
+                    'value'       => 12,
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar'
                 ]
             ]
         );
@@ -229,7 +293,7 @@ HTML;
      */
     public function optin_form_css()
     {
-        $optin_css_id = $this->optin_css_id;
+        $optin_css_id     = $this->optin_css_id;
         $background_image = $this->get_form_background_image_url();
 
         return <<<CSS
