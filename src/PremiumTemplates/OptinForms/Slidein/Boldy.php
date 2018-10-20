@@ -569,7 +569,6 @@ HTML;
 
         div#$optin_css_id.boldy_container .boldy_main .boldy_header {
             font-weight: 700;
-            font-size: 20px;
             display: block;
             border: 0;
             line-height: normal;
@@ -604,7 +603,6 @@ HTML;
         }
 
         div#$optin_css_id.boldy_container .boldy_main .boldy_description {
-            font-size: 16px;
             padding-bottom: 10px;
             padding-top: 10px;
             font-weight: 500;

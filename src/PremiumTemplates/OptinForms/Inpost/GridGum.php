@@ -167,6 +167,64 @@ class Gridgum extends AbstractOptinTheme
                     'value'       => true,
                     'optin_class' => 'Gridgum',
                     'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 25,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 25,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 20,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 16,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 16,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 14,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 14,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 14,
+                    'optin_class' => 'Gridgum',
+                    'optin_type'  => 'inpost'
                 ]
             ]
         );
