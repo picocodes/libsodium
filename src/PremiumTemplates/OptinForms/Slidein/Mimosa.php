@@ -11,227 +11,281 @@ class Mimosa extends AbstractOptinTheme
 
     public function __construct($optin_campaign_id)
     {
-
         $this->init_config_filters([
                 [
-                    'name' => 'mo_optin_form_background_color_default', // 1
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_background_color_default', // 1
+                    'value'       => '#ffffff',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_border_color_default', // 2
-                    'value' => '#dddddd',
+                    'name'        => 'mo_optin_form_border_color_default', // 2
+                    'value'       => '#dddddd',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default', // 3
-                    'value' => __("Enter your email here...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_placeholder_default', // 3
+                    'value'       => __("Enter your email here...", 'mailoptin'),
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_name_field_placeholder_default',
-                    'value' => __("Enter your name here...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name here...", 'mailoptin'),
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_headline_default', // 4
-                    'value' => __("Don't Miss Our Update", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default', // 4
+                    'value'       => __("Don't Miss Our Update", 'mailoptin'),
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default', // 5
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_headline_font_color_default', // 5
+                    'value'       => '#000000',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_description_default', // 6
-                    'value' => $this->_description_content(),
+                    'name'        => 'mo_optin_form_description_default', // 6
+                    'value'       => $this->_description_content(),
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_description_font_color_default', // 6.5
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_description_font_color_default', // 6.5
+                    'value'       => '#000000',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_name_field_color_default', // 7
-                    'value' => '#555555',
+                    'name'        => 'mo_optin_form_name_field_color_default', // 7
+                    'value'       => '#555555',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#555555',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#555555',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_email_field_background_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_email_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#1b1bea',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#1b1bea',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_modal_effects_default',
-                    'value' => 'MOslideInUp',
+                    'name'        => 'mo_optin_form_modal_effects_default',
+                    'value'       => 'MOslideInUp',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
-                    'name' => 'mo_optin_form_slidein_position_default',
-                    'value' => 'bottom_right',
+                    'name'        => 'mo_optin_form_slidein_position_default',
+                    'value'       => 'bottom_right',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
                 [
                     // Add Raleway with 400, 700 font weight variant.
-                    'name' => 'mo_optin_form_fonts_list',
+                    'name'  => 'mo_optin_form_fonts_list',
                     'value' => function ($webfont) {
                         $webfont[] = "'Raleway:400,700'";
+
                         return $webfont;
                     }
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#ea0c1a',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#ea0c1a',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Palatino Linotype, Book Antiqua, serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_hide_name_field_default',
-                    'value' => true,
+                    'name'        => 'mo_optin_form_hide_name_field_default',
+                    'value'       => true,
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'optin_form_slidein_position_default',
-                    'value' => 'bottom_right',
+                    'name'        => 'optin_form_slidein_position_default',
+                    'value'       => 'bottom_right',
                     'optin_class' => 'Mimosa',
-                    'optin_type' => 'slidein'
+                    'optin_type'  => 'slidein'
                 ],
 
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
+                    'name'  => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_style',
                     'value' => function () {
                         return 'inline';
                     }
                 ],
 
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
+                    'name'  => 'mailoptin_customizer_optin_campaign_MailChimpConnect_segment_display_alignment',
                     'value' => function () {
                         return 'center';
                     }
                 ],
 
                 [
-                    'name' => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
+                    'name'  => 'mailoptin_customizer_optin_campaign_MailChimpConnect_user_input_field_color',
                     'value' => function () {
                         return '#000000';
                     }
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'       => 15,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'       => 15,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'       => 15,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'       => 12,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'       => 12,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'       => 12,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'       => 10.5,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'       => 10.5,
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
+                    'value'       => 10.5,
+                    'optin_type'  => 'slidein'
                 ]
             ]
         );
@@ -470,6 +524,7 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+
         return <<<CSS
 div#$optin_css_id.mimosa-container * {
 -webkit-box-sizing: border-box;
