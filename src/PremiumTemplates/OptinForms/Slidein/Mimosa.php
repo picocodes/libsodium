@@ -235,57 +235,57 @@ class Mimosa extends AbstractOptinTheme
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_headline_font_size_desktop_default',
-                    'value'       => 15,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_headline_font_size_desktop_default',
+                    'value'      => 15,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
-                    'value'       => 15,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_headline_font_size_tablet_default',
+                    'value'      => 15,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
-                    'value'       => 15,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_headline_font_size_mobile_default',
+                    'value'      => 15,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_description_font_size_desktop_default',
-                    'value'       => 12,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_description_font_size_desktop_default',
+                    'value'      => 12,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_description_font_size_tablet_default',
-                    'value'       => 12,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_description_font_size_tablet_default',
+                    'value'      => 12,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_description_font_size_mobile_default',
-                    'value'       => 12,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_description_font_size_mobile_default',
+                    'value'      => 12,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_note_font_size_desktop_default',
-                    'value'       => 10.5,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_note_font_size_desktop_default',
+                    'value'      => 10.5,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
-                    'value'       => 10.5,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_note_font_size_tablet_default',
+                    'value'      => 10.5,
+                    'optin_type' => 'slidein'
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
-                    'value'       => 10.5,
-                    'optin_type'  => 'slidein'
+                    'name'       => 'mo_optin_form_note_font_size_mobile_default',
+                    'value'      => 10.5,
+                    'optin_type' => 'slidein'
                 ]
             ]
         );
@@ -542,7 +542,6 @@ div#$optin_css_id.mimosa-container {
   width: auto;
   padding: 0.5em;
   font-size: 15px;
-  font-family: 'Open Sans', arial, sans-serif;
   color: #000;
   text-align: center;
   -webkit-box-sizing: border-box;
@@ -556,6 +555,7 @@ div#$optin_css_id.mimosa-container .mimosa-optin-form-close {
     cursor: pointer;
     font-size: 1.5em;
     font-weight: 500;
+    font-family: 'Open Sans', arial, sans-serif;
     float: right;
     text-decoration: none !important;
     vertical-align: text-top;
@@ -619,7 +619,6 @@ div#$optin_css_id.mimosa-container input.mimosa-input {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  font-family: 'Open Sans', arial, sans-serif;
   padding: 0.7em;
   font-size: 0.9em;
   line-height: 0.9em;
@@ -640,7 +639,6 @@ div#$optin_css_id.mimosa-container input[type="submit"].mimosa-submit {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  font-family: 'Open Sans', arial, sans-serif;
   padding: 0.9em;
   font-size: 0.9em;
   line-height: 0.9em;

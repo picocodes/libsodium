@@ -549,13 +549,6 @@ HTML;
             position: relative;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_header,
-        div#$optin_css_id.boldy_container .boldy_main .boldy_description,
-        div#$optin_css_id.boldy_container .boldy_main .boldy_note,
-        div#$optin_css_id.boldy_container .boldy_input{
-            font-family: "Lato", sans-serif;
-        }
-
        div#$optin_css_id.boldy_container .boldy_main .boldy_header,
        div#$optin_css_id.boldy_container .boldy_main .boldy_description,
        div#$optin_css_id.boldy_container .boldy_main .boldy_note{
@@ -615,7 +608,6 @@ HTML;
         }
 
         div#$optin_css_id.boldy_container input.boldy_submitButton {
-            font-family: Lato, sans-serif, Arial, Verdana, "Trebuchet MS";
             font-size: 15px;
             text-transform: uppercase;
             padding: 10px 5px;

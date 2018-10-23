@@ -68,8 +68,16 @@ class Shortcodes
         return $this->get_optin($optin_campaign_id);
     }
 
+    /**
+     * @param $optin_campaign_id
+     *
+     * @return string
+     */
     public function get_optin($optin_campaign_id)
     {
+        // $optin_campaign_id could be null if invalid uuid is supplied.
+        if(!$optin_campaign_id) return __('Invalid optin campaign ID', 'mailoptin');
+
         $optin_type = OCR::get_optin_campaign_type($optin_campaign_id);
 
         if (!in_array($optin_type, ['inpost', 'sidebar'])) {

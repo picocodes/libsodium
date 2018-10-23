@@ -624,7 +624,6 @@ HTML;
                 }
 
                div#$optin_css_id.rescript_container .rescript_main .rescript_description {
-                    font-family: 'Open Sans', sans-serif;
                     font-size: 16px;
                     line-height: 1.8;
                     color: #bebebe;
@@ -650,7 +649,6 @@ HTML;
                     padding: 10px;
                     height: 60px !important;
                     font-weight: 400;
-                    font-family: 'Open Sans', sans-serif;
                     padding-left: 25px !important;
                     color: #737373;
                     text-align: left;
@@ -666,7 +664,6 @@ HTML;
                 }
 
                div#$optin_css_id.rescript_container .rescript_headline {
-                    font-family: 'PT Serif', serif;
                     line-height: 1.5;
                     color: #2c2f33;
                     font-weight: bold;
@@ -695,7 +692,6 @@ HTML;
                     color: #fff;
                     font-weight: 700;
                     text-transform: uppercase;
-                    font-family: 'Open Sans', sans-serif;
                     margin-top: 20px;
                 }
 

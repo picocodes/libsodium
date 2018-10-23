@@ -576,7 +576,6 @@ div#$optin_css_id.gridgum_container {
          max-width: 350px;
          padding-left: 10px;
          padding-right: 10px;
-         font-family: 'Open Sans', arial, sans-serif;
      }
 
 div#$optin_css_id.gridgum_container .mo-optin-error {
@@ -593,6 +592,7 @@ div#$optin_css_id.gridgum_container .gridgum-optin-form-close {
     cursor: pointer;
     font-size: 1.5em;
     font-weight: 500;
+    font-family: 'Open Sans', arial, sans-serif;
     float: right;
     text-decoration: none !important;
     vertical-align: text-top;
@@ -623,13 +623,6 @@ div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2 {
          text-align: center;
          $is_mini_hadline_display
      }
-
-div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2,
-     div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline,
-          div#$optin_css_id.gridgum_container .gridgum_body-form .gridgum_input_field,
-               div#$optin_css_id.gridgum_container .gridgum_submit_button, .gridgum_note {
-                        font-family: "Open Sans", sans-serif;
-                    }
 
 div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline {
          padding-bottom: 10px;

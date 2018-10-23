@@ -498,7 +498,6 @@ div#$optin_css_id.dahlia-container {
     padding-left: 15px;
     padding-right: 35px;
     width: 100%;
-    font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
     font-size: 16px;
     border: 2px solid #00ceff;
     box-sizing: border-box;
@@ -593,7 +592,6 @@ div#$optin_css_id.dahlia-container input.dahlia-button{
     border: 1px solid transparent;
     border-radius: 4px;
     font-weight: normal;
-    font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
     width: 100%;
 }
 

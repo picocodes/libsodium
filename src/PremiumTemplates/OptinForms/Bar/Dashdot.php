@@ -540,7 +540,6 @@ div#$optin_css_id.dashdot-container input.dashdot-submit-button {
     display: inline;
     line-height: normal;
     font-weight: 900;
-    font-family: Georgia, "Times New Roman", Times, serif;;
     padding: 10px;
 	border-radius: 2px;
 	border: 0;
@@ -550,7 +549,6 @@ div#$optin_css_id.dashdot-container input.dashdot-submit-button {
 div#$optin_css_id.dashdot-container input.dashdot-input-field {
     font-weight: 400;
     padding: 10px 10px;
-    font-family: Georgia, "Times New Roman", Times, serif;
     border: none;
     font-size: 13px;
     margin: 0;
@@ -576,7 +574,6 @@ div#$optin_css_id.dashdot-container .dashdot-dotted {
     border: 1px dashed $headline_border_color;
     border-radius: 1px;
     font-weight: 700;
-    font-family: Vollkorn, san-serif;
 }
 
 div#$optin_css_id.dashdot-container .dashdot-header-block {

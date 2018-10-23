@@ -599,13 +599,13 @@ HTML;
         }
 
         return <<<CSS
-div#$optin_css_id.gridgum_container * {
-            padding: 0px;
-            margin: 0px;
-          -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-         box-sizing: border-box;
-        }
+        div#$optin_css_id.gridgum_container * {
+                padding: 0px;
+                margin: 0px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+          }
 
         div#$optin_css_id.gridgum_container {
             background: #ffffff;
@@ -617,12 +617,12 @@ div#$optin_css_id.gridgum_container * {
         }
         
         div#$optin_css_id.gridgum_container .mo-optin-error {
-     display: none; 
-    color: #ff0000;
-    text-align: center;
-    padding: 5px;
-    font-size: 14px;
-}
+            display: none; 
+            color: #ff0000;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
+        }
 
         div#$optin_css_id.gridgum_container .gridgum_style-smaller{
             display: none;
@@ -648,15 +648,6 @@ div#$optin_css_id.gridgum_container * {
             color: $mini_headline_font_color;
             text-align: center;
             $is_mini_hadline_display
-        }
-
-       div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2, 
-       div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline, 
-       div#$optin_css_id.gridgum_container .gridgum_body-form .gridgum_input_field, 
-       div#$optin_css_id.gridgum_container .gridgum_submit_button, .gridgum_note ,
-        div#$optin_css_id.gridgum_container .gridgum_content-overlay .gridgum_header2, 
-        div#$optin_css_id.gridgum_container .gridgum_content-overlay .gridgum_description {
-            font-family: "Open Sans", sans-serif;
         }
 
         div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline {

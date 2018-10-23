@@ -646,15 +646,6 @@ div#$optin_css_id.gridgum_container * {
             $is_mini_hadline_display
         }
 
-       div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_header2, 
-       div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline, 
-       div#$optin_css_id.gridgum_container .gridgum_body-form .gridgum_input_field, 
-       div#$optin_css_id.gridgum_container .gridgum_submit_button, .gridgum_note ,
-        div#$optin_css_id.gridgum_container .gridgum_content-overlay .gridgum_header2, 
-        div#$optin_css_id.gridgum_container .gridgum_content-overlay .gridgum_description {
-            font-family: "Open Sans", sans-serif;
-        }
-
         div#$optin_css_id.gridgum_container .gridgum_body-inner .gridgum_headline {
             padding-bottom: 10px;
             color: #4b4646;

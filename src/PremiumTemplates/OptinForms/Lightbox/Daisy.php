@@ -39,7 +39,7 @@ class Daisy extends AbstractOptinTheme
                 // -- default for description sections -- //
                 [
                     'name'        => 'mo_optin_form_description_font_default',
-                    'value'       => 'Titillium Web',
+                    'value'       => 'Titillium+Web',
                     'optin_class' => 'Daisy',
                     'optin_type'  => 'lightbox'
                 ],
@@ -519,7 +519,6 @@ div#$optin_css_id.daisy-container * {
     box-sizing: border-box;
 }
 div#$optin_css_id.daisy-container div.daisy-header {
-    font-family: 'Courgette', cursive;
     color: #000;
     font-weight: 700;
     margin: 10px 0;
@@ -548,12 +547,10 @@ div#$optin_css_id.daisy-container input.daisy-input:focus {
     background: #f5f1f1;
 }
 div#$optin_css_id.daisy-container .daisy-note {
-    font-family: merriweather, sans-serif;
     margin: 10px 0 0;
     text-align: center;
 }
 div#$optin_css_id.daisy-container .daisy-description {
-    font-family: 'merriweather', sans-serif;
     line-height: 1.5;
     text-align: center;
     color: #a2a2a2;
@@ -594,7 +591,6 @@ div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
     background: #2ecc71;
     font-weight: 700;
     color: white;
-    font-family: merriweather, sans-serif;
     cursor: pointer;
     font-size: 13px;
     padding: 12px;
@@ -668,7 +664,6 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
         padding-right: 10px;
         margin-right: 10px !important;
         border-radius: 3px;
-        font-family: merriweather, sans-serif;
     }
     div#$optin_css_id.daisy-container .daisy-note {
         padding-top: 10px;

@@ -528,7 +528,6 @@ div#$optin_css_id.letterBox_container {
 }
 
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
-    font-family: 'Raleway', sans-serif;
     color: #ffffff;
     font-size: 24px;
     padding: 0 20px;
@@ -542,7 +541,6 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
 
 div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
     color: #ffffff;
-    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     padding: 0 20px;
     font-weight: 400;
@@ -562,7 +560,6 @@ div#$optin_css_id.letterBox_container input.letterBox_form_field {
     border: 0px;
     border-radius: 5px;
     color: #444;
-    font-family: 'Raleway', sans-serif;
     font-size: 15px;
     text-align: center;
     margin: 0 0 10px;

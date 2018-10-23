@@ -448,7 +448,6 @@ div#$optin_css_id.muscari-container{
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
     font-size: 16px;
 }
 
@@ -534,7 +533,6 @@ div#$optin_css_id.muscari-container .muscari-button{
     border: 1px solid transparent;
     border-radius: 4px;
     font-weight: normal;
-    font-family: Helvetica, Arial, sans-serif;  /* Adjust font */
     width: 100%;
 }
 

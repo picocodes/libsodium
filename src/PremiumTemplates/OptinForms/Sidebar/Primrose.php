@@ -321,7 +321,6 @@ div#$optin_css_id.primrose-container {
 div#$optin_css_id.primrose-container .primrose-headline {
     font-size: 45px;
     text-align: center;
-    font-family: 'PT serif', serif;
     display: block;
     border: 0;
     line-height: normal;
@@ -330,7 +329,6 @@ div#$optin_css_id.primrose-container .primrose-headline {
     
 div#$optin_css_id.primrose-container .primrose-description {
     font-size: 18px;
-    font-family: Raleway, sans-serif;
     font-weight: 600;
     text-align: center;
     padding: 10px 0;
@@ -343,7 +341,6 @@ div#$optin_css_id.primrose-container .primrose-description {
 div#$optin_css_id.primrose-container .primrose-note {
     font-size: 12px;
     margin-top: 10px;
-    font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
     font-weight: normal;
     text-align: center;
     display: block;
@@ -362,7 +359,6 @@ div#$optin_css_id.primrose-container input.primrose-input-field {
     border: 2px solid #f0f0f0;
     border-radius: 3px;
     padding-left: 10px;
-    font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
     font-size: 16px;
     margin: 0 auto;
     margin-top: 10px;
@@ -378,7 +374,6 @@ div#$optin_css_id.primrose-container input.primrose-submit-button {
     color: #ffffff;
     width: 100%;
     font-weight: 700;
-    font-family: Raleway, sans-serif, Arial, Verdana, "Trebuchet MS";
     text-transform: uppercase;
     padding: 8px 5px;
     margin-top: 10px;

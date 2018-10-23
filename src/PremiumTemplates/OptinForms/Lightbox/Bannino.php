@@ -456,7 +456,6 @@ div#$optin_css_id.bannino-container .form-body {
 	 }
 
 div#$optin_css_id.bannino-container .moBannini_note {
-		 font-family: 'Titillium Web', sans-serif;
 		 font-style: italic;
 		 font-size: 14px;
 		 line-height: 1.5;
@@ -485,7 +484,6 @@ div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input
 		 font-weight: 700;
 		 padding: 5px 10px;
 		 font-size: 14px;
-		 font-family: 'open sans', serif;
 		 text-align: center;
 		 white-space: nowrap;
 		 vertical-align: middle;
@@ -501,7 +499,6 @@ div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix .bann
 			  width: 100%;
 			  margin-bottom: 10px;
 			  border: 0;
-			  font-family: 'open sans', serif;
 			  line-height: normal;
 		  }
 
