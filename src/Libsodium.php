@@ -81,6 +81,7 @@ class Libsodium
         if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
         add_filter('mailoptin_enable_advance_analytics', '__return_true');
         add_filter('mailoptin_enable_post_email_digest', '__return_true');
+        add_filter('mailoptin_enable_email_customizer_connections', '__return_true');
         add_filter('mailoptin_enable_leadbank', '__return_true');
         LeadBank::get_instance();
         OptinSchedule::get_instance();
