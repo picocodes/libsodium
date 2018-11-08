@@ -550,6 +550,7 @@ div#$optin_css_id.letterBox_container .letterBox_inner {
 
 div#$optin_css_id.letterBox_container input.letterBox_form_field {
     width: 100%;
+    max-width: 100%;
     padding: 15px;
     border: 0px;
     border-radius: 5px;

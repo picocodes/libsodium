@@ -705,6 +705,7 @@ HTML;
                div#$optin_css_id.rescript_container input.rescript_inputField {
                     border: 2px solid $submit_button_background;
                     width: 100%;
+                    max-width: 100%;
                     border-radius: 100px;
                     -webkit-border-radius: 100px; 
                     -moz-border-radius: 100px; 
