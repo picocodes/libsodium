@@ -656,6 +656,28 @@ HTML;
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
         }
+
+@media screen and (max-width: 480px) {
+    body div#DRvtHSeDgP_slidein.boldy_container .boldy_closeIcon {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -18px;
+    right: -18px;
+    text-align: center;
+    font-size: 25px;
+    line-height: .45;
+    margin: 10px;
+    font-weight: 700;
+    text-decoration: none!important;
+    font-family: Helvetica,"Helvetic Neue",Arial,sans-serif;
+    z-index: 1050;
+    padding: 10px 10px;
+    border-radius: 100px;
+    background-color: #2d3144;
+    color: #ffffff;
+    }
+}
 CSS;
 
     }
