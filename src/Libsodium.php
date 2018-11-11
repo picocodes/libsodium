@@ -119,9 +119,9 @@ class Libsodium
             $option_prefix . '[remove_branding]',
             apply_filters('mailoptin_customizer_settings_remove_branding_args', array(
                     'label'    => __('Remove MailOptin Branding', 'mailoptin'),
-                    'section'  => $customizerClassInstance->campaign_settings_section_id,
+                    'section'  => $customizerClassInstance->campaign_footer_section_id,
                     'settings' => $option_prefix . '[remove_branding]',
-                    'priority' => 90
+                    'priority' => 100
                 )
             )
         );
