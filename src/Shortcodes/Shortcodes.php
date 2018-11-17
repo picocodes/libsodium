@@ -20,20 +20,25 @@ class Shortcodes
     {
         $atts = shortcode_atts(
             [
-                'id' => '',
-                'link' => __('click here', 'mailoptin'),
+                'id'    => '',
+                'class' => '',
+                'link'  => __('click here', 'mailoptin'),
             ],
             $atts
         );
 
-        $id = $atts['id'];
-        $link = $atts['link'];
+        $id    = esc_attr($atts['id']);
+        $class = esc_attr($atts['class']);
+        if (!empty($class)) {
+            $class = " $class";
+        }
+        $link = esc_url_raw($atts['link']);
 
 
         if (empty($id)) return;
 
         $optin_campaign_uuid = is_numeric($id) ? OCR::get_optin_campaign_uuid($id) : $id;
-        $optin_campaign_id = OCR::get_optin_campaign_id_by_uuid($optin_campaign_uuid);
+        $optin_campaign_id   = OCR::get_optin_campaign_id_by_uuid($optin_campaign_uuid);
 
         $optin_type = OCR::get_optin_campaign_type($optin_campaign_id);
 
@@ -41,10 +46,11 @@ class Shortcodes
             return sprintf(__('Click trigger does not support %s optin.', 'mailoptin'), $optin_type);
         }
 
-        $anchor_text = !empty($content) ? $content : $link;
+        $anchor_text = ! empty($content) ? $content : $link;
 
         return sprintf(
-            '<a href="#" class="mailoptin-click-trigger" data-optin-uuid="%s">%s</a>',
+            '<a href="#" class="mailoptin-click-trigger%s" data-optin-uuid="%s">%s</a>',
+            $class,
             $optin_campaign_uuid,
             $anchor_text
         );
@@ -52,7 +58,7 @@ class Shortcodes
 
     public function template_tag($id)
     {
-        if (!isset($id) || empty($id)) return;
+        if ( ! isset($id) || empty($id)) return;
 
         $optin_campaign_id = is_numeric($id) ? $id : OCR::get_optin_campaign_id_by_uuid(sanitize_text_field($id));
 
@@ -61,7 +67,7 @@ class Shortcodes
 
     public function optin_shortcode($atts)
     {
-        if (!isset($atts['id']) || empty($atts['id'])) return;
+        if ( ! isset($atts['id']) || empty($atts['id'])) return;
 
         $optin_campaign_id = is_numeric($atts['id']) ? $atts['id'] : OCR::get_optin_campaign_id_by_uuid(sanitize_text_field($atts['id']));
 
@@ -76,11 +82,11 @@ class Shortcodes
     public function get_optin($optin_campaign_id)
     {
         // $optin_campaign_id could be null if invalid uuid is supplied.
-        if(!$optin_campaign_id) return __('Invalid optin campaign ID', 'mailoptin');
+        if ( ! $optin_campaign_id) return __('Invalid optin campaign ID', 'mailoptin');
 
         $optin_type = OCR::get_optin_campaign_type($optin_campaign_id);
 
-        if (!in_array($optin_type, ['inpost', 'sidebar'])) {
+        if ( ! in_array($optin_type, ['inpost', 'sidebar'])) {
             return sprintf(__('Shortcode embed does not support %s optin.', 'mailoptin'), $optin_type);
         }
 
