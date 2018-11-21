@@ -32,7 +32,8 @@ class Shortcodes
         if (!empty($class)) {
             $class = " $class";
         }
-        $link = esc_url_raw($atts['link']);
+        
+        $link = sanitize_text_field($atts['link']);
 
 
         if (empty($id)) return;
