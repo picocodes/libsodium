@@ -155,7 +155,7 @@ class Muscari extends AbstractOptinTheme
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_note_font_size_tablet_default',
+                    'name'        => 'mo_optin_form_note_font_size_mobile_default',
                     'value'       => 12,
                     'optin_class' => 'Muscari',
                     'optin_type'  => 'bar'
@@ -176,7 +176,7 @@ class Muscari extends AbstractOptinTheme
                 ],
 
                 [
-                    'name'        => 'mo_optin_form_headline_font_size_tablet_default',
+                    'name'        => 'mo_optin_form_headline_font_size_mobile_default',
                     'value'       => 15,
                     'optin_class' => 'Muscari',
                     'optin_type'  => 'bar'

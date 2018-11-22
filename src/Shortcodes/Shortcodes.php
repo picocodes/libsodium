@@ -32,7 +32,7 @@ class Shortcodes
         if (!empty($class)) {
             $class = " $class";
         }
-        
+
         $link = sanitize_text_field($atts['link']);
 
 
