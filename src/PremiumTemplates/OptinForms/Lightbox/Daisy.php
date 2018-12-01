@@ -260,7 +260,7 @@ class Daisy extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [self::CTA_BUTTON_SUPPORT];
     }
 
     /**
