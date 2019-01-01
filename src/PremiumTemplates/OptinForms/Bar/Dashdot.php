@@ -490,6 +490,7 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid   = $this->optin_campaign_uuid;
         $headline_border_color = $this->get_customizer_value('headline_border_color');
         if (empty($headline_border_color)) {
             $headline_border_color = '#ffffff';
@@ -501,25 +502,25 @@ HTML;
         }
 
         return <<<CSS
-div#$optin_css_id.dashdot-container {
+html div#$optin_uuid div#$optin_css_id.dashdot-container {
     border: 2px solid #34495e;
     background: #34495e;
     width: 100%;
     text-align: center;
     padding: 15px 0px;
 }
-div#$optin_css_id.dashdot-container * {
+html div#$optin_uuid div#$optin_css_id.dashdot-container * {
       box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
-div#$optin_css_id.dashdot-container .dashdot-form-wrapper {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-form-wrapper {
     display: inline-block;
     position: relative;
 }
 
-div#$optin_css_id.dashdot-container .dashdot-header-block {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-block {
     display: inline-block;
     padding: 0px;
     margin: 0px;
@@ -528,12 +529,12 @@ div#$optin_css_id.dashdot-container .dashdot-header-block {
     color: white;
 	padding-right: 10px;
 }
-div#$optin_css_id.dashdot-container .dashdot-form-wrapper {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-form-wrapper {
     padding: 0px !important;
     margin: 0px !important;
 }
 
-div#$optin_css_id.dashdot-container input.dashdot-submit-button {
+html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-submit-button {
     color: #FFF;
     background: #1abc9c;
     font-size: 13px;
@@ -546,7 +547,7 @@ div#$optin_css_id.dashdot-container input.dashdot-submit-button {
 	
 }
 
-div#$optin_css_id.dashdot-container input.dashdot-input-field {
+html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-input-field {
     font-weight: 400;
     padding: 10px 10px;
     border: none;
@@ -566,7 +567,7 @@ div#$optin_css_id.dashdot-container input.dashdot-input-field {
     background-color:#ffffff;
 }
 
-div#$optin_css_id.dashdot-container .dashdot-dotted {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-dotted {
     padding: 5px;
     margin: 10px;
     background: $headline_background_color;
@@ -576,11 +577,11 @@ div#$optin_css_id.dashdot-container .dashdot-dotted {
     font-weight: 700;
 }
 
-div#$optin_css_id.dashdot-container .dashdot-header-block {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-block {
     padding-right: 0px;
 }
 
-div#$optin_css_id.dashdot-container div.mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.dashdot-container div.mo-optin-error {
          display: none;
          color: #FF0000;
          text-align: center;
@@ -589,7 +590,7 @@ div#$optin_css_id.dashdot-container div.mo-optin-error {
          padding-bottom: .5em;
      }
      
-div#$optin_css_id.dashdot-container .dashdot-close-form {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-close-form {
     cursor: pointer;
     display: block;
     font-size: 22px;
@@ -609,12 +610,12 @@ div#$optin_css_id.dashdot-container .dashdot-close-form {
     user-select: none;
 }
 
-div#$optin_css_id.dashdot-container .dashdot-close-form a.mo-close-optin {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-close-form a.mo-close-optin {
     color: #fff;
     text-decoration: none;
 }
 
-div#$optin_css_id.dashdot-container .moDashdot_note {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .moDashdot_note {
 		 font-style: italic;
 		 line-height: 1.5;
 		 text-align: center;
@@ -623,22 +624,22 @@ div#$optin_css_id.dashdot-container .moDashdot_note {
 	 }
 
 @media only screen and (max-width: 768px) {
-	div#$optin_css_id.dashdot-container .dashdot-header-block{
+	html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-block{
 	padding-right: 0px;
 	}
 }
 @media only screen and (max-width: 572px) {
-	div#$optin_css_id.dashdot-container input.dashdot-input-field{
+	html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-input-field{
 	width: 33%;
 	}
 }
 @media only screen and (max-width: 370px) {
-	div#$optin_css_id.dashdot-container input.dashdot-input-field{
+	html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-input-field{
 	width: 40%;
 	margin-bottom: 10px;
 	}
 	
-	div#$optin_css_id.dashdot-container .dashdot-close-form {
+	html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-close-form {
     top: 12px;
 }
 	

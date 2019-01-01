@@ -479,12 +479,13 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid   = $this->optin_campaign_uuid;
         $dahlia_icons_color = $this->get_customizer_value('dahlia_icons_color');
         $dahlia_icons_color = empty($dahlia_icons_color) ? '#00cef' : $dahlia_icons_color;
 
         return <<<CSS
         @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-div#$optin_css_id.dahlia-container * {
+html div#$optin_uuid div#$optin_css_id.dahlia-container * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -492,7 +493,7 @@ div#$optin_css_id.dahlia-container * {
     -moz-osx-font-smoothing: grayscale;
 }
 
-div#$optin_css_id.dahlia-container {
+html div#$optin_uuid div#$optin_css_id.dahlia-container {
     background-color: #fff;
     color:#fff;
     padding-left: 15px;
@@ -505,7 +506,7 @@ div#$optin_css_id.dahlia-container {
     -moz-box-sizing: border-box;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-close-form {
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-close-form {
     display: block;
     font-family: Arial, sans-serif !important;
     margin-left: 5px;
@@ -520,7 +521,7 @@ div#$optin_css_id.dahlia-container .dahlia-close-form {
     user-select: none;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-close-form a {
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-close-form a {
     color: #000;
     cursor: pointer;
     font-size: 22px;
@@ -529,30 +530,30 @@ div#$optin_css_id.dahlia-container .dahlia-close-form a {
     font-family: Arial, sans-serif !important;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-close-form:hover {
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-close-form:hover {
     text-shadow: 0 0 2px #fff
 }
 
-div#$optin_css_id.dahlia-container .moDahlia_note {
+html div#$optin_uuid div#$optin_css_id.dahlia-container .moDahlia_note {
 		 font-style: italic;
 		 line-height: 1.5;
 		 text-align: center;
 		 color: #515151;
 	 }
 
-div#$optin_css_id.dahlia-container .dahlia-title-wrap{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-title-wrap{
     padding: 15px;
     width:100%;
     text-align: center;
     font-size: 18px;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-form-group {
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-group {
     margin-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
-div#$optin_css_id.dahlia-container input.dahlia-form-control{
+html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-control{
     display: block;
     width: 100%;
     height: 34px;
@@ -563,15 +564,15 @@ div#$optin_css_id.dahlia-container input.dahlia-form-control{
     outline: none !important;
     border:none;
 }
-div#$optin_css_id.dahlia-container .dahlia-form-row{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-row{
     margin-right: -15px;
     margin-left: -15px;
 }
-div#$optin_css_id.dahlia-container .dahlia-form-row:after{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-row:after{
     clear: both;
 }
 
-div#$optin_css_id.dahlia-container input.dahlia-button{
+html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-button{
     outline: none !important;
     display: inline-block;
     padding: 6px 12px;
@@ -595,11 +596,13 @@ div#$optin_css_id.dahlia-container input.dahlia-button{
     width: 100%;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-email-field, div#$optin_css_id.dahlia-container .dahlia-name-field, div#$optin_css_id.dahlia-container .dahlia-button-group{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-email-field,
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-name-field,
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-button-group{
     width: 100%;
 }
 
-div#$optin_css_id.dahlia-container div.mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.dahlia-container div.mo-optin-error {
          display: none;
          color: #FF0000;
          text-align: center;
@@ -611,22 +614,23 @@ div#$optin_css_id.dahlia-container div.mo-optin-error {
 /* Media queries for responsiveness */
 /* Tablet */
 @media (min-width: 768px) {
-    div#$optin_css_id.dahlia-container .dahlia-email-field, div#$optin_css_id.dahlia-container .dahlia-name-field{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-email-field, 
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-name-field{
         width:28.19%;
         display: inline-block;
     }
-    div#$optin_css_id.dahlia-container .dahlia-button-group{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-button-group{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.dahlia-container .dahlia-close-form{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-close-form{
         top: 50%;
     }
 }
 
 /* Medium device */
 @media (min-width: 992px) {
-    div#$optin_css_id.dahlia-container .dahlia-text-align{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-text-align{
         text-align: center;
     }
 }
@@ -634,32 +638,32 @@ div#$optin_css_id.dahlia-container div.mo-optin-error {
 
 /* Large screens & TVs */
 @media (min-width: 1200px) {
-    div#$optin_css_id.dahlia-container .dahlia-title-wrap{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-title-wrap{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.dahlia-container .dahlia-email-field,
-    div#$optin_css_id.dahlia-container .dahlia-name-field,
-    div#$optin_css_id.dahlia-container .dahlia-button-group{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-email-field,
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-name-field,
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-button-group{
         width:auto;
         display: inline-block;
     }
-    div#$optin_css_id.dahlia-container .dahlia-close-form{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-close-form{
         top: 24px;
     }
-    div#$optin_css_id.dahlia-container .dahlia-form-group{
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-group{
         margin-bottom: -5px;
     }
     
-    div#$optin_css_id.dahlia-container .moDahlia_note {
+    html div#$optin_uuid div#$optin_css_id.dahlia-container .moDahlia_note {
 		 margin-top: 10px;
 	 }
 	 
-	 div#$optin_css_id.dahlia-container div.mo-optin-error {
+	 html div#$optin_uuid div#$optin_css_id.dahlia-container div.mo-optin-error {
 	    margin-top: 5px;
 	 }
 }
-div#$optin_css_id.dahlia-container .dahlia-headline{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-headline{
     color: #000;
     display: block;
     border: none;
@@ -667,7 +671,7 @@ div#$optin_css_id.dahlia-container .dahlia-headline{
     height: auto;
 }
 
-div#$optin_css_id.dahlia-container input.dahlia-form-control{
+html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-control{
     color: #2e2e2e;
     border-bottom: 2px solid #D6D6D6;
     padding-left: 45px;
@@ -678,7 +682,7 @@ div#$optin_css_id.dahlia-container input.dahlia-form-control{
     margin: 0;
 }
 
-div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{
+html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{
     outline: 0;
     border-bottom-color: $dahlia_icons_color;
     -webkit-transition: border-bottom-color 0.15s;
@@ -688,19 +692,19 @@ div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{
     transition: border-bottom-color 0.15s;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-form-group{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-group{
     position: relative;
 }
 
-div#$optin_css_id.dahlia-container input.dahlia-button{
+html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-button{
     background: #00CCFF;
     color:#fff;
 }
-div#$optin_css_id.dahlia-container input.dahlia-button:hover{
+html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-button:hover{
     background: #00c1f3;
 }
 
-div#$optin_css_id.dahlia-container .dahlia-icons-wrap{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-icons-wrap{
     position:absolute;
     bottom:-5px;
     top:0;
@@ -711,29 +715,29 @@ div#$optin_css_id.dahlia-container .dahlia-icons-wrap{
     width: 34px;
     border-top-left-radius: 5px;
 }
-div#$optin_css_id.dahlia-container .dahlia-icons{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-icons{
     width:30px;
     height:30px;
     padding: 5px;
     color: $dahlia_icons_color;
 }
 
-div#$optin_css_id.dahlia-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+html div#$optin_uuid div#$optin_css_id.dahlia-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.dahlia-container ::-moz-placeholder { /* Firefox 19+ */
+html div#$optin_uuid div#$optin_css_id.dahlia-container ::-moz-placeholder { /* Firefox 19+ */
     color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.dahlia-container :-ms-input-placeholder { /* IE 10+ */
+html div#$optin_uuid div#$optin_css_id.dahlia-container :-ms-input-placeholder { /* IE 10+ */
     color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.dahlia-container :-moz-placeholder { /* Firefox 18- */
+html div#$optin_uuid div#$optin_css_id.dahlia-container :-moz-placeholder { /* Firefox 18- */
     color: rgba(46,46,46,0.70);
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
