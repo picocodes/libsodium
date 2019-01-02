@@ -268,7 +268,9 @@ class Boldy extends AbstractOptinTheme
     public function features_support()
     {
         // doesn't declare cta support
-        return [];
+        return [
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -526,9 +528,11 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid   = $this->optin_campaign_uuid;
+
         return <<<CSS
 
-      div#$optin_css_id.boldy_container {
+      html div#$optin_uuid div#$optin_css_id.boldy_container {
             margin: 0 auto;
             font-size: 16px;
             background: #2d3144;
@@ -536,7 +540,7 @@ HTML;
             max-width: 700px;
         }
         
-     div#$optin_css_id.boldy_container .boldy_closeIcon {
+     html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_closeIcon {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -555,31 +559,31 @@ HTML;
     color:#ffffff;
 }
 
-       div#$optin_css_id.boldy_container .boldy_isresponsive img {
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_isresponsive img {
             display: block;
             width: 100%;
             height: auto;
         }
 
-        div#$optin_css_id.boldy_container .boldy_inner {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_inner {
             margin: 0;
             position: relative;
         }
 
-       div#$optin_css_id.boldy_container .boldy_main .boldy_header,
-       div#$optin_css_id.boldy_container .boldy_main .boldy_description,
-       div#$optin_css_id.boldy_container .boldy_main .boldy_note{
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_header,
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_description,
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_note{
             color: #fff;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_header {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_header {
             font-weight: 700;
             display: block;
             border: 0;
             line-height: normal;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main {
             text-align: center;
             padding: 20px;
             background: inherit;
@@ -588,7 +592,7 @@ HTML;
             margin: 0;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_description {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_description {
             padding-bottom: 10px;
             padding-top: 10px;
             font-weight: 500;
@@ -597,14 +601,14 @@ HTML;
             line-height: normal;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_note {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_note {
             color: #8f8888;
             display: block;
             border: 0;
             line-height: normal;
         }
 
-        div#$optin_css_id.boldy_container input.boldy_input {
+        html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_input {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -613,20 +617,20 @@ HTML;
             outline: none;
         }
         
-        div#$optin_css_id.boldy_container.mo-has-email input.boldy_input {
+        html div#$optin_uuid div#$optin_css_id.boldy_container.mo-has-email input.boldy_input {
             width: 100% !important;
         }
 
-        div#$optin_css_id.boldy_container input.boldy_input:focus,
-         div#$optin_css_id.boldy_container input.boldy_submitButton:focus {
+        html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_input:focus,
+         html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_submitButton:focus {
             outline: 0
         }
 
-        div#$optin_css_id.boldy_container .boldy_main-form {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main-form {
             padding: 20px 20px 10px;
         }
 
-        div#$optin_css_id.boldy_container input.boldy_submitButton {
+        html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_submitButton {
             font-size: 15px;
             text-transform: uppercase;
             padding: 6px;
@@ -641,7 +645,7 @@ HTML;
             width: 100%;
         }
 
-        div#$optin_css_id.boldy_container .boldy_optin_error {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_optin_error {
             display:none;
             font-size: 12px;
             color: #ff5151 !important;
@@ -649,12 +653,12 @@ HTML;
             margin-top: 5px;
         }
 
-       div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
         }
         
-        div#$optin_css_id.boldy_container .mo-optin-error {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .mo-optin-error {
             display: none; 
             color: #ff0000;
             text-align: center;
@@ -664,17 +668,17 @@ HTML;
 
         @media only screen and (min-width: 720px){
         
-          div#$optin_css_id.boldy_container .boldy_main-form {
+          html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main-form {
                 padding: 30px 20px 10px;
                 display: flex;
             }
             
-            div#$optin_css_id.boldy_container .boldy_main .boldy_description {
+            html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_description {
                 padding-top: 0px;
                 font-weight: 500;
             }
             
-            div#$optin_css_id.boldy_container input.boldy_input {
+            html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_input {
                 width: 35%;
                 padding: 15px;
                 border-radius: 3px;
@@ -682,21 +686,21 @@ HTML;
                 margin-right: 10px;
                 margin-bottom: 0px;
             }
-            div#$optin_css_id.boldy_container input.boldy_submitButton {
+            html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_submitButton {
             width: 25%;
             }
         }
 
         @media only screen and (min-width: 1000px){
-            div#$optin_css_id.boldy_container input.boldy_input {
+            html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_input {
                 font-weight: 600;
                 font-size: 14px;
             }
 
-            div#$optin_css_id.boldy_container .boldy_optin_error {
+            html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_optin_error {
                 font-size: 14px;
             }
-            div#$optin_css_id.boldy_container .boldy_main .boldy_header{
+            html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_header{
                 padding-bottom: 5px;
             }
         }
