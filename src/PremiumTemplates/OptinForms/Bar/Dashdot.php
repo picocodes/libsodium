@@ -14,172 +14,172 @@ class Dashdot extends AbstractOptinTheme
         $this->init_config_filters([
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#34495e',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#34495e',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#34495e',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#34495e',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_placeholder_default',
-                    'value' => __("Enter your name..", 'mailoptin'),
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name..", 'mailoptin'),
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email..", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email..", 'mailoptin'),
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Grab your Free Copy of SEO eBook ($9.69)", 'mailoptin'),
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Vollkorn',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Vollkorn',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#666666',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#666666',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#666666',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#666666',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#666666',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#666666',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Raleway',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Raleway',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_hide_note_default',
-                    'value' => true,
+                    'name'        => 'mo_optin_form_hide_note_default',
+                    'value'       => true,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
-                    'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Helvetica',
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Helvetica',
+                    'optin_class' => 'Dashdot',
+                    'optin_type'  => 'bar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_desktop_default',
                     'value'       => 14,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_tablet_default',
                     'value'       => 14,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_mobile_default',
                     'value'       => 12,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_headline_font_size_desktop_default',
                     'value'       => 18,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_headline_font_size_tablet_default',
                     'value'       => 18,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_headline_font_size_mobile_default',
                     'value'       => 16,
                     'optin_class' => 'Dashdot',
-                    'optin_type' => 'bar'
+                    'optin_type'  => 'bar'
                 ]
             ]
         );
@@ -205,7 +205,10 @@ class Dashdot extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     public function customizer_preview_js()
@@ -263,14 +266,14 @@ class Dashdot extends AbstractOptinTheme
     public function customizer_headline_settings($settings, $CustomizerSettingsInstance)
     {
         $settings['headline_border_color'] = array(
-            'default' => '#ffffff',
-            'type' => 'option',
+            'default'   => '#ffffff',
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['headline_background_color'] = array(
-            'default' => '#aa3030',
-            'type' => 'option',
+            'default'   => '#aa3030',
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
@@ -291,8 +294,8 @@ class Dashdot extends AbstractOptinTheme
             $wp_customize,
             $option_prefix . '[headline_border_color]',
             apply_filters('mo_optin_form_customizer_headline_border_color_args', array(
-                    'label' => __('Border Color', 'mailoptin'),
-                    'section' => $customizerClassInstance->headline_section_id,
+                    'label'    => __('Border Color', 'mailoptin'),
+                    'section'  => $customizerClassInstance->headline_section_id,
                     'settings' => $option_prefix . '[headline_border_color]',
                     'priority' => 50
                 )
@@ -303,8 +306,8 @@ class Dashdot extends AbstractOptinTheme
             $wp_customize,
             $option_prefix . '[headline_background_color]',
             apply_filters('mo_optin_form_customizer_headline_background_color_args', array(
-                    'label' => __('Background Color', 'mailoptin'),
-                    'section' => $customizerClassInstance->headline_section_id,
+                    'label'    => __('Background Color', 'mailoptin'),
+                    'section'  => $customizerClassInstance->headline_section_id,
                     'settings' => $option_prefix . '[headline_background_color]',
                     'priority' => 50
                 )
@@ -464,12 +467,15 @@ class Dashdot extends AbstractOptinTheme
 [mo-optin-form-wrapper class="dashdot-container"]
    <div class="dashdot-close-form">[mo-close-optin class="mo-close-optin"]x[/mo-close-optin]</div>
     <div class="dashdot-form-row dashdot-text-align">
+        <div class="dashdot-header-wrap">
         <div class="dashdot-header-block">
             [mo-optin-form-headline tag="div" class="dashdot-dotted"]
+        </div>
         </div>
         [mo-optin-form-fields-wrapper class="dashdot-form-wrapper"]
                 [mo-optin-form-name-field class="dashdot-input-field"]
                 [mo-optin-form-email-field class="dashdot-input-field"]
+                [mo-optin-form-custom-fields class="dashdot-input-field"]
             [mo-optin-form-submit-button class="dashdot-submit-button"]
         [/mo-optin-form-fields-wrapper]
         [mo-optin-form-cta-button class="dashdot-submit-button"]
@@ -489,8 +495,8 @@ HTML;
      */
     public function optin_form_css()
     {
-        $optin_css_id = $this->optin_css_id;
-        $optin_uuid   = $this->optin_campaign_uuid;
+        $optin_css_id          = $this->optin_css_id;
+        $optin_uuid            = $this->optin_campaign_uuid;
         $headline_border_color = $this->get_customizer_value('headline_border_color');
         if (empty($headline_border_color)) {
             $headline_border_color = '#ffffff';
@@ -520,6 +526,10 @@ html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-form-wrapper {
     position: relative;
 }
 
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-wrap {
+    display: inline-block;
+}
+
 html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-block {
     display: inline-block;
     padding: 0px;
@@ -527,8 +537,10 @@ html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-block {
     font-weight: 700;
     font-size: 18px;
     color: white;
-	padding-right: 10px;
+	padding-right: 0;
 }
+
+
 html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-form-wrapper {
     padding: 0px !important;
     margin: 0px !important;
@@ -547,7 +559,7 @@ html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-submit-bu
 	
 }
 
-html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-input-field {
+html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-input-field {
     font-weight: 400;
     padding: 10px 10px;
     border: none;
@@ -575,10 +587,6 @@ html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-dotted {
     border: 1px dashed $headline_border_color;
     border-radius: 1px;
     font-weight: 700;
-}
-
-html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-header-block {
-    padding-right: 0px;
 }
 
 html div#$optin_uuid div#$optin_css_id.dashdot-container div.mo-optin-error {
@@ -629,12 +637,12 @@ html div#$optin_uuid div#$optin_css_id.dashdot-container .moDashdot_note {
 	}
 }
 @media only screen and (max-width: 572px) {
-	html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-input-field{
+	html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-input-field{
 	width: 33%;
 	}
 }
 @media only screen and (max-width: 370px) {
-	html div#$optin_uuid div#$optin_css_id.dashdot-container input.dashdot-input-field{
+	html div#$optin_uuid div#$optin_css_id.dashdot-container .dashdot-input-field{
 	width: 40%;
 	margin-bottom: 10px;
 	}
@@ -643,6 +651,29 @@ html div#$optin_uuid div#$optin_css_id.dashdot-container .moDashdot_note {
     top: 12px;
 }
 	
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dashdot-container .dashdot-input-field,
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dashdot-container .dashdot-submit-button {
+    width: 100% !important;
+    max-width: 400px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dashdot-container .dashdot-input-field{
+    margin-bottom: 5px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dashdot-container .dashdot-header-wrap{
+	display: block;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
+padding-top: 15px !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix {
+	display: block !important;
 }
 
 CSS;

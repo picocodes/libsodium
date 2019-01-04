@@ -755,11 +755,11 @@ html div#$optin_uuid div#$optin_css_id.dahlia-container :-moz-placeholder { /* F
 }
 
 html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dahlia-container .dahlia-form-group {
-     width: 100% !important;
-    display:block!important;
-    max-width: 400px !important;
-    margin:  auto !important;
-    margin-bottom:10px !important;
+     width: 100%;
+    display:block;
+    max-width: 400px;
+    margin:  auto;
+    margin-bottom:10px;
 }
 
 html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dahlia-container textarea.mo-optin-form-custom-field.textarea-field {

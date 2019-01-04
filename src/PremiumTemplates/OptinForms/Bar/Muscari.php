@@ -427,7 +427,6 @@ HTML;
      */
     public function optin_form_css()
     {
-        $optin_uuid   = $this->optin_campaign_uuid;
         $optin_css_id = $this->optin_css_id;
         $optin_uuid   = $this->optin_campaign_uuid;
 
