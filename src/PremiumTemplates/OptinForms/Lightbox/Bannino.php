@@ -168,7 +168,10 @@ class Bannino extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -381,6 +384,7 @@ class Bannino extends AbstractOptinTheme
 		<div class="bannino-input-fields bannino-clearfix">
 			[mo-optin-form-name-field class="bannino-form-field"]
 			[mo-optin-form-email-field class="bannino-form-field"]
+			[mo-optin-form-custom-fields class="bannino-form-field"]
 			[mo-optin-form-submit-button class="bannino-form-submit-button"]
 		</div>
       [/mo-optin-form-fields-wrapper]
@@ -428,7 +432,7 @@ div#$optin_css_id.bannino-container .bannino-input-fields {
 		 border: 0;
 	 }
 	 
-div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix input.bannino-form-field {
+div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix .bannino-form-field {
 	background-color: #ffffff;
 }
 
@@ -612,6 +616,20 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 div#$optin_uuid.mo-cta-button-display input.mo-optin-form-cta-button {
     width: 100% !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container input,
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container textarea {
+    width: 100% !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
+padding-top: 15px !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix {
+	display: block !important;
 }
 CSS;
 
