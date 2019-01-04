@@ -206,7 +206,10 @@ class Dahlia extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -431,6 +434,11 @@ class Dahlia extends AbstractOptinTheme
      */
     public function optin_form()
     {
+        $tag_start = '<div class="dahlia-form-group">';
+        $tag_end = '<span class="dahlia-icons-wrap">';
+        $tag_end .= apply_filters('mo_optin_form_customizer_dahlia_custom_fields_fa_icon', '<i class="fa fa-comment fa-lg dahlia-icons" aria-hidden="true"></i>');
+        $tag_end .= '</span>';
+        $tag_end .= '</div>';
         return <<<HTML
 [mo-optin-form-wrapper class="dahlia-container"]
 <div class="dahlia-form-row dahlia-text-align">
@@ -452,6 +460,9 @@ class Dahlia extends AbstractOptinTheme
             <i class="fa fa-envelope fa-lg dahlia-icons" aria-hidden="true"></i>
 		</span>
     </div>
+    
+    [mo-optin-form-custom-fields class="dahlia-form-control" tag_start='$tag_start' tag_end='$tag_end']
+    
     <div class="dahlia-form-group dahlia-button-group">
         [mo-optin-form-submit-button class="dahlia-button"]
     </div>
@@ -481,7 +492,7 @@ HTML;
         $optin_css_id = $this->optin_css_id;
         $optin_uuid   = $this->optin_campaign_uuid;
         $dahlia_icons_color = $this->get_customizer_value('dahlia_icons_color');
-        $dahlia_icons_color = empty($dahlia_icons_color) ? '#00cef' : $dahlia_icons_color;
+        $dahlia_icons_color = empty($dahlia_icons_color) ? '#00ceff' : $dahlia_icons_color;
 
         return <<<CSS
         @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
@@ -553,7 +564,7 @@ html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-group {
     padding-left: 15px;
     padding-right: 15px;
 }
-html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-control{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-control{
     display: block;
     width: 100%;
     height: 34px;
@@ -671,7 +682,7 @@ html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-headline{
     height: auto;
 }
 
-html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-control{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-control{
     color: #2e2e2e;
     border-bottom: 2px solid #D6D6D6;
     padding-left: 45px;
@@ -682,7 +693,7 @@ html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-contro
     margin: 0;
 }
 
-html div#$optin_uuid div#$optin_css_id.dahlia-container input.dahlia-form-control:hover{
+html div#$optin_uuid div#$optin_css_id.dahlia-container .dahlia-form-control:hover{
     outline: 0;
     border-bottom-color: $dahlia_icons_color;
     -webkit-transition: border-bottom-color 0.15s;
@@ -742,6 +753,19 @@ html div#$optin_uuid div#$optin_css_id.dahlia-container :-moz-placeholder { /* F
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dahlia-container .dahlia-form-group {
+     width: 100% !important;
+    display:block!important;
+    max-width: 400px !important;
+    margin:  auto !important;
+    margin-bottom:10px !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.dahlia-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
+}
+
 CSS;
 
     }
