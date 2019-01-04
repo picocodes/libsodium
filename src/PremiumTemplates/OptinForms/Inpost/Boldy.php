@@ -680,7 +680,7 @@ HTML;
         
         html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container .boldy_main-form  input,
         html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container textarea {
-            width: 100% !important;
+            width: 100%;
             margin-bottom: 10px;
             padding: 15px;
         }
