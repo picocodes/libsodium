@@ -201,7 +201,10 @@ class Muscari extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -389,6 +392,9 @@ class Muscari extends AbstractOptinTheme
      */
     public function optin_form()
     {
+        $tag_start = '<div class="muscari-form-group">';
+        $tag_end = '</div>';
+
         return <<<HTML
 [mo-optin-form-wrapper class="muscari-container"]
 <div role="form">
@@ -404,6 +410,9 @@ class Muscari extends AbstractOptinTheme
         <div class="muscari-form-group muscari-email-field mo-optin-form-email-field">
             [mo-optin-form-email-field class="muscari-form-control"]
         </div>
+        
+        [mo-optin-form-custom-fields class="muscari-form-control" tag_start='$tag_start' tag_end='$tag_end']
+    
         <div class="muscari-form-group muscari-button-group">
             [mo-optin-form-submit-button class="muscari-button"]
         </div>
@@ -673,6 +682,18 @@ html div#$optin_uuid div#$optin_css_id.muscari-container :-moz-placeholder { /* 
     color: #cccccc;
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.muscari-container .muscari-form-group {
+     width: 100%;
+    display:block;
+    max-width: 400px;
+    margin:  auto;
+    margin-bottom:10px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.muscari-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
 }
 CSS;
 
