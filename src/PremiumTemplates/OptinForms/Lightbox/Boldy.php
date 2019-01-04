@@ -509,6 +509,7 @@ class Boldy extends AbstractOptinTheme
                         <div class="boldy_main-form">
                             [mo-optin-form-name-field class="boldy_input"]
                             [mo-optin-form-email-field class="boldy_input"]
+                            [mo-optin-form-custom-fields class="boldy_input"]
                             [mo-optin-form-submit-button class="boldy_submitButton"]
                         </div>
                         [mo-mailchimp-interests]
@@ -703,6 +704,21 @@ HTML;
             html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_header{
                 padding-bottom: 5px;
             }
+        }
+
+        html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container .boldy_main-form {
+            display:block;
+        }
+        
+        html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container .boldy_main-form  input,
+        html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+        html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container textarea.mo-optin-form-custom-field.textarea-field {
+            min-height: 80px;
         }
 CSS;
 
