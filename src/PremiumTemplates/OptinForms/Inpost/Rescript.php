@@ -737,7 +737,7 @@ HTML;
                     margin-top: 20px;
                 }
 
-              html div#$optin_uuid div#$optin_uuid.mo-cta-button-display .rescript_ctaBtn {
+              html div#$optin_uuid.mo-cta-button-display .rescript_ctaBtn {
                     width: 100% !important;
                 }
                 

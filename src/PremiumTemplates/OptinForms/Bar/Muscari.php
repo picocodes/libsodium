@@ -648,14 +648,14 @@ html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button{
     color:#fff;
 }
 
-html div#$optin_uuid div#$optin_uuid.mo-cta-button-display .muscari-button-group,
-html div#$optin_uuid div#$optin_uuid.mo-cta-button-display .muscari-form-title-wrap {
+html div#$optin_uuid.mo-cta-button-display .muscari-button-group,
+html div#$optin_uuid.mo-cta-button-display .muscari-form-title-wrap {
     display: inline-block;
     width: auto;
     margin: auto;
 }
 
-html div#$optin_uuid div#$optin_uuid.mo-cta-button-display .muscari-text-align{
+html div#$optin_uuid.mo-cta-button-display .muscari-text-align{
         text-align: center;
     }
 
