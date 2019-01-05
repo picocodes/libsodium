@@ -234,6 +234,8 @@ class Rescript extends AbstractOptinTheme
             ]
         );
 
+        add_filter('mo_optin_form_disable_name_field', '__return_true');
+
         add_action('customize_preview_init', function () {
             add_action('wp_footer', [$this, 'customizer_preview_js']);
         });
@@ -416,14 +418,6 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_fields_settings($fields_settings, $CustomizerSettingsInstance)
     {
-        // this optin theme do not have support for name field hence remove them.
-
-        foreach ($fields_settings as $key => $fields_setting) {
-            if (strpos($key, 'name_field') !== false) {
-                unset($fields_settings[$key]);
-            }
-        }
-
         $fields_settings['submit_button_background']['transport'] = 'refresh';
 
         return $fields_settings;
