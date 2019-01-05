@@ -295,7 +295,10 @@ class Mimosa extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -504,6 +507,7 @@ class Mimosa extends AbstractOptinTheme
     [mo-optin-form-fields-wrapper]
     [mo-optin-form-name-field class="mimosa-input"]
     [mo-optin-form-email-field class="mimosa-input"]
+    [mo-optin-form-custom-fields class="mimosa-input"]
     [mo-mailchimp-interests]
     [mo-optin-form-submit-button class="mimosa-submit"]
     [/mo-optin-form-fields-wrapper]
@@ -524,15 +528,16 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid   = $this->optin_campaign_uuid;
 
         return <<<CSS
-div#$optin_css_id.mimosa-container * {
+html div#$optin_uuid div#$optin_css_id.mimosa-container * {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
 
-div#$optin_css_id.mimosa-container {
+html div#$optin_uuid div#$optin_css_id.mimosa-container {
   border: 3px solid #dddddd;
   background: #fff;
   -webkit-border-radius: 5px;
@@ -549,7 +554,7 @@ div#$optin_css_id.mimosa-container {
 box-sizing: border-box;
 }
 
-div#$optin_css_id.mimosa-container .mimosa-optin-form-close {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-optin-form-close {
     color: #000;
     display: inline;
     cursor: pointer;
@@ -566,36 +571,36 @@ div#$optin_css_id.mimosa-container .mimosa-optin-form-close {
     user-select: none;
 }
 
-div#$optin_css_id.mimosa-container .mimosa-inner-wrapper {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-inner-wrapper {
   padding: 0.5em;
 }
 
-div#$optin_css_id.mimosa-container .mimosa-heading {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-heading {
   font-weight: 600;
   font-size: 1em;
   line-height: 1.5em;
 }
 
-div#$optin_css_id.mimosa-container .mimosa-caption {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-caption {
   margin: 1em 0;
   font-size: 0.8em
 }
 
-div#$optin_css_id.mimosa-container .mimosa-form {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-form {
   max-width: 100%;
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
 
-div#$optin_css_id.mimosa-container .mo-mailchimp-interest-label {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mo-mailchimp-interest-label {
   font-size: 0.83em;
 }
 
-div#$optin_css_id.mimosa-container span.mo-mailchimp-choice-label {
+html div#$optin_uuid div#$optin_css_id.mimosa-container span.mo-mailchimp-choice-label {
   font-size: 0.8em;
 }
 
-div#$optin_css_id.mimosa-container .mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mo-optin-error {
 display: none;
 color: #c94c4c;
 text-align: center;
@@ -608,7 +613,7 @@ font-size: 0.8em;
 box-sizing: border-box; 
 }
 
-div#$optin_css_id.mimosa-container input.mimosa-input {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-input {
   -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -622,14 +627,14 @@ div#$optin_css_id.mimosa-container input.mimosa-input {
   padding: 0.7em;
   font-size: 0.9em;
   line-height: 0.9em;
-  text-align: center;
+  text-align: left;
   color: #555;
   border: 1px solid #ccc;
   outline: none;
   background: 0;
 }
 
-div#$optin_css_id.mimosa-container input[type="submit"].mimosa-submit {
+html div#$optin_uuid div#$optin_css_id.mimosa-container input[type="submit"].mimosa-submit {
   display: block;
   width: 100%;
   margin-top: 0.5em;
@@ -650,11 +655,15 @@ div#$optin_css_id.mimosa-container input[type="submit"].mimosa-submit {
   font-weight: 600;
 }
 
-div#$optin_css_id.mimosa-container .mimosa-finePrint {
+html div#$optin_uuid div#$optin_css_id.mimosa-container .mimosa-finePrint {
   margin-top: 1em;
   font-size: 0.7em;
   line-height: 1.5em;
   font-style: italic;
+}
+
+html div#$optin_uuid div#$optin_css_id.mimosa-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
 }
 CSS;
 

@@ -263,7 +263,10 @@ class LetterBox extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -478,6 +481,7 @@ class LetterBox extends AbstractOptinTheme
     <div class="letterBox_field_wrapper">
         [mo-optin-form-name-field class="letterBox_form_field"]
         [mo-optin-form-email-field class="letterBox_form_field"]
+        [mo-optin-form-custom-fields class="letterBox_form_field"]
         [mo-optin-form-note class="letterbox_note"]
     </div>
     [mo-mailchimp-interests]
@@ -499,24 +503,25 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid = $this->optin_campaign_uuid;
         return <<<CSS
         
-div#$optin_css_id.letterBox_container input,
- div#$optin_css_id.letterBox_container select, 
- div#$optin_css_id.letterBox_container textarea {
+html div#$optin_uuid div#$optin_css_id.letterBox_container input,
+html div#$optin_uuid div#$optin_css_id.letterBox_container select, 
+html div#$optin_uuid div#$optin_css_id.letterBox_container textarea {
     margin: 0;
 }
 
-div#$optin_css_id.letterBox_container *,
- div#$optin_css_id.letterBox_container .letterBox_submitButton,
- div#$optin_css_id.letterBox_container .letterBox_form_field
+html div#$optin_uuid div#$optin_css_id.letterBox_container *,
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_submitButton,
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_form_field
  {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
         
-div#$optin_css_id.letterBox_container {
+html div#$optin_uuid div#$optin_css_id.letterBox_container {
     background: #0e67e0;
     border-radius: 10px;
     text-align: center;
@@ -526,7 +531,7 @@ div#$optin_css_id.letterBox_container {
     border: 0;
 }
 
-div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
     color: #ffffff;
     padding: 0 20px;
     font-weight: 700;
@@ -537,7 +542,7 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_header {
     border: 0;
 }
 
-div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
     color: #ffffff;
     padding: 0 20px;
     font-weight: 400;
@@ -547,11 +552,11 @@ div#$optin_css_id.letterBox_container .letterBox_copy .letterBox_description {
     border: 0;
 }
 
-div#$optin_css_id.letterBox_container .letterBox_inner {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_inner {
     padding: 20px;
 }
 
-div#$optin_css_id.letterBox_container input.letterBox_form_field {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_form_field {
     width: 100%;
     max-width: 100%;
     padding: 15px;
@@ -559,23 +564,23 @@ div#$optin_css_id.letterBox_container input.letterBox_form_field {
     border-radius: 5px;
     color: #444;
     font-size: 15px;
-    text-align: center;
+    text-align: left;
     margin: 0 0 10px;
     display: inline-block;
     line-height: normal;
 }
 
-div#$optin_css_id.letterBox_container input.letterBox_form_field:focus,
-div#$optin_css_id.letterBox_container input.letterBox_submitButton:focus,
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_form_field:focus,
+html div#$optin_uuid div#$optin_css_id.letterBox_container input.letterBox_submitButton:focus,
  {
    outline: 0
 }
 
-div#$optin_css_id.letterBox_container input.letterBox_form_field:focus {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_form_field:focus {
     background: #ececec;
 }
 
-div#$optin_css_id.letterBox_container .mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .mo-optin-error {
      display: none; 
     color: #ff0000;
     text-align: center;
@@ -583,7 +588,7 @@ div#$optin_css_id.letterBox_container .mo-optin-error {
     font-size: 14px;
 }
 
-div#$optin_css_id.letterBox_container input[type="submit"].letterBox_submitButton {
+html div#$optin_uuid div#$optin_css_id.letterBox_container input[type="submit"].letterBox_submitButton {
     width: 100%;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -603,17 +608,17 @@ div#$optin_css_id.letterBox_container input[type="submit"].letterBox_submitButto
     margin: 0;
 }
 
-div#$optin_css_id.letterBox_container .letterBox_submitButton:hover{
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_submitButton:hover{
     color: #ffffff;
     border-color: #3a3a3a;
     background-color: #3a3a3a;
 }
 
-div#$optin_css_id.letterBox_container .letterBox_field_wrapper {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_field_wrapper {
     padding: 0px 20px;
 }
 
-div#$optin_css_id.letterBox_container .letterBox_closeBtn {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_closeBtn {
     position: absolute;
     right: 10px;
     top: 7px;
@@ -621,7 +626,7 @@ div#$optin_css_id.letterBox_container .letterBox_closeBtn {
     height: 20px;
 }
 
-div#$optin_css_id.letterBox_container .letterbox_note {
+html div#$optin_uuid div#$optin_css_id.letterBox_container .letterbox_note {
      margin: 0 auto 10px;
      text-align: center;
      font-style: italic;
@@ -632,10 +637,14 @@ div#$optin_css_id.letterBox_container .letterbox_note {
 
 /* remove border radius from submit button when display on mobile */
 @media only screen and (max-width: 575px) {
-    div#$optin_css_id.letterBox_container, 
-     div#$optin_css_id.letterBox_container .letterBox_submitButton {
+    html div#$optin_uuid div#$optin_css_id.letterBox_container, 
+     html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_submitButton {
         border-radius: 0 !important;
     }
+}
+
+html div#$optin_uuid div#$optin_css_id.letterBox_container textarea.mo-optin-form-custom-field.textarea-field {
+    min-height: 80px;
 }
 CSS;
 

@@ -716,7 +716,7 @@ HTML;
 
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {
-                html div#$optin_uuid  div#$optin_css_id.rescript_container .rescript_copy {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_copy {
                         padding: 10px;
                     }
                 }

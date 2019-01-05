@@ -579,6 +579,7 @@ html div#$optin_uuid div#$optin_css_id.letterBox_container .letterBox_form_field
     padding: 15px;
     border: 0px;
     border-radius: 5px;
+    text-align: left;
     color: #444;
     font-size: 15px;
     margin: 0 0 10px;
