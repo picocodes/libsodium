@@ -265,7 +265,10 @@ class Rescript extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [self::CTA_BUTTON_SUPPORT];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -581,6 +584,7 @@ class Rescript extends AbstractOptinTheme
             <div class="rescript_blockify">
             [mo-optin-form-fields-wrapper]
                 [mo-optin-form-email-field class="rescript_inputField"]
+                [mo-optin-form-custom-fields class="rescript_inputField"]
                 [mo-optin-form-submit-button class="rescript_submitBtn"]
                 [mo-mailchimp-interests]
             [/mo-optin-form-fields-wrapper]
@@ -702,7 +706,7 @@ HTML;
             font-size: 14px;
         }
 
-               div#$optin_css_id.rescript_container input.rescript_inputField {
+               div#$optin_css_id.rescript_container .rescript_inputField {
                     border: 2px solid $submit_button_background;
                     width: 100%;
                     max-width: 100%;
@@ -717,8 +721,8 @@ HTML;
                     color: #737373;
                 }
 
-               div#$optin_css_id.rescript_container input.rescript_inputField:focus,
-               div#$optin_css_id.rescript_container input.rescript_submitBtn:focus {
+               div#$optin_css_id.rescript_container .rescript_inputField:focus,
+               div#$optin_css_id.rescript_container .rescript_submitBtn:focus {
                     outline: 0;
                 }
 
@@ -881,6 +885,30 @@ HTML;
                         padding: 0px;
                     }
                 }
+                
+                
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container input,
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container textarea {
+    margin-bottom: 15px;
+}
+                
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container .mo-optin-form-custom-field + input.rescript_submitBtn {
+    margin-top: 0;
+    right: auto;
+    top: auto;
+    position: static;
+    width: 100%;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container textarea.mo-optin-form-custom-field.textarea-field {
+    min-height: 80px;
+    padding-top: 20px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container .rescript_copy {
+    padding-bottom: 15px;
+}
 CSS;
 
     }
