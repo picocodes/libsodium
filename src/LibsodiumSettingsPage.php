@@ -2,7 +2,6 @@
 
 namespace MailOptin\Libsodium;
 
-use MailOptin\Core\Admin\SettingsPage\LicenseControl;
 use PAnD as PAnD;
 
 ob_start();
@@ -22,7 +21,7 @@ class LibsodiumSettingsPage
             add_action('admin_menu', array(__CLASS__, 'register_settings_page'));
         }, 199);
         // unavailability of this class could potentially break all ajax requests.
-        if (class_exists('MailOptin\Core\Admin\SettingsPage\LicenseControl')) {
+        if (class_exists('MailOptin\Libsodium\LicenseControl')) {
             add_action('admin_init', array(__CLASS__, 'plugin_updater'), 0);
             add_action('admin_init', array(__CLASS__, 'plugin_check_license'), 0);
         }
