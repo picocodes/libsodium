@@ -260,7 +260,10 @@ class Daisy extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -478,6 +481,7 @@ class Daisy extends AbstractOptinTheme
     <div class="daisy-form-wrap mo-optin-form-submit-button">
         [mo-optin-form-name-field class="daisy-input"]
         [mo-optin-form-email-field class="daisy-input"]
+        [mo-optin-form-custom-fields class="daisy-input"]
         [mo-optin-form-submit-button class="daisy-submit-button"]
     </div>
     [/mo-optin-form-fields-wrapper]
@@ -507,50 +511,50 @@ HTML;
         $cta_button_background_color    = $this->get_customizer_value('cta_button_background');
 
         return <<<CSS
-        div#$optin_css_id.daisy-container {
+html div#$optin_uuid div#$optin_css_id.daisy-container {
     max-width: 600px;
     background: #fff;
     padding: 20px;
     border: 5px solid #2ecc71;
 }
-div#$optin_css_id.daisy-container * {
+html div#$optin_uuid div#$optin_css_id.daisy-container * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-div#$optin_css_id.daisy-container div.daisy-header {
+html div#$optin_uuid div#$optin_css_id.daisy-container div.daisy-header {
     color: #000;
     font-weight: 700;
     margin: 10px 0;
     line-height: 1.5;
     text-align: center;
 }
-div#$optin_css_id.daisy-container .dasiy-image-wrap img {
+html div#$optin_uuid div#$optin_css_id.daisy-container .dasiy-image-wrap img {
     max-height: 300px;
     margin: 0px auto;
 }
-div#$optin_css_id.daisy-container .daisy-clearfix:before,
-div#$optin_css_id.daisy-container .daisy-clearfix:after {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-clearfix:before,
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-clearfix:after {
     display: table;
     content: " ";
 }
-div#$optin_css_id.daisy-container .daisy-clearfix:after {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-clearfix:after {
     clear: both;
 }
-div#$optin_css_id.daisy-container .daisy-half-col {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-half-col {
     position: relative;
     min-height: 1px;
     float: left;
     width: 100%;
 }
-div#$optin_css_id.daisy-container input.daisy-input:focus {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-input:focus {
     background: #f5f1f1;
 }
-div#$optin_css_id.daisy-container .daisy-note {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-note {
     margin: 10px 0 0;
     text-align: center;
 }
-div#$optin_css_id.daisy-container .daisy-description {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-description {
     line-height: 1.5;
     text-align: center;
     color: #a2a2a2;
@@ -558,18 +562,18 @@ div#$optin_css_id.daisy-container .daisy-description {
     font-weight: 300;
 }
 
-div#$optin_css_id.daisy-container img.mo-optin-form-image {
+html div#$optin_uuid div#$optin_css_id.daisy-container img.mo-optin-form-image {
     display: block;
     max-width: 100%;
     height: auto;
 }
-div#$optin_css_id.daisy-container .dasiy-image-wrap {
+html div#$optin_uuid div#$optin_css_id.daisy-container .dasiy-image-wrap {
     text-align: center;
     margin: 10px auto;
     width: 100%;
     padding-top: 0;
 }
-div#$optin_css_id.daisy-container input.daisy-input {
+html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-input {
     border: 1px solid $submit_button_background_color;
     width: 100%;
     display: block;
@@ -582,7 +586,7 @@ div#$optin_css_id.daisy-container input.daisy-input {
     background-color: #ffffff;
     min-height: 0;
 }
-div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
+html div#$optin_uuid div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
     width: 100%;
     height: 44px;
     margin: 0;
@@ -596,7 +600,7 @@ div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
     padding: 12px;
     line-height: normal;
 }
-div#$optin_css_id.daisy-container div.mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.daisy-container div.mo-optin-error {
     display: none;
     color: #FF0000;
     font-size: 12px;
@@ -606,41 +610,41 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
 }
     
 @media only screen and (min-width: 500px) {
-    div#$optin_css_id.daisy-container input.daisy-input {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-input {
         width: 100%;
     }
 }
 @media only screen and (min-width: 400px) {
-    div#$optin_css_id.daisy-container .daisy-half-col {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-half-col {
         position: relative;
         min-height: 1px;
         float: left;
         width: 50%;
     }
-    div#$optin_css_id.daisy-container .daisy-tabbled {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-tabbled {
         display: table-cell;
     }
-    div#$optin_css_id.daisy-container input.daisy-input {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-input {
         width: 100%;
     }
 }
 @media only screen and (min-width: 768px) {
-    div#$optin_css_id.daisy-container .daisy-half-col {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-half-col {
         width: 50%;
     }
 }
 @media only screen and (min-width: 800px) {
-    div#$optin_css_id.daisy-container input.daisy-input {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-input {
         width: 100%;
     }
 }
 @media only screen and (min-width: 1200px) {
-    div#$optin_css_id.daisy-container .daisy-note {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-note {
         padding-top: 10px !important;
     }
 }
 @media only screen and (min-width: 900px) {
-    div#$optin_css_id.daisy-container .daisy-form-wrap {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-form-wrap {
         text-align: center;
         padding: 3px 3px 6px;
         margin: 20px auto 10px;
@@ -649,15 +653,15 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
         height: 44px;
     }
     
-    div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-cta-button {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-cta-button {
         background: $cta_button_background_color;
     }
     
-    div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-submit-button {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-submit-button {
         background: $submit_button_background_color;
     }
     
-    div#$optin_css_id.daisy-container input.daisy-input {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-input {
         width: 33%;
         font-weight: normal;
         float: left;
@@ -665,41 +669,64 @@ div#$optin_css_id.daisy-container div.mo-optin-error {
         margin-right: 10px !important;
         border-radius: 3px;
     }
-    div#$optin_css_id.daisy-container .daisy-note {
+    html div#$optin_uuid div#$optin_css_id.daisy-container .daisy-note {
         padding-top: 10px;
     }
-    div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
+    html div#$optin_uuid div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
         width: 30%;
     }
-    div#$optin_css_id.daisy-container {
+    html div#$optin_uuid div#$optin_css_id.daisy-container {
         padding: 20px;
     }
     
     
-div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
+html div#$optin_uuid div#$optin_css_id.mo-has-email.daisy-container .daisy-input {
     width: 66% !important;
 }
 
-div#$optin_css_id.mo-has-email.daisy-container input[type="submit"].daisy-submit-button {
+html div#$optin_uuid div#$optin_css_id.mo-has-email.daisy-container input[type="submit"].daisy-submit-button {
         width: 30%;
     }
 }
 /* hide image on small devices */
 
 @media only screen and (max-width: 399px) {
-    div#$optin_css_id.daisy-container img.mo-optin-form-image {
+    html div#$optin_uuid div#$optin_css_id.daisy-container img.mo-optin-form-image {
         display: none
     }
     
     
-div#$optin_css_id.mo-has-email.daisy-container input.daisy-input {
+html div#$optin_uuid div#$optin_css_id.mo-has-email.daisy-container .daisy-input {
     width: 100% !important;
 }
 }
 
-div#$optin_uuid.mo-cta-button-display input.mo-optin-form-cta-button {
-    width: 100% !important;
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.daisy-container .daisy-input,
+ html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.daisy-container input[type="submit"].daisy-submit-button {
+        width: 100%;
 }
+
+/* the three css rule below overrides the ones set above to their default css calues.*/
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.daisy-container .daisy-form-wrap {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        border-radius: 0;
+        height: auto;
+    }
+    
+    html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-cta-button {
+        background: transparent;
+    }
+    
+    html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.daisy-container .daisy-form-wrap.mo-optin-form-submit-button {
+        background: transparent;
+    }
+    
+     html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.daisy-container textarea.mo-optin-form-custom-field.textarea-field {
+            min-height: 80px;
+        }
 
 CSS;
 

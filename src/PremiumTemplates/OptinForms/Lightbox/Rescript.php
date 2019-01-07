@@ -21,6 +21,8 @@ class Rescript extends AbstractOptinTheme
             return $val;
         }, 10, 3);
 
+        add_filter('mo_optin_form_disable_name_field', '__return_true');
+
         $this->init_config_filters([
 
                 // -- default for design sections -- //
@@ -265,7 +267,10 @@ class Rescript extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -435,14 +440,6 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_fields_settings($fields_settings, $CustomizerSettingsInstance)
     {
-        // this optin theme do not have support for name field hence remove them.
-
-        foreach ($fields_settings as $key => $fields_setting) {
-            if (strpos($key, 'name_field') !== false) {
-                unset($fields_settings[$key]);
-            }
-        }
-
         $fields_settings['submit_button_background']['transport'] = 'refresh';
 
         return $fields_settings;
@@ -581,6 +578,7 @@ class Rescript extends AbstractOptinTheme
             <div class="rescript_blockify">
             [mo-optin-form-fields-wrapper]
                 [mo-optin-form-email-field class="rescript_inputField"]
+                [mo-optin-form-custom-fields class="rescript_inputField"]
                 [mo-optin-form-submit-button class="rescript_submitBtn"]
                 [mo-mailchimp-interests]
             [/mo-optin-form-fields-wrapper]
@@ -615,40 +613,40 @@ HTML;
 
         return <<<CSS
         
-        div#{$optin_css_id}_container.mo-optin-form-container {
+        html div#$optin_uuid div#{$optin_css_id}_container.mo-optin-form-container {
                     max-width: 800px !important;
                 }
                
-                div#$optin_css_id.rescript_container .rescript_imgResponsive {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_imgResponsive {
                     display: block;
                     max-width: 100%;
                     height: auto;
                 }
 
-               div#$optin_css_id.rescript_container {
+               html div#$optin_uuid div#$optin_css_id.rescript_container {
                     padding: 50px 50px 0 0;
                 }
 
-               div#$optin_css_id.rescript_container * {
+               html div#$optin_uuid div#$optin_css_id.rescript_container * {
                     font-size: 16px;
                     text-align: center;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_clear::before,
-               div#$optin_css_id.rescript_container .rescript_clear::after {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_clear::before,
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_clear::after {
                     content: " ";
                     display: table;
                 }
 
-                div#$optin_css_id.rescript_container .rescript_clear::after {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_clear::after {
                     clear: both;
                 }
 
-                div#$optin_css_id.rescript_container .rescript_imgCol {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_imgCol {
                     display: none;
                 }
 
-                div#$optin_css_id.rescript_container .rescript_miniHeader {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_miniHeader {
                     text-transform: uppercase;
                     font-weight: 700;
                     color: $mini_headline_font_color;
@@ -661,7 +659,7 @@ HTML;
 
                 }
 
-                div#$optin_css_id.rescript_container {
+                html div#$optin_uuid div#$optin_css_id.rescript_container {
                     padding: 20px;
                     background: #fff;
                     border-radius: 6px;
@@ -671,7 +669,7 @@ HTML;
                     position: relative;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_main .rescript_description {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_main .rescript_description {
                     font-size: 16px;
                     line-height: 1.8;
                     color: #bebebe;
@@ -680,21 +678,21 @@ HTML;
                     height: auto;
                 }
                 
-                div#$optin_css_id.rescript_container .rescript_note::before, 
-                div#$optin_css_id.rescript_container .rescript_note::after,
-                div#$optin_css_id.rescript_container .mo-optin-error ::before, 
-                div#$optin_css_id.rescript_container .mo-optin-error ::after {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_note::before, 
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_note::after,
+                html div#$optin_uuid div#$optin_css_id.rescript_container .mo-optin-error ::before, 
+                html div#$optin_uuid div#$optin_css_id.rescript_container .mo-optin-error ::after {
                     display: table;
                     content: " ";
                 }
                 
-                div#$optin_css_id.rescript_container .mo-note-content,
-                div#$optin_css_id.rescript_container #mo-acceptance-checkbox
+                html div#$optin_uuid div#$optin_css_id.rescript_container .mo-note-content,
+                html div#$optin_uuid div#$optin_css_id.rescript_container #mo-acceptance-checkbox
                  {
                     display: inline !important;
                 }
                             
-        div#$optin_css_id.rescript_container .mo-optin-error {
+        html div#$optin_uuid div#$optin_css_id.rescript_container .mo-optin-error {
              display: none; 
             color: #ff0000;
             text-align: center;
@@ -702,7 +700,7 @@ HTML;
             font-size: 14px;
         }
 
-               div#$optin_css_id.rescript_container input.rescript_inputField {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_inputField {
                     border: 2px solid $submit_button_background;
                     width: 100%;
                     max-width: 100%;
@@ -717,29 +715,29 @@ HTML;
                     color: #737373;
                 }
 
-               div#$optin_css_id.rescript_container input.rescript_inputField:focus,
-               div#$optin_css_id.rescript_container input.rescript_submitBtn:focus {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_inputField:focus,
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_submitBtn:focus {
                     outline: 0;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_blockify {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_blockify {
                     position: relative;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_closeBtn {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_closeBtn {
                     text-decoration: none;
                     color: #000;
                     font-size: 25px;
                     font-family: "Verdana", Arial, sans-serif;
                 }
 
-              div#$optin_css_id.rescript_container  .rescript_closeBtnDiv {
+              html div#$optin_uuid div#$optin_css_id.rescript_container  .rescript_closeBtnDiv {
                     position: absolute;
                     right: 20px;
                     top: 10px;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_headline {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_headline {
                     line-height: 1.5;
                     color: #2c2f33;
                     font-weight: bold;
@@ -750,13 +748,13 @@ HTML;
                     height: auto;
                 }
 
-               div#$optin_css_id.rescript_container .rescript_form {
+               html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_form {
                     padding-top: 20px;
                     padding-bottom: 20px;
                     position: relative;
                 }
 
-              div#$optin_css_id.rescript_container input.rescript_submitBtn {
+              html div#$optin_uuid div#$optin_css_id.rescript_container input.rescript_submitBtn {
                     width: 100%;
                     background: #ff7f45;
                     border: 0px;
@@ -775,8 +773,8 @@ HTML;
                     width: 100% !important;
                 }
                 
-                div#$optin_css_id.rescript_container .rescript_note,
-                div#$optin_css_id.rescript_container .rescript_note * {
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_note,
+                html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_note * {
                      margin-top: 5px;
                      text-align: center;
                      font-size: 14px !important;
@@ -788,31 +786,31 @@ HTML;
 
                 /* Responsive cases*/
                 @media only screen and (min-width: 230px) {
-                 div#$optin_css_id.rescript_container .rescript_copy {
+                 html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_copy {
                         padding: 20px 10px ;
                     }
                 }
 
                 @media only screen and (min-width: 580px) {
-                    div#$optin_css_id.rescript_container {
+                    html div#$optin_uuid div#$optin_css_id.rescript_container {
                         padding: 40px;
                     }
                 }
 
                 @media only screen and (min-width: 768px) {
-                    div#$optin_css_id.rescript_container {
+                    html div#$optin_uuid div#$optin_css_id.rescript_container {
                         padding: 50px;
                     }
 
-                   div#$optin_css_id.rescript_container input.rescript_submitBtn {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container input.rescript_submitBtn {
                         width: 165px;
                         margin-top: 0;
                         background: #ff7f45;
                         border: 0;
                         padding: 10px;
                         border-radius: 100px;
-                    -webkit-border-radius: 100px; 
-                    -moz-border-radius: 100px; 
+                        -webkit-border-radius: 100px; 
+                        -moz-border-radius: 100px; 
                         height: 60px !important;
                         color: #fff;
                         font-weight: 700;
@@ -824,43 +822,43 @@ HTML;
                 }
 
                 @media only screen and (min-width: 768px) {
-                   div#$optin_css_id.rescript_container .rescript_main {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_main {
                         padding-right: 20px;
                         padding-left: 320px;
                         padding-top: 25px;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_imgCol {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_imgCol {
                         display: inline-block;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_imgCol {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_imgCol {
                         float: left;
                     }
 
-                    div#$optin_css_id.rescript_container {
+                    html div#$optin_uuid div#$optin_css_id.rescript_container {
                         padding: 0px;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_blockify {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_blockify {
                         width: 100%;
                         position: relative;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_form {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_form {
                         padding-bottom: 0px;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_copy {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_copy {
                         padding-top: 20px;
                     }
 
-                    div#$optin_css_id.rescript_container {
+                    html div#$optin_uuid div#$optin_css_id.rescript_container {
                         padding: 0px;
                         width: auto;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_imgCol img {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_imgCol img {
                         width: 300px;
                         height: 450px;
                         border-top-left-radius: 4px;
@@ -871,16 +869,40 @@ HTML;
                         -webkit-border-bottom-left-radius: 4px;
                     }
 
-                   div#$optin_css_id.rescript_container .rescript_copy {
+                   html div#$optin_uuid div#$optin_css_id.rescript_container .rescript_copy {
                         padding-bottom: 0 ;
                     }
                 }
 
                 @media only screen and (min-width: 1000px) {
-                    div#$optin_css_id.rescript_container {
+                    html div#$optin_uuid div#$optin_css_id.rescript_container {
                         padding: 0px;
                     }
                 }
+                
+                
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container input,
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container textarea {
+    margin-bottom: 15px;
+}
+                
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container .mo-optin-form-custom-field + input.rescript_submitBtn {
+    margin-top: 0;
+    right: auto;
+    top: auto;
+    position: static;
+    width: 100%;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container textarea.mo-optin-form-custom-field.textarea-field {
+    min-height: 80px;
+    padding-top: 20px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container .rescript_copy {
+    padding-bottom: 15px;
+}
 CSS;
 
     }

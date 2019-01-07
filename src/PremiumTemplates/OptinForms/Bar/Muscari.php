@@ -201,7 +201,10 @@ class Muscari extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -389,6 +392,9 @@ class Muscari extends AbstractOptinTheme
      */
     public function optin_form()
     {
+        $tag_start = '<div class="muscari-form-group">';
+        $tag_end = '</div>';
+
         return <<<HTML
 [mo-optin-form-wrapper class="muscari-container"]
 <div role="form">
@@ -404,6 +410,9 @@ class Muscari extends AbstractOptinTheme
         <div class="muscari-form-group muscari-email-field mo-optin-form-email-field">
             [mo-optin-form-email-field class="muscari-form-control"]
         </div>
+        
+        [mo-optin-form-custom-fields class="muscari-form-control" tag_start='$tag_start' tag_end='$tag_end']
+    
         <div class="muscari-form-group muscari-button-group">
             [mo-optin-form-submit-button class="muscari-button"]
         </div>
@@ -427,19 +436,19 @@ HTML;
      */
     public function optin_form_css()
     {
-        $optin_uuid   = $this->optin_campaign_uuid;
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid   = $this->optin_campaign_uuid;
 
         return <<<CSS
-        div#$optin_css_id.muscari-container,
- div#$optin_css_id.muscari-container .muscari-form-group,
- div#$optin_css_id.muscari-container .muscari-form-control {
+html div#$optin_uuid div#$optin_css_id.muscari-container,
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-group,
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-control {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
-div#$optin_css_id.muscari-container{
+html div#$optin_uuid div#$optin_css_id.muscari-container{
     background-color: #000000;
     border: 3px solid #000000;
     color:#fff;
@@ -451,7 +460,7 @@ div#$optin_css_id.muscari-container{
     font-size: 16px;
 }
 
-div#$optin_css_id.muscari-container .muscari-close-form{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-close-form{
     cursor: pointer;
     display: block;
     font-size: 22px;
@@ -470,29 +479,29 @@ div#$optin_css_id.muscari-container .muscari-close-form{
     user-select: none;
 }
 
-div#$optin_css_id.muscari-container .muscari-close-form,
-div#$optin_css_id.muscari-container .muscari-close-form a.mo-close-optin {
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-close-form,
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-close-form a.mo-close-optin {
     color: #fff;
     text-decoration: none;
 }
 
-div#$optin_css_id.muscari-container .muscari-close-form:hover {
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-close-form:hover {
     text-shadow: 0 0 2px #fff
 }
 
-div#$optin_css_id.muscari-container .muscari-form-title-wrap{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-title-wrap{
     padding: 15px;
     width:100%;
     text-align: center;
     font-size: 15px;
 }
 
-div#$optin_css_id.muscari-container .muscari-form-group {
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-group {
     margin-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
-div#$optin_css_id.muscari-container .muscari-form-control{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-control{
     display: block;
     width: 100%;
     height: 34px;
@@ -503,15 +512,15 @@ div#$optin_css_id.muscari-container .muscari-form-control{
     outline: none !important;
     border:none;
 }
-div#$optin_css_id.muscari-container .muscari-form-row{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-row{
     margin-right: auto;
     margin-left: auto;
 }
-div#$optin_css_id.muscari-container .muscari-form-row:after{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-row:after{
     clear: both;
 }
 
-div#$optin_css_id.muscari-container .muscari-button{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button{
     outline: none !important;
     display: inline-block;
     padding: 6px 12px;
@@ -536,15 +545,15 @@ div#$optin_css_id.muscari-container .muscari-button{
     width: 100%;
 }
 
-div#$optin_css_id.muscari-container .muscari-email-field,.muscari-name-field,
-div#$optin_css_id.muscari-container .muscari-button-group {
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-email-field,.muscari-name-field,
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button-group {
     width: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
-div#$optin_css_id.muscari-container div.mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.muscari-container div.mo-optin-error {
          display: none;
          color: #FF0000;
          text-align: center;
@@ -553,7 +562,7 @@ div#$optin_css_id.muscari-container div.mo-optin-error {
          font-size: 14px;
      }
      
-     div#$optin_css_id.muscari-container .moMuscari_note {
+     html div#$optin_uuid div#$optin_css_id.muscari-container .moMuscari_note {
 		 font-style: italic;
 		 font-size: 14px;
 		 text-align: center;
@@ -563,29 +572,29 @@ div#$optin_css_id.muscari-container div.mo-optin-error {
 /* Media queries for responsiveness */
 /* Tablet */
 @media (min-width: 768px) {
-    div#$optin_css_id.muscari-container .muscari-email-field,
-    div#$optin_css_id.muscari-container .muscari-name-field{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-email-field,
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-name-field{
         width:28.19%;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-button-group{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button-group{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-close-form{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-close-form{
         top: 50%;
     }
 }
 
 /* Tablet onwards with only email field */
 @media (min-width: 992px) {
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-form-title-wrap{
+    html div#$optin_uuid div#$optin_css_id.mo-has-email.muscari-container .muscari-form-title-wrap{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-email-field,
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-name-field,
-    div#$optin_css_id.mo-has-email.muscari-container .muscari-button-group{
+    html div#$optin_uuid div#$optin_css_id.mo-has-email.muscari-container .muscari-email-field,
+    html div#$optin_uuid div#$optin_css_id.mo-has-email.muscari-container .muscari-name-field,
+    html div#$optin_uuid div#$optin_css_id.mo-has-email.muscari-container .muscari-button-group{
         width:auto;
         display: inline-block;
     }
@@ -593,39 +602,39 @@ div#$optin_css_id.muscari-container div.mo-optin-error {
 
 /* Medium device */
 @media (min-width: 992px) {
-    div#$optin_css_id.muscari-container .muscari-text-align{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-text-align{
         text-align: center;
     }
 }
 
 /* Large screens & TVs */
 @media (min-width: 1200px) {
-    div#$optin_css_id.muscari-container .muscari-form-title-wrap{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-title-wrap{
         width: auto;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-email-field,
-    div#$optin_css_id.muscari-container .muscari-name-field,
-    div#$optin_css_id.muscari-container .muscari-button-group{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-email-field,
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-name-field,
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button-group{
         width:auto;
         display: inline-block;
     }
-    div#$optin_css_id.muscari-container .muscari-close-form{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-close-form{
         top: 24px;
     }
-    div#$optin_css_id.muscari-container .muscari-form-group{
+    html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-group{
         margin-bottom: -5px;
     }
 }
 
-div#$optin_css_id.muscari-container .muscari-form-control{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-control{
     background: transparent;
     color: #dddddd;
     border-radius: 0;
     border-bottom: 2px solid #cccccc;
 }
 
-div#$optin_css_id.muscari-container .muscari-form-control:hover{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-form-control:hover{
     outline: 0;
     border-bottom-color: #3abaab;
     -webkit-transition: border-bottom-color 0.15s;
@@ -634,45 +643,57 @@ div#$optin_css_id.muscari-container .muscari-form-control:hover{
     -o-transition: border-bottom-color 0.15s;
     transition: border-bottom-color 0.15s;
 }
-div#$optin_css_id.muscari-container .muscari-button{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button{
     background: #3abaab;
     color:#fff;
 }
 
-div#$optin_uuid.mo-cta-button-display .muscari-button-group,
- div#$optin_uuid.mo-cta-button-display .muscari-form-title-wrap {
+html div#$optin_uuid.mo-cta-button-display .muscari-button-group,
+html div#$optin_uuid.mo-cta-button-display .muscari-form-title-wrap {
     display: inline-block;
     width: auto;
     margin: auto;
 }
 
-div#$optin_uuid.mo-cta-button-display .muscari-text-align{
+html div#$optin_uuid.mo-cta-button-display .muscari-text-align{
         text-align: center;
     }
 
-div#$optin_css_id.muscari-container .muscari-button:hover{
+html div#$optin_uuid div#$optin_css_id.muscari-container .muscari-button:hover{
     background: #2fa699;
 }
 
-div#$optin_css_id.muscari-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+html div#$optin_uuid div#$optin_css_id.muscari-container ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #cccccc;
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.muscari-container ::-moz-placeholder { /* Firefox 19+ */
+html div#$optin_uuid div#$optin_css_id.muscari-container ::-moz-placeholder { /* Firefox 19+ */
     color: #cccccc;
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.muscari-container :-ms-input-placeholder { /* IE 10+ */
+html div#$optin_uuid div#$optin_css_id.muscari-container :-ms-input-placeholder { /* IE 10+ */
     color: #cccccc;
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
 }
-div#$optin_css_id.muscari-container :-moz-placeholder { /* Firefox 18- */
+html div#$optin_uuid div#$optin_css_id.muscari-container :-moz-placeholder { /* Firefox 18- */
     color: #cccccc;
     font-family: Palatino,Helvetica, Arial, sans-serif; !important;
     font-size: 15px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.muscari-container .muscari-form-group {
+     width: 100%;
+    display:block;
+    max-width: 400px;
+    margin:  auto;
+    margin-bottom:10px;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.muscari-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
 }
 CSS;
 

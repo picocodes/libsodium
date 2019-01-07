@@ -17,112 +17,112 @@ class Bannino extends AbstractOptinTheme
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#00cc77',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#00cc77',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#00cc77',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#00cc77',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Subscribe For Latest Updates", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Subscribe For Latest Updates", 'mailoptin'),
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#000',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#000',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#000',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#000',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#2c3e50',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#2c3e50',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Open+Sans',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Open+Sans',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Trebuchet MS, Arial, sans-serif',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Trebuchet MS, Arial, sans-serif',
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Trebuchet MS, Arial, sans-serif',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#000000',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#000000',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => __('We promise not to spam you. You can unsubscribe at any time.', 'mailoptin'),
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Titillium+Web',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Titillium+Web',
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_desktop_default',
                     'value'       => 14,
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_tablet_default',
                     'value'       => 14,
                     'optin_class' => 'Bannino',
-                    'optin_type' => 'inpost'
+                    'optin_type'  => 'inpost'
                 ]
             ]
         );
@@ -140,7 +140,7 @@ class Bannino extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
-            $config['width'] = 700;
+            $config['width']  = 700;
             $config['height'] = 300;
 
             return $config;
@@ -155,7 +155,10 @@ class Bannino extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -374,6 +377,7 @@ class Bannino extends AbstractOptinTheme
 		    <div class="bannino-input-fields bannino-clearfix">
 			    [mo-optin-form-name-field class="bannino-form-field"]
 			    [mo-optin-form-email-field class="bannino-form-field"]
+                [mo-optin-form-custom-fields]
 			    [mo-optin-form-submit-button class="bannino-form-submit-button"]
 		    </div>
       [/mo-optin-form-fields-wrapper]
@@ -399,57 +403,58 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
-        $optin_uuid = $this->optin_campaign_uuid;
+        $optin_uuid   = $this->optin_campaign_uuid;
+
         return <<<CSS
-div#$optin_css_id.bannino-container * {
+html div#$optin_uuid div#$optin_css_id.bannino-container * {
 		 -webkit-box-sizing: border-box;
 		 -moz-box-sizing: border-box;
 		 box-sizing: border-box;
 	 }
 
-div#$optin_css_id.bannino-container {
+html div#$optin_uuid div#$optin_css_id.bannino-container {
 		 border: 5px solid #2c3e50;
 		 margin: 10px auto;
 		 width: 100%;
 	 }
 
-div#$optin_css_id.bannino-container button, div#$optin_css_id.bannino-container input {
+html div#$optin_uuid div#$optin_css_id.bannino-container button, div#$optin_css_id.bannino-container input {
 	margin: 0;
 }
 
-div#$optin_css_id.bannino-container .bannino-input-fields {
+html div#$optin_uuid div#$optin_css_id.bannino-container .bannino-input-fields {
 		 border: 0;
 	 }
 	 
 	 
-div#$optin_css_id.bannino-container input.bannino-form-field {
+html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-field {
 	background-color: #ffffff;
 }
 
-div#$optin_css_id.bannino-container img.mo-optin-form-image{
+html div#$optin_uuid div#$optin_css_id.bannino-container img.mo-optin-form-image{
 		 display: block;
 		 width: 100%;
 		 height: auto;
 		 max-height: 400px;
 	 }
 
-div#$optin_css_id.bannino-container input:focus {
+html div#$optin_uuid div#$optin_css_id.bannino-container input:focus {
 		 background: #ece4e4;
 	 }
 
-div#$optin_css_id.bannino-container .bannino-clearfix:before, div#$optin_css_id.bannino-container .bannino-clearfix:after {
+html div#$optin_uuid div#$optin_css_id.bannino-container .bannino-clearfix:before, div#$optin_css_id.bannino-container .bannino-clearfix:after {
 															   display: table;
 															   content: " ";
 														   }
-div#$optin_css_id.bannino-container .bannino-clearfix:after{
+html div#$optin_uuid div#$optin_css_id.bannino-container .bannino-clearfix:after{
 		 clear: both;
 	 }
 
-div#$optin_css_id.bannino-container .form-body {
+html div#$optin_uuid div#$optin_css_id.bannino-container .form-body {
 		 padding: 10px 10px;
 	 }
 
-div#$optin_css_id.bannino-container .moBannini_note {
+html div#$optin_uuid div#$optin_css_id.bannino-container .moBannini_note {
 		 font-style: italic;
 		 font-size: 14px;
 		 line-height: 1.5;
@@ -457,7 +462,7 @@ div#$optin_css_id.bannino-container .moBannini_note {
 		 color: #000;
 	 }
 
-div#$optin_css_id.bannino-container div.mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.bannino-container div.mo-optin-error {
 		 display: none;
 		 color: #FF0000;
 		 font-size: 14px;
@@ -467,11 +472,11 @@ div#$optin_css_id.bannino-container div.mo-optin-error {
 		 margin-top: 5px;
 	 }
 
-div#$optin_css_id.mo-has-email.bannino-container input.bannino-form-field {
+html div#$optin_uuid div#$optin_css_id.mo-has-email.bannino-container input.bannino-form-field {
 		 width: 100% !important;
 	 }
 
-div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 		 background: #2c3e50;
 		 border: 0;
 		 margin-top: 5px;
@@ -487,8 +492,10 @@ div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 	 }
 
 
-div#$optin_css_id.bannino-container input.bannino-form-field,
-	 div#$optin_css_id.bannino-container input.bannino-form-submit-button{
+html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-field,
+html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button,
+html div#$optin_uuid div#$optin_css_id.bannino-container input.mo-optin-form-custom-field.text-field,
+html div#$optin_uuid div#$optin_css_id.bannino-container textarea.mo-optin-form-custom-field.textarea-field {
 			  padding: 7px !important;
 			  display: block;
 			  width: 100%;
@@ -497,14 +504,14 @@ div#$optin_css_id.bannino-container input.bannino-form-field,
 			  line-height: normal;
 		  }
 
-div#$optin_css_id.bannino-container  .bannino-close-btn img {
+html div#$optin_uuid div#$optin_css_id.bannino-container  .bannino-close-btn img {
 		 width: 20px;
 		 height: 20px;
 		 text-align: center;
 		 margin-top: 5px;
 	 }
 
-div#$optin_css_id.bannino-container .bannino-close-btn {
+html div#$optin_uuid div#$optin_css_id.bannino-container .bannino-close-btn {
 		 border-radius: 100px;
 		 border: 0;
 		 width: 34px;
@@ -517,26 +524,28 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 	 }
 
 @media only screen and (min-width: 414px){
-	div#$optin_css_id.bannino-container  .bannino-input-fields.bannino-clearfix {
+	html div#$optin_uuid div#$optin_css_id.bannino-container  .bannino-input-fields.bannino-clearfix {
 			 display: flex;
 		 }
 
-	div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 			 margin-right: 0 !important;
 		 }
 
-	div#$optin_css_id.bannino-container input.bannino-form-field,
-		 div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-field,
+    html div#$optin_uuid div#$optin_css_id.bannino-container input.mo-optin-form-custom-field.text-field,
+    html div#$optin_uuid div#$optin_css_id.bannino-container textarea.mo-optin-form-custom-field.textarea-field,
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 				  width: 33%;
 				  float: left;
 				  margin-right: 10px;
 				  margin-bottom: 10px;
 				  height: 40px !important;
-				  padding: 0 20px !important;
+				  padding: 0 15px !important;
 
 			  }
 
-	div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 			 background: #2c3e50;
 			 border: 0;
 			 margin-top: 0 !important;
@@ -546,8 +555,8 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 }
 @media only screen and (min-width: 500px){
 
-	div#$optin_css_id.bannino-container input.bannino-form-field,
-		 div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-field,
+		 html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 				  width: 33%;
 				  float: left;
 				  font-size: 14px;
@@ -558,7 +567,7 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 			  }
 
-	div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 			 background: #2c3e50;
 			 border: 0;
 			 margin-top: 0 !important;
@@ -569,19 +578,19 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 @media only screen and (min-width: 1200px){
 
-	div#$optin_css_id.bannino-container input.bannino-form-field,
-		 div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-field,
+		 html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 				  width: 33% !important;
 				  height: 40px !important;
 			  }
 
-	div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 			 margin-top: 0 !important;
 			 padding: 8px 20px !important;
 			 height: 40px !important;
 			 margin-bottom: 10px !important;
 		 }
-	div#$optin_css_id.bannino-container .bannino-input-fields {
+	html div#$optin_uuid div#$optin_css_id.bannino-container .bannino-input-fields {
 			 padding: 10px 30px 5px !important;
 		 }
 
@@ -589,8 +598,10 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 
 @media only screen and (min-width: 768px){
 
-	div#$optin_css_id.bannino-container input.bannino-form-field,
-		 div#$optin_css_id.bannino-container input.bannino-form-submit-button   {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-field,
+		 html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button,	    
+html div#$optin_uuid div#$optin_css_id.bannino-container input.mo-optin-form-custom-field.text-field,
+html div#$optin_uuid div#$optin_css_id.bannino-container textarea.mo-optin-form-custom-field.textarea-field {
 				  width: 33%;
 				  float: left;
 				  margin-right: 10px;
@@ -598,15 +609,29 @@ div#$optin_css_id.bannino-container .bannino-close-btn {
 				  padding: 0 20px !important;
 			  }
 
-	div#$optin_css_id.bannino-container input.bannino-form-submit-button {
+	html div#$optin_uuid div#$optin_css_id.bannino-container input.bannino-form-submit-button {
 			 margin-top: 0 !important;
 			 padding: 0 20px !important;
 			 height: 40px !important;
 		 }
 }
 
-div#$optin_uuid.mo-cta-button-display input.mo-optin-form-cta-button {
+html div#$optin_uuid.mo-cta-button-display div#$optin_css_id.bannino-container input.mo-optin-form-cta-button {
     width: 100% !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container input,
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container textarea {
+    width: 100% !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container textarea.mo-optin-form-custom-field.textarea-field {
+min-height: 80px;
+padding-top: 15px !important;
+}
+
+html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.bannino-container .bannino-input-fields.bannino-clearfix {
+	display: block !important;
 }
 CSS;
 

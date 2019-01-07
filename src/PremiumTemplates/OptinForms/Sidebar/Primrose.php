@@ -241,7 +241,10 @@ class Primrose extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -276,6 +279,7 @@ class Primrose extends AbstractOptinTheme
     [mo-optin-form-fields-wrapper]
     [mo-optin-form-name-field class="primrose-input-field"]
     [mo-optin-form-email-field class="primrose-input-field"]
+    [mo-optin-form-custom-fields class="primrose-input-field"]
     [mo-mailchimp-interests]
     [mo-optin-form-submit-button class="primrose-submit-button"]
     [/mo-optin-form-fields-wrapper]
@@ -294,17 +298,18 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id     = $this->optin_css_id;
+        $optin_uuid = $this->optin_campaign_uuid;
         $background_image = $this->get_form_background_image_url();
 
         return <<<CSS
 
-div#$optin_css_id.primrose-container * {
+html div#$optin_uuid div#$optin_css_id.primrose-container * {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
     
-div#$optin_css_id.primrose-container {
+html div#$optin_uuid div#$optin_css_id.primrose-container {
     max-width: 400px;
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -318,7 +323,7 @@ div#$optin_css_id.primrose-container {
     border: 5px solid #000000;
 }
 
-div#$optin_css_id.primrose-container .primrose-headline {
+html div#$optin_uuid div#$optin_css_id.primrose-container .primrose-headline {
     font-size: 45px;
     text-align: center;
     display: block;
@@ -327,7 +332,7 @@ div#$optin_css_id.primrose-container .primrose-headline {
     height: auto;
 }
     
-div#$optin_css_id.primrose-container .primrose-description {
+html div#$optin_uuid div#$optin_css_id.primrose-container .primrose-description {
     font-size: 18px;
     font-weight: 600;
     text-align: center;
@@ -338,7 +343,7 @@ div#$optin_css_id.primrose-container .primrose-description {
     height: auto;
 }
         
-div#$optin_css_id.primrose-container .primrose-note {
+html div#$optin_uuid div#$optin_css_id.primrose-container .primrose-note {
     font-size: 12px;
     margin-top: 10px;
     font-weight: normal;
@@ -349,11 +354,11 @@ div#$optin_css_id.primrose-container .primrose-note {
     height: auto;
 }
         
-div#$optin_css_id.primrose-container .primrose-headline {
+html div#$optin_uuid div#$optin_css_id.primrose-container .primrose-headline {
     margin: 0;
 }
         
-div#$optin_css_id.primrose-container input.primrose-input-field {
+html div#$optin_uuid div#$optin_css_id.primrose-container .primrose-input-field {
     width: 100%;
     height: 36px !important;
     border: 2px solid #f0f0f0;
@@ -362,12 +367,11 @@ div#$optin_css_id.primrose-container input.primrose-input-field {
     font-size: 16px;
     margin: 0 auto;
     margin-top: 10px;
-    text-align: center;
     line-height: normal;
     background-color: #ffffff;
 }
         
-div#$optin_css_id.primrose-container input.primrose-submit-button {
+html div#$optin_uuid div#$optin_css_id.primrose-container input.primrose-submit-button {
     border: 0;
     border-radius: 3px;
     background: black;
@@ -381,7 +385,7 @@ div#$optin_css_id.primrose-container input.primrose-submit-button {
     line-height: normal;
 }
 
-div#$optin_css_id.primrose-container .mo-optin-error {
+html div#$optin_uuid div#$optin_css_id.primrose-container .mo-optin-error {
      display: none; 
     background: #FF0000;
     color: #ffffff;
@@ -395,14 +399,18 @@ div#$optin_css_id.primrose-container .mo-optin-error {
     box-sizing: border-box;
 }
         
-div#$optin_css_id.primrose-container input.primrose-input-field:focus {
+html div#$optin_uuid div#$optin_css_id.primrose-container .primrose-input-field:focus {
     border-color: #0abff0;
     border-radius: 3px;
 }
         
-div#$optin_css_id.primrose-container input.primrose-submit-button:hover {
+html div#$optin_uuid div#$optin_css_id.primrose-container input.primrose-submit-button:hover {
     background: black;
     opacity: 0.9;
+}
+
+html div#$optin_uuid div#$optin_css_id.primrose-container textarea.mo-optin-form-custom-field.textarea-field {
+    min-height: 80px;
 }
 CSS;
     }

@@ -18,223 +18,223 @@ class Boldy extends AbstractOptinTheme
 
                 // -- default for design sections -- //
                 [
-                    'name' => 'mo_optin_form_background_color_default',
-                    'value' => '#2d3144',
+                    'name'        => 'mo_optin_form_background_color_default',
+                    'value'       => '#2d3144',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_border_color_default',
-                    'value' => '#2d3144',
+                    'name'        => 'mo_optin_form_border_color_default',
+                    'value'       => '#2d3144',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for headline sections -- //
                 [
-                    'name' => 'mo_optin_form_headline_default',
-                    'value' => __("Sport News Around The World", 'mailoptin'),
+                    'name'        => 'mo_optin_form_headline_default',
+                    'value'       => __("Sport News Around The World", 'mailoptin'),
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_headline_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_headline_font_default',
-                    'value' => 'Lato',
+                    'name'        => 'mo_optin_form_headline_font_default',
+                    'value'       => 'Lato',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for description sections -- //
                 [
-                    'name' => 'mo_optin_form_description_font_default',
-                    'value' => 'Lato',
+                    'name'        => 'mo_optin_form_description_font_default',
+                    'value'       => 'Lato',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_default',
-                    'value' => __('Subscribe To Our Newsletter'),
+                    'name'        => 'mo_optin_form_description_default',
+                    'value'       => __('Subscribe To Our Newsletter'),
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_description_font_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_description_font_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for fields sections -- //
                 [
-                    'name' => 'mo_optin_form_name_field_color_default',
-                    'value' => '#181818',
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#181818',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_placeholder_default',
-                    'value' => __("Enter your name...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name...", 'mailoptin'),
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_background_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_name_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
                 [
-                    'name' => 'mo_optin_form_email_field_color_default',
-                    'value' => '#181818',
+                    'name'        => 'mo_optin_form_email_field_color_default',
+                    'value'       => '#181818',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
-                ],
-
-                [
-                    'name' => 'mo_optin_form_email_field_background_default',
-                    'value' => '#ffffff',
-                    'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_placeholder_default',
-                    'value' => __("Enter your email...", 'mailoptin'),
+                    'name'        => 'mo_optin_form_email_field_background_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_color_default',
-                    'value' => '#ffffff',
+                    'name'        => 'mo_optin_form_email_field_placeholder_default',
+                    'value'       => __("Enter your email...", 'mailoptin'),
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_background_default',
-                    'value' => '#13aff0',
+                    'name'        => 'mo_optin_form_submit_button_color_default',
+                    'value'       => '#ffffff',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_submit_button_font_default',
-                    'value' => 'Lato',
+                    'name'        => 'mo_optin_form_submit_button_background_default',
+                    'value'       => '#13aff0',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_name_field_font_default',
-                    'value' => 'Franklin Gothic Medium, sans-serif',
+                    'name'        => 'mo_optin_form_submit_button_font_default',
+                    'value'       => 'Lato',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_email_field_font_default',
-                    'value' => 'Franklin Gothic Medium, sans-serif',
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Franklin Gothic Medium, sans-serif',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_email_field_font_default',
+                    'value'       => 'Franklin Gothic Medium, sans-serif',
+                    'optin_class' => 'Boldy',
+                    'optin_type'  => 'sidebar'
                 ],
 
                 // -- default for note sections -- //
                 [
-                    'name' => 'mo_optin_form_note_font_color_default',
-                    'value' => '#8f8888',
+                    'name'        => 'mo_optin_form_note_font_color_default',
+                    'value'       => '#8f8888',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_default',
-                    'value' => $this->_note_content(),
+                    'name'        => 'mo_optin_form_note_default',
+                    'value'       => $this->_note_content(),
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
-                    'name' => 'mo_optin_form_note_font_default',
-                    'value' => 'Lato',
+                    'name'        => 'mo_optin_form_note_font_default',
+                    'value'       => 'Lato',
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_headline_font_size_desktop_default',
                     'value'       => 20,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_headline_font_size_tablet_default',
                     'value'       => 20,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_headline_font_size_mobile_default',
                     'value'       => 16,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_description_font_size_desktop_default',
                     'value'       => 16,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_description_font_size_tablet_default',
                     'value'       => 16,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_description_font_size_mobile_default',
                     'value'       => 14,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_desktop_default',
                     'value'       => 14,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_tablet_default',
                     'value'       => 14,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ],
 
                 [
                     'name'        => 'mo_optin_form_note_font_size_mobile_default',
                     'value'       => 12,
                     'optin_class' => 'Boldy',
-                    'optin_type' => 'sidebar'
+                    'optin_type'  => 'sidebar'
                 ]
             ]
         );
@@ -248,7 +248,7 @@ class Boldy extends AbstractOptinTheme
         });
 
         add_filter('mo_optin_form_customizer_form_image_args', function ($config) {
-            $config['width'] = 700;
+            $config['width']  = 700;
             $config['height'] = 190;
 
             return $config;
@@ -263,7 +263,10 @@ class Boldy extends AbstractOptinTheme
 
     public function features_support()
     {
-        return [$this->cta_button];
+        return [
+            self::CTA_BUTTON_SUPPORT,
+            self::OPTIN_CUSTOM_FIELD_SUPPORT
+        ];
     }
 
     /**
@@ -347,8 +350,8 @@ class Boldy extends AbstractOptinTheme
     public function customizer_note_settings($settings, $CustomizerSettingsInstance)
     {
         $settings['note_position'] = [
-            'default' => 'before_form',
-            'type' => 'option',
+            'default'   => 'before_form',
+            'type'      => 'option',
             'transport' => 'refresh',
         ];
 
@@ -366,16 +369,16 @@ class Boldy extends AbstractOptinTheme
     public function customizer_note_controls($controls, $wp_customize, $option_prefix, $customizerClassInstance)
     {
         $controls['note_position'] = apply_filters('mo_optin_form_customizer_note_position_args', array(
-                'type' => 'select',
+                'type'        => 'select',
                 'description' => __(''),
-                'choices' => [
+                'choices'     => [
                     'before_form' => __('Before Form', 'mailoptin'),
-                    'after_form' => __('After Form', 'mailoptin')
+                    'after_form'  => __('After Form', 'mailoptin')
                 ],
-                'label' => __('Position', 'mailoptin'),
-                'section' => $customizerClassInstance->note_section_id,
-                'settings' => $option_prefix . '[note_position]',
-                'priority' => 15,
+                'label'       => __('Position', 'mailoptin'),
+                'section'     => $customizerClassInstance->note_section_id,
+                'settings'    => $option_prefix . '[note_position]',
+                'priority'    => 15,
             )
         );
 
@@ -482,8 +485,8 @@ class Boldy extends AbstractOptinTheme
     public function optin_form()
     {
         $optin_default_image = $this->default_form_image_partial;
-        $note_position = OptinCampaignsRepository::get_customizer_value($this->optin_campaign_id, 'note_position', 'before_form');
-        $before_form_note = $after_form_note = '';
+        $note_position       = OptinCampaignsRepository::get_customizer_value($this->optin_campaign_id, 'note_position', 'before_form');
+        $before_form_note    = $after_form_note = '';
 
         if ($note_position == 'after_form') $after_form_note = '[mo-optin-form-note class="boldy_note"]';
         if ($note_position == 'before_form') $before_form_note = '[mo-optin-form-note class="boldy_note"]';
@@ -502,6 +505,7 @@ class Boldy extends AbstractOptinTheme
                         [mo-optin-form-fields-wrapper]
                             [mo-optin-form-name-field class="boldy_input"]
                             [mo-optin-form-email-field class="boldy_input"]
+                            [mo-optin-form-custom-fields class="boldy_input"]
                             [mo-mailchimp-interests]
                             [mo-optin-form-submit-button class="boldy_submitButton"]
                             [/mo-optin-form-fields-wrapper]
@@ -523,9 +527,11 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id = $this->optin_css_id;
+        $optin_uuid   = $this->optin_campaign_uuid;
+
         return <<<CSS
 
-      div#$optin_css_id.boldy_container {
+      html div#$optin_uuid div#$optin_css_id.boldy_container {
             margin: 0 auto;
             font-size: 14px;
             background: #2d3144;
@@ -534,28 +540,28 @@ HTML;
             max-width: 400px;
         }
 
-      div#$optin_css_id.boldy_container * {
+      html div#$optin_uuid div#$optin_css_id.boldy_container * {
             font-size: 14px;
         }
 
-       div#$optin_css_id.boldy_container .boldy_isresponsive img {
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_isresponsive img {
             display: block;
             width: 100%;
             height: auto;
         }
 
-        div#$optin_css_id.boldy_container .boldy_inner {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_inner {
             margin: 0;
             position: relative;
         }
 
-       div#$optin_css_id.boldy_container .boldy_main .boldy_header,
-       div#$optin_css_id.boldy_container .boldy_main .boldy_description,
-       div#$optin_css_id.boldy_container .boldy_main .boldy_note{
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_header,
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_description,
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_note{
             color: #fff;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_header {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_header {
             font-weight: 700;
             font-size: 20px;
             display: block;
@@ -563,7 +569,7 @@ HTML;
             line-height: normal;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main {
             text-align: center;
             padding: 10px;
             background: inherit;
@@ -572,7 +578,7 @@ HTML;
             margin: 0;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_description {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_description {
             font-size: 16px;
             padding-bottom: 10px;
             padding-top: 10px;
@@ -582,14 +588,14 @@ HTML;
             line-height: normal;
         }
 
-        div#$optin_css_id.boldy_container .boldy_main .boldy_note {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main .boldy_note {
             color: #8f8888;
             display: block;
             border: 0;
             line-height: normal;
         }
 
-        div#$optin_css_id.boldy_container input.boldy_input {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_input {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -598,16 +604,16 @@ HTML;
             outline: none;
         }
 
-        div#$optin_css_id.boldy_container input.boldy_input:focus,
-         div#$optin_css_id.boldy_container input.boldy_submitButton:focus {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_input:focus,
+        html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_submitButton:focus {
             outline: 0
         }
 
-        div#$optin_css_id.boldy_container .boldy_main-form {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_main-form {
             padding: 20px;
         }
 
-        div#$optin_css_id.boldy_container input.boldy_submitButton {
+        html div#$optin_uuid div#$optin_css_id.boldy_container input.boldy_submitButton {
             font-size: 15px;
             text-transform: uppercase;
             padding: 10px 5px;
@@ -622,7 +628,7 @@ HTML;
             width: 100%;
         }
 
-        div#$optin_css_id.boldy_container .boldy_optin_error {
+        html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_optin_error {
             display:none;
             padding: 5px;
             font-size: 14px;
@@ -630,9 +636,13 @@ HTML;
             font-style: italic;
         }
 
-       div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
+       html div#$optin_uuid div#$optin_css_id.boldy_container .boldy_featureImage.boldy_isresponsive img {
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
+        }
+        
+       html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.boldy_container textarea.mo-optin-form-custom-field.textarea-field {
+            min-height: 80px;
         }
 CSS;
 
