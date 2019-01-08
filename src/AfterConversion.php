@@ -87,6 +87,18 @@ class AfterConversion
             unset($lead_data['optin_campaign_type']);
 
             foreach ($lead_data as $key => $value) {
+
+                if ('custom_fields' == $key) {
+                    $data = json_decode($value, true);
+                    if ( ! empty($data)) {
+                        foreach ($data as $key2 => $value2) {
+                            $message .= '<p>' . ucfirst($key2) . ': ' . $value2 . '</p>';
+                        }
+                    }
+
+                    continue;
+                }
+
                 $key     = str_replace('_', ' ', $key);
                 $message .= '<p>' . ucfirst($key) . ': ' . $value . '</p>';
             }
