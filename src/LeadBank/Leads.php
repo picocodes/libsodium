@@ -4,6 +4,7 @@ namespace MailOptin\Libsodium\LeadBank;
 
 // Exit if accessed directly
 use MailOptin\Core\Admin\SettingsPage\AbstractSettingsPage;
+use MailOptin\Core\Repositories\OptinConversionsRepository;
 use W3Guy\Custom_Settings_Page_Api;
 
 if ( ! defined('ABSPATH')) {
@@ -26,6 +27,30 @@ class Leads extends AbstractSettingsPage
         add_action('mailoptin_register_optin_campaign_settings_page', function ($hook) {
             add_action("load-$hook", array($this, 'screen_option'));
         });
+
+        add_action('admin_init', [$this, 'custom_field_preview']);
+    }
+
+    public function custom_field_preview()
+    {
+        if (current_user_can('administrator')) {
+            if (isset($_GET['mailoptin']) && isset($_GET['id']) && 'view-lead-custom-field' == $_GET['mailoptin']) {
+                $id = absint($_GET['id']);
+                $data = OptinConversionsRepository::get($id);
+
+                if(isset($data['custom_fields'])) {
+                    $custom_fields = json_decode($data['custom_fields'], true);
+
+                    $output = '';
+                    foreach ($custom_fields as $key => $value) {
+                        $output .= sprintf('<p>%s: %s</p>', $key, $value);
+                    }
+                }
+
+                wp_die($output);
+                exit;
+            }
+        }
     }
 
     public function init()
@@ -89,6 +114,7 @@ class Leads extends AbstractSettingsPage
                 'default' => 8,
                 'option'  => 'conversions_per_page',
             );
+
             add_screen_option($option, $args);
 
             $this->conversions_instance = Leads_List::get_instance();

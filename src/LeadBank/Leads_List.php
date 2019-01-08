@@ -123,6 +123,24 @@ class Leads_List extends \WP_List_Table
         return $name . $this->row_actions($actions);
     }
 
+    public function column_email($item)
+    {
+        $url = add_query_arg(
+            ['mailoptin' => 'view-lead-custom-field', 'id' => $item['id']],
+            admin_url()
+        );
+
+        $html = '<p>' . $item['email'] . '</p>';
+        if (isset($item['custom_fields'])) {
+            $custom_fields = json_decode($item['custom_fields'], true);
+            if ( ! empty($custom_fields)) {
+                $html .= '<p>' . sprintf("<a class='mo-open-link-fancybox' href='$url' target='_blank'>%s</a>", __('View Custom Fields', 'mailoptin')) . '</p>';
+            }
+        }
+
+        return $html;
+    }
+
     /**
      * Column for conversion page
      *
