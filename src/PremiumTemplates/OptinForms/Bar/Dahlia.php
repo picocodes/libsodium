@@ -509,6 +509,7 @@ html div#$optin_uuid div#$optin_css_id.dahlia-container {
     color:#fff;
     padding-left: 15px;
     padding-right: 35px;
+    padding-bottom: 10px;
     width: 100%;
     font-size: 16px;
     border: 2px solid #00ceff;

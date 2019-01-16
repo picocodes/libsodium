@@ -454,6 +454,7 @@ html div#$optin_uuid div#$optin_css_id.muscari-container{
     color:#fff;
     padding-left: 15px;
     padding-right: 35px;
+    padding-bottom: 5px;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
