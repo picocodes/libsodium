@@ -40,7 +40,7 @@ class Libsodium
     public function libsodium()
     {
         // we need to check got this constant because it becomes undefined if license is expired.
-        if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
+        if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return $this;
 
         add_filter('mailoptin_enable_advance_analytics', '__return_true');
         add_filter('mailoptin_enable_leadbank', '__return_true');
@@ -61,7 +61,7 @@ class Libsodium
     public function libprodium()
     {
         // we need to check got this constant because it becomes undefined if license is expired.
-        if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return;
+        if ( ! defined('MAILOPTIN_DETACH_LIBSODIUM')) return $this;
         add_filter('mailoptin_enable_email_customizer_connections', '__return_true');
         add_filter('mailoptin_enable_post_email_digest', '__return_true');
         add_filter('mailoptin_enable_email_automation_cpt_support', '__return_true');
