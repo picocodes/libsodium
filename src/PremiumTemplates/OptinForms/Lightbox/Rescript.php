@@ -349,6 +349,7 @@ class Rescript extends AbstractOptinTheme
                     'section'       => $customizerClassInstance->headline_section_id,
                     'settings'      => $option_prefix . '[mini_headline]',
                     'editor_id'     => 'mini_headline',
+                    'quicktags' => true,
                     'editor_height' => 50,
                     'priority'      => 4
                 )
