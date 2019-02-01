@@ -50,6 +50,7 @@ class Libsodium
         LeadBank::get_instance();
         OptinSchedule::get_instance();
         AdblockDetector::get_instance();
+        DeviceTargeting::get_instance();
         NewVsReturningVisitors::get_instance();
         ReferrerDetection::get_instance();
         AutoResponder::get_instance();
@@ -86,6 +87,7 @@ class Libsodium
         LeadBank::get_instance();
         OptinSchedule::get_instance();
         AdblockDetector::get_instance();
+        DeviceTargeting::get_instance();
         NewVsReturningVisitors::get_instance();
         ReferrerDetection::get_instance();
         AutoResponder::get_instance();
