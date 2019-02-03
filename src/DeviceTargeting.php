@@ -3,9 +3,7 @@
 namespace MailOptin\Libsodium;
 
 
-use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Custom_Content;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Toggle_Control;
-use MailOptin\Core\Admin\Customizer\OptinForm\AbstractCustomizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinForm;
@@ -28,17 +26,18 @@ class DeviceTargeting
     /**
      * @param array $data
      * @param AbstractOptinForm $abstractOptinFormClass
+     *
      * @return mixed
      */
     public function device_targeting_js_config($data, $abstractOptinFormClass)
     {
-        $device_targeting_status = $abstractOptinFormClass->get_customizer_value('device_targeting_status');
-        $device_targeting_settings = $abstractOptinFormClass->get_customizer_value('device_targeting_settings');
+        $device_targeting_hide_desktop = $abstractOptinFormClass->get_customizer_value('device_targeting_hide_desktop', false);
+        $device_targeting_hide_tablet  = $abstractOptinFormClass->get_customizer_value('device_targeting_hide_tablet', false);
+        $device_targeting_hide_mobile  = $abstractOptinFormClass->get_customizer_value('device_targeting_hide_mobile', false);
 
-        if ($device_targeting_status === true && !empty($device_targeting_settings)) {
-            $data['device_targeting_status'] = $device_targeting_status;
-            $data['device_targeting_settings'] = $device_targeting_settings;
-        }
+        $data['device_targeting_hide_desktop'] = $device_targeting_hide_desktop;
+        $data['device_targeting_hide_tablet']  = $device_targeting_hide_tablet;
+        $data['device_targeting_hide_mobile']  = $device_targeting_hide_mobile;
 
         return $data;
     }
@@ -66,27 +65,26 @@ class DeviceTargeting
     /**
      * @param $settings
      * @param CustomizerSettings $customizerSettings
+     *
      * @return mixed
      */
     public function device_targeting_settings($settings, $customizerSettings)
     {
-        $customizer_defaults = (new AbstractCustomizer())->customizer_defaults;
-
         $settings['device_targeting_hide_mobile'] = array(
-            'default' => false,
-            'type' => 'option',
+            'default'   => false,
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['device_targeting_hide_tablet'] = array(
-            'default' => false,
-            'type' => 'option',
+            'default'   => false,
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
         $settings['device_targeting_hide_desktop'] = array(
-            'default' => false,
-            'type' => 'option',
+            'default'   => false,
+            'type'      => 'option',
             'transport' => 'postMessage',
         );
 
@@ -109,34 +107,34 @@ class DeviceTargeting
                     $wp_customize,
                     $option_prefix . '[device_targeting_hide_desktop]',
                     apply_filters('mo_optin_form_customizer_device_targeting_hide_desktop_args', array(
-                            'label' => esc_html__('Hide on Desktop', 'mailoptin'),
-                            'section' => $this->customizer_section_id,
+                            'label'    => esc_html__('Hide on Desktop', 'mailoptin'),
+                            'section'  => $this->customizer_section_id,
                             'settings' => $option_prefix . '[device_targeting_hide_desktop]',
-                            'type' => 'flat',// light, ios, flat
+                            'type'     => 'flat',// light, ios, flat
                             'priority' => 10
                         )
                     )
                 ),
-                'device_targeting_hide_tablet' => new WP_Customize_Toggle_Control(
+                'device_targeting_hide_tablet'  => new WP_Customize_Toggle_Control(
                     $wp_customize,
                     $option_prefix . '[device_targeting_hide_tablet]',
                     apply_filters('mo_optin_form_customizer_device_targeting_hide_tablet_args', array(
-                            'label' => esc_html__('Hide on Tablet', 'mailoptin'),
-                            'section' => $this->customizer_section_id,
+                            'label'    => esc_html__('Hide on Tablet', 'mailoptin'),
+                            'section'  => $this->customizer_section_id,
                             'settings' => $option_prefix . '[device_targeting_hide_tablet]',
-                            'type' => 'flat',// light, ios, flat
+                            'type'     => 'flat',// light, ios, flat
                             'priority' => 10
                         )
                     )
                 ),
-                'device_targeting_hide_mobile' => new WP_Customize_Toggle_Control(
+                'device_targeting_hide_mobile'  => new WP_Customize_Toggle_Control(
                     $wp_customize,
                     $option_prefix . '[device_targeting_hide_mobile]',
                     apply_filters('mo_optin_form_customizer_device_targeting_hide_mobile_args', array(
-                            'label' => esc_html__('Hide on Mobile', 'mailoptin'),
-                            'section' => $this->customizer_section_id,
+                            'label'    => esc_html__('Hide on Mobile', 'mailoptin'),
+                            'section'  => $this->customizer_section_id,
                             'settings' => $option_prefix . '[device_targeting_hide_mobile]',
-                            'type' => 'flat',// light, ios, flat
+                            'type'     => 'flat',// light, ios, flat
                             'priority' => 10
                         )
                     )
