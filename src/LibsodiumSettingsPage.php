@@ -8,18 +8,15 @@ ob_start();
 
 class LibsodiumSettingsPage
 {
-    const slug = MAILOPTIN_LICENSE_SETTINGS_SLUG;
-
     private static $license_key;
+    private static $license_page_url;
 
     public function __construct()
     {
         self::$license_key = self::license_key();
 
-        // plugins_loaded hook is used so it is shown as the last sub menu.
-        add_action('plugins_loaded', function () {
-            add_action('admin_menu', array(__CLASS__, 'register_settings_page'));
-        }, 199);
+        self::$license_page_url = MAILOPTIN_SETTINGS_SETTINGS_PAGE . '#license_settings';
+
         // unavailability of this class could potentially break all ajax requests.
         if (class_exists('MailOptin\Libsodium\LicenseControl')) {
             add_action('admin_init', array(__CLASS__, 'plugin_updater'), 0);
@@ -30,6 +27,29 @@ class LibsodiumSettingsPage
             add_action('admin_notices', array(__CLASS__, 'license_not_active_notice'));
             add_action('admin_notices', array(__CLASS__, 'license_expired_notice'));
         });
+
+        add_filter('mailoptin_settings_page', [$this, 'license_settings_tab'], 999999999);
+    }
+
+    public function license_settings_tab($settings)
+    {
+        ob_start();
+        self::license_page();
+        $page = ob_get_clean();
+
+        $settings['license_settings'] = [
+            'tab_title' => __('License', 'mailoptin'),
+            [
+                'section_title'         => __('Activate License Key', 'mailoptin'),
+                'disable_leadbank'      => [
+                    'type' => 'arbitrary',
+                    'data' => $page
+                ],
+                'disable_submit_button' => true
+            ]
+        ];
+
+        return $settings;
     }
 
     public static function license_key()
@@ -151,21 +171,9 @@ class LibsodiumSettingsPage
         }
 
         if ($force === true) {
-            wp_redirect(MAILOPTIN_LICENSE_SETTINGS_PAGE);
+            wp_redirect(self::$license_page_url);
             exit;
         }
-    }
-
-    public static function register_settings_page()
-    {
-        add_submenu_page(
-            MAILOPTIN_SETTINGS_SETTINGS_SLUG,
-            __('License', 'mailoptin') . ' - MailOptin',
-            __('License', 'mailoptin'),
-            'manage_options',
-            self::slug,
-            array(__CLASS__, 'license_page')
-        );
     }
 
     /**
@@ -183,26 +191,16 @@ class LibsodiumSettingsPage
         } // listen for our activate button to be clicked
         elseif (isset($_POST['save_license'])) {
             self::save_license_key();
-        } // listen for our activate button to be clicked
-        elseif (isset($_GET['revalidate_license'])) {
-            self::plugin_check_license(true);
         }
 
         if (isset($_GET['settings-updated']) && $_GET['settings-updated']) {
-            add_settings_error(self::slug, 'changes_saved', __('License key updated successfully', 'mailoptin'), 'updated');
+            add_settings_error('moLicenseSettingsError', 'changes_saved', __('License key updated successfully', 'mailoptin'), 'updated');
         } elseif (isset($_GET['license']) && $_GET['license'] == 'activated') {
-            add_settings_error(self::slug, 'valid_license', __('License key activation successful.', 'mailoptin'), 'updated');
+            add_settings_error('moLicenseSettingsError', 'valid_license', __('License key activation successful.', 'mailoptin'), 'updated');
         } elseif (isset($_GET['license']) && $_GET['license'] == 'deactivated') {
-            add_settings_error(self::slug, 'invalid_license', __('License key deactivation successful.', 'mailoptin'), 'updated');
+            add_settings_error('moLicenseSettingsError', 'invalid_license', __('License key deactivation successful.', 'mailoptin'), 'updated');
         }
         ?>
-
-        <div class="wrap">
-        <h2><?php _e('MailOptin License', 'mailoptin'); ?>
-            <a class="add-new-h2" href="<?php echo add_query_arg('revalidate_license', 'true', MAILOPTIN_LICENSE_SETTINGS_PAGE); ?>">
-                <?php _e('Re-validate Saved License Key', 'mailoptin') ?>
-            </a>
-        </h2>
         <!--	Output Settings error	-->
         <?php settings_errors(); ?>
         <?php self::license_banner(); ?>
@@ -214,8 +212,7 @@ class LibsodiumSettingsPage
                         <?php _e('License Key'); ?>
                     </th>
                     <td>
-                        <input id="mo_license_key" name="mo_license_key" type="text" class="regular-text" value="<?php esc_attr_e($license); ?>"/>
-                        <label class="description" for="mo_license_key"><?php _e('Enter your license key', 'mailoptin'); ?></label>
+                        <input id="mo_license_key" name="mo_license_key" type="text" class="regular-text" value="<?php esc_attr_e($license); ?>">
                     </td>
                 </tr>
                 <?php if (false !== $license) { ?>
@@ -289,7 +286,7 @@ class LibsodiumSettingsPage
         $response = self::license_control_instance()->activate_license($license_key);
 
         if (is_wp_error($response)) {
-            add_settings_error(self::slug, 'activation_error', $response->get_error_message());
+            add_settings_error('moLicenseSettingsError', 'activation_error', $response->get_error_message());
 
             return;
         }
@@ -299,7 +296,7 @@ class LibsodiumSettingsPage
         update_option('mo_price_id', $response->price_id);
 
         if ($response->license == 'invalid') {
-            add_settings_error(self::slug, 'invalid_license', 'License key entered is invalid.');
+            add_settings_error('moLicenseSettingsError', 'invalid_license', 'License key entered is invalid.');
         } elseif ($response->license == 'expired') {
             update_option('mo_license_expired_status', 'true');
         } elseif ($response->license == 'valid') {
@@ -330,7 +327,7 @@ class LibsodiumSettingsPage
         $response = self::license_control_instance()->deactivate_license();
 
         if (is_wp_error($response)) {
-            add_settings_error(self::slug, 'deactivation_error', $response->get_error_message());
+            add_settings_error('moLicenseSettingsError', 'deactivation_error', $response->get_error_message());
 
             return;
         }
@@ -377,7 +374,7 @@ class LibsodiumSettingsPage
         echo '<div class="error notice"><p>' . sprintf(__('%sWelcome to MailOptin Premium!%s Please %s or %s to enable automatic updates.', 'mailoptin'),
                 '<strong>',
                 '</strong>',
-                '<a href="' . MAILOPTIN_LICENSE_SETTINGS_PAGE . '">' . __('activate your license key', 'mailoptin') . '</a>',
+                '<a href="' . self::$license_page_url . '">' . __('activate your license key', 'mailoptin') . '</a>',
                 '<a target="_blank" href="https://my.mailoptin.io">' . __('renew it', 'mailoptin') . '</a>') . '</p></div>';
     }
 
