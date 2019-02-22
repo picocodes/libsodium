@@ -781,6 +781,8 @@ html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_contai
 html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container textarea {
     margin-bottom: 15px;
 }
+
+html div#$optin_uuid.mo-has-name-email div#$optin_css_id.rescript_container .rescript_submitBtn,
 html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container .rescript_inputField + .rescript_submitBtn {
     margin-top: 0;
 }
