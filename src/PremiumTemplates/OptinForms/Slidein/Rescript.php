@@ -78,6 +78,13 @@ class Rescript extends AbstractOptinTheme
                 // -- default for fields sections -- //
 
                 [
+                    'name'        => 'mo_optin_form_name_field_placeholder_default',
+                    'value'       => __("Enter your name...", 'mailoptin'),
+                    'optin_class' => 'Rescript',
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
                     'name'        => 'mo_optin_form_email_field_placeholder_default',
                     'value'       => __("Enter your email...", 'mailoptin'),
                     'optin_class' => 'Rescript',
@@ -93,6 +100,21 @@ class Rescript extends AbstractOptinTheme
 
                 [
                     'name'        => 'mo_optin_form_email_field_background_default',
+                    'value'       => '#ffffff',
+                    'optin_class' => 'Rescript',
+                    'optin_type'  => 'slidein'
+                ],
+
+
+                [
+                    'name'        => 'mo_optin_form_name_field_color_default',
+                    'value'       => '#737373',
+                    'optin_class' => 'Rescript',
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_name_field_background_default',
                     'value'       => '#ffffff',
                     'optin_class' => 'Rescript',
                     'optin_type'  => 'slidein'
@@ -115,6 +137,13 @@ class Rescript extends AbstractOptinTheme
                 [
                     'name'        => 'mo_optin_form_submit_button_font_default',
                     'value'       => 'Open+Sans',
+                    'optin_class' => 'Rescript',
+                    'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_name_field_font_default',
+                    'value'       => 'Palatino Linotype, Book Antiqua, serif',
                     'optin_class' => 'Rescript',
                     'optin_type'  => 'slidein'
                 ],
@@ -230,11 +259,16 @@ class Rescript extends AbstractOptinTheme
                     'value'       => 12,
                     'optin_class' => 'Rescript',
                     'optin_type'  => 'slidein'
+                ],
+
+                [
+                    'name'        => 'mo_optin_form_hide_name_field_default',
+                    'value'       => true,
+                    'optin_class' => 'Rescript',
+                    'optin_type'  => 'slidein'
                 ]
             ]
         );
-
-        add_filter('mo_optin_form_disable_name_field', '__return_true');
 
         add_action('customize_preview_init', function () {
             add_action('wp_footer', [$this, 'customizer_preview_js']);
@@ -327,7 +361,7 @@ class Rescript extends AbstractOptinTheme
                     'section'       => $customizerClassInstance->headline_section_id,
                     'settings'      => $option_prefix . '[mini_headline]',
                     'editor_id'     => 'mini_headline',
-                    'quicktags' => true,
+                    'quicktags'     => true,
                     'editor_height' => 50,
                     'priority'      => 4
                 )
@@ -419,6 +453,7 @@ class Rescript extends AbstractOptinTheme
      */
     public function customizer_fields_settings($fields_settings, $CustomizerSettingsInstance)
     {
+        $fields_settings['hide_name_field']['transport']          = 'refresh';
         $fields_settings['submit_button_background']['transport'] = 'refresh';
 
         return $fields_settings;
@@ -551,6 +586,7 @@ class Rescript extends AbstractOptinTheme
         <div class="rescript_form rescript_clear">
             <div class="rescript_blockify">
             [mo-optin-form-fields-wrapper]
+                [mo-optin-form-name-field class="rescript_inputField"]
                 [mo-optin-form-email-field class="rescript_inputField"]
                 [mo-optin-form-custom-fields class="rescript_inputField"]
                 [mo-optin-form-submit-button class="rescript_submitBtn"]
@@ -740,6 +776,7 @@ HTML;
                     }
                 }
 
+html div#$optin_uuid.mo-has-name-email div#$optin_css_id.rescript_container input,
 html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container input,
 html div#$optin_uuid.mo-optin-has-custom-field div#$optin_css_id.rescript_container textarea {
     margin-bottom: 15px;
