@@ -21,7 +21,14 @@ class Polylang
             add_filter('mo_optin_form_customizer_output_settings', [$this, 'settings'], 10, 2);
             add_action('mo_optin_after_customizer_controls', array($this, 'controls'), 10, 4);
 
+            add_filter('mailoptin_show_optin_form', [$this, 'display_rule']);
+
         });
+    }
+
+    public function display_rule()
+    {
+
     }
 
     /**
