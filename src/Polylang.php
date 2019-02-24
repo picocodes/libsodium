@@ -7,6 +7,7 @@ use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Chosen_Select_Co
 use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
 use MailOptin\Core\OptinForms\AbstractOptinForm;
+use MailOptin\Core\Repositories\OptinCampaignsRepository;
 
 class Polylang
 {
@@ -21,14 +22,23 @@ class Polylang
             add_filter('mo_optin_form_customizer_output_settings', [$this, 'settings'], 10, 2);
             add_action('mo_optin_after_customizer_controls', array($this, 'controls'), 10, 4);
 
-            add_filter('mailoptin_show_optin_form', [$this, 'display_rule']);
-
+            add_filter('mailoptin_show_optin_form', [$this, 'display_rule'], 10, 2);
         });
     }
 
-    public function display_rule()
+    public function display_rule($status, $optin_campaign_id)
     {
+        $languages = OptinCampaignsRepository::get_customizer_value($optin_campaign_id, 'polylang_active_languages');
 
+        if ( ! empty($languages) && is_array($languages)) {
+            $status = false;
+
+            if (in_array(pll_current_language(), $languages)) {
+                $status = true;
+            }
+        }
+
+        return $status;
     }
 
     /**
@@ -60,7 +70,7 @@ class Polylang
     public function settings($settings, $customizerSettings)
     {
         $settings['polylang_active_languages'] = array(
-            'default'   => false,
+            'default'   => '',
             'type'      => 'option',
             'transport' => 'postMessage',
         );
