@@ -24,21 +24,22 @@ class Leads extends AbstractSettingsPage
 
         add_filter('mailoptin_settings_page', [$this, 'leadbank_settings']);
 
-        add_action('mailoptin_register_optin_campaign_settings_page', function ($hook) {
-            add_action("load-$hook", array($this, 'screen_option'));
-        });
-
         add_action('admin_init', [$this, 'custom_field_preview']);
+
+        add_action('mailoptin_leadbank_settings_page_screen_option', function () {
+            $this->conversions_instance = Leads_List::get_instance();
+            add_action('admin_enqueue_scripts', array('MailOptin\Core\RegisterScripts', 'fancybox_scripts'));
+        });
     }
 
     public function custom_field_preview()
     {
         if (current_user_can('administrator')) {
             if (isset($_GET['mailoptin']) && isset($_GET['id']) && 'view-lead-custom-field' == $_GET['mailoptin']) {
-                $id = absint($_GET['id']);
+                $id   = absint($_GET['id']);
                 $data = OptinConversionsRepository::get($id);
 
-                if(isset($data['custom_fields'])) {
+                if (isset($data['custom_fields'])) {
                     $custom_fields = json_decode($data['custom_fields'], true);
 
                     $output = '';
@@ -102,27 +103,6 @@ class Leads extends AbstractSettingsPage
     }
 
     /**
-     * Screen options
-     */
-    public function screen_option()
-    {
-        if (isset($_GET['page']) && $_GET['page'] == MAILOPTIN_OPTIN_CAMPAIGNS_SETTINGS_SLUG && isset($_GET['view'])) {
-
-            $option = 'per_page';
-            $args   = array(
-                'label'   => __('Leads', 'mailoptin'),
-                'default' => 8,
-                'option'  => 'conversions_per_page',
-            );
-
-            add_screen_option($option, $args);
-
-            $this->conversions_instance = Leads_List::get_instance();
-        }
-    }
-
-
-    /**
      * Build the settings page structure. I.e tab, sidebar.
      */
     public function settings_admin_page_callback()
@@ -159,7 +139,6 @@ class Leads extends AbstractSettingsPage
         if ($option_name != 'mo_leads') {
             return $content;
         }
-
         $this->conversions_instance->prepare_items();
         ob_start();
         $this->leadbank_disabled_notice();

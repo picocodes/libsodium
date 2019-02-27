@@ -15,8 +15,8 @@ class LeadBank
 
     public function hook()
     {
-        add_filter('mo_optin_form_customizer_integration_controls', array($this, 'add_control'), 10, 4);
         Leads::get_instance();
+        add_filter('mo_optin_form_customizer_integration_controls', array($this, 'add_control'), 10, 4);
         add_filter('wp_privacy_personal_data_exporters', [$this, 'wp_export_data']);
         add_filter('wp_privacy_personal_data_erasers', [$this, 'wp_erase_data']);
     }
