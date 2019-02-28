@@ -6,7 +6,6 @@ namespace MailOptin\Libsodium;
 use MailOptin\Core\Admin\Customizer\CustomControls\WP_Customize_Chosen_Select_Control;
 use MailOptin\Core\Admin\Customizer\OptinForm\Customizer;
 use MailOptin\Core\Admin\Customizer\OptinForm\CustomizerSettings;
-use MailOptin\Core\OptinForms\AbstractOptinForm;
 use MailOptin\Core\Repositories\OptinCampaignsRepository;
 
 class Polylang
