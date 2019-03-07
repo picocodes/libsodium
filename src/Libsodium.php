@@ -89,6 +89,7 @@ class Libsodium
         OptinSchedule::get_instance();
         AdblockDetector::get_instance();
         DeviceTargeting::get_instance();
+        Polylang::get_instance();
         NewVsReturningVisitors::get_instance();
         ReferrerDetection::get_instance();
         AutoResponder::get_instance();

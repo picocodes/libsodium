@@ -86,7 +86,6 @@ class Polylang
      */
     public function controls($instance, $wp_customize, $option_prefix, $customizerClassInstance)
     {
-
         $choices = [];
         if (function_exists('PLL')) {
             $choices = array_reduce(
