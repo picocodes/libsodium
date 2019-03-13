@@ -193,7 +193,7 @@ class LibsodiumSettingsPage
             self::save_license_key();
         }
 
-        if (isset($_GET['settings-updated']) && $_GET['settings-updated']) {
+        if (isset($_GET['license-settings-updated']) && $_GET['license-settings-updated']) {
             add_settings_error('moLicenseSettingsError', 'changes_saved', __('License key updated successfully', 'mailoptin'), 'updated');
         } elseif (isset($_GET['license']) && $_GET['license'] == 'activated') {
             add_settings_error('moLicenseSettingsError', 'valid_license', __('License key activation successful.', 'mailoptin'), 'updated');
@@ -274,7 +274,7 @@ class LibsodiumSettingsPage
             self::activate_license($new);
         }
 
-        wp_redirect(esc_url_raw(add_query_arg('settings-updated', 'true')));
+        wp_redirect(esc_url_raw(add_query_arg('license-settings-updated', 'true')));
         exit;
     }
 
