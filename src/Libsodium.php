@@ -8,9 +8,9 @@ use MailOptin\Core\Admin\Customizer\EmailCampaign\Customizer as EmailTemplateCus
 use MailOptin\Libsodium\LeadBank\LeadBank;
 use MailOptin\Libsodium\PremiumTemplates\PremiumTemplates;
 
-if (strpos(__FILE__, 'mailoptin/vendor') !== false) {
+if (strpos(__FILE__, 'mailoptin/src') !== false) {
     // production url path to assets folder.
-    define('MAILOPTIN_LIBSODIUM_ASSETS_URL', MAILOPTIN_URL . '../' . dirname(substr(__FILE__, strpos(__FILE__, 'mailoptin/vendor'))) . '/assets/');
+    define('MAILOPTIN_LIBSODIUM_ASSETS_URL', MAILOPTIN_URL . 'src/libsodium/src/assets/');
 } else {
     // dev url path to assets folder.
     define('MAILOPTIN_LIBSODIUM_ASSETS_URL', MAILOPTIN_URL . '../' . dirname(substr(__FILE__, strpos(__FILE__, 'mailoptin'))) . '/assets/');
