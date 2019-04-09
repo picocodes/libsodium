@@ -158,10 +158,10 @@ class Primrose extends AbstractOptinTheme
                 ],
 
                 [
-                    'name'  => 'mo_optin_form_background_image_default',
-                    'value' => function () {
-                        return MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg';
-                    }
+                    'name'        => 'mo_optin_form_background_image_default',
+                    'optin_class' => 'Primrose',
+                    'optin_type'  => 'sidebar',
+                    'value'       => MAILOPTIN_PREMIUMTEMPLATES_ASSETS_URL . 'optin/primrose-bg.jpg'
                 ],
 
 
@@ -298,7 +298,7 @@ HTML;
     public function optin_form_css()
     {
         $optin_css_id     = $this->optin_css_id;
-        $optin_uuid = $this->optin_campaign_uuid;
+        $optin_uuid       = $this->optin_campaign_uuid;
         $background_image = $this->get_form_background_image_url();
 
         return <<<CSS
